@@ -373,4 +373,6 @@ continue playing the words will get longer and longer."
 		  words nil))))
     (toe-score letter-count total-word-count game-start (current-time))))
 
+(provide 'typing)
+
 ;;; typing.el ends here
