@@ -1,3 +1,5 @@
 emacs.d/.passwords
 emacs.d/url/*
 .DS_Store
+\#*
+*.swp

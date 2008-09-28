@@ -1,3 +1,7 @@
+;; Use common lisp stuff
+
+(require 'cl)
+
 (add-to-list 'load-path "~/.emacs.d")
 
 ;; You're expected to populate .emacs.d/local.el
@@ -7,3 +11,7 @@
 (load "local") 
 
 (autoload 'typing-of-emacs "typing" "The Typing Of Emacs, a game." t) 
+
+(setq menu-bar-mode -1)
+
+(setq nxml-sexp-element-flag t)
