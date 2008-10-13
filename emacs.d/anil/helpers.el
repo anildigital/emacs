@@ -82,6 +82,7 @@
   (newline-and-indent))
 (global-set-key [A-return] 'insert-blank-line-after-current)
 
+
 ; for loading libraries in from the vendor directory
 (defun vendor (library)
   (let* ((file (symbol-name library)) 
@@ -95,22 +96,8 @@
     (when (file-exists-p (concat anil ".el"))
       (load anil))))
 
-(defun find-thing-at-point (&optional always-ask)
-  (interactive "P")
-  (let* ((at-point (thing-at-point 'symbol))
-         (s (and at-point (intern at-point)))
-         (v (or (variable-at-point)
-                (and s (boundp s) s)))
-         (f (or (function-called-at-point)
-                (and s (fboundp s) s))))
-    (push-mark (point) t)
-    (cond
-     (always-ask (call-interactively 'find-function))
-     ((and v (not (numberp v)))
-      (find-variable v))
-     ((and f (subrp (symbol-function f)))
-      (let ((buf-pos (find-function-search-for-symbol
-                      f nil (help-C-file-name (symbol-function f) 'subr))))
-        (and (car buf-pos) (pop-to-buffer (car buf-pos)))))
-     (f (find-function f))
-     (t (call-interactively 'find-function)))))
+
+;; evaluate current buffer
+(defun ruby-eval-buffer () (interactive)
+  "Evaluate the buffer with ruby."
+  (shell-command-on-region (point-min) (point-max) "ruby"))
