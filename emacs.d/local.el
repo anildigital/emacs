@@ -17,3 +17,7 @@
 (vendor 'growl)
 (vendor 'twittering-mode)
 (vendor 'haml-mode)
+(vendor 'ack)
+(vendor 'ack)
+(vendor 'fuzzy-find-in-project)
+(vendor 'yasnippet)

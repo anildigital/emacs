@@ -15,3 +15,5 @@
 (setq menu-bar-mode -1)
 
 (setq nxml-sexp-element-flag t)
+
+(windmove-default-keybindings 'meta)

@@ -12,6 +12,7 @@
  '(js2-bounce-indent-flag t)
  '(js2-enter-indents-newline t)
  '(js2-strict-missing-semi-warning nil)
+ '(line-number-mode nil)
  '(one-buffer-one-frame-mode nil nil (aquamacs-frame-setup))
  '(show-paren-mode nil)
  '(transient-mark-mode t))
