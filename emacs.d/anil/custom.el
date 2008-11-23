@@ -12,6 +12,7 @@
  '(js2-bounce-indent-flag t)
  '(js2-enter-indents-newline t)
  '(js2-strict-missing-semi-warning nil)
+ '(erc-modules (quote (autojoin button completion fill irccontrols match menu netsplit noncommands readonly ring scrolltobottom stamp track)))
  '(line-number-mode nil)
  '(one-buffer-one-frame-mode nil nil (aquamacs-frame-setup))
  '(show-paren-mode nil)

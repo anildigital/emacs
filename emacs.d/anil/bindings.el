@@ -22,7 +22,7 @@
 
 
 ; TODO: this doesn't work at all yet
-;;(global-set-key "C-*" 'isearch-forward-at-point)
+(global-set-key (kbd "C-*") 'isearch-forward-at-point)
 
 ;; Open dot emacs
 (global-set-key "\C-x." 'find-dot-emacs)
@@ -37,3 +37,11 @@
 (global-set-key (kbd "A-]") 'indent-region)
 (define-key osx-key-mode-map (kbd "A-t") 'fuzzy-find-in-project)
 (define-key osx-key-mode-map (kbd "A-T") 'ido-goto-symbol)
+
+
+;; gist
+
+(global-set-key "\C-c\C-g" 'gist-buffer-confirm)
+
+;; magit
+(global-set-key "\C-xg" 'magit-status)

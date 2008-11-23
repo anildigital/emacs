@@ -151,3 +151,9 @@
 (defun ruby-eval-buffer () (interactive)
   "Evaluate the buffer with ruby."
   (shell-command-on-region (point-min) (point-max) "ruby"))
+
+
+(defun gist-buffer-confirm ()
+ (interactive)
+  (when (yes-or-no-p "Are you sure you want to Gist this buffer? ") (gist-buffer)))
+
