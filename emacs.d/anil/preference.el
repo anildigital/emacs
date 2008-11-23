@@ -9,3 +9,5 @@
 (windmove-default-keybindings 'meta)
 
 (fset 'yes-or-no-p 'y-or-n-p) ; stop forcing me to spell out "yes"
+
+(set tool-bar-mode nil)

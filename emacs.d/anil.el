@@ -4,10 +4,13 @@
 (setq custom-file "~/.emacs.d/anil/custom.el")
 (load custom-file)
 
-(load ".passwords")
+(when (file-exists-p ".passwords") (load ".passwords"))
 
+(load "anil/lisp")
+(load "anil/defuns")
 (load "anil/global")
 (load "anil/helpers")
+(load "anil/bindings")
 (load "anil/modes")
 (load "anil/theme")
 
@@ -17,7 +20,6 @@
 (vendor 'growl)
 (vendor 'twittering-mode)
 (vendor 'haml-mode)
-(vendor 'ack)
 (vendor 'ack)
 (vendor 'fuzzy-find-in-project)
 (vendor 'yasnippet)
