@@ -21,8 +21,5 @@
 (vendor 'twittering-mode)
 (vendor 'haml-mode)
 (vendor 'ack)
-(vendor 'fuzzy-find-in-project)
-(vendor 'yasnippet)
-
-;(add-to-list 'load-path "~/code/emacs/emacs.d/vendor/textmate.el/vendor/fuzzy-find-in-project")
-;(load "vendor/textmate.el/textmate.el")
+(vendor 'textmate)
+(textmate-mode)
