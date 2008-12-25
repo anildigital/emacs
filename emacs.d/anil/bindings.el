@@ -28,7 +28,7 @@
 (global-set-key "\C-x." 'find-dot-emacs)
 
 ;; Ruby eval buffer
-(global-set-key "\C-c\C-e" 'ruby-eval-buffer)
+(global-set-key "\C-c\C-r" 'ruby-eval-buffer)
 
 
 ;; textmateness
@@ -40,9 +40,11 @@
 
 
 ;; gist
-
 (global-set-key "\C-c\C-g" 'gist-buffer-confirm)
 
 ;; magit
 (global-set-key "\C-xg" 'magit-status)
 
+; don't use Alt-x, use Ctrl-x-m
+(global-set-key "\C-x\C-m" 'execute-extended-command)
+(global-set-key "\C-c\C-m" 'execute-extended-command)
