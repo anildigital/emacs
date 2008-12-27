@@ -1,2 +1,0 @@
-;; others
-(load "anil/url")
