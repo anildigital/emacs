@@ -7,6 +7,9 @@
 [submodule "twilight-emacs"]
   path = vendor/twilight-emacs
   url = git://github.com/crafterm/twilight-emacs.git
+[submodule "vendor/fuzzy-find-in-project"]
+  path = vendor/fuzzy-find-in-project
+  url = git://github.com/avvo/fuzzy-find-in-project.git 
 [submodule "/magit"]
   path = vendor/magit
   url = git://github.com/technomancy/magit.git
@@ -19,6 +22,3 @@
 [submodule "vendor/textmate.el"]
   path = vendor/textmate.el
   url = git://github.com/defunkt/textmate.el
-[submodule "vendor/fuzzy-find-in-project"]
-  path = vendor/fuzzy-find-in-project
-  url = git://github.com/avvo/fuzzy-find-in-project.git 
