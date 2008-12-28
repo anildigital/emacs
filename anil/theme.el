@@ -1,7 +1,7 @@
 (require 'color-theme)
 (color-theme-initialize)
 (setq color-theme-is-global t)
-(load-file "~/elisp/vendor/twilight-emacs/color-theme-twilight.el")
+(load-file "~/.elisp/vendor/twilight-emacs/color-theme-twilight.el")
 (color-theme-twilight)
 ; how to get the font you want:
 ;   M-x mac-font-panel

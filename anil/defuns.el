@@ -5,9 +5,9 @@
 ; for loading libraries in from the vendor directory
 (defun vendor (library)
   (let* ((file (symbol-name library))
-         (normal (concat "~/elisp/vendor/" file))
+         (normal (concat "~/.elisp/vendor/" file))
          (suffix (concat normal ".el"))
-         (anil (concat "~/elisp/anil/" file)))
+         (anil (concat "~/.elisp/anil/" file)))
     (cond
      ((file-directory-p normal) (add-to-list 'load-path normal) (require library))
      ((file-directory-p suffix) (add-to-list 'load-path suffix) (require library))
@@ -50,11 +50,11 @@
 (defun anil-find-config ()
   (interactive)
   (let ((config-file
-         (ido-completing-read "Config file: " (reject (directory-files "~/elisp/anil/")
+         (ido-completing-read "Config file: " (reject (directory-files "~/.elisp/anil/")
                                                   (lambda (x) (string-match "^\\." x))))))
     (if (empty? config-file)
-        (find-file "~/elisp/anil.el")
-      (find-file (concat "~/elisp/anil/" config-file)))))
+        (find-file "~/.elisp/anil.el")
+      (find-file (concat "~/.elisp/anil/" config-file)))))
 
 ;; fix kill-word
 (defun anil-kill-word (arg)
@@ -145,7 +145,7 @@
 
 (defun find-dot-emacs ()
   (interactive)
-  (find-file "~/elisp/anil.el"))
+  (find-file "~/.elisp/anil.el"))
 
 ;; evaluate current buffer
 (defun ruby-eval-buffer () (interactive)

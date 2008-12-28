@@ -1,7 +1,7 @@
-(add-to-list 'load-path "~/elisp/vendor")
+(add-to-list 'load-path "~/.elisp/vendor")
 
 ; custom place to save customizations
-(setq custom-file "~/elisp/anil/custom.el")
+(setq custom-file "~/.elisp/anil/custom.el")
 (load custom-file)
 
 (when (file-exists-p ".passwords") (load ".passwords"))

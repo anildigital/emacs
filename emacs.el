@@ -1,4 +1,4 @@
-(add-to-list 'load-path "~/elisp")
+(add-to-list 'load-path "~/.elisp")
 
 ;; You're expected to populate elisp/local.el
 ;; with your own code. This file is under .gitignore
