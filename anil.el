@@ -22,4 +22,5 @@
 (vendor 'haml-mode)
 (vendor 'ack)
 (vendor 'textmate)
+(vendor 'linum)
 (textmate-mode)
