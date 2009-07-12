@@ -3,6 +3,7 @@
 (load "anil/ruby")
 (load "anil/shell")
 (load "anil/javascript")
+(load "anil/python")
 
 
 ; bash

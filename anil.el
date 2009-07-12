@@ -4,8 +4,6 @@
 (setq custom-file "~/.elisp/anil/custom.el")
 (load custom-file)
 
-(when (file-exists-p ".passwords") (load ".passwords"))
-
 (load "anil/lisp")
 (load "anil/defuns")
 (load "anil/global")
@@ -18,7 +16,6 @@
 (vendor 'magit)
 (vendor 'gist)
 (vendor 'growl)
-(vendor 'twittering-mode)
 (vendor 'haml-mode)
 (vendor 'ack)
 (vendor 'textmate)
