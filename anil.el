@@ -1,23 +1,21 @@
-(add-to-list 'load-path "~/.elisp/vendor")
+(add-to-list 'load-path "~/.emacs.d/vendor")
 
 ; custom place to save customizations
-(setq custom-file "~/.elisp/anil/custom.el")
+(setq custom-file "~/.emacs.d/anil/custom.el")
 (load custom-file)
 
-(load "anil/lisp")
-(load "anil/defuns")
-(load "anil/global")
-(load "anil/helpers")
-(load "anil/bindings")
-(load "anil/modes")
-(load "anil/theme")
+(when (file-exists-p ".passwords") (load ".passwords"))
 
-(vendor 'cheat)
-(vendor 'magit)
-(vendor 'gist)
-(vendor 'growl)
-(vendor 'haml-mode)
+(load "anil/global")
+(load "anil/preferences")
+(load "anil/defuns")
+(load "anil/modes")
+(load "anil/dired")
+(load "anil/theme")
+(load "anil/shell")
+(load "anil/bindings")
+(load "anil/ruby")
+
+
 (vendor 'ack)
-(vendor 'textmate)
-(vendor 'linum)
-(textmate-mode)
+

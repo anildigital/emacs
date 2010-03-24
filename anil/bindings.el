@@ -1,50 +1,26 @@
-;; general
-
+; general
 (global-set-key "\C-x\C-b" 'buffer-menu)
 (global-set-key "\C-x\C-m" 'execute-extended-command)
-(global-set-key "\C-c\C-m" 'execute-extended-command)
-(global-set-key "\C-xp" 'anil-find-config)
-(global-set-key "\M-i" 'insert-soft-tab)     
+(global-set-key (kbd "A-F") 'ack)
+(global-set-key "\C-xg" 'magit-status)
 
+;; no printing!
+;; no changing meta key!!
+(when (boundp 'osx-key-mode-map)
+  ;; Option is my meta key.
+  (define-key osx-key-mode-map (kbd "A-;")
+    '(lambda () (interactive) (message "noop")))
+ 
+  ;; What's paper?
+  (define-key osx-key-mode-map (kbd "A-p")
+    '(lambda () (interactive) (message "noop"))))
 
-; no printing!
-(define-key osx-key-mode-map (kbd "A-p")
-  '(lambda () (interactive) (message "noop")))
 
 ; no mailing!
 (global-unset-key (kbd "C-x m"))
+(global-unset-key "\C-z")
 
-;;duplicate line
-(global-set-key [C-return] 'anil-duplicate-line)
-
-(global-set-key [M-up] 'anil-inc-num-at-point)
-(global-set-key [M-down] 'anil-dec-num-at-point)
+; vim emulation
+(global-set-key [C-tab] 'other-window)
 
 
-; TODO: this doesn't work at all yet
-(global-set-key (kbd "C-*") 'isearch-forward-at-point)
-
-;; Open dot emacs
-(global-set-key "\C-x." 'find-dot-emacs)
-
-;; Ruby eval buffer
-(global-set-key "\C-c\C-r" 'ruby-eval-buffer)
-
-
-;; textmateness
-(global-set-key [A-return] 'anil-insert-blank-line-after-current)
-(global-set-key (kbd "A-M-]") 'align)
-(global-set-key (kbd "A-]") 'indent-region)
-(define-key osx-key-mode-map (kbd "A-t") 'fuzzy-find-in-project)
-(define-key osx-key-mode-map (kbd "A-T") 'ido-goto-symbol)
-
-
-;; gist
-(global-set-key "\C-c\C-g" 'gist-buffer-confirm)
-
-;; magit
-(global-set-key "\C-xg" 'magit-status)
-
-; don't use Alt-x, use Ctrl-x-m
-(global-set-key "\C-x\C-m" 'execute-extended-command)
-(global-set-key "\C-c\C-m" 'execute-extended-command)

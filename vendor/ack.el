@@ -52,6 +52,8 @@ in the --type argument to the ack command")
     ((html-mode) . "html")
     ((xml-mode nxml-mode) . "xml")
     ((java-mode) . "java")
+    ((ruby-mode) . "ruby")
+    ((js2-mode) . "js")
     ((lisp-mode) . "lisp")
     ((perl-mode cperl-mode) . "perl"))
   "alist describing how to fill in the '--type=' argument to ack")
@@ -80,6 +82,7 @@ in the --type argument to the ack command")
                                nil
                                nil
                                'ack-history)))
-  (compilation-start command-args 'ack-mode))
+  (compilation-start (concat command-args " " (textmate-project-root)) 
+                     'ack-mode))
 
 (provide 'ack)
