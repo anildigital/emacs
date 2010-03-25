@@ -3,3 +3,4 @@ local.el
 \#*
 *.swp
 *.elc
+auto-save-list/

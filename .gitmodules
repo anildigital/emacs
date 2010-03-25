@@ -1,6 +1,6 @@
 [submodule "vendor/textmate.el"]
 	path = vendor/textmate.el
-	url = git://github.com/defunkt/textmate.el.git
+	url = git://github.com/anildigital/textmate.el.git
 [submodule "vendor/twilight-emacs.el"]
 	path = vendor/twilight-emacs.el
 	url = git://github.com/crafterm/twilight-emacs.git
