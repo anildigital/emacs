@@ -1,4 +1,6 @@
- ;; textmate.el
+(load "anil/erc") 
+
+;; textmate.el
 (vendor 'textmate)
 (textmate-mode)
 
@@ -14,6 +16,13 @@
 (add-hook 'markdown-mode-hook '(lambda ()
                                  (define-key markdown-mode-map (kbd "A-r") 'markdown-preview)))
 
+
+
+; paredit
+(autoload 'paredit-mode "paredit"
+     "Minor mode for pseudo-structurally editing Lisp code."
+     t)
+(add-hook 'emacs-lisp-mode-hook (lambda () (paredit-mode +1)))
 
 
 ; magit
@@ -33,6 +42,15 @@
  "Command to kill a compilation launched by `mode-compile'" t)
 (global-set-key "\C-ck" 'mode-compile-kill)
 
+
+; mode-compile
+(autoload 'mode-compile "mode-compile"
+   "Command to compile current buffer file based on the major mode" t)
+(global-set-key "\C-cc" 'mode-compile)
+ 
+(autoload 'mode-compile-kill "mode-compile"
+ "Command to kill a compilation launched by `mode-compile'" t)
+(global-set-key "\C-ck" 'mode-compile-kill)
 
 
 ; c

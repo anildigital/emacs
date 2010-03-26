@@ -19,4 +19,4 @@
 
 (vendor 'ack)
 (vendor 'magit)
-
+(vendor 'ooc-mode)
