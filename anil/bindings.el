@@ -22,5 +22,3 @@
 
 ; vim emulation
 (global-set-key [C-tab] 'other-window)
-
-

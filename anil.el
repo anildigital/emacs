@@ -18,4 +18,5 @@
 
 
 (vendor 'ack)
+(vendor 'magit)
 
