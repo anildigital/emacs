@@ -22,6 +22,6 @@
 [submodule "vendor/magit"]
 	path = vendor/magit
 	url = git://github.com/technomancy/magit.git
-[submodule "vendor/ooc-mode"]
-	path = vendor/ooc-mode
-	url = git://github.com/tatofoo/ooc-mode.git
+[submodule "vendor/cheat"]
+	path = vendor/cheat
+	url = git://github.com/defunkt/cheat.el.git

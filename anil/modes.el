@@ -17,7 +17,6 @@
                                  (define-key markdown-mode-map (kbd "A-r") 'markdown-preview)))
 
 
-
 ; paredit
 (autoload 'paredit-mode "paredit"
      "Minor mode for pseudo-structurally editing Lisp code."

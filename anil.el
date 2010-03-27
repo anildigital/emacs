@@ -18,5 +18,6 @@
 
 
 (vendor 'ack)
+(vendor 'cheat)
 (vendor 'magit)
-(vendor 'ooc-mode)
+(vendor 'cheat)
