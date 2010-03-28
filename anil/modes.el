@@ -16,7 +16,6 @@
 (add-hook 'markdown-mode-hook '(lambda ()
                                  (define-key markdown-mode-map (kbd "A-r") 'markdown-preview)))
 
-
 ; paredit
 (autoload 'paredit-mode "paredit"
      "Minor mode for pseudo-structurally editing Lisp code."
@@ -59,3 +58,8 @@
              (define-key c-mode-map "{" 'anil/c-electric-brace)))
  
 (setq show-trailing-whitespace (not buffer-read-only))
+
+
+;yaml mode
+(setq auto-mode-alist (cons '("\\.yml" . yaml-mode) auto-mode-alist))
+(setq auto-mode-alist (cons '("\\.yaml" . yaml-mode) auto-mode-alist))

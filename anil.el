@@ -21,3 +21,4 @@
 (vendor 'cheat)
 (vendor 'magit)
 (vendor 'cheat)
+(vendor 'yaml-mode)
