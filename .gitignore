@@ -5,3 +5,4 @@ local.el
 *.elc
 auto-save-list/
 *~
+dump.rdb
