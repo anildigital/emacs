@@ -30,6 +30,16 @@
      (set-face-foreground 'magit-diff-del "red3")))
 
 
+;; Cosmetics
+ 
+(eval-after-load 'diff-mode
+  '(progn
+     (set-face-foreground 'diff-added "green4")
+     (set-face-foreground 'diff-removed "red3")))
+
+; git commit msg 
+(add-to-list 'auto-mode-alist '("COMMIT_EDITMSG$" . diff-mode))
+
 
 ; mode-compile
 (autoload 'mode-compile "mode-compile"
@@ -53,3 +63,10 @@
 ;yaml mode
 (setq auto-mode-alist (cons '("\\.yml" . yaml-mode) auto-mode-alist))
 (setq auto-mode-alist (cons '("\\.yaml" . yaml-mode) auto-mode-alist))
+
+;sh mode
+(setq auto-mode-alist (cons '(".bashrc" . sh-mode) auto-mode-alist))
+(setq auto-mode-alist (cons '(".bash_profile" . sh-mode) auto-mode-alist)) 
+(setq auto-mode-alist (cons '(".bash_aliases" . sh-mode) auto-mode-alist))
+(setq auto-mode-alist (cons '(".aliases" . sh-mode) auto-mode-alist))  
+
