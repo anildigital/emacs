@@ -21,3 +21,6 @@
  
 ;; no warnings when compiling
 (setq ruby-dbg-flags "")
+
+(require 'flymake-ruby)
+(add-hook 'ruby-mode-hook 'flymake-ruby-load)
