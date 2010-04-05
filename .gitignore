@@ -6,3 +6,4 @@ local.el
 auto-save-list/
 *~
 dump.rdb
+backup

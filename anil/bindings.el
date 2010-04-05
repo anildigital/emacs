@@ -22,3 +22,6 @@
 
 ; vim emulation
 (global-set-key [C-tab] 'other-window)
+
+; copy whole line
+(global-set-key "\C-c\l" 'copy-line)
