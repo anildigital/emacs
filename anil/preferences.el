@@ -28,3 +28,6 @@
 (defalias 'qr 'query-replace)
 
 (set-default 'indicate-empty-lines t)
+
+;; follow symlinks
+(setq vc-follow-symlinks -1)

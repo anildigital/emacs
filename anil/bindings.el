@@ -22,3 +22,7 @@
 
 ; vim emulation
 (global-set-key [C-tab] 'other-window)
+
+; swap windows
+(global-set-key (kbd "C-c s") 'swap-windows)
+

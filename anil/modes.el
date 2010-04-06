@@ -29,6 +29,8 @@
      (set-face-foreground 'magit-diff-add "green3")
      (set-face-foreground 'magit-diff-del "red3")))
 
+;; Correct spelling on commit messages.
+(add-hook 'magit-log-edit-mode-hook 'flyspell-mode)
 
 ;; Cosmetics
  
