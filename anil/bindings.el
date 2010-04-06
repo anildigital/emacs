@@ -25,3 +25,6 @@
 
 ; copy whole line
 (global-set-key "\C-c\l" 'copy-line)
+
+; swap windows
+(global-set-key (kbd "C-c s") 'swap-windows)
