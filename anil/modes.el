@@ -16,6 +16,9 @@
 (add-hook 'markdown-mode-hook '(lambda ()
                                  (define-key markdown-mode-map (kbd "A-r") 'markdown-preview)))
 
+; textile
+(setq auto-mode-alist (cons '("\\.textile" . textile-mode) auto-mode-alist))
+
 ; paredit
 (autoload 'paredit-mode "paredit"
      "Minor mode for pseudo-structurally editing Lisp code."
