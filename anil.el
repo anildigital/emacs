@@ -19,6 +19,7 @@
 
 (vendor 'ack)
 (vendor 'cheat)
+(vendor 'textile-mode)
 (vendor 'magit)
 (vendor 'cheat)
 (vendor 'yaml-mode)
