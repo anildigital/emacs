@@ -40,7 +40,7 @@
                       (save-buffers-kill-emacs))))
 
 ;; Fast go to .emacs.
-(global-set-key (kbd "<f8x>") (lambda ()
+(global-set-key (kbd "<f8>") (lambda ()
                                 (interactive)
                                 (find-file "~/.emacs.d/emacs.el")))
 
