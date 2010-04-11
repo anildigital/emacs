@@ -24,3 +24,6 @@
 
 (require 'flymake-ruby)
 (add-hook 'ruby-mode-hook 'flymake-ruby-load)
+
+(require 'ruby-electric)
+(add-hook 'ruby-mode-hook 'ruby-electric-mode)
