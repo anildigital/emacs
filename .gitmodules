@@ -25,9 +25,6 @@
 [submodule "vendor/cheat"]
 	path = vendor/cheat
 	url = git://github.com/defunkt/cheat.el.git
-[submodule "gist.el"]
-	path = gist.el
-	url = git://github.com/defunkt/gist.el.git
 [submodule "vendor/gist"]
 	path = vendor/gist
 	url = git://github.com/defunkt/gist.el.git
