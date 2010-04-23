@@ -32,13 +32,6 @@
 (global-set-key (kbd "C-c s") 'swap-windows)
 
 
-;; So that Emacs never is quit by mistake.
-(global-set-key (kbd "C-x C-c")
-                (lambda ()
-                  (interactive)
-                  (if (y-or-n-p "Quit Emacs? ")
-                      (save-buffers-kill-emacs))))
-
 ;; Fast go to .emacs.
 (global-set-key (kbd "<f8>") (lambda ()
                                 (interactive)

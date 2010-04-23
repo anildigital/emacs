@@ -23,3 +23,4 @@
 (vendor 'magit)
 (vendor 'cheat)
 (vendor 'yaml-mode)
+(vendor 'gist)
