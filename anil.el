@@ -24,3 +24,4 @@
 (vendor 'cheat)
 (vendor 'yaml-mode)
 (vendor 'gist)
+(vendor 'simplenote)

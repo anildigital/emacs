@@ -28,3 +28,6 @@
 [submodule "vendor/gist"]
 	path = vendor/gist
 	url = git://github.com/defunkt/gist.el.git
+[submodule "vendor/simplenote"]
+	path = vendor/simplenote
+	url = git://github.com/cefstat/simplenote.el.git
