@@ -34,3 +34,6 @@
 [submodule "vendor/drag-stuff"]
 	path = vendor/drag-stuff
 	url = git://github.com/rejeep/drag-stuff.git
+[submodule "vendor/rvm"]
+	path = vendor/rvm
+	url = git://github.com/senny/rvm.el.git

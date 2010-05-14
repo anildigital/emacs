@@ -76,3 +76,6 @@
 (setq auto-mode-alist (cons '(".bash_aliases" . sh-mode) auto-mode-alist))
 (setq auto-mode-alist (cons '(".aliases" . sh-mode) auto-mode-alist))  
 
+
+(vendor 'rvm)
+(rvm-use-default)
