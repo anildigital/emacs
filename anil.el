@@ -25,3 +25,4 @@
 (vendor 'yaml-mode)
 (vendor 'gist)
 (vendor 'simplenote)
+(vendor 'drag-stuff)

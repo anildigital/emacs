@@ -31,3 +31,6 @@
 [submodule "vendor/simplenote"]
 	path = vendor/simplenote
 	url = git://github.com/cefstat/simplenote.el.git
+[submodule "vendor/drag-stuff"]
+	path = vendor/drag-stuff
+	url = git://github.com/rejeep/drag-stuff.git

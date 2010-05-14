@@ -18,6 +18,7 @@
 
 ; textile
 (setq auto-mode-alist (cons '("\\.textile" . textile-mode) auto-mode-alist))
+(add-hook 'textile-mode-hook 'flyspell-mode)
 
 ; paredit
 (autoload 'paredit-mode "paredit"
