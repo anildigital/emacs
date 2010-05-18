@@ -17,7 +17,7 @@
 (load "anil/ruby")
 
 
-(vendor 'ack)
+(vendor 'full-ack)
 (vendor 'cheat)
 (vendor 'textile-mode)
 (vendor 'magit)
