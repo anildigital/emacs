@@ -30,6 +30,8 @@
                                         ; swap windows
 (global-set-key (kbd "C-c s") 'swap-windows)
 
+(global-set-key (kbd "s-r") 'mode-compile)
+
 (global-set-key (kbd "<f5>") 'eval-buffer)
 
 ;; Rails source

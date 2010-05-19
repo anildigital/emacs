@@ -26,3 +26,4 @@
 (vendor 'gist)
 (vendor 'simplenote)
 (vendor 'drag-stuff)
+(vendor 'pastie)

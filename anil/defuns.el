@@ -76,9 +76,3 @@
     (if mark-active
         (buffer-substring (region-beginning) (region-end))
       (read-string "Query: ")))))
-
-;; http://stackoverflow.com/questions/2205121/emacs-programmatically-change-window-size
-(defadvice compilation-handle-exit (around my-compilation-handle-exit-shrink-height activate)
-  (let ((compilation-window-height (if (zerop (car (ad-get-args 1))) 5 nil)))
-    (compilation-set-window-height (get-buffer-window (current-buffer) 0))
-    ad-do-it))
