@@ -27,3 +27,4 @@
 (vendor 'simplenote)
 (vendor 'drag-stuff)
 (vendor 'pastie)
+(vendor 'yari)

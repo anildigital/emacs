@@ -50,3 +50,8 @@
 ;; Increase and decrease font size.
 (global-set-key (kbd "C-+") 'text-scale-increase)
 (global-set-key (kbd "C--") 'text-scale-decrease)
+
+
+(defun ri-bind-key ()
+  (local-set-key [f2] 'yari))
+(add-hook 'ruby-mode-hook 'ri-bind-key)
