@@ -40,3 +40,6 @@
 [submodule "vendor/yari.el"]
 	path = vendor/yari.el
 	url = http://github.com/hron/yari.el.git
+[submodule "vendor/ecb"]
+	path = vendor/ecb
+	url = http://github.com/qdot/ecb.git

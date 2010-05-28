@@ -1,5 +1,8 @@
 (load "anil/erc") 
 
+(load "anil/ecb")
+(vendor 'ecb)
+
 ;; textmate.el
 (vendor 'textmate)
 (textmate-mode)
