@@ -1,7 +1,8 @@
 (load "anil/erc") 
 
-(load "anil/ecb")
-(vendor 'ecb)
+(cond ((featurep 'aquamacs)
+       (load "anil/ecb")
+       (vendor 'ecb)))
 
 ;; textmate.el
 (vendor 'textmate)
