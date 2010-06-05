@@ -28,3 +28,4 @@
 (vendor 'drag-stuff)
 (vendor 'pastie)
 (vendor 'yari)
+(vendor 'rspec-mode)
