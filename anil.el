@@ -22,6 +22,7 @@
 (vendor 'textile-mode)
 (vendor 'magit)
 (vendor 'cheat)
+(vendor 'open-file-in-github)
 (vendor 'yaml-mode)
 (vendor 'gist)
 (vendor 'simplenote)
