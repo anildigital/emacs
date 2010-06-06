@@ -1,6 +1,6 @@
 (load "anil/erc") 
 
-(cond ((featurep 'aquamacs)
+(cond ((or (featurep 'aquamacs) (featurep 'ns))
        (load "anil/ecb")
        (vendor 'ecb)))
 
