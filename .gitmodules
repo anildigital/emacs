@@ -39,10 +39,10 @@
 	url = git://github.com/senny/rvm.el.git
 [submodule "vendor/yari.el"]
 	path = vendor/yari.el
-	url = http://github.com/hron/yari.el.git
+	url = git://github.com/hron/yari.el.git
 [submodule "vendor/ecb"]
 	path = vendor/ecb
-	url = http://github.com/qdot/ecb.git
+	url = git://github.com/qdot/ecb.git
 [submodule "vendor/rspec-mode"]
 	path = vendor/rspec-mode
-	url = http://github.com/pezra/rspec-mode.git
+	url = git://github.com/pezra/rspec-mode.git
