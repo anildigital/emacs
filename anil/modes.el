@@ -81,5 +81,12 @@
 (setq auto-mode-alist (cons '(".aliases" . sh-mode) auto-mode-alist))  
 
 
+;; google maps
+
+(add-to-list 'load-path "~/.emacs.d/vendor/jd-el")
+(require 'google-maps)
+
+
+; rvm
 (vendor 'rvm)
 (rvm-use-default)

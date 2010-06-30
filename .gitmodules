@@ -46,3 +46,6 @@
 [submodule "vendor/rspec-mode"]
 	path = vendor/rspec-mode
 	url = git://github.com/pezra/rspec-mode.git
+[submodule "vendor/jd-el"]
+	path = vendor/jd-el
+	url = git://git.naquadah.org/~jd/jd-el.git
