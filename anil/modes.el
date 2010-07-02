@@ -90,3 +90,7 @@
 ; rvm
 (vendor 'rvm)
 (rvm-use-default)
+
+; slime
+(load "anil/slime") 
+(load "anil/clojure-mode")
