@@ -3,6 +3,7 @@
 (global-set-key "\C-x\C-m" 'execute-extended-command)
 (global-set-key (kbd "A-F") 'ack)
 (global-set-key "\C-xg" 'magit-status)
+
 ;; Go to line.
 (global-set-key (kbd "M-g") 'goto-line)
 
@@ -55,3 +56,7 @@
 (defun ri-bind-key ()
   (local-set-key [f2] 'yari))
 (add-hook 'ruby-mode-hook 'ri-bind-key)
+
+
+;; ECB toggle windows
+(global-set-key (kbd "M-p") 'ecb-toggle-ecb-windows)

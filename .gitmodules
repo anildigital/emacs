@@ -1,6 +1,3 @@
-[submodule "vendor/textmate.el"]
-	path = vendor/textmate.el
-	url = git://github.com/anildigital/textmate.el.git
 [submodule "vendor/twilight-emacs.el"]
 	path = vendor/twilight-emacs.el
 	url = git://github.com/crafterm/twilight-emacs.git
@@ -40,9 +37,6 @@
 [submodule "vendor/yari.el"]
 	path = vendor/yari.el
 	url = git://github.com/hron/yari.el.git
-[submodule "vendor/ecb"]
-	path = vendor/ecb
-	url = git://github.com/qdot/ecb.git
 [submodule "vendor/rspec-mode"]
 	path = vendor/rspec-mode
 	url = git://github.com/pezra/rspec-mode.git
@@ -58,3 +52,9 @@
 [submodule "vendor/swank-clojure"]
 	path = vendor/swank-clojure
 	url = http://github.com/technomancy/swank-clojure.git
+[submodule "vendor/ecb"]
+	path = vendor/ecb
+	url = http://github.com/emacsmirror/ecb.git
+[submodule "vendor/textmate.el"]
+	path = vendor/textmate.el
+	url = http://github.com/defunkt/textmate.el.git
