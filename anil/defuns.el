@@ -76,3 +76,39 @@
     (if mark-active
         (buffer-substring (region-beginning) (region-end))
       (read-string "Query: ")))))
+
+
+
+; for finding integers
+(defun integer-bounds-of-integer-at-point ()
+  "Return the start and end points of an integer at the current point.
+The result is a paired list of character positions for an integer
+located at the current point in the current buffer.  An integer is any
+decimal digit 0 through 9 with an optional starting minus symbol
+\(\"-\")."
+  (if (looking-at "-?[0-9]+")
+      (let ((end (match-end 0))
+            (start
+             (save-excursion
+               (re-search-backward "[^0-9]")
+               (if (looking-at "-")
+                   (point) ;; Use current point if a "-".
+                 (+ 1 (point)))))) ;; Add 1 to correct extra step
+        ;; backwards.
+        (cons start end))
+    nil))
+
+(put 'integer
+     'bounds-of-thing-at-point
+     'integer-bounds-of-integer-at-point)
+
+(autoload 'integer-bounds-of-integer-at-point "integers"
+    "Return the start and end points of an integer at the current point.")
+
+(defun browse-rails-ticket-at-point ()
+  "Visit ticket at point."
+  (interactive)
+  (let ((ticket (thing-at-point 'word)))
+    (if ticket
+        (browse-url (concat "https://rails.lighthouseapp.com/projects/8994/tickets/" ticket))
+      (error "No ticket at point"))))

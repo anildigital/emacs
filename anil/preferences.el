@@ -31,3 +31,8 @@
 
 ;; follow symlinks
 (setq vc-follow-symlinks -1)
+
+;; display time
+(display-time)
+
+
