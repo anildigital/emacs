@@ -32,7 +32,8 @@
 ;; follow symlinks
 (setq vc-follow-symlinks -1)
 
+;; use clipboard
+(setq x-select-enable-clipboard t)
+
 ;; display time
 (display-time)
-
-
