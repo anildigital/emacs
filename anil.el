@@ -30,3 +30,4 @@
 (vendor 'pastie)
 (vendor 'yari)
 (vendor 'rspec-mode)
+(vendor 'ecb)
