@@ -90,3 +90,8 @@
 ; slime
 (load "anil/slime") 
 (load "anil/clojure-mode")
+
+
+
+;; Org mode settings
+(setq org-export-with-sub-superscripts nil)
