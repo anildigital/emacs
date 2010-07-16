@@ -23,6 +23,7 @@
 (vendor 'magit)
 (vendor 'cheat)
 (vendor 'open-file-in-github)
+(vendor 'google-define)
 (vendor 'yaml-mode)
 (vendor 'gist)
 (vendor 'simplenote)
