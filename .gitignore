@@ -3,6 +3,7 @@ local.el
 \#*
 *.swp
 *.elc
+.org-id-locations
 auto-save-list/
 *~
 dump.rdb

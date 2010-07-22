@@ -11,6 +11,12 @@
     (when (file-exists-p (concat anil ".el"))
       (load anil))))
 
+;; find project
+(defun anil-ido-find-project ()
+  (interactive)
+  (find-file
+   (concat "~/work/projects/" (ido-completing-read "projects: "
+                           (directory-files "~/work/projects/" nil "^[^.]")))))
 
 ; copy line
 (defun copy-line (arg)

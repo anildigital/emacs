@@ -35,6 +35,8 @@
 
 (global-set-key (kbd "<f5>") 'eval-buffer)
 
+(global-set-key (kbd "<f6>") 'anil-ido-find-project)
+
 ;; Rails source
 (global-set-key (kbd "<f9>") (lambda ()
                                 (interactive)
