@@ -58,3 +58,6 @@
 [submodule "vendor/textmate.el"]
 	path = vendor/textmate.el
 	url = git://github.com/defunkt/textmate.el.git
+[submodule "vendor/rainbow"]
+	path = vendor/rainbow
+	url = git://git.naquadah.org/rainbow.git

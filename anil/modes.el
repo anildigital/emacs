@@ -79,8 +79,12 @@
 
 ;; google maps
 
-(add-to-list 'load-path "~/.emacs.d/vendor/jd-el")
+(add-to-list 'load-path "~/.emacs.d/vendor/google-maps")
 (require 'google-maps)
+
+;; rainbow mode
+(add-to-list 'load-path "~/.emacs.d/vendor/rainbow")
+(require 'rainbow-mode)
 
 
 ; rvm
