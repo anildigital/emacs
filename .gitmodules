@@ -61,3 +61,6 @@
 [submodule "vendor/rainbow"]
 	path = vendor/rainbow
 	url = git://git.naquadah.org/rainbow.git
+[submodule "vendor/yasnippets-rails"]
+	path = vendor/yasnippets-rails
+	url = git://github.com/eschulte/yasnippets-rails.git
