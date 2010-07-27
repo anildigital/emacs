@@ -13,4 +13,3 @@
 
 (if (< 0 (length (lisp-path)))
 		(load-slime))
-(provide 'slime-init)
