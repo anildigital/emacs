@@ -29,6 +29,7 @@
 (vendor 'simplenote)
 (vendor 'drag-stuff)
 (vendor 'pastie)
+(vendor 'undo-tree)
 (vendor 'yasnippet)
 (vendor 'yari)
 (vendor 'rspec-mode)
