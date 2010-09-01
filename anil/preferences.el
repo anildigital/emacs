@@ -32,6 +32,9 @@
 
 (set-default 'indicate-empty-lines t)
 
+;; Confirm kill emacs
+(setq confirm-kill-emacs 'y-or-n-p)
+
 ;; follow symlinks
 (setq vc-follow-symlinks -1)
 
