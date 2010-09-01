@@ -16,6 +16,9 @@
 ;; Setting up line number mode
 (add-hook 'find-file-hook (lambda () (linum-mode 1)))
 
+;; Confirm before closing emacs
+(setq confirm-kill-emacs 'yes-or-no-p)
+
 ;; Turn off the annoying default backup behaviour=
 (if (file-directory-p "~/.emacs.d/backup")
     (setq backup-directory-alist '(("." . "~/.emacs.d/backup")))
