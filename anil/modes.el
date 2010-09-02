@@ -99,3 +99,5 @@
 
 ;; Org mode settings
 (setq org-export-with-sub-superscripts nil)
+(setq org-load-hook '((lambda nil (textmate-mode) 
+                        (toggle-truncate-lines 1))))
