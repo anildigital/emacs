@@ -62,3 +62,7 @@
 
 ;; ECB toggle windows
 (global-set-key (kbd "M-p") 'ecb-toggle-ecb-windows)
+
+
+;; Go to last change
+(global-set-key "\C-x\C-\\" 'goto-last-change)

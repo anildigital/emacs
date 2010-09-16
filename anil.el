@@ -28,6 +28,7 @@
 (vendor 'gist)
 (vendor 'simplenote)
 (vendor 'drag-stuff)
+(vendor 'goto-last-change)
 (vendor 'pastie)
 (vendor 'undo-tree)
 (vendor 'yasnippet)
