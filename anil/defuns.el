@@ -15,8 +15,8 @@
 (defun anil-ido-find-project ()
   (interactive)
   (find-file
-   (concat "~/work/projects/" (ido-completing-read "projects: "
-                           (directory-files "~/work/projects/" nil "^[^.]")))))
+   (concat "~/Code/" (ido-completing-read "projects: "
+                           (directory-files "~/Code/" nil "^[^.]")))))
 
 ; copy line
 (defun copy-line (arg)
