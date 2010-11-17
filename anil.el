@@ -15,6 +15,7 @@
 (load "anil/shell")
 (load "anil/bindings")
 (load "anil/ruby")
+(load "anil/javascript")
 
 
 (vendor 'full-ack)

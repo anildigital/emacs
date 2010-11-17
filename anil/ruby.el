@@ -4,10 +4,19 @@
 (add-hook 'rinari-minor-mode-hook
           (lambda ()
             (define-key rinari-minor-mode-map (kbd "A-r") 'rinari-test)))
+
+; rhtml mode
+(vendor 'rhtml-mode)
+(add-hook 'rhtml-mode-hook
+          (lambda () (rinari-launch)))
  
 ; rhtml
 (setq auto-mode-alist (cons '("\\.html\\.erb" . nxml-mode) auto-mode-alist))
+(setq auto-mode-alist (cons '("\\.html\\.erb" . rhtml-mode) auto-mode-alist))
+
 (setq auto-mode-alist (cons '("\\.erb" . nxml-mode) auto-mode-alist))
+(setq auto-mode-alist (cons '("\\.erb" . rhtml-mode) auto-mode-alist))
+
  
 ; ruby
 (vendor 'ruby-hacks)
