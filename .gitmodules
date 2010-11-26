@@ -39,7 +39,7 @@
 	url = git://github.com/hron/yari.el.git
 [submodule "vendor/rspec-mode"]
 	path = vendor/rspec-mode
-	url = git://github.com/pezra/rspec-mode.git
+	url = git://github.com/anildigital/rspec-mode.git
 [submodule "vendor/google-maps"]
 	path = vendor/google-maps
 	url = git://git.naquadah.org/google-maps.git
