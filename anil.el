@@ -36,3 +36,4 @@
 (vendor 'yari)
 (vendor 'rspec-mode)
 (vendor 'ecb)
+(vendor 'coffee-mode)
