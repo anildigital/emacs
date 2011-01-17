@@ -19,7 +19,7 @@
 (load "anil/javascript")
 
 
-(vendor 'full-ack)
+(vendor 'ack)
 (vendor 'cheat)
 (vendor 'textile-mode)
 (vendor 'magit)
