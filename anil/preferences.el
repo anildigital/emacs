@@ -39,7 +39,7 @@
 (setq x-select-enable-clipboard t)
 
 ;; display time
-(display-time)
+(display-time)  
 
 ;; Set default browser as Google Chrome
 (setq browse-url-browser-function 'browse-url-generic
@@ -47,3 +47,17 @@
 
 ;; Don't insert instructions in the *scratch* buffer
 (setq initial-scratch-message nil)
+
+;; save session state when you quit emacs
+(desktop-save-mode 1)
+
+;; midnight mode purges buffers which haven't been displayed in 3 days
+(require 'midnight)
+(setq midnight-mode 't)
+
+;; make buffer names unique even if the files have the same names
+(require 'uniquify)
+(setq uniquify-buffer-name-style 'forward)
+
+
+   

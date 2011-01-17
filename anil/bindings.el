@@ -25,6 +25,13 @@
 
 ;; vim emulation
 (global-set-key [C-tab] 'other-window)
+;;; WINDOW SPLITING
+(global-set-key (kbd "M-4") 'split-window-vertically) ; was digit-argument
+(global-set-key (kbd "M-3") 'delete-other-windows) ; was digit-argument
+
+;Mac like next tab, previous tab
+(global-set-key (kbd "s-}") 'next-buffer) 
+(global-set-key (kbd "s-{") 'previous-buffer) 
 
 ;; copy whole line
 (global-set-key "\C-c\l" 'copy-line)

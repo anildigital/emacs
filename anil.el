@@ -6,6 +6,7 @@
 
 (when (file-exists-p ".passwords") (load ".passwords"))
 
+(load "anil/repositories")
 (load "anil/global")
 (load "anil/preferences")
 (load "anil/defuns")
