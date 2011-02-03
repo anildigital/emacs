@@ -48,6 +48,12 @@
 ;; Don't insert instructions in the *scratch* buffer
 (setq initial-scratch-message nil)
 
+;; Disable scroll bar mode
+(scroll-bar-mode -1)
+
+;; Disable fringe style mode
+(set-fringe-style -1)
+
 ;; save session state when you quit emacs
 (desktop-save-mode 1)
 
