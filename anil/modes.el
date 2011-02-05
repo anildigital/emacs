@@ -20,6 +20,9 @@
 (setq auto-mode-alist (cons '("\\.textile" . textile-mode) auto-mode-alist))
 (add-hook 'textile-mode-hook 'flyspell-mode)
 
+;less
+(setq auto-mode-alist (cons '("\\.less" . css-mode) auto-mode-alist))
+
 ; paredit
 (autoload 'paredit-mode "paredit"
      "Minor mode for pseudo-structurally editing Lisp code."

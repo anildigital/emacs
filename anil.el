@@ -38,3 +38,4 @@
 (vendor 'rspec-mode)
 (vendor 'ecb)
 (vendor 'coffee-mode)
+(vendor 'autopair)
