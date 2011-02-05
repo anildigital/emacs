@@ -1,3 +1,6 @@
+; Use Command key as meta key
+(setq ns-command-modifier 'meta)
+
 (font-lock-mode t)
 (setq standard-indent 2)
 
@@ -34,6 +37,7 @@
 
 ;; follow symlinks
 (setq vc-follow-symlinks -1)
+
 
 ;; use clipboard
 (setq x-select-enable-clipboard t)
