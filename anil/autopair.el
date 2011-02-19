@@ -1,6 +1,9 @@
 (autopair-global-mode)
 
-;; use autopair everywhere but ruby buffers 
+;; Use autopair everywhere but ruby buffers 
 (add-hook 'ruby-mode-hook
+            '(lambda () (setq autopair-dont-activate t)))
+
+(add-hook 'js2-mode-hook
             '(lambda () (setq autopair-dont-activate t)))
  

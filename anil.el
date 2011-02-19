@@ -11,14 +11,14 @@
 (load "anil/preferences")
 (load "anil/defuns")
 (load "anil/modes")
+(load "anil/misc")
 (load "anil/dired")
 (load "anil/theme")
 (load "anil/shell")
 (load "anil/bindings")
 (load "anil/ruby")
 (load "anil/javascript")
-
-
+ 
 (vendor 'ack)
 (vendor 'cheat)
 (vendor 'textile-mode)
@@ -39,3 +39,4 @@
 (vendor 'ecb)
 (vendor 'coffee-mode)
 (vendor 'autopair)
+(vendor 'idle-highlight)
