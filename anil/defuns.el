@@ -144,3 +144,11 @@ decimal digit 0 through 9 with an optional starting minus symbol
   "Insert a time-stamp according to locale's date and time format."
   (interactive)
   (insert (format-time-string "%c" (current-time))))
+
+
+(defun anil-kill-region (beg end &optional arg)
+  "Kill between BEG and END, but delete if prefix argument ARG."
+  (interactive "*r\nP")
+  (if arg
+      (delete-region beg end)
+    (kill-region beg end)))

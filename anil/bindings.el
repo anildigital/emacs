@@ -74,3 +74,9 @@
 ;; Go to last change
 (global-set-key "\C-x\C-\\" 'goto-last-change)
 (global-set-key (kbd "<escape> .") 'goto-last-change)
+
+;; delete region
+(global-set-key "\C-w" 'anil-kill-region)
+
+;; fullscreen
+(global-set-key "\C-c\C-f" 'ns-toggle-fullscreen)

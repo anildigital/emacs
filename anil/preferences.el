@@ -68,6 +68,3 @@
 ;; make buffer names unique even if the files have the same names
 (require 'uniquify)
 (setq uniquify-buffer-name-style 'forward)
-
-
-   
