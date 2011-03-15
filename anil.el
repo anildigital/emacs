@@ -40,3 +40,4 @@
 (vendor 'coffee-mode)
 (vendor 'autopair)
 (vendor 'idle-highlight)
+(vendor 'http-twiddle)
