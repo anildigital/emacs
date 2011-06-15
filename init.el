@@ -15,7 +15,11 @@
 ;; load preferences.el
 (load "anil/preferences")
 (load "anil/modes")
+(load "anil/defuns")
 (load "anil/theme")
+(load "anil/bindings")
+(load "anil/ruby")
+(load "anil/rake")
 
 ;; Shows load time message
 (message "My .emacs loaded in %ds" (destructuring-bind (hi lo ms) (current-time)
