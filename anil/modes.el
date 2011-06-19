@@ -18,13 +18,6 @@
 (setq ido-everywhere t)
 (ido-mode 1)
 
-;; Recentf is a minor mode that builds a list of recently opened files. 
-;; This list is is automatically saved across Emacs sessions.
-;; You can then access this list through a menu.
-(require 'recentf)
-(recentf-mode 1)
-
-
 ;; Magit is an interface to Git for Emacs
 (add-to-list 'load-path "~/.emacs.d/vendor/magit/")
 (require 'magit)

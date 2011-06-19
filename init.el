@@ -18,6 +18,7 @@
 (load "anil/defuns")
 (load "anil/theme")
 (load "anil/bindings")
+(load "anil/dired")
 (load "anil/ruby")
 (load "anil/rake")
 
