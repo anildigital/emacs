@@ -21,6 +21,9 @@
 (load "anil/dired")
 (load "anil/ruby")
 (load "anil/rake")
+(load "anil/textmate")
+
+(server-start)
 
 ;; Shows load time message
 (message "My .emacs loaded in %ds" (destructuring-bind (hi lo ms) (current-time)

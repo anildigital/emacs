@@ -1,3 +1,6 @@
 [submodule "vendor/magit"]
 	path = vendor/magit
 	url = https://github.com/magit/magit.git
+[submodule "vendor/textmate.el"]
+	path = vendor/textmate.el
+	url = http://github.com/defunkt/textmate.el.git
