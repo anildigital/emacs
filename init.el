@@ -21,6 +21,7 @@
 (load "anil/dired")
 (load "anil/ruby")
 (load "anil/rake")
+(load "anil/lua")
 (load "anil/textmate")
 
 (server-start)

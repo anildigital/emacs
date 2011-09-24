@@ -12,6 +12,9 @@
 ;; enable speedbar mode
 (speedbar 1)
 (speedbar-add-supported-extension ".rb")
+(speedbar-add-supported-extension ".rake")
+(speedbar-add-supported-extension ".yml")
+
 
 ;; enable ido mode
 (setq ido-enable-flex-matching t)
@@ -42,9 +45,28 @@
 ;; MINI HOWTO: 
 ;; Open .scala file. M-x ensime (once per project)
 
+;; gist.el
+(add-to-list 'load-path "~/.emacs.d/vendor/gist.el")
+(require 'gist)
+
+
+;; markdown mode
+(add-to-list 'load-path "~/.emacs.d/vendor/markdown-mode")
+(autoload 'markdown-mode "markdown-mode.el" 
+	"Major mode for editing Markdown files" t)
+(setq auto-mode-alist 
+			(cons '("\\.text" . markdown-mode) auto-mode-alist))
 
 
 
 ;; smex
  (require 'smex)
 (smex-initialize)
+
+
+
+(load-file "~/.emacs.d/vendor/package.el")
+(require 'package)
+(add-to-list 'package-archives
+             '("marmalade" . "http://marmalade-repo.org/packages/"))
+(package-initialize)
