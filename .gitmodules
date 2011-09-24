@@ -10,7 +10,8 @@
 [submodule "vendor/gist.el"]
 	path = vendor/gist.el
 	url = git://github.com/defunkt/gist.el.git
+
+
 [submodule "vendor/markdown-mode"]
 	path = vendor/markdown-mode
 	url = git://jblevins.org/git/markdown-mode.git
-
