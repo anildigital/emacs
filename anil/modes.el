@@ -14,6 +14,8 @@
 (speedbar-add-supported-extension ".rb")
 (speedbar-add-supported-extension ".rake")
 (speedbar-add-supported-extension ".yml")
+(speedbar-add-supported-extension ".erb")
+
 
 
 ;; enable ido mode
@@ -62,6 +64,12 @@
 ;; smex
  (require 'smex)
 (smex-initialize)
+
+
+;; Shell mode
+(add-to-list 'auto-mode-alist '(".aliases" . sh-mode))
+(add-to-list 'auto-mode-alist '(".bash_profile" . sh-mode))
+(add-to-list 'auto-mode-alist '(".bashrc" . sh-mode))
 
 
 
