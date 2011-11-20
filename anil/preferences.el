@@ -8,6 +8,9 @@
 ; don't create backup files 
 (setq make-backup-files nil)
 
+;; Set emacs cursor type
+(setq-default cursor-type 'bar) 
+
 ; default tab width
 (setq-default tab-width 2)
 
@@ -23,3 +26,5 @@
 
 (add-to-list 'default-frame-alist (cons 'font anil-fav-font))
 (add-to-list 'initial-frame-alist (cons 'font anil-fav-font))
+
+

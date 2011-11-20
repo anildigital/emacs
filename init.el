@@ -3,6 +3,10 @@
 (require 'cl)
 
 (defvar *emacs-load-start* (current-time))
+
+;; Set paths
+;(setq exec-path (append exec-path '("/usr/local/bin")))
+
 (add-to-list 'load-path "~/.emacs.d")
 (add-to-list 'load-path "~/.emacs.d/vendor")
 

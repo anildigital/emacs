@@ -19,6 +19,14 @@
 
 
 
+;; Ruby style guide
+;; From https://github.com/bbatsov/ruby-style-guide
+(setq whitespace-style '(trailing space-before-tab
+                         indentation space-after-tab))
+
+
+
+
 ;; Add this to ~/.emacs
 
 ;; Missing from ruby-mode.el, see https://groups.google.com/group/emacs-on-rails/msg/565fba8263233c28
@@ -32,4 +40,5 @@
 (add-hook 'ruby-mode-hook
           (lambda ()
             (require 'ruby-electric)
-            (ruby-electric-mode t)))
+            (ruby-electric-mode t)
+						(idle-highlight-mode t)))

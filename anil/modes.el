@@ -30,6 +30,10 @@
   '(progn
      (set-face-foreground 'magit-diff-add "green3")
      (set-face-foreground 'magit-diff-del "red3")))
+(custom-set-faces
+ '(diff-added ((t (:foreground "green3"))) 'now)
+ '(diff-removed ((t (:foreground "red3"))) 'now)
+ )
 
 
 (add-to-list 'load-path "~/.scalaemacs")
@@ -56,9 +60,11 @@
 (add-to-list 'load-path "~/.emacs.d/vendor/markdown-mode")
 (autoload 'markdown-mode "markdown-mode.el" 
 	"Major mode for editing Markdown files" t)
-(setq auto-mode-alist 
-			(cons '("\\.text" . markdown-mode) auto-mode-alist))
+(add-to-list 'auto-mode-alist '(".text" . markdown-mode))
+(add-to-list 'auto-mode-alist '(".markdown" . markdown-mode))
+(add-to-list 'auto-mode-alist '(".md" . markdown-mode))
 
+(setq markdown-command "/usr/local/bin/markdown")
 
 
 ;; smex
@@ -71,6 +77,24 @@
 (add-to-list 'auto-mode-alist '(".bash_profile" . sh-mode))
 (add-to-list 'auto-mode-alist '(".bashrc" . sh-mode))
 
+
+;; scpaste
+(load-file "~/.emacs.d/vendor/scpaste.el")
+(autoload 'scpaste "scpaste" "Paste the current buffer." t nil)
+(setq scpaste-http-destination "http://anildigital.io/notes"
+      scpaste-scp-destination "anil@anildigital.io:notes")
+
+
+
+;; RVM
+(load-file "~/.emacs.d/vendor/rvm.el")
+(require 'rvm)
+(rvm-use-default) ;; use rvm’s default ruby for the current Emacs session
+
+
+
+;;idle highlight mode
+(load-file "~/.emacs.d/vendor/idle-highlight-mode.el")
 
 
 (load-file "~/.emacs.d/vendor/package.el")
