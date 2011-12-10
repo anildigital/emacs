@@ -27,4 +27,7 @@
 (add-to-list 'default-frame-alist (cons 'font anil-fav-font))
 (add-to-list 'initial-frame-alist (cons 'font anil-fav-font))
 
+;; highlight TODOs etc.
+(add-hook 'find-file-hook (lambda() (highlight-phrase "\\(BUG\\|FIXME\\|TODO\\):")))
+
 
