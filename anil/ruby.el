@@ -1,4 +1,3 @@
-(add-to-list 'load-path "~/.emacs.d/vendor/inf-ruby/inf-ruby.el")
 (add-to-list 'load-path "~/.emacs.d/vendor/ruby-electric.el")
 
 (eval-after-load 'ruby-mode
