@@ -24,7 +24,6 @@
 (ido-mode 1)
 
 ;; Magit is an interface to Git for Emacs
-(add-to-list 'load-path "~/.emacs.d/vendor/magit/")
 (require 'magit)
 (eval-after-load 'magit
   '(progn
@@ -49,9 +48,7 @@
 (add-hook 'scala-mode-hook 'ensime-scala-mode-hook)
 
 ;; markdown mode
-(add-to-list 'load-path "~/.emacs.d/vendor/markdown-mode")
-(autoload 'markdown-mode "markdown-mode.el" 
-	"Major mode for editing Markdown files" t)
+(require 'markdown-mode)
 (add-to-list 'auto-mode-alist '(".text" . markdown-mode))
 (add-to-list 'auto-mode-alist '(".markdown" . markdown-mode))
 (add-to-list 'auto-mode-alist '(".md" . markdown-mode))
@@ -71,29 +68,17 @@
 
 
 ;; scpaste
-(load-file "~/.emacs.d/vendor/scpaste.el")
+(require 'scpaste)
 (autoload 'scpaste "scpaste" "Paste the current buffer." t nil)
 (setq scpaste-http-destination "http://anildigital.io/notes"
       scpaste-scp-destination "anil@anildigital.io:notes")
 
 
 
-;; RVM
-(load-file "~/.emacs.d/vendor/rvm.el")
+;; rvm mode
 (require 'rvm)
 (rvm-use-default) ;; use rvm’s default ruby for the current Emacs session
 
 
 ;; Gitx
 (load-file "~/.emacs.d/vendor/gitx.el")
-
-
-
-;;idle highlight mode
-(load-file "~/.emacs.d/vendor/idle-highlight-mode.el")
-
-
-;; packages
-(require 'package)
-(add-to-list 'package-archives '("marmalade" . "http://marmalade-repo.org/packages/"))
-(package-initialize)

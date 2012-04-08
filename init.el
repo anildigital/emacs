@@ -16,6 +16,9 @@
 (setq custom-file "~/.emacs.d/anil/custom.el")
 (load custom-file)
 
+;; load packages.el
+(load "anil/packages")
+
 ;; load preferences.el
 (load "anil/preferences")
 (load "anil/modes")

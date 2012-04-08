@@ -1,5 +1,3 @@
-(add-to-list 'load-path "~/.emacs.d/vendor/ruby-electric.el")
-
 (eval-after-load 'ruby-mode
   '(progn
      (setq ruby-use-encoding-map nil) ;;don't autoadd encoding comment at the top

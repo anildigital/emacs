@@ -1,5 +1,3 @@
-(load-file "~/.emacs.d/vendor/lua-mode.el")
-
 (require 'lua-mode)
 
 ;; use an indentation width of two spaces
