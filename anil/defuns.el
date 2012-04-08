@@ -11,3 +11,7 @@
   (find-file
    (concat "~/Projects/" (ido-completing-read "Project: "
                            (directory-files "~/Projects/" nil "^[^.]")))))
+
+(defun open-gitx ()
+	(interactive)
+	(shell-command "/usr/local/bin/gitx ."))

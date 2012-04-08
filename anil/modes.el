@@ -48,14 +48,6 @@
 ;; if you're not using the standard scala mode.
 (add-hook 'scala-mode-hook 'ensime-scala-mode-hook)
 
-;; MINI HOWTO: 
-;; Open .scala file. M-x ensime (once per project)
-
-;; gist.el
-(add-to-list 'load-path "~/.emacs.d/vendor/gist.el")
-(require 'gist)
-
-
 ;; markdown mode
 (add-to-list 'load-path "~/.emacs.d/vendor/markdown-mode")
 (autoload 'markdown-mode "markdown-mode.el" 
@@ -92,6 +84,10 @@
 (rvm-use-default) ;; use rvm’s default ruby for the current Emacs session
 
 
+;; Gitx
+(load-file "~/.emacs.d/vendor/gitx.el")
+
+
 
 ;;idle highlight mode
 (load-file "~/.emacs.d/vendor/idle-highlight-mode.el")
@@ -102,3 +98,5 @@
 (add-to-list 'package-archives
              '("marmalade" . "http://marmalade-repo.org/packages/"))
 (package-initialize)
+
+

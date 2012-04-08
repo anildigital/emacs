@@ -31,3 +31,6 @@
 (add-hook 'find-file-hook (lambda() (highlight-phrase "\\(BUG\\|FIXME\\|TODO\\):")))
 
 
+(defalias 'list-buffers 'ibuffer)
+
+

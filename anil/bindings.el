@@ -12,3 +12,6 @@
 
 
 (global-set-key "\C-xp" 'anil-ido-find-project)
+
+;;
+(global-set-key  (kbd "M-n") 'open-gitx)
