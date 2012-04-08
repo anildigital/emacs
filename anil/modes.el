@@ -93,10 +93,7 @@
 (load-file "~/.emacs.d/vendor/idle-highlight-mode.el")
 
 
-(load-file "~/.emacs.d/vendor/package.el")
+;; packages
 (require 'package)
-(add-to-list 'package-archives
-             '("marmalade" . "http://marmalade-repo.org/packages/"))
+(add-to-list 'package-archives '("marmalade" . "http://marmalade-repo.org/packages/"))
 (package-initialize)
-
-
