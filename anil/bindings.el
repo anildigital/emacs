@@ -15,3 +15,6 @@
 
 ;;
 (global-set-key  (kbd "M-n") 'open-gitx)
+
+;; Run ruby buffer
+(global-set-key (kbd "s-r") 'ruby-compilation-this-buffer)
