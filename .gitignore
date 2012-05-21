@@ -3,3 +3,6 @@ swank
 project/
 target/
 elpa/
+tramp
+url/
+var/

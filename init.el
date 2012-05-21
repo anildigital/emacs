@@ -30,9 +30,12 @@
 (load "anil/rake")
 (load "anil/lua")
 (load "anil/textmate")
+(load "anil/ispell")
+
 
 (server-start)
 
 ;; Shows load time message
 (message "My .emacs loaded in %ds" (destructuring-bind (hi lo ms) (current-time)
 																		 (- (+ hi lo) (+ (first *emacs-load-start*) (second *emacs-load-start*)))))
+(put 'ido-exit-minibuffer 'disabled nil)

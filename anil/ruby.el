@@ -14,6 +14,7 @@
 (add-to-list 'auto-mode-alist '("Rakefile$" . ruby-mode))
 (add-to-list 'auto-mode-alist '("Capfile$" . ruby-mode))
 (add-to-list 'auto-mode-alist '("\\.gemspec$" . ruby-mode))
+(add-to-list 'auto-mode-alist '("\\.ru$" . ruby-mode))
 
 
 
@@ -40,3 +41,14 @@
             (require 'ruby-electric)
             (ruby-electric-mode t)
 						(idle-highlight-mode t)))
+
+
+
+
+
+;; flymake
+
+(require 'flymake)
+
+(when (featurep 'flymake)
+  (add-hook 'ruby-mode-hook 'flymake-ruby-load))

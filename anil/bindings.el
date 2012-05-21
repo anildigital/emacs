@@ -18,3 +18,11 @@
 
 ;; Run ruby buffer
 (global-set-key (kbd "s-r") 'ruby-compilation-this-buffer)
+
+;; Search
+(global-set-key (kbd "s-F") 'rgrep)
+
+
+;; Command + Return to go to newline
+(global-set-key [s-return] 'textmate-next-line)
+

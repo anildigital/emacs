@@ -80,5 +80,9 @@
 (rvm-use-default) ;; use rvm’s default ruby for the current Emacs session
 
 
+;; yaml mode
+(require 'yaml-mode)
+(add-to-list 'auto-mode-alist '("\\.yml$" . yaml-mode))
+
 ;; Gitx
 (load-file "~/.emacs.d/vendor/gitx.el")
