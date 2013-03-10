@@ -10,11 +10,11 @@
 (setq uniquify-ignore-buffers-re "^\\*") ; don't muck with special buffers
 
 ;; enable speedbar mode
-(speedbar 1)
-(speedbar-add-supported-extension ".rb")
-(speedbar-add-supported-extension ".rake")
-(speedbar-add-supported-extension ".yml")
-(speedbar-add-supported-extension ".erb")
+;; (speedbar 1)
+;; (speedbar-add-supported-extension ".rb")
+;; (speedbar-add-supported-extension ".rake")
+;; (speedbar-add-supported-extension ".yml")
+;; (speedbar-add-supported-extension ".erb")
 
 
 
@@ -39,8 +39,8 @@
 (require 'scala-mode-auto)
 
 ;; Load the ensime lisp code...
-(add-to-list 'load-path "~/Code/ensime/elisp/")
-(require 'ensime)
+;(add-to-list 'load-path "~/Code/ensime/elisp/")
+;(require 'ensime)
 
 ;; This step causes the ensime-mode to be started whenever
 ;; scala-mode is started for a buffer. You may have to customize this step
@@ -79,6 +79,12 @@
 (require 'rvm)
 (rvm-use-default) ;; use rvm’s default ruby for the current Emacs session
 
+
+(add-hook 'js-mode-hook
+      '(lambda ()
+         (add-hook 'before-save-hook
+                   (lambda ()
+                     (untabify (point-min) (point-max))))))
 
 ;; yaml mode
 (require 'yaml-mode)
