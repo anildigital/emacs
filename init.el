@@ -20,6 +20,7 @@
 (load "anil/packages")
 
 ;; load preferences.el
+(load "anil/path")
 (load "anil/preferences")
 (load "anil/modes")
 (load "anil/defuns")

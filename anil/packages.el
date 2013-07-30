@@ -23,6 +23,11 @@
 											idle-highlight-mode
 											yaml-mode
 											coffee-mode
+											clojure-mode
+											clojure-test-mode
+											nrepl
+											paredit
+											ace-jump-mode
                       )
   "A list of packages to ensure are installed at launch.")
 (dolist (p my-packages) (when (not (package-installed-p p)) (package-install p)))
