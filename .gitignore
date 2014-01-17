@@ -6,3 +6,4 @@ elpa/
 tramp
 url/
 var/
+.DS_Store
