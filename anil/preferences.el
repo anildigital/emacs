@@ -45,7 +45,8 @@
 
 
 
-
+;; disable indenting by tabs  
+(setq-default indent-tabs-mode nil)
 
 
 (defalias 'list-buffers 'ibuffer)
