@@ -9,14 +9,6 @@
 (setq uniquify-after-kill-buffer-p t) ; rename after killing uniquified
 (setq uniquify-ignore-buffers-re "^\\*") ; don't muck with special buffers
 
-;; enable speedbar mode
-;; (speedbar 1)
-;; (speedbar-add-supported-extension ".rb")
-;; (speedbar-add-supported-extension ".rake")
-;; (speedbar-add-supported-extension ".yml")
-;; (speedbar-add-supported-extension ".erb")
-
-
 
 ;; enable ido mode
 (setq ido-enable-flex-matching t)
@@ -45,7 +37,7 @@
 
 
 ;; smex
- (require 'smex)
+(require 'smex)
 (smex-initialize)
 
 
@@ -55,24 +47,12 @@
 (add-to-list 'auto-mode-alist '(".bashrc" . sh-mode))
 
 
-;; scpaste
-(require 'scpaste)
-(autoload 'scpaste "scpaste" "Paste the current buffer." t nil)
-(setq scpaste-http-destination "http://anildigital.io/notes"
-      scpaste-scp-destination "anil@anildigital.io:notes")
-
-
-
-;; rvm mode
-(require 'rvm)
-(rvm-use-default) ;; use rvm’s default ruby for the current Emacs session
-
-
+;; js-mode hook
 (add-hook 'js-mode-hook
-      '(lambda ()
-         (add-hook 'before-save-hook
-                   (lambda ()
-                     (untabify (point-min) (point-max))))))
+					'(lambda ()
+						 (add-hook 'before-save-hook
+											 (lambda ()
+												 (untabify (point-min) (point-max))))))
 
 ;; yaml mode
 (require 'yaml-mode)
@@ -80,3 +60,44 @@
 
 ;; Gitx
 (load-file "~/.emacs.d/vendor/gitx.el")
+
+
+;; cider
+(add-hook 'cider-mode-hook 'cider-turn-on-eldoc-mode)
+(setq nrepl-hide-special-buffers t)
+(setq cider-repl-wrap-history t)
+
+
+;; webmode
+(load-file "~/.emacs.d/vendor/web-mode.el")
+
+(require 'web-mode)
+(add-to-list 'auto-mode-alist '("\\.phtml\\'" . web-mode))
+(add-to-list 'auto-mode-alist '("\\.tpl\\.php\\'" . web-mode))
+(add-to-list 'auto-mode-alist '("\\.jsp\\'" . web-mode))
+(add-to-list 'auto-mode-alist '("\\.as[cp]x\\'" . web-mode))
+(add-to-list 'auto-mode-alist '("\\.erb\\'" . web-mode))
+(add-to-list 'auto-mode-alist '("\\.mustache\\'" . web-mode))
+(add-to-list 'auto-mode-alist '("\\.djhtml\\'" . web-mode))
+(add-to-list 'auto-mode-alist '("\\.html?\\'" . web-mode))
+
+
+(defun web-mode-hook ()
+  "Hooks for Web mode."
+  (setq web-mode-markup-indent-offset 2)
+  (setq web-mode-css-indent-offset 2)
+  (setq web-mode-indent-style 2)
+	)
+(add-hook 'web-mode-hook  'web-mode-hook)
+(add-to-list 'auto-mode-alist '("\\.html?\\'" . web-mode))
+
+
+;; emmet
+(require 'emmet-mode)
+(add-hook 'emmet-mode-hook (lambda () (setq emmet-indentation 2))) ;; indent 2 spaces.
+(add-hook 'web-mode-hook  'emmet-mode) 
+
+
+
+;; Clojure mode hook
+(add-hook 'clojure-mode-hook 'paredit-mode)
