@@ -1,3 +1,0 @@
-[submodule "vendor/twilight-emacs"]
-	path = vendor/twilight-emacs
-	url = git://github.com/crafterm/twilight-emacs.git
