@@ -26,3 +26,6 @@
 ;; Command + Return to go to newline
 (global-set-key [s-return] 'textmate-next-line)
 
+
+
+(global-set-key [S-escape] 'delete-other-windows)

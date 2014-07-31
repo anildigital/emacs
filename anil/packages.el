@@ -13,7 +13,9 @@
 (when (not package-archive-contents) (package-refresh-contents))
 
 ;; Auto-download missing packages
-(defvar my-packages '(ruby-compilation
+(defvar my-packages '(
+                      exec-path-from-shell
+                      ruby-compilation
                       magit
                       multiple-cursors
                       markdown-mode

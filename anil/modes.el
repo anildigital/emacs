@@ -49,10 +49,10 @@
 
 ;; js-mode hook
 (add-hook 'js-mode-hook
-					'(lambda ()
-						 (add-hook 'before-save-hook
-											 (lambda ()
-												 (untabify (point-min) (point-max))))))
+          '(lambda ()
+             (add-hook 'before-save-hook
+                       (lambda ()
+                         (untabify (point-min) (point-max))))))
 
 ;; yaml mode
 (require 'yaml-mode)
@@ -62,6 +62,11 @@
 (load-file "~/.emacs.d/vendor/gitx.el")
 
 
+(add-to-list 'load-path "~/.emacs.d/vendor/neotree")
+(require 'neotree)
+(global-set-key [f8] 'neotree-toggle)
+
+
 ;; cider
 (add-hook 'cider-mode-hook 'cider-turn-on-eldoc-mode)
 (setq nrepl-hide-special-buffers t)
@@ -69,7 +74,11 @@
 
 
 ;; webmode
-(load-file "~/.emacs.d/vendor/web-mode.el")
+;;(load-file "~/.emacs.d/vendor/web-mode.el")
+
+;; exec path from shell
+(when (memq window-system '(mac ns))
+  (exec-path-from-shell-initialize))
 
 (require 'web-mode)
 (add-to-list 'auto-mode-alist '("\\.phtml\\'" . web-mode))
@@ -87,7 +96,7 @@
   (setq web-mode-markup-indent-offset 2)
   (setq web-mode-css-indent-offset 2)
   (setq web-mode-indent-style 2)
-	)
+  )
 (add-hook 'web-mode-hook  'web-mode-hook)
 (add-to-list 'auto-mode-alist '("\\.html?\\'" . web-mode))
 
@@ -101,3 +110,11 @@
 
 ;; Clojure mode hook
 (add-hook 'clojure-mode-hook 'paredit-mode)
+
+
+;; Python mode
+(add-to-list 'auto-mode-alist '("\\.py?\\'" . python-mode))
+
+;;
+(require 'ensime)
+(add-hook 'scala-mode-hook 'ensime-scala-mode-hook)

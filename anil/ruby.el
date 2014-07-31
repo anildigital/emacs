@@ -26,7 +26,6 @@
 
 
 
-;; Add this to ~/.emacs
 
 ;; Missing from ruby-mode.el, see https://groups.google.com/group/emacs-on-rails/msg/565fba8263233c28
 (defun ruby-insert-end () 
@@ -37,13 +36,7 @@
   (end-of-line)) 
 
 (add-hook 'ruby-mode-hook
-          (lambda ()
-            (require 'ruby-electric)
-            (ruby-electric-mode t)
-						(idle-highlight-mode t)))
-
-
-
+          (idle-highlight-mode t))
 
 
 ;; flymake

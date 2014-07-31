@@ -14,6 +14,9 @@
 ; default tab width
 (setq-default tab-width 2)
 
+;; default directory
+(setq default-directory (concat (getenv "HOME") "/"))
+
 ; ask y/n instead of yes/no
 (fset 'yes-or-no-p 'y-or-n-p)
 
