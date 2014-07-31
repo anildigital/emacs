@@ -48,11 +48,15 @@
 
 
 ;; js-mode hook
-(add-hook 'js-mode-hook
+(add-hook 'js2-mode-hook
           '(lambda ()
              (add-hook 'before-save-hook
                        (lambda ()
                          (untabify (point-min) (point-max))))))
+
+;; js-mode2
+(add-to-list 'auto-mode-alist '(".js" . js2-mode))
+
 
 ;; yaml mode
 (require 'yaml-mode)
@@ -118,3 +122,16 @@
 ;;
 (require 'ensime)
 (add-hook 'scala-mode-hook 'ensime-scala-mode-hook)
+
+
+;; Projectile mode
+(projectile-global-mode)
+
+;; recentf mode
+(require 'recentf)
+(recentf-mode 1)
+(setq recentf-max-menu-items 25)
+
+
+;; Guru mode
+(guru-global-mode +1)

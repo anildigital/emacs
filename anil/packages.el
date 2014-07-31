@@ -5,7 +5,7 @@
 (add-to-list 'package-archives '("tromey" . "http://tromey.com/elpa/"))
 
 (add-to-list 'package-archives
-						 '("melpa" . "http://melpa.milkbox.net/packages/") t)
+             '("melpa" . "http://melpa.milkbox.net/packages/") t)
 
 (package-initialize)
 
@@ -36,6 +36,7 @@
                       projectile
                       emmet-mode
                       spacegray-theme
+                      guru-mode
                       )
   "A list of packages to ensure are installed at launch.")
 (dolist (p my-packages) (when (not (package-installed-p p)) (package-install p)))

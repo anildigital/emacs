@@ -29,3 +29,6 @@
 
 
 (global-set-key [S-escape] 'delete-other-windows)
+
+
+(global-set-key "\C-x\ \C-r" 'recentf-open-files)
