@@ -1,3 +1,7 @@
+;; chruby
+(require 'chruby)
+(chruby "ruby-2.1.1")
+
 (eval-after-load 'ruby-mode
   '(progn
      (setq ruby-use-encoding-map nil) ;;don't autoadd encoding comment at the top
@@ -39,9 +43,6 @@
           (idle-highlight-mode t))
 
 
-;; flymake
+(provide 'ruby)
+;;; ruby.el ends here
 
-(require 'flymake)
-
-(when (featurep 'flymake)
-  (add-hook 'ruby-mode-hook 'flymake-ruby-load))

@@ -55,3 +55,7 @@
 (defalias 'list-buffers 'ibuffer)
 
 
+(global-git-gutter-mode +1)
+
+;; Sublimity
+(sublimity-mode 1)

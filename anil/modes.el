@@ -135,3 +135,22 @@
 
 ;; Guru mode
 (guru-global-mode +1)
+
+
+;; Company mode
+(add-hook 'after-init-hook 'global-company-mode)
+
+
+;;
+(autoload
+  'ace-jump-mode
+  "ace-jump-mode"
+  "Emacs quick move minor mode"
+  t)
+
+
+(add-hook 'after-init-hook #'global-flycheck-mode)
+
+
+(require 'expand-region)
+(global-set-key (kbd "C-=") 'er/expand-region)

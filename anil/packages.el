@@ -1,8 +1,14 @@
+;;; package --- Summary
+;;; package.el
+;;; Commentary:
+
+
 (require 'package)
 
+;;; Code:
 (add-to-list 'package-archives '("marmalade" . "http://marmalade-repo.org/packages/") t)
 
-(add-to-list 'package-archives '("tromey" . "http://tromey.com/elpa/"))
+(add-to-list 'package-archives '("tromey" . "http://tromey.com/elpa/") t)
 
 (add-to-list 'package-archives
              '("melpa" . "http://melpa.milkbox.net/packages/") t)
@@ -16,9 +22,12 @@
 (defvar my-packages '(
                       exec-path-from-shell
                       ruby-compilation
+                      chruby
                       magit
+                      git-gutter
                       multiple-cursors
                       markdown-mode
+                      org
                       ruby-electric
                       scpaste
                       smex
@@ -28,15 +37,25 @@
                       idle-highlight-mode
                       yaml-mode
                       coffee-mode
-                      clojure-mode
-                      clojure-test-mode
                       cider
+                      clojure-mode
                       paredit
                       ace-jump-mode
                       projectile
                       emmet-mode
                       spacegray-theme
                       guru-mode
+                      company
+                      company-cider
+                      ace-jump-mode
+                      flycheck
+                      multiple-cursors
+                      expand-region
+                      goto-chg
+                      sublimity
                       )
   "A list of packages to ensure are installed at launch.")
 (dolist (p my-packages) (when (not (package-installed-p p)) (package-install p)))
+
+(provide 'packages)
+;;; packages.el ends here
