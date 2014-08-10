@@ -31,6 +31,7 @@
 (load "anil/lua")
 (load "anil/textmate")
 (load "anil/ispell")
+(load "anil/org")
 
 
 (server-start)

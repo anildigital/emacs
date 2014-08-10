@@ -1,2 +1,3 @@
 (require 'textmate)
-(textmate-mode)
+
+;;(add-hook 'prog-mode-hook 'textmate-mode)

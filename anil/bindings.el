@@ -11,6 +11,11 @@
 (global-set-key [s-mouse-1] 'find-tag)
 
 
+;; Font size
+(global-set-key (kbd "C-+") 'text-scale-increase)
+(global-set-key (kbd "C--") 'text-scale-decrease)
+
+
 (global-set-key "\C-xp" 'anil-ido-find-project)
 
 ;;
@@ -35,7 +40,7 @@
 
 (global-set-key "\C-c \C-l" 'stabby-lambda)
 
-(define-key global-map (kbd "C-c SPC") 'ace-jump-mode)
+(define-key global-map (kbd "C-c j") 'ace-jump-mode)
 
 (global-set-key (kbd "C-S-c C-S-c") 'mc/edit-lines)
 
@@ -47,3 +52,6 @@
 (require 'goto-chg)
 (global-set-key [(control ?.)] 'goto-last-change)
 (global-set-key [(control ?,)] 'goto-last-change-reverse)
+
+
+(global-set-key (kbd "C-S-<mouse-1>") 'mc/add-cursor-on-click)

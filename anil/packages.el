@@ -40,9 +40,15 @@
                       cider
                       clojure-mode
                       paredit
+                      popup
                       ace-jump-mode
                       projectile
+                      ensime
+                      scala-mode2
+                      sbt-mode
+                      grizzl
                       emmet-mode
+                      web-mode
                       spacegray-theme
                       guru-mode
                       company
@@ -53,6 +59,8 @@
                       expand-region
                       goto-chg
                       sublimity
+                      move-text
+                      discover-my-major
                       )
   "A list of packages to ensure are installed at launch.")
 (dolist (p my-packages) (when (not (package-installed-p p)) (package-install p)))

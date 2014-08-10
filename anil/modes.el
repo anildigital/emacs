@@ -123,9 +123,29 @@
 (require 'ensime)
 (add-hook 'scala-mode-hook 'ensime-scala-mode-hook)
 
+;; scala-mode-2
+(add-hook 'scala-mode-hook '(lambda ()
+  (require 'whitespace)
+  (make-local-variable 'before-save-hook)
+  (add-hook 'before-save-hook 'whitespace-cleanup)
+  (whitespace-mode)
+
+  (local-set-key (kbd "C-x '") 'sbt-run-previous-command)
+   
+  (local-set-key (kbd "RET") 'newline-and-indent)
+  (local-set-key (kbd "<backtab>") 'scala-indent:indent-with-reluctant-strategy)
+))
+
 
 ;; Projectile mode
 (projectile-global-mode)
+(projectile-global-mode)
+(setq projectile-enable-caching t)
+(setq projectile-completion-system 'grizzl)
+;; Press Command-p for fuzzy find in project
+(global-set-key (kbd "s-p") 'projectile-find-file)
+;; Press Command-b for fuzzy switch buffer
+(global-set-key (kbd "s-b") 'projectile-switch-to-buffer)
 
 ;; recentf mode
 (require 'recentf)
@@ -134,7 +154,7 @@
 
 
 ;; Guru mode
-(guru-global-mode +1)
+;;(guru-global-mode +1)
 
 
 ;; Company mode
@@ -154,3 +174,10 @@
 
 (require 'expand-region)
 (global-set-key (kbd "C-=") 'er/expand-region)
+
+
+(require 'move-text)
+(move-text-default-bindings);
+
+;; mutiple cursors
+(require 'multiple-cursors)
