@@ -31,6 +31,7 @@
                       ruby-electric
                       scpaste
                       smex
+                      dash
                       textmate
                       lua-mode
                       gist
@@ -60,7 +61,11 @@
                       goto-chg
                       sublimity
                       move-text
+                      smartparens
                       discover-my-major
+                      js2-mode
+                      ack-and-a-half
+                      rainbow-mode
                       )
   "A list of packages to ensure are installed at launch.")
 (dolist (p my-packages) (when (not (package-installed-p p)) (package-install p)))

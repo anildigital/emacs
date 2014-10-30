@@ -31,8 +31,6 @@
 ;; Command + Return to go to newline
 (global-set-key [s-return] 'textmate-next-line)
 
-
-
 (global-set-key [S-escape] 'delete-other-windows)
 
 
@@ -55,3 +53,7 @@
 
 
 (global-set-key (kbd "C-S-<mouse-1>") 'mc/add-cursor-on-click)
+
+
+(define-key global-map [home] 'beginning-of-line);
+(define-key global-map [end] 'end-of-line);

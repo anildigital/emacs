@@ -1,37 +1,30 @@
 ;;; init.el First thing to get loaded when Emacs starts.
-
 (require 'cl)
 
 (defvar *emacs-load-start* (current-time))
 
 ;; Set paths
-;(setq exec-path (append exec-path '("/usr/local/bin")))
-
-(add-to-list 'load-path "~/.emacs.d")
-(add-to-list 'load-path "~/.emacs.d/vendor")
-
-;; load paths.el
-(load "paths")
+(add-to-list 'load-path (expand-file-name "~/.emacs.d/anil") t)
+(add-to-list 'load-path (expand-file-name "~/.emacs.d/vendor"))
 
 (setq custom-file "~/.emacs.d/anil/custom.el")
 (load custom-file)
 
 ;; load packages.el
-(load "anil/packages")
+(load "packages")
 
 ;; load preferences.el
-(load "anil/path")
-(load "anil/preferences")
-(load "anil/modes")
-(load "anil/defuns")
-(load "anil/bindings")
-(load "anil/dired")
-(load "anil/ruby")
-(load "anil/rake")
-(load "anil/lua")
-(load "anil/textmate")
-(load "anil/ispell")
-(load "anil/org")
-
+(load "path")
+(load "preferences")
+(load "modes")
+(load "defuns")
+(load "dired")
+(load "ruby")
+(load "rake")
+(load "lua")
+(load "textmate")
+(load "ispell")
+(load "org")
+(load "key-bindings")
 
 (server-start)

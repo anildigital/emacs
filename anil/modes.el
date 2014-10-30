@@ -115,6 +115,8 @@
 ;; Clojure mode hook
 (add-hook 'clojure-mode-hook 'paredit-mode)
 
+;; Dockerfile mode
+(add-to-list 'auto-mode-alist '("\\Dockerfile\\'" . dockerfile-mode))
 
 ;; Python mode
 (add-to-list 'auto-mode-alist '("\\.py?\\'" . python-mode))
@@ -181,3 +183,18 @@
 
 ;; mutiple cursors
 (require 'multiple-cursors)
+
+
+
+;; Load merlin-mode
+(require 'merlin)
+
+;; Start merlin on ocaml files
+(add-hook 'tuareg-mode-hook 'merlin-mode t)
+(add-hook 'caml-mode-hook 'merlin-mode t)
+
+;; Enable auto-complete
+(setq merlin-use-auto-complete-mode 'easy)
+
+;; Use opam switch to lookup ocamlmerlin binary
+(setq merlin-command 'opam)

@@ -8,9 +8,6 @@
 ; don't create backup files 
 (setq make-backup-files nil)
 
-;; Set emacs cursor type
-(setq-default cursor-type 'bar) 
-
 ; default tab width
 (setq-default tab-width 2)
 
@@ -22,6 +19,13 @@
 
 ; Enable paren mode
 (show-paren-mode t)
+;; (require 'smartparens-config)
+;; (smartparens-global-mode 1)
+;; (show-smartparens-global-mode +1)
+
+
+(setq mac-shift-modifier 'meta);
+
 
 ;; Set favorite font
 (setq anil-fav-font "-apple-inconsolata-medium-r-normal-*-14-*-*-*-m-0-iso10646-1")

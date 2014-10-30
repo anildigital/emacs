@@ -1,3 +1,5 @@
+(setq exec-path (append exec-path '("/usr/local/bin")))
+
 ;; fix the PATH variable
 (defun set-exec-path-from-shell-PATH ()
   (let ((path-from-shell (shell-command-to-string "$SHELL -i -c 'echo $PATH'")))
