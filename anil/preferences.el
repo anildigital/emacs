@@ -51,13 +51,10 @@
     ad-do-it))
 
 
-
 ;; disable indenting by tabs  
-(setq-default indent-tabs-mode nil)
-
+;;(setq-default indent-tabs-mode nil)
 
 (defalias 'list-buffers 'ibuffer)
-
 
 (global-git-gutter-mode +1)
 

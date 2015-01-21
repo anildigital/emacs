@@ -65,6 +65,7 @@
                       discover-my-major
                       js2-mode
                       ack-and-a-half
+                      git-timemachine
                       rainbow-mode
                       )
   "A list of packages to ensure are installed at launch.")

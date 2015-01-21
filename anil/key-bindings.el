@@ -1,3 +1,4 @@
+(require 'dired)
 
 ;; bind to hippie-expand .. default is 'just-one-space'
 (global-set-key "\M- " 'hippie-expand)
@@ -10,6 +11,13 @@
 
 (global-set-key [s-mouse-1] 'find-tag)
 
+;; Dired
+
+; - is `cd ..` (like vim)
+(define-key dired-mode-map "-" 'dired-up-directory)
+; prefer dired over dumping dir list to buffer
+(global-set-key "\C-x\C-d" 'dired)
+
 
 ;; Font size
 (global-set-key (kbd "C-+") 'text-scale-increase)
@@ -18,21 +26,10 @@
 
 (global-set-key "\C-xp" 'anil-ido-find-project)
 
-;;
-(global-set-key  (kbd "M-n") 'open-gitx)
-
-;; Run ruby buffer
-(global-set-key (kbd "s-r") 'ruby-compilation-this-buffer)
-
-;; Search
-(global-set-key (kbd "s-F") 'rgrep)
-
-
 ;; Command + Return to go to newline
 (global-set-key [s-return] 'textmate-next-line)
 
 (global-set-key [S-escape] 'delete-other-windows)
-
 
 (global-set-key "\C-x\ \C-r" 'recentf-open-files)
 
@@ -55,5 +52,12 @@
 (global-set-key (kbd "C-S-<mouse-1>") 'mc/add-cursor-on-click)
 
 
-(define-key global-map [home] 'beginning-of-line);
-(define-key global-map [end] 'end-of-line);
+(define-key global-map [home] 'beginning-of-line)
+(define-key global-map [end] 'end-of-line)
+
+
+(require 'expand-region)
+(global-set-key (kbd "C-=") 'er/expand-region)
+
+(provide 'key-bindings)
+;;; key-bindings.el ends here

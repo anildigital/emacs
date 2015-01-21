@@ -7,3 +7,10 @@ tramp
 url/
 var/
 .DS_Store
+.mc-lists.el
+.org-id-locations
+abbrev_defs
+eshell/
+ac-comphist.dat
+*.eld
+*.cache

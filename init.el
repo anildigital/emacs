@@ -18,7 +18,6 @@
 (load "preferences")
 (load "modes")
 (load "defuns")
-(load "dired")
 (load "ruby")
 (load "rake")
 (load "lua")
@@ -26,5 +25,6 @@
 (load "ispell")
 (load "org")
 (load "key-bindings")
+
 
 (server-start)

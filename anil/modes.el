@@ -162,7 +162,6 @@
 ;; Company mode
 (add-hook 'after-init-hook 'global-company-mode)
 
-
 ;;
 (autoload
   'ace-jump-mode
@@ -171,11 +170,8 @@
   t)
 
 
+;; Flycheck mode
 (add-hook 'after-init-hook #'global-flycheck-mode)
-
-
-(require 'expand-region)
-(global-set-key (kbd "C-=") 'er/expand-region)
 
 
 (require 'move-text)
@@ -183,8 +179,6 @@
 
 ;; mutiple cursors
 (require 'multiple-cursors)
-
-
 
 ;; Load merlin-mode
 (require 'merlin)
