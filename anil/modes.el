@@ -17,10 +17,6 @@
 
 ;; Magit is an interface to Git for Emacs
 (require 'magit)
-(eval-after-load 'magit
-  '(progn
-     (set-face-foreground 'magit-diff-add "green3")
-     (set-face-foreground 'magit-diff-del "red3")))
 (custom-set-faces
  '(diff-added ((t (:foreground "green3"))) 'now)
  '(diff-removed ((t (:foreground "red3"))) 'now)
@@ -94,6 +90,15 @@
 (add-to-list 'auto-mode-alist '("\\.djhtml\\'" . web-mode))
 (add-to-list 'auto-mode-alist '("\\.html?\\'" . web-mode))
 
+(add-hook 'web-mode-hook
+  (lambda ()
+  (if (equal web-mode-content-type "javascript")
+  (web-mode-set-content-type "jsx")
+  (message "now set to: %s" web-mode-content-type))))
+
+(setq web-mode-content-types-alist
+  '(("jsx" . "\\.js[x]?\\'")))
+
 
 (defun web-mode-hook ()
   "Hooks for Web mode."
@@ -114,6 +119,7 @@
 
 ;; Clojure mode hook
 (add-hook 'clojure-mode-hook 'paredit-mode)
+(add-to-list 'auto-mode-alist '("\\.cljs$" . clojure-mode))
 
 ;; Dockerfile mode
 (add-to-list 'auto-mode-alist '("\\Dockerfile\\'" . dockerfile-mode))
@@ -121,9 +127,14 @@
 ;; Python mode
 (add-to-list 'auto-mode-alist '("\\.py?\\'" . python-mode))
 
+
+;; Scala mode
+(add-to-list 'auto-mode-alist '("\\.scala?\\'" . scala-mode))
+
 ;;
 (require 'ensime)
 (add-hook 'scala-mode-hook 'ensime-scala-mode-hook)
+
 
 ;; scala-mode-2
 (add-hook 'scala-mode-hook '(lambda ()
@@ -179,16 +190,3 @@
 
 ;; mutiple cursors
 (require 'multiple-cursors)
-
-;; Load merlin-mode
-(require 'merlin)
-
-;; Start merlin on ocaml files
-(add-hook 'tuareg-mode-hook 'merlin-mode t)
-(add-hook 'caml-mode-hook 'merlin-mode t)
-
-;; Enable auto-complete
-(setq merlin-use-auto-complete-mode 'easy)
-
-;; Use opam switch to lookup ocamlmerlin binary
-(setq merlin-command 'opam)

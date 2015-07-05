@@ -5,6 +5,11 @@
 (if (fboundp 'tool-bar-mode) (tool-bar-mode -1))
 (if (fboundp 'scroll-bar-mode) (scroll-bar-mode -1))
 
+
+;; Fix Emacs scrolling
+(setq mouse-wheel-scroll-amount '(2 ((shift) . 1) ((control) . nil)))
+(setq mouse-wheel-progressive-speed nil)
+
 ; don't create backup files 
 (setq make-backup-files nil)
 
@@ -28,7 +33,7 @@
 
 
 ;; Set favorite font
-(setq anil-fav-font "-apple-inconsolata-medium-r-normal-*-14-*-*-*-m-0-iso10646-1")
+(setq anil-fav-font "-apple-inconsolata-medium-r-normal-*-16-*-*-*-m-0-iso10646-1")
 (set-frame-font anil-fav-font)
 
 (add-to-list 'default-frame-alist (cons 'font anil-fav-font))
@@ -52,8 +57,8 @@
 
 
 ;; disable indenting by tabs  
-;;(setq-default indent-tabs-mode nil)
 
+;;(setq-default indent-tabs-mode nil)
 (defalias 'list-buffers 'ibuffer)
 
 (global-git-gutter-mode +1)
