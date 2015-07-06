@@ -93,7 +93,7 @@
 (add-hook 'web-mode-hook
   (lambda ()
   (if (equal web-mode-content-type "javascript")
-  (web-mode-set-content-type "jsx")
+      (web-mode-set-content-type "jsx")
   (message "now set to: %s" web-mode-content-type))))
 
 (setq web-mode-content-types-alist
@@ -113,7 +113,7 @@
 ;; emmet
 (require 'emmet-mode)
 (add-hook 'emmet-mode-hook (lambda () (setq emmet-indentation 2))) ;; indent 2 spaces.
-(add-hook 'web-mode-hook  'emmet-mode) 
+(add-hook 'web-mode-hook  'emmet-mode)
 
 
 
@@ -144,7 +144,7 @@
   (whitespace-mode)
 
   (local-set-key (kbd "C-x '") 'sbt-run-previous-command)
-   
+
   (local-set-key (kbd "RET") 'newline-and-indent)
   (local-set-key (kbd "<backtab>") 'scala-indent:indent-with-reluctant-strategy)
 ))
@@ -190,3 +190,18 @@
 
 ;; mutiple cursors
 (require 'multiple-cursors)
+
+
+;; alchemist
+(setq alchemist-execute-command "/usr/local/bin/elixir") ;; default: elixir
+(setq alchemist-mix-command "/usr/local/bin/mix")
+(setq alchemist-compile-command "/usr/local/bin/elixirc") ;; default: elixirc
+(setq alchemist-buffer-status-modeline nil)
+(setq alchemist-key-command-prefix (kbd "C-c ,")) ;; default: (kbd "C-c a")
+(setq alchemist-test-mode-highlight-tests nil) ;; default t
+(setq alchemist-hooks-test-on-save t)
+
+(add-to-list 'auto-mode-alist '(".ex" . elixir-mode))
+(add-to-list 'auto-mode-alist '(".ex" . alchemist-mode))
+
+(add-to-list 'auto-mode-alist '("\\.js[x]?\\'" . web-mode))   ;; JS + JSX
