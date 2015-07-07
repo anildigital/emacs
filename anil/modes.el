@@ -173,6 +173,10 @@
 ;; Company mode
 (add-hook 'after-init-hook 'global-company-mode)
 
+(add-hook 'company-mode-hook '(lambda ()
+  (setq company-dabbrev-downcase nil)
+))
+
 ;;
 (autoload
   'ace-jump-mode
