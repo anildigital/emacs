@@ -61,5 +61,8 @@
 ;; helm M-x
 (global-set-key (kbd "M-x") 'helm-M-x)
 
+;; browse kill ring
+(global-set-key "\C-cy" 'browse-kill-ring)
+
 (provide 'key-bindings)
 ;;; key-bindings.el ends here
