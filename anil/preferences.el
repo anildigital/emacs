@@ -10,7 +10,7 @@
 (setq mouse-wheel-scroll-amount '(2 ((shift) . 1) ((control) . nil)))
 (setq mouse-wheel-progressive-speed nil)
 
-; don't create backup files 
+; don't create backup files
 (setq make-backup-files nil)
 
 ; default tab width
@@ -56,7 +56,7 @@
     ad-do-it))
 
 
-;; disable indenting by tabs  
+;; disable indenting by tabs
 
 ;;(setq-default indent-tabs-mode nil)
 (defalias 'list-buffers 'ibuffer)
@@ -65,3 +65,6 @@
 
 ;; Sublimity
 (sublimity-mode 1)
+
+(setq create-lockfiles nil)
+(setq make-backup-files nil)

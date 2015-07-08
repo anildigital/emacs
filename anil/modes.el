@@ -18,10 +18,13 @@
 ;; Magit is an interface to Git for Emacs
 (require 'magit)
 (custom-set-faces
- '(diff-added ((t (:foreground "green3"))) 'now)
- '(diff-removed ((t (:foreground "red3"))) 'now)
- )
+  '(diff-added ((t (:foreground "green3"))) 'now)
+  '(diff-removed ((t (:foreground "red3"))) 'now)
+  );
 
+(add-hook 'git-commit-mode-hook
+  '(lambda () (auto-fill-mode 0))
+  t)
 
 ;; markdown mode
 (require 'markdown-mode)
@@ -32,11 +35,6 @@
 (setq markdown-command "/usr/local/bin/markdown")
 
 
-;; smex
-(require 'smex)
-(smex-initialize)
-
-
 ;; Shell mode
 (add-to-list 'auto-mode-alist '(".aliases" . sh-mode))
 (add-to-list 'auto-mode-alist '(".bash_profile" . sh-mode))
@@ -45,10 +43,10 @@
 
 ;; js-mode hook
 (add-hook 'js2-mode-hook
-          '(lambda ()
-             (add-hook 'before-save-hook
-                       (lambda ()
-                         (untabify (point-min) (point-max))))))
+  '(lambda ()
+     (add-hook 'before-save-hook
+       (lambda ()
+         (untabify (point-min) (point-max))))))
 
 ;; js-mode2
 (add-to-list 'auto-mode-alist '(".js" . js2-mode))
@@ -68,9 +66,6 @@
 (setq cider-repl-wrap-history t)
 
 
-;; webmode
-;;(load-file "~/.emacs.d/vendor/web-mode.el")
-
 ;; exec path from shell
 (when (memq window-system '(mac ns))
   (exec-path-from-shell-initialize))
@@ -87,9 +82,9 @@
 
 (add-hook 'web-mode-hook
   (lambda ()
-  (if (equal web-mode-content-type "javascript")
+    (if (equal web-mode-content-type "javascript")
       (web-mode-set-content-type "jsx")
-  (message "now set to: %s" web-mode-content-type))))
+      (message "now set to: %s" web-mode-content-type))))
 
 (setq web-mode-content-types-alist
   '(("jsx" . "\\.js[x]?\\'")))
@@ -104,12 +99,13 @@
 (add-hook 'web-mode-hook  'web-mode-hook)
 (add-to-list 'auto-mode-alist '("\\.html?\\'" . web-mode))
 
+(add-to-list 'auto-mode-alist '("\\.js[x]?\\'" . web-mode))   ;; JS + JSX
+
 
 ;; emmet
 (require 'emmet-mode)
 (add-hook 'emmet-mode-hook (lambda () (setq emmet-indentation 2))) ;; indent 2 spaces.
 (add-hook 'web-mode-hook  'emmet-mode)
-
 
 
 ;; Clojure mode hook
@@ -133,23 +129,23 @@
 
 ;; scala-mode-2
 (add-hook 'scala-mode-hook '(lambda ()
-  (require 'whitespace)
-  (make-local-variable 'before-save-hook)
-  (add-hook 'before-save-hook 'whitespace-cleanup)
-  (whitespace-mode)
+                              (require 'whitespace)
+                              (make-local-variable 'before-save-hook)
+                              (add-hook 'before-save-hook 'whitespace-cleanup)
+                              (whitespace-mode)
 
-  (local-set-key (kbd "C-x '") 'sbt-run-previous-command)
+                              (local-set-key (kbd "C-x '") 'sbt-run-previous-command)
 
-  (local-set-key (kbd "RET") 'newline-and-indent)
-  (local-set-key (kbd "<backtab>") 'scala-indent:indent-with-reluctant-strategy)
-))
+                              (local-set-key (kbd "RET") 'newline-and-indent)
+                              (local-set-key (kbd "<backtab>") 'scala-indent:indent-with-reluctant-strategy)
+                              ))
 
 
 ;; Projectile mode
 (projectile-global-mode)
-(projectile-global-mode)
 (setq projectile-enable-caching t)
-(setq projectile-completion-system 'grizzl)
+(setq projectile-completion-system 'helm)
+
 ;; Press Command-p for fuzzy find in project
 (global-set-key (kbd "s-p") 'projectile-find-file)
 ;; Press Command-b for fuzzy switch buffer
@@ -169,8 +165,8 @@
 (add-hook 'after-init-hook 'global-company-mode)
 
 (add-hook 'company-mode-hook '(lambda ()
-  (setq company-dabbrev-downcase nil)
-))
+                                (setq company-dabbrev-downcase nil)
+                                ))
 
 ;;
 (autoload
@@ -203,9 +199,10 @@
 (add-to-list 'auto-mode-alist '(".ex" . elixir-mode))
 (add-to-list 'auto-mode-alist '(".ex" . alchemist-mode))
 
-(add-to-list 'auto-mode-alist '("\\.js[x]?\\'" . web-mode))   ;; JS + JSX
-
 
 ;; tern mode
 (add-hook 'web-mode-hook (lambda () (tern-mode t)));
 (add-to-list 'company-backends 'company-tern)
+
+;; less-mode
+(add-to-list 'auto-mode-alist '("\\.less$" . less-css-mode))

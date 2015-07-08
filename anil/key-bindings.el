@@ -4,17 +4,11 @@
 (global-set-key "\M- " 'hippie-expand)
 (global-set-key "\C-xg" 'magit-status)
 
-;;smex
-(global-set-key (kbd "M-x") 'smex)
-(global-set-key (kbd "M-X") 'smex-major-mode-commands) ;;
-
-
+;; ctags
 (global-set-key [s-mouse-1] 'find-tag)
 (global-set-key (kbd "s-.") 'find-tag)
 
-
 ;; Dired
-
 ; - is `cd ..` (like vim)
 (define-key dired-mode-map "-" 'dired-up-directory)
 ; prefer dired over dumping dir list to buffer
@@ -63,6 +57,9 @@
 
 ;; neotree toggle
 (global-set-key (kbd "s-\\") 'neotree-toggle)
+
+;; helm M-x
+(global-set-key (kbd "M-x") 'helm-M-x)
 
 (provide 'key-bindings)
 ;;; key-bindings.el ends here

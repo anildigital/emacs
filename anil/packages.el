@@ -20,6 +20,7 @@
                        ruby-compilation
                        chruby
                        magit
+                       git-lens
                        yasnippet
                        git-gutter
                        multiple-cursors
@@ -27,7 +28,6 @@
                        org
                        ruby-electric
                        scpaste
-                       smex
                        dash
                        textmate
                        lua-mode
@@ -41,6 +41,7 @@
                        popup
                        ace-jump-mode
                        projectile
+                       helm
                        ensime
                        scala-mode2
                        sbt-mode
@@ -69,6 +70,8 @@
                        tern
                        company-tern
                        neotree
+                       browse-kill-ring
+                       less-css-mode
                        )
   "A list of packages to ensure are installed at launch.")
 (dolist (p my-packages) (when (not (package-installed-p p)) (package-install p)))
