@@ -25,6 +25,6 @@
 (load "ispell")
 (load "org")
 (load "key-bindings")
-
+(load "fullscreen")
 
 (server-start)
