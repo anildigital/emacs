@@ -10,6 +10,8 @@
 
 
 (global-set-key [s-mouse-1] 'find-tag)
+(global-set-key (kbd "s-.") 'find-tag)
+
 
 ;; Dired
 
@@ -58,6 +60,9 @@
 
 (require 'expand-region)
 (global-set-key (kbd "C-=") 'er/expand-region)
+
+;; neotree toggle
+(global-set-key (kbd "s-\\") 'neotree-toggle)
 
 (provide 'key-bindings)
 ;;; key-bindings.el ends here

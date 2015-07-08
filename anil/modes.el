@@ -62,11 +62,6 @@
 (load-file "~/.emacs.d/vendor/gitx.el")
 
 
-(add-to-list 'load-path "~/.emacs.d/vendor/neotree")
-(require 'neotree)
-(global-set-key [f8] 'neotree-toggle)
-
-
 ;; cider
 (add-hook 'cider-mode-hook 'cider-turn-on-eldoc-mode)
 (setq nrepl-hide-special-buffers t)
@@ -209,3 +204,8 @@
 (add-to-list 'auto-mode-alist '(".ex" . alchemist-mode))
 
 (add-to-list 'auto-mode-alist '("\\.js[x]?\\'" . web-mode))   ;; JS + JSX
+
+
+;; tern mode
+(add-hook 'web-mode-hook (lambda () (tern-mode t)));
+(add-to-list 'company-backends 'company-tern)
