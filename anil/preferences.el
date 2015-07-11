@@ -62,6 +62,9 @@
 (setq ediff-diff-options "-w")
 
 
+;; query replace regex
+(defalias 'qrr 'query-replace-regexp)
+
 ;;(setq-default indent-tabs-mode nil)
 (defalias 'list-buffers 'ibuffer)
 

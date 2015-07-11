@@ -28,10 +28,38 @@
 
 
 (defun stabby-lambda()
-  (interactive)
   "Convert lambda to stabby lambda"
+  (interactive)
   ;; (replace-regexp "lambda" "->" (match-string 1))
   (replace-regexp "lambda[\s]*{ *|\\([^|]*\\)|" "-> (\\1) {" (match-string 1))
   (replace-regexp "lambda[\s]*{" "-> {" (match-string 1))
 
   )
+
+(defun revert-all-buffers ()
+  "Refreshes all open buffers from their respective files."
+  (interactive)
+  (dolist (buf (buffer-list))
+    (with-current-buffer buf
+      (when (and (buffer-file-name) (not (buffer-modified-p)))
+        (revert-buffer t t t))))
+  (message "Refreshed open files."))
+
+
+;; Function to launch a google search
+(defun google-search ()
+  "googles a query or a selected region"
+  (interactive)
+  (browse-url
+   (concat
+    "http://www.google.com/search?q="
+    (if mark-active
+        (buffer-substring (region-beginning) (region-end))
+      (read-string "Google: ")))))
+
+
+(defun eshell/clear ()
+  "Clear the eshell buffer."
+  (let ((inhibit-read-only t))
+    (erase-buffer)
+    (eshell-send-input)))

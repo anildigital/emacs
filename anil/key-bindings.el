@@ -41,7 +41,11 @@
 
 (global-set-key "\C-c \C-l" 'stabby-lambda)
 
+;; Ace jump
 (define-key global-map (kbd "C-c j") 'ace-jump-mode)
+(global-set-key (kbd "C-c SPC") 'ace-jump-char-mode)
+(global-set-key (kbd "C-<return>") 'ace-jump-line-mode)
+
 
 (global-set-key (kbd "C-S-c C-S-c") 'mc/edit-lines)
 
@@ -70,6 +74,8 @@
 
 ;; helm M-x
 (global-set-key (kbd "M-x") 'helm-M-x)
+(global-set-key "\C-x\C-m" 'helm-M-x)
+(global-set-key "\C-c\C-m" 'helm-M-x)
 
 ;; browse kill ring
 (global-set-key "\C-cy" 'browse-kill-ring)
@@ -83,9 +89,6 @@
   (fset 'insert-pound "#")
   (define-key global-map "\M-3" #'insert-pound))
 
-
-(global-set-key (kbd "C-c SPC") 'ace-jump-char-mode)
-(global-set-key (kbd "C-<return>") 'ace-jump-line-mode)
 
 
 (provide 'key-bindings)
