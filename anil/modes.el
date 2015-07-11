@@ -198,13 +198,37 @@
 (setq alchemist-test-mode-highlight-tests nil) ;; default t
 (setq alchemist-hooks-test-on-save t)
 
-(add-to-list 'auto-mode-alist '(".ex" . elixir-mode))
 (add-to-list 'auto-mode-alist '(".ex" . alchemist-mode))
-
+(add-to-list 'auto-mode-alist '(".ex" . elixir-mode))
 
 ;; tern mode
 (add-hook 'web-mode-hook (lambda () (tern-mode t)));
 (add-to-list 'company-backends 'company-tern)
 
+
+;; popwin
+(require 'popwin)
+(popwin-mode 1)
+
+(with-eval-after-load 'popwin
+  (add-to-list 'popwin:special-display-config `"*ag search*")
+  (add-to-list 'popwin:special-display-config `("*magit*" :noselect t))
+  (add-to-list 'popwin:special-display-config `"*Flycheck errors*")
+  (add-to-list 'popwin:special-display-config `"*Occur*")
+  (add-to-list 'popwin:special-display-config `("*Compile-Log*" :noselect t)))
+
 ;; less-mode
 (add-to-list 'auto-mode-alist '("\\.less$" . less-css-mode))
+
+;; guide key
+(require 'guide-key)
+(setq guide-key/guide-key-sequence '("C-x r" "C-x 4"))
+(guide-key-mode 1)  ; Enable guide-key-mode
+
+(setq guide-key/highlight-command-regexp
+      '("rectangle"
+        ("register" . font-lock-type-face)
+        ("bookmark" . "hot pink")))
+
+;; nyan-cat
+(nyan-mode 1)

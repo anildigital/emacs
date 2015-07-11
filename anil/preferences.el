@@ -55,16 +55,17 @@
          (linum-format (concat " %" (number-to-string w) "d ")))
     ad-do-it))
 
+;; Visual bell
+(setq visible-bell t)
 
-;; disable indenting by tabs
+(setq ediff-split-window-function 'split-window-horizontally)
+(setq ediff-diff-options "-w")
+
 
 ;;(setq-default indent-tabs-mode nil)
 (defalias 'list-buffers 'ibuffer)
 
 (global-git-gutter-mode +1)
-
-;; Sublimity
-(sublimity-mode 1)
 
 (setq create-lockfiles nil)
 (setq make-backup-files nil)

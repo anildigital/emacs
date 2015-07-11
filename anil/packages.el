@@ -56,7 +56,7 @@
                        multiple-cursors
                        expand-region
                        goto-chg
-                       sublimity
+                       ag
                        move-text
                        smartparens
                        discover-my-major
@@ -73,6 +73,9 @@
                        browse-kill-ring
                        less-css-mode
                        ido-vertical-mode
+                       popwin
+                       guide-key
+                       nyan-mode
                        )
   "A list of packages to ensure are installed at launch.")
 (dolist (p my-packages) (when (not (package-installed-p p)) (package-install p)))

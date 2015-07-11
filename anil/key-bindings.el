@@ -27,6 +27,16 @@
 
 (global-set-key [S-escape] 'delete-other-windows)
 
+(global-set-key "\M-o" 'other-window)
+
+(global-set-key (kbd "C-w") 'backward-kill-word)
+
+(global-set-key (kbd "C-c r") 'revert-buffer)
+
+(global-set-key "\C-x\C-k" 'kill-region)
+
+(global-set-key "\C-c\C-k" 'kill-region)
+
 (global-set-key "\C-x\ \C-r" 'recentf-open-files)
 
 (global-set-key "\C-c \C-l" 'stabby-lambda)
@@ -63,6 +73,20 @@
 
 ;; browse kill ring
 (global-set-key "\C-cy" 'browse-kill-ring)
+
+
+;; String insert rectangle
+(global-set-key (kbd "C-x r M-i") 'string-insert-rectangle)
+
+;; Add pound
+(when (eq system-type 'darwin)
+  (fset 'insert-pound "#")
+  (define-key global-map "\M-3" #'insert-pound))
+
+
+(global-set-key (kbd "C-c SPC") 'ace-jump-char-mode)
+(global-set-key (kbd "C-<return>") 'ace-jump-line-mode)
+
 
 (provide 'key-bindings)
 ;;; key-bindings.el ends here
