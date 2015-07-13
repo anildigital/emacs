@@ -53,7 +53,6 @@
                        company
                        ace-jump-mode
                        flycheck
-                       multiple-cursors
                        expand-region
                        goto-chg
                        ag
@@ -66,6 +65,7 @@
                        alchemist
                        elixir-mode
                        editorconfig
+                       feature-mode
                        react-snippets
                        tern
                        company-tern
@@ -75,6 +75,10 @@
                        ido-vertical-mode
                        popwin
                        guide-key
+                       paradox
+                       wsd-mode
+                       circe
+                       twittering-mode
                        nyan-mode
                        )
   "A list of packages to ensure are installed at launch.")

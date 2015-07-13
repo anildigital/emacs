@@ -23,6 +23,7 @@
 (load "lua")
 (load "textmate")
 (load "ispell")
+(load "irc")
 (load "org")
 (load "key-bindings")
 (load "fullscreen")

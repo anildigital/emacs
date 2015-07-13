@@ -12,6 +12,8 @@
 
 ; don't create backup files
 (setq make-backup-files nil)
+(setq create-lockfiles nil)
+(setq auto-save-default nil)
 
 ; default tab width
 (setq-default tab-width 2)
@@ -61,7 +63,6 @@
 (setq ediff-split-window-function 'split-window-horizontally)
 (setq ediff-diff-options "-w")
 
-
 ;; query replace regex
 (defalias 'qrr 'query-replace-regexp)
 
@@ -70,5 +71,5 @@
 
 (global-git-gutter-mode +1)
 
-(setq create-lockfiles nil)
-(setq make-backup-files nil)
+(provide 'preferences)
+;;; preferences ends here

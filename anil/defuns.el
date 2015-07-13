@@ -63,3 +63,8 @@
   (let ((inhibit-read-only t))
     (erase-buffer)
     (eshell-send-input)))
+
+
+(defun anil-goto-config ()
+  (interactive)
+  (find-file "~/.emacs.d/init.el"))

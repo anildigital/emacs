@@ -193,6 +193,7 @@
 (setq alchemist-execute-command "/usr/local/bin/elixir") ;; default: elixir
 (setq alchemist-mix-command "/usr/local/bin/mix")
 (setq alchemist-compile-command "/usr/local/bin/elixirc") ;; default: elixirc
+(setq alchemist-iex-program-name "/usr/local/bin/iex") ;; default: iex
 (setq alchemist-buffer-status-modeline nil)
 (setq alchemist-key-command-prefix (kbd "C-c ,")) ;; default: (kbd "C-c a")
 (setq alchemist-test-mode-highlight-tests nil) ;; default t
@@ -228,7 +229,14 @@
 (setq guide-key/highlight-command-regexp
       '("rectangle"
         ("register" . font-lock-type-face)
-        ("bookmark" . "hot pink")))
+         ("bookmark" . "hot pink")))
+
+
+(setq circe-network-options
+      `(("Freenode"
+         :nick "adgtl"
+         :channels ("#emacs" "#fauna")
+         )))
 
 ;; nyan-cat
 (nyan-mode 1)
