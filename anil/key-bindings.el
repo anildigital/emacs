@@ -29,6 +29,8 @@
 
 (global-set-key "\M-o" 'other-window)
 
+(global-set-key "\C-o" 'helm-imenu)
+
 (global-set-key (kbd "C-w") 'backward-kill-word)
 
 (global-set-key (kbd "C-c r") 'revert-buffer)
