@@ -27,8 +27,6 @@
 
 (global-set-key [S-escape] 'delete-other-windows)
 
-(global-set-key "\M-o" 'other-window)
-
 (global-set-key "\C-o" 'helm-imenu)
 
 (global-set-key (kbd "C-w") 'backward-kill-word)
@@ -44,10 +42,11 @@
 (global-set-key "\C-c \C-l" 'stabby-lambda)
 
 ;; Ace jump
-(define-key global-map (kbd "C-c j") 'ace-jump-mode)
-(global-set-key (kbd "C-c SPC") 'ace-jump-char-mode)
-(global-set-key (kbd "C-<return>") 'ace-jump-line-mode)
+(global-set-key (kbd "C-c j") 'avy-goto-word-or-subword-1)
+(global-set-key (kbd "s-.") 'avy-goto-word-or-subword-1)
 
+(global-set-key "\M-o" 'ace-window)
+(global-set-key (kbd "s-w") 'ace-window)
 
 (global-set-key (kbd "C-S-c C-S-c") 'mc/edit-lines)
 

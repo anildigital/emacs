@@ -39,7 +39,8 @@
                        clojure-mode
                        paredit
                        popup
-                       ace-jump-mode
+                       avy
+                       ace-window
                        projectile
                        helm
                        ensime
@@ -51,7 +52,6 @@
                        spacegray-theme
                        guru-mode
                        company
-                       ace-jump-mode
                        flycheck
                        expand-region
                        goto-chg
@@ -62,8 +62,8 @@
                        js2-mode
                        git-timemachine
                        rainbow-mode
-                       alchemist
                        elixir-mode
+                       alchemist
                        editorconfig
                        feature-mode
                        react-snippets

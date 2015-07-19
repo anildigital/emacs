@@ -105,9 +105,9 @@
 
 
 ;; emmet
-(require 'emmet-mode)
-(add-hook 'emmet-mode-hook (lambda () (setq emmet-indentation 2))) ;; indent 2 spaces.
-(add-hook 'web-mode-hook  'emmet-mode)
+;; (require 'emmet-mode)
+;; (add-hook 'emmet-mode-hook (lambda () (setq emmet-indentation 2))) ;; indent 2 spaces.
+;; (add-hook 'web-mode-hook  'emmet-mode)
 
 
 ;; Clojure mode hook
@@ -199,8 +199,14 @@
 (setq alchemist-test-mode-highlight-tests nil) ;; default t
 (setq alchemist-hooks-test-on-save t)
 
-(add-to-list 'auto-mode-alist '(".ex" . alchemist-mode))
-(add-to-list 'auto-mode-alist '(".ex" . elixir-mode))
+;(add-to-list 'auto-mode-alist '(".ex" . elixir-mode)) ;
+(require 'elixir-mode)
+(require 'alchemist)
+
+;; (eval-after-load 'elixir-mode
+;;   '(progn
+;;     (add-hook 'ruby-mode-hook (lambda () (alchemist-mode t)))
+;;     ))
 
 ;; tern mode
 (add-hook 'web-mode-hook (lambda () (tern-mode t)));
