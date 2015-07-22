@@ -246,3 +246,6 @@
 
 ;; nyan-cat
 (nyan-mode 1)
+
+;; avy
+(require 'avy)
