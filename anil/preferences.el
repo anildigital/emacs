@@ -46,7 +46,7 @@
 
 
 ;; theme
-(load-theme 'spacegray t)
+(load-theme 'zenburn t)
 (global-hl-line-mode 1)
 
 (global-linum-mode 1)

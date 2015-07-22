@@ -49,7 +49,7 @@
                        grizzl
                        emmet-mode
                        web-mode
-                       spacegray-theme
+                       zenburn-theme
                        guru-mode
                        company
                        flycheck
