@@ -41,6 +41,7 @@
                        popup
                        avy
                        ace-window
+                       dockerfile-mode
                        projectile
                        helm
                        ensime

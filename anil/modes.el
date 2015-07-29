@@ -160,7 +160,7 @@
 
 
 ;; Guru mode
-;;(guru-global-mode +1)
+(guru-global-mode +1)
 
 
 ;; Company mode
@@ -246,6 +246,9 @@
 
 ;; nyan-cat
 (nyan-mode 1)
+
+;;
+(add-to-list 'auto-mode-alist '("Dockerfile" . dockerfile-mode))
 
 ;; avy
 (require 'avy)
