@@ -50,6 +50,14 @@
        (lambda ()
          (untabify (point-min) (point-max))))))
 
+;; js-mode hook
+(add-hook 'elixir-mode-hook
+  '(lambda ()
+     (add-hook 'before-save-hook
+       (lambda ()
+         (untabify (point-min) (point-max))))))
+
+
 ;; js-mode2
 (add-to-list 'auto-mode-alist '(".js" . js2-mode))
 
@@ -150,6 +158,7 @@
 
 ;; Press Command-p for fuzzy find in project
 (global-set-key (kbd "s-p") 'projectile-find-file)
+(global-set-key (kbd "s-e") 'projectile-recentf)
 ;; Press Command-b for fuzzy switch buffer
 (global-set-key (kbd "s-b") 'projectile-switch-to-buffer)
 
@@ -162,6 +171,8 @@
 ;; Guru mode
 (guru-global-mode +1)
 
+;; Golden ratio
+;; (golden-ratio-mode 1)
 
 ;; Company mode
 (add-hook 'after-init-hook 'global-company-mode)
@@ -194,9 +205,9 @@
 (setq alchemist-mix-command "/usr/local/bin/mix")
 (setq alchemist-compile-command "/usr/local/bin/elixirc") ;; default: elixirc
 (setq alchemist-iex-program-name "/usr/local/bin/iex") ;; default: iex
-(setq alchemist-buffer-status-modeline nil)
-(setq alchemist-key-command-prefix (kbd "C-c ,")) ;; default: (kbd "C-c a")
-(setq alchemist-test-mode-highlight-tests nil) ;; default t
+;; (setq alchemist-buffer-status-modeline nil)
+;; (setq alchemist-key-command-prefix (kbd "C-c ,")) ;; default: (kbd "C-c a")
+;; (setq alchemist-test-mode-highlight-tests nil) ;; default t
 (setq alchemist-hooks-test-on-save t)
 
 ;(add-to-list 'auto-mode-alist '(".ex" . elixir-mode)) ;
@@ -209,8 +220,8 @@
 ;;     ))
 
 ;; tern mode
-(add-hook 'web-mode-hook (lambda () (tern-mode t)));
-(add-to-list 'company-backends 'company-tern)
+;;(add-hook 'web-mode-hook (lambda () (tern-mode t)));
+;;(add-to-list 'company-backends 'company-tern) ;
 
 
 ;; popwin
@@ -246,6 +257,11 @@
 
 ;; nyan-cat
 (nyan-mode 1)
+
+;; yasnippets
+(require 'yasnippet)
+(yas-global-mode 1)
+(setq yas-snippet-dirs '("~/.emacs.d/snippets"))
 
 ;;
 (add-to-list 'auto-mode-alist '("Dockerfile" . dockerfile-mode))

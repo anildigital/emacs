@@ -35,7 +35,7 @@
 
 
 ;; Set favorite font
-(setq anil-fav-font "-apple-inconsolata-medium-r-normal-*-16-*-*-*-m-0-iso10646-1")
+(setq anil-fav-font "-apple-inconsolata-medium-r-normal-*-15-*-*-*-m-0-iso10646-1")
 (set-frame-font anil-fav-font)
 
 (add-to-list 'default-frame-alist (cons 'font anil-fav-font))
@@ -59,6 +59,8 @@
 
 ;; Visual bell
 (setq visible-bell t)
+
+(setq org-startup-with-inline-images t)
 
 (setq ediff-split-window-function 'split-window-horizontally)
 (setq ediff-diff-options "-w")

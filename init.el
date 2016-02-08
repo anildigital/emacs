@@ -25,6 +25,7 @@
 (load "ispell")
 (load "irc")
 (load "org")
+(load "elixir-mode")
 (load "key-bindings")
 (load "fullscreen")
 

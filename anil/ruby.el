@@ -1,6 +1,6 @@
 ;; chruby
 (require 'chruby)
-(chruby "ruby-2.1.1")
+(chruby "ruby-2.3.0")
 
 (eval-after-load 'ruby-mode
   '(progn
@@ -19,7 +19,6 @@
 (add-to-list 'auto-mode-alist '("Capfile$" . ruby-mode))
 (add-to-list 'auto-mode-alist '("\\.gemspec$" . ruby-mode))
 (add-to-list 'auto-mode-alist '("\\.ru$" . ruby-mode))
-
 
 ;; Ruby style guide
 ;; From https://github.com/bbatsov/ruby-style-guide

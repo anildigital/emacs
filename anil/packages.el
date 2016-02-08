@@ -58,6 +58,7 @@
                        goto-chg
                        ag
                        move-text
+                       golden-ratio
                        smartparens
                        discover-my-major
                        js2-mode
