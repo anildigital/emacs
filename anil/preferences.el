@@ -5,7 +5,6 @@
 (if (fboundp 'tool-bar-mode) (tool-bar-mode -1))
 (if (fboundp 'scroll-bar-mode) (scroll-bar-mode -1))
 
-
 ;; Fix Emacs scrolling
 (setq mouse-wheel-scroll-amount '(2 ((shift) . 1) ((control) . nil)))
 (setq mouse-wheel-progressive-speed nil)
@@ -33,9 +32,8 @@
 
 (setq mac-shift-modifier 'meta);
 
-
 ;; Set favorite font
-(setq anil-fav-font "-apple-inconsolata-medium-r-normal-*-15-*-*-*-m-0-iso10646-1")
+(setq anil-fav-font "-apple-inconsolata-medium-r-normal-*-16-*-*-*-m-0-iso10646-1")
 (set-frame-font anil-fav-font)
 
 (add-to-list 'default-frame-alist (cons 'font anil-fav-font))
@@ -44,10 +42,9 @@
 ;; highlight TODOs etc.
 (add-hook 'find-file-hook (lambda() (highlight-phrase "\\(BUG\\|FIXME\\|TODO\\):")))
 
-
 ;; theme
-(load-theme 'zenburn t)
-(global-hl-line-mode 1)
+(load-theme 'spolsky t)
+;;(global-hl-line-mode 0)
 
 (global-linum-mode 1)
 
@@ -56,9 +53,6 @@
                      (count-lines (point-min) (point-max)))))
          (linum-format (concat " %" (number-to-string w) "d ")))
     ad-do-it))
-
-;; Visual bell
-(setq visible-bell t)
 
 (setq org-startup-with-inline-images t)
 

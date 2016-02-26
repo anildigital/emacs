@@ -219,10 +219,16 @@
 ;;     (add-hook 'ruby-mode-hook (lambda () (alchemist-mode t)))
 ;;     ))
 
+
+;; Robe backend for company mode
+(eval-after-load 'company
+  '(push 'company-robe company-backends))
+
 ;; tern mode
 ;;(add-hook 'web-mode-hook (lambda () (tern-mode t)));
 ;;(add-to-list 'company-backends 'company-tern) ;
 
+(add-to-list 'auto-mode-alist '(".go" . go-mode));
 
 ;; popwin
 (require 'popwin)
@@ -257,6 +263,10 @@
 
 ;; nyan-cat
 (nyan-mode 1)
+
+
+;; neotree
+(setq neo-smart-open t)
 
 ;; yasnippets
 (require 'yasnippet)
