@@ -137,7 +137,7 @@
 (add-hook 'scala-mode-hook 'ensime-scala-mode-hook)
 
 
-;; scala-mode-2
+;; scala-mode
 (add-hook 'scala-mode-hook '(lambda ()
                               (require 'whitespace)
                               (make-local-variable 'before-save-hook)

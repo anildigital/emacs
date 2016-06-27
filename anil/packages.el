@@ -49,7 +49,7 @@
                       projectile
                       helm
                       ensime
-                      scala-mode2
+                      scala-mode
                       sbt-mode
                       grizzl
                       emmet-mode
