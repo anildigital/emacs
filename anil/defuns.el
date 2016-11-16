@@ -13,7 +13,7 @@
                                               (directory-files "~/Projects/" nil "^[^.]")))))
 
 (defun anil-clean-slate ()
-  "Kills all buffers except *scratch*"b
+  "Kills all buffers except *scratch*"
   (interactive)
   (let ((buffers (buffer-list)) (safe '("*scratch*")))
     (while buffers
