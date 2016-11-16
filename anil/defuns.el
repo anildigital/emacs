@@ -12,29 +12,14 @@
    (concat "~/Projects/" (ido-completing-read "Project: "
                                               (directory-files "~/Projects/" nil "^[^.]")))))
 
-(defun open-gitx ()
-	(interactive)
-	(shell-command "/usr/local/bin/gitx ."))
-
-
 (defun anil-clean-slate ()
-  "Kills all buffers except *scratch*"
+  "Kills all buffers except *scratch*"b
   (interactive)
   (let ((buffers (buffer-list)) (safe '("*scratch*")))
     (while buffers
       (when (not (member (car buffers) safe))
         (kill-buffer (car buffers))
         (setq buffers (cdr buffers))))))
-
-
-(defun stabby-lambda()
-  "Convert lambda to stabby lambda"
-  (interactive)
-  ;; (replace-regexp "lambda" "->" (match-string 1))
-  (replace-regexp "lambda[\s]*{ *|\\([^|]*\\)|" "-> (\\1) {" (match-string 1))
-  (replace-regexp "lambda[\s]*{" "-> {" (match-string 1))
-
-  )
 
 (defun revert-all-buffers ()
   "Refreshes all open buffers from their respective files."

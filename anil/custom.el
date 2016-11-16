@@ -39,10 +39,13 @@
  ;; If you edit it by hand, you could mess it up, so be careful.
  ;; Your init file should contain only one such instance.
  ;; If there is more than one, they won't work right.
-  '(custom-safe-themes
-     (quote
-       ("53e29ea3d0251198924328fd943d6ead860e9f47af8d22f0b764d11168455a8e" default)))
+ '(custom-safe-themes
+	 (quote
+		("53e29ea3d0251198924328fd943d6ead860e9f47af8d22f0b764d11168455a8e" default)))
  '(org-agenda-files (quote ("~/Dropbox/Org files/inbox.org")))
+ '(package-selected-packages
+	 (quote
+		(nyan-mode twittering-mode circe wsd-mode paradox guide-key popwin ido-vertical-mode less-css-mode browse-kill-ring neotree company-tern tern react-snippets feature-mode editorconfig alchemist elixir-mode rainbow-mode git-timemachine js2-mode discover-my-major smartparens golden-ratio move-text ag goto-chg expand-region flycheck guru-mode sublime-themes web-mode emmet-mode grizzl ensime helm projectile dockerfile-mode ace-window avy popup paredit go-mode cider coffee-mode yaml-mode idle-highlight-mode gist lua-mode textmate scpaste enh-ruby-mode ruby-electric robe perspective markdown-mode multiple-cursors git-gutter yasnippet git-lens magit chruby ruby-compilation exec-path-from-shell)))
  '(paradox-github-token t)
  '(send-mail-function (quote mailclient-send-it)))
 (custom-set-faces

@@ -9,7 +9,6 @@
 (setq uniquify-after-kill-buffer-p t) ; rename after killing uniquified
 (setq uniquify-ignore-buffers-re "^\\*") ; don't muck with special buffers
 
-
 ;; enable ido mode
 (setq ido-enable-flex-matching t)
 (setq ido-everywhere t)
@@ -24,9 +23,6 @@
   '(diff-removed ((t (:foreground "red3"))) 'now)
   );
 
-(add-hook 'git-commit-mode-hook
-  '(lambda () (auto-fill-mode 0))
-  t)
 
 ;; markdown mode
 (require 'markdown-mode)
@@ -36,12 +32,10 @@
 
 (setq markdown-command "/usr/local/bin/markdown")
 
-
 ;; Shell mode
 (add-to-list 'auto-mode-alist '(".aliases" . sh-mode))
 (add-to-list 'auto-mode-alist '(".bash_profile" . sh-mode))
 (add-to-list 'auto-mode-alist '(".bashrc" . sh-mode))
-
 
 ;; js-mode hook
 (add-hook 'js2-mode-hook
@@ -61,13 +55,9 @@
 ;; js-mode2
 (add-to-list 'auto-mode-alist '(".js" . js2-mode))
 
-
 ;; yaml mode
 (require 'yaml-mode)
 (add-to-list 'auto-mode-alist '("\\.yml$" . yaml-mode))
-
-;; Gitx
-(load-file "~/.emacs.d/vendor/gitx.el")
 
 
 ;; cider
@@ -111,13 +101,6 @@
 
 (add-to-list 'auto-mode-alist '("\\.js[x]?\\'" . web-mode))   ;; JS + JSX
 
-
-;; emmet
-;; (require 'emmet-mode)
-;; (add-hook 'emmet-mode-hook (lambda () (setq emmet-indentation 2))) ;; indent 2 spaces.
-;; (add-hook 'web-mode-hook  'emmet-mode)
-
-
 ;; Clojure mode hook
 (add-hook 'clojure-mode-hook 'paredit-mode)
 (add-to-list 'auto-mode-alist '("\\.cljs$" . clojure-mode))
@@ -128,14 +111,12 @@
 ;; Python mode
 (add-to-list 'auto-mode-alist '("\\.py?\\'" . python-mode))
 
-
 ;; Scala mode
 (add-to-list 'auto-mode-alist '("\\.scala?\\'" . scala-mode))
 
 ;;
 (require 'ensime)
 (add-hook 'scala-mode-hook 'ensime-scala-mode-hook)
-
 
 ;; scala-mode
 (add-hook 'scala-mode-hook '(lambda ()
@@ -149,7 +130,6 @@
                               (local-set-key (kbd "RET") 'newline-and-indent)
                               (local-set-key (kbd "<backtab>") 'scala-indent:indent-with-reluctant-strategy)
                               ))
-
 
 ;; Projectile mode
 (projectile-global-mode)
@@ -166,7 +146,6 @@
 (require 'recentf)
 (recentf-mode 1)
 (setq recentf-max-menu-items 25)
-
 
 ;; Guru mode
 (guru-global-mode +1)
@@ -192,13 +171,11 @@
 ;; Flycheck mode
 (add-hook 'after-init-hook #'global-flycheck-mode)
 
-
 (require 'move-text)
 (move-text-default-bindings);
 
 ;; mutiple cursors
 (require 'multiple-cursors)
-
 
 ;; alchemist
 (setq alchemist-execute-command "/usr/local/bin/elixir") ;; default: elixir
@@ -214,19 +191,9 @@
 (require 'elixir-mode)
 (require 'alchemist)
 
-;; (eval-after-load 'elixir-mode
-;;   '(progn
-;;     (add-hook 'ruby-mode-hook (lambda () (alchemist-mode t)))
-;;     ))
-
-
 ;; Robe backend for company mode
 (eval-after-load 'company
   '(push 'company-robe company-backends))
-
-;; tern mode
-;;(add-hook 'web-mode-hook (lambda () (tern-mode t)));
-;;(add-to-list 'company-backends 'company-tern) ;
 
 (add-to-list 'auto-mode-alist '(".go" . go-mode));
 
@@ -254,7 +221,6 @@
         ("register" . font-lock-type-face)
          ("bookmark" . "hot pink")))
 
-
 (setq circe-network-options
       `(("Freenode"
          :nick "adgtl"
@@ -263,7 +229,6 @@
 
 ;; nyan-cat
 (nyan-mode 1)
-
 
 ;; neotree
 (setq neo-smart-open t)

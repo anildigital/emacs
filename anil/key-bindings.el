@@ -37,9 +37,7 @@
 
 (global-set-key "\C-c\C-k" 'kill-region)
 
-(global-set-key "\C-x\ \C-r" 'recentf-open-files)
-
-(global-set-key "\C-c \C-l" 'stabby-lambda)
+(global-set-key "\C-x\ \C-r" 'anil-recentf-ido-find-file)
 
 ;; Ace jump
 (global-set-key (kbd "C-:") 'avy-goto-char)

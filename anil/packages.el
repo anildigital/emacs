@@ -2,7 +2,6 @@
 ;;; package.el
 ;;; Commentary:
 
-
 (require 'package)
 
 ;;; Code:
@@ -33,7 +32,6 @@
                       scpaste
                       dash
                       textmate
-                      lua-mode
                       gist
                       idle-highlight-mode
                       yaml-mode

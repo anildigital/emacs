@@ -5,10 +5,6 @@
 (if (fboundp 'tool-bar-mode) (tool-bar-mode -1))
 (if (fboundp 'scroll-bar-mode) (scroll-bar-mode -1))
 
-;; Fix Emacs scrolling
-(setq mouse-wheel-scroll-amount '(2 ((shift) . 1) ((control) . nil)))
-(setq mouse-wheel-progressive-speed nil)
-
 ; don't create backup files
 (setq make-backup-files nil)
 (setq create-lockfiles nil)
@@ -25,10 +21,6 @@
 
 ; Enable paren mode
 (show-paren-mode t)
-;; (require 'smartparens-config)
-;; (smartparens-global-mode 1)
-;; (show-smartparens-global-mode +1)
-
 
 (setq mac-shift-modifier 'meta);
 
