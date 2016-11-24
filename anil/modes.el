@@ -131,7 +131,9 @@
                               (local-set-key (kbd "<backtab>") 'scala-indent:indent-with-reluctant-strategy)
                               ))
 
-;; Projectile mode
+
+;; Projectile mod
+(require 'helm-projectile)
 (projectile-global-mode)
 (setq projectile-enable-caching t)
 (setq projectile-completion-system 'helm)

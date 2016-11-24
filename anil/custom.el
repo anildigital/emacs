@@ -45,7 +45,7 @@
  '(org-agenda-files (quote ("~/Dropbox/Org files/inbox.org")))
  '(package-selected-packages
 	 (quote
-		(nyan-mode twittering-mode circe wsd-mode paradox guide-key popwin ido-vertical-mode less-css-mode browse-kill-ring neotree company-tern tern react-snippets feature-mode editorconfig alchemist elixir-mode rainbow-mode git-timemachine js2-mode discover-my-major smartparens golden-ratio move-text ag goto-chg expand-region flycheck guru-mode sublime-themes web-mode emmet-mode grizzl ensime helm projectile dockerfile-mode ace-window avy popup paredit go-mode cider coffee-mode yaml-mode idle-highlight-mode gist lua-mode textmate scpaste enh-ruby-mode ruby-electric robe perspective markdown-mode multiple-cursors git-gutter yasnippet git-lens magit chruby ruby-compilation exec-path-from-shell)))
+		(elm-modeb nyan-mode twittering-mode circe wsd-mode paradox guide-key popwin ido-vertical-mode less-css-mode browse-kill-ring neotree company-tern tern react-snippets feature-mode editorconfig alchemist elixir-mode rainbow-mode git-timemachine js2-mode discover-my-major smartparens golden-ratio move-text ag goto-chg expand-region flycheck guru-mode sublime-themes web-mode emmet-mode grizzl ensime helm projectile dockerfile-mode ace-window avy popup paredit go-mode cider coffee-mode yaml-mode idle-highlight-mode gist lua-mode textmate scpaste enh-ruby-mode ruby-electric robe perspective markdown-mode multiple-cursors git-gutter yasnippet git-lens magit chruby ruby-compilation exec-path-from-shell)))
  '(paradox-github-token t)
  '(send-mail-function (quote mailclient-send-it)))
 (custom-set-faces

@@ -5,13 +5,13 @@
 (require 'package)
 
 ;;; Code:
-(add-to-list 'package-archives
-             '("melpa" . "http://melpa.org/packages/") t)
-
-(package-initialize)
+(setq package-archives '(("gnu" . "https://elpa.gnu.org/packages/")
+                         ("marmalade" . "https://marmalade-repo.org/packages/")
+                         ("melpa" . "https://melpa.org/packages/")))
 
 ;; Auto-download archive if missing
-(when (not package-archive-contents) (package-refresh-contents))
+(unless package-archive-contents    ;; Refresh the packages descriptions
+  (package-refresh-contents))
 
 ;; Auto-download missing packages
 (defvar my-packages '(
@@ -36,8 +36,9 @@
                       idle-highlight-mode
                       yaml-mode
                       coffee-mode
+                      elm-mode
                       cider
-                      go-mode                      
+                      go-mode
                       clojure-mode
                       paredit
                       popup
@@ -46,6 +47,7 @@
                       dockerfile-mode
                       projectile
                       helm
+                      helm-projectile
                       ensime
                       scala-mode
                       sbt-mode
