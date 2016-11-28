@@ -59,5 +59,9 @@
 
 (global-git-gutter-mode +1)
 
+;; Disable Emacs going to sleep
+(global-unset-key [(control z)])
+(global-unset-key [(control x)(control z)])
+
 (provide 'preferences)
 ;;; preferences ends here
