@@ -33,6 +33,8 @@
 
 (global-set-key (kbd "C-c r") 'revert-buffer)
 
+(global-set-key (kbd "C-c g") 'google-search)
+
 (global-set-key "\C-x\C-k" 'kill-region)
 
 (global-set-key "\C-c\C-k" 'kill-region)
