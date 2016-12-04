@@ -55,6 +55,12 @@
 ;; js-mode2
 (add-to-list 'auto-mode-alist '(".js" . js2-mode))
 
+;; Dash at point
+(autoload 'dash-at-point "dash-at-point"
+          "Search the word at point with Dash." t nil)
+(global-set-key "\C-cd" 'dash-at-point)
+(global-set-key "\C-ce" 'dash-at-point-with-docset)
+
 ;; yaml mode
 (require 'yaml-mode)
 (add-to-list 'auto-mode-alist '("\\.yml$" . yaml-mode))

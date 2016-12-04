@@ -32,6 +32,7 @@
                       scpaste
                       dash
                       textmate
+                      dash-at-point
                       gist
                       idle-highlight-mode
                       yaml-mode
