@@ -87,6 +87,7 @@
                       circe
                       twittering-mode
                       nyan-mode
+                      flycheck-elm
                       )
   "A list of packages to ensure are installed at launch.")
 (dolist (p my-packages) (when (not (package-installed-p p)) (package-install p)))
