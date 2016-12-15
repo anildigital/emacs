@@ -7,6 +7,7 @@
 ;; ctags
 (global-set-key [s-mouse-1] 'find-tag)
 (global-set-key (kbd "s-.") 'find-tag)
+(global-set-key "\M-*" 'pop-tag-mark)
 
 ;; Dired
 ; - is `cd ..` (like vim)
@@ -104,6 +105,10 @@
 (global-set-key "\C-cc" 'org-capture)
 (global-set-key "\C-ca" 'org-agenda)
 (global-set-key "\C-cb" 'org-iswitchb)
+
+;; Web mode
+(define-key web-mode-map (kbd "M-n") 'web-mode-tag-match)
+
 
 (provide 'key-bindings)
 ;;; key-bindings.el ends here
