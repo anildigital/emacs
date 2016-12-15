@@ -14,3 +14,6 @@ eshell/
 ac-comphist.dat
 *.eld
 *.cache
+recentf
+ido.last
+network-security.data
