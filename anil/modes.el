@@ -262,5 +262,10 @@
 (add-hook 'elm-mode-hook
           (lambda () (add-hook 'before-save-hook 'elm-mode-format-buffer)))
 
+
+;; smooth scrolling
+(require 'smooth-scrolling)
+(smooth-scrolling-mode 1)
+
 ;; avy
 (require 'avy)
