@@ -44,16 +44,18 @@
        (lambda ()
          (untabify (point-min) (point-max))))))
 
-;; js-mode hook
+(add-to-list 'auto-mode-alist '(".js" . js2-mode))
+
+;; elixir-mode hook
 (add-hook 'elixir-mode-hook
   '(lambda ()
      (add-hook 'before-save-hook
        (lambda ()
          (untabify (point-min) (point-max))))))
 
-
-;; js-mode2
-(add-to-list 'auto-mode-alist '(".js" . js2-mode))
+;; Flycheck Elixir
+(require 'flycheck-elixir)
+(add-hook 'elixir-mode-hook 'flycheck-mode)
 
 ;; Dash at point
 (autoload 'dash-at-point "dash-at-point"
@@ -252,6 +254,7 @@
 ;; Remove trailng whitespace on save
 (add-hook 'before-save-hook 'delete-trailing-whitespace)
 
+;; Elm
 (eval-after-load 'flycheck
   '(add-hook 'flycheck-mode-hook #'flycheck-elm-setup))
 

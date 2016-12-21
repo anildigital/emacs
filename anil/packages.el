@@ -55,7 +55,7 @@
                       grizzl
                       emmet-mode
                       web-mode
-                      sublime-themes                       
+                      sublime-themes
                       guru-mode
                       company
                       flycheck
@@ -88,7 +88,8 @@
                       twittering-mode
                       nyan-mode
                       flycheck-elm
-											smooth-scrolling
+                      flycheck-elixir
+                      smooth-scrolling
                       )
   "A list of packages to ensure are installed at launch.")
 (dolist (p my-packages) (when (not (package-installed-p p)) (package-install p)))
