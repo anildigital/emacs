@@ -51,7 +51,7 @@
 (global-set-key (kbd "C-c j") 'avy-goto-word-or-subword-1)
 (global-set-key (kbd "s-.") 'avy-goto-word-or-subword-1)
 
-(global-set-key "\M-o" 'ace-window)
+(global-set-key (kbd "M-p") 'ace-window)
 (global-set-key (kbd "s-w") 'ace-window)
 
 (global-set-key (kbd "C-S-c C-S-c") 'mc/edit-lines)
