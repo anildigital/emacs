@@ -146,6 +146,9 @@
 (setq projectile-enable-caching t)
 (setq projectile-completion-system 'helm)
 
+;; Projectile Neotree
+(setq projectile-switch-project-action 'neotree-projectile-action)
+
 ;; Press Command-p for fuzzy find in project
 (global-set-key (kbd "s-p") 'projectile-find-file)
 (global-set-key (kbd "s-e") 'projectile-recentf)
