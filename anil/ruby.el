@@ -1,12 +1,12 @@
 ;; chruby
 (require 'chruby)
-(chruby "ruby-2.3.2")
+(chruby "ruby-2.3.3")
 
 (eval-after-load 'ruby-mode
   '(progn
      (setq ruby-use-encoding-map nil) ;;don't autoadd encoding comment at the top
-     (require 'inf-ruby)
-     (add-hook 'ruby-mode-hook 'inf-ruby-keys)
+		 (autoload 'inf-ruby-minor-mode "inf-ruby" "Run an inferior Ruby process" t)
+		 (add-hook 'ruby-mode-hook 'inf-ruby-minor-mode)
      (require 'ruby-electric)
      (add-hook 'ruby-mode-hook (lambda () (ruby-electric-mode t)))
      (add-hook 'ruby-mode-hook (lambda () (robe-mode t)))
