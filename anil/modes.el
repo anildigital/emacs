@@ -147,7 +147,7 @@
 (setq projectile-completion-system 'helm)
 
 ;; Projectile Neotree
-(setq projectile-switch-project-action 'neotree-projectile-action)
+;;(setq projectile-switch-project-action 'neotree-projectile-action)
 
 ;; Press Command-p for fuzzy find in project
 (global-set-key (kbd "s-p") 'projectile-find-file)
@@ -200,9 +200,9 @@
 ;; (setq alchemist-test-mode-highlight-tests nil) ;; default t
 (setq alchemist-hooks-test-on-save t)
 
-;(add-to-list 'auto-mode-alist '(".ex" . elixir-mode)) ;
 (require 'elixir-mode)
 (require 'alchemist)
+
 
 ;; Robe backend for company mode
 (eval-after-load 'company
@@ -272,6 +272,9 @@
 ;; smooth scrolling
 (require 'smooth-scrolling)
 (smooth-scrolling-mode 1)
+
+;; winner mode
+(winner-mode 1)
 
 ;; avy
 (require 'avy)
