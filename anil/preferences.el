@@ -35,7 +35,9 @@
 (add-hook 'find-file-hook (lambda() (highlight-phrase "\\(BUG\\|FIXME\\|TODO\\):")))
 
 ;; theme
+(add-to-list 'custom-theme-load-path "~/.emacs.d/themes")
 (load-theme 'spolsky t)
+
 ;;(global-hl-line-mode 0)
 
 (global-linum-mode 1)
