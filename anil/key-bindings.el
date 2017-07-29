@@ -85,10 +85,6 @@
 ;; browse kill ring
 (global-set-key "\C-cy" 'browse-kill-ring)
 
-
-;; String insert rectangle
-(global-set-key (kbd "C-x r M-i") 'string-insert-rectangle)
-
 ;; Add pound
 (when (eq system-type 'darwin)
   (fset 'insert-pound "#")
@@ -105,6 +101,13 @@
 ;; Web mode
 (define-key web-mode-map (kbd "M-n") 'web-mode-tag-match)
 
+;; contextual backspace
+(global-set-key (kbd "C-<backspace>") 'contextual-backspace)
+
+;; yas
+(define-key yas-minor-mode-map (kbd "<tab>") nil)
+(define-key yas-minor-mode-map (kbd "TAB") nil)
+(define-key yas-minor-mode-map (kbd "<backtab>") 'yas-expand)
 
 (provide 'key-bindings)
 ;;; key-bindings.el ends here

@@ -129,7 +129,8 @@
 
 ;;
 (require 'ensime)
-(add-hook 'scala-mode-hook 'ensime-scala-mode-hook)
+(add-hook 'git-timemachine-mode-hook (lambda () (ensime-mode 0)))
+(require 'ensime-expand-region)
 
 ;; scala-mode
 (add-hook 'scala-mode-hook '(lambda ()
@@ -137,9 +138,9 @@
                               (make-local-variable 'before-save-hook)
                               (add-hook 'before-save-hook 'whitespace-cleanup)
                               (whitespace-mode)
-
+															(ensime-mode)
+															(scala-mode:goto-start-of-code)
                               (local-set-key (kbd "C-x '") 'sbt-run-previous-command)
-
                               (local-set-key (kbd "RET") 'newline-and-indent)
                               (local-set-key (kbd "<backtab>") 'scala-indent:indent-with-reluctant-strategy)
                               ))
@@ -219,6 +220,10 @@
 (require 'popwin)
 (popwin-mode 1)
 
+;; popup imenu
+(require 'popup-imenu)
+(setq popup-imenu-position 'point)
+
 (with-eval-after-load 'popwin
   (add-to-list 'popwin:special-display-config `"*ag search*")
   (add-to-list 'popwin:special-display-config `("*magit*" :noselect t))
@@ -228,16 +233,6 @@
 
 ;; less-mode
 (add-to-list 'auto-mode-alist '("\\.less$" . less-css-mode))
-
-;; guide key
-(require 'guide-key)
-(setq guide-key/guide-key-sequence '("C-x r" "C-x 4"))
-(guide-key-mode 1)  ; Enable guide-key-mode
-
-(setq guide-key/highlight-command-regexp
-      '("rectangle"
-        ("register" . font-lock-type-face)
-         ("bookmark" . "hot pink")))
 
 (setq circe-network-options
       `(("Freenode"
@@ -253,8 +248,9 @@
 
 ;; yasnippets
 (require 'yasnippet)
-(yas-global-mode 1)
+(yas-global-mode t)
 (setq yas-snippet-dirs '("~/.emacs.d/snippets"))
+(add-to-list 'yas-snippet-dirs "~/Code/yasnippet-snippets")
 
 ;;
 (add-to-list 'auto-mode-alist '("Dockerfile" . dockerfile-mode))
@@ -284,6 +280,14 @@
 ;; avy
 (require 'avy)
 
+;; which key
+(require 'which-key)
+(which-key-mode)
+
+;; Org mode
+(require 'org-bullets)
+(add-hook 'org-mode-hook (lambda () (org-bullets-mode 1)))
+
 ;; coffee
 (setq coffee-tab-width 2)
 (custom-set-variables
@@ -291,3 +295,6 @@
  '(flycheck-coffeelintrc "~/.emacs.d/coffeelint.json"))
 
 (add-hook 'coffee-mode-hook 'flymake-mode)
+
+;; undo tree
+(global-undo-tree-mode)
