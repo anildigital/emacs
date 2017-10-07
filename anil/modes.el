@@ -119,6 +119,9 @@
 (add-hook 'clojure-mode-hook 'paredit-mode)
 (add-to-list 'auto-mode-alist '("\\.cljs$" . clojure-mode))
 
+;; Idris mode
+(require 'idris-mode)
+
 ;; Dockerfile mode
 (add-to-list 'auto-mode-alist '("\\Dockerfile\\'" . dockerfile-mode))
 
