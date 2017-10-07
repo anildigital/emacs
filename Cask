@@ -90,3 +90,4 @@
 (depends-on "smex")
 (depends-on "use-package")
 (depends-on "yasnippet")
+(depends-on "dracula-theme")
