@@ -26,7 +26,6 @@
 (load "modes")
 (load "defuns")
 (load "ruby")
-(load "rake")
 (load "textmate")
 (load "ispell")
 (load "irc")
