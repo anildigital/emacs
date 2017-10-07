@@ -23,6 +23,7 @@
 ;; load preferences.el
 (load "path")
 (load "preferences")
+(load "font")
 (load "modes")
 (load "defuns")
 (load "ruby")

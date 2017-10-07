@@ -22,13 +22,6 @@
 ; Enable paren mode
 (show-paren-mode t)
 
-;; Set favorite font
-(setq anil-fav-font "-apple-inconsolata-medium-r-normal-*-15-*-*-*-m-0-iso10646-1")
-(set-frame-font anil-fav-font)
-
-(add-to-list 'default-frame-alist (cons 'font anil-fav-font))
-(add-to-list 'initial-frame-alist (cons 'font anil-fav-font))
-
 ;; highlight TODOs etc.
 (add-hook 'find-file-hook (lambda() (highlight-phrase "\\(BUG\\|FIXME\\|TODO\\):")))
 
