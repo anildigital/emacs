@@ -51,16 +51,7 @@
 
 (add-to-list 'auto-mode-alist '(".js" . js2-mode))
 
-;; elixir-mode hook
-(add-hook 'elixir-mode-hook
-  '(lambda ()
-     (add-hook 'before-save-hook
-       (lambda ()
-         (untabify (point-min) (point-max))))))
 
-;; Flycheck Elixir
-(require 'flycheck-elixir)
-(add-hook 'elixir-mode-hook 'flycheck-mode)
 
 ;; Dash at point
 (autoload 'dash-at-point "dash-at-point"
@@ -131,7 +122,7 @@
 ;; Scala mode
 (add-to-list 'auto-mode-alist '("\\.scala?\\'" . scala-mode))
 
-;;
+;; Ensime
 (require 'ensime)
 (add-hook 'git-timemachine-mode-hook (lambda () (ensime-mode 0)))
 (require 'ensime-expand-region)
@@ -142,8 +133,8 @@
                               (make-local-variable 'before-save-hook)
                               (add-hook 'before-save-hook 'whitespace-cleanup)
                               (whitespace-mode)
-															(ensime-mode)
-															(scala-mode:goto-start-of-code)
+                              (ensime-mode)
+                              (scala-mode:goto-start-of-code)
                               (local-set-key (kbd "C-x '") 'sbt-run-previous-command)
                               (local-set-key (kbd "RET") 'newline-and-indent)
                               (local-set-key (kbd "<backtab>") 'scala-indent:indent-with-reluctant-strategy)
@@ -155,9 +146,6 @@
 (projectile-global-mode)
 (setq projectile-enable-caching t)
 (setq projectile-completion-system 'helm)
-
-;; Projectile Neotree
-;;(setq projectile-switch-project-action 'neotree-projectile-action)
 
 ;; Press Command-p for fuzzy find in project
 (global-set-key (kbd "s-p") 'projectile-find-file)
@@ -172,9 +160,6 @@
 
 ;; Guru mode
 (guru-global-mode +1)
-
-;; Golden ratio
-;; (golden-ratio-mode 1)
 
 ;; Company mode
 (add-hook 'after-init-hook 'global-company-mode)
@@ -199,20 +184,6 @@
 
 ;; mutiple cursors
 (require 'multiple-cursors)
-
-;; alchemist
-(setq alchemist-execute-command "/usr/local/bin/elixir") ;; default: elixir
-(setq alchemist-mix-command "/usr/local/bin/mix")
-(setq alchemist-compile-command "/usr/local/bin/elixirc") ;; default: elixirc
-(setq alchemist-iex-program-name "/usr/local/bin/iex") ;; default: iex
-;; (setq alchemist-buffer-status-modeline nil)
-;; (setq alchemist-key-command-prefix (kbd "C-c ,")) ;; default: (kbd "C-c a")
-;; (setq alchemist-test-mode-highlight-tests nil) ;; default t
-(setq alchemist-hooks-test-on-save t)
-
-(require 'elixir-mode)
-(require 'alchemist)
-
 
 ;; Robe backend for company mode
 (eval-after-load 'company
@@ -247,9 +218,6 @@
 ;; nyan-cat
 (nyan-mode 1)
 
-;; neotree
-(setq neo-smart-open t)
-
 ;; yasnippets
 (require 'yasnippet)
 (yas-global-mode t)
@@ -273,10 +241,6 @@
 (add-hook 'elm-mode-hook
           (lambda () (add-hook 'before-save-hook 'elm-mode-format-buffer)))
 
-
-;; smooth scrolling
-(require 'smooth-scrolling)
-(smooth-scrolling-mode 1)
 
 ;; winner mode
 (winner-mode 1)

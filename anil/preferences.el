@@ -6,9 +6,9 @@
 (if (fboundp 'scroll-bar-mode) (scroll-bar-mode -1))
 
 ; don't create backup files
-(setq make-backup-files nil)
-(setq create-lockfiles nil)
-(setq auto-save-default nil)
+;(setq make-backup-files nil)
+;(setq create-lockfiles nil)
+;(setq auto-save-default nil)
 
 ; default tab width
 (setq-default tab-width 2)
@@ -21,8 +21,6 @@
 
 ; Enable paren mode
 (show-paren-mode t)
-
-(setq mac-shift-modifier 'meta);
 
 ;; Set favorite font
 (setq anil-fav-font "-apple-inconsolata-medium-r-normal-*-15-*-*-*-m-0-iso10646-1")
@@ -40,12 +38,6 @@
 ;;(global-hl-line-mode 0)
 
 (global-linum-mode 1)
-
-(defadvice linum-update-window (around linum-dynamic activate)
-  (let* ((w (length (number-to-string
-                     (count-lines (point-min) (point-max)))))
-         (linum-format (concat " %" (number-to-string w) "d ")))
-    ad-do-it))
 
 (setq org-startup-with-inline-images t)
 
