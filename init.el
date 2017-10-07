@@ -30,7 +30,7 @@
 (load "ispell")
 (load "irc")
 (load "org")
-(load "elixir-mode")
+(load "elixir")
 (load "key-bindings")
 (load "fullscreen")
 
