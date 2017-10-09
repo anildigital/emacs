@@ -23,6 +23,10 @@
 ;; Flycheck Elixir
 (require 'flycheck-elixir)
 
+;; Flycheck Mix
+(require 'flycheck-mix)
+(flycheck-mix-setup)
+
 (eval-after-load 'flycheck
  '(flycheck-credo-setup))
 (add-hook 'elixir-mode-hook 'flycheck-mode)

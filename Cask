@@ -61,6 +61,7 @@
 (depends-on "elixir-mode")
 (depends-on "alchemist")
 (depends-on "flycheck-credo")
+(depends-on "flycheck-mix")
 (depends-on "editorconfig")
 (depends-on "feature-mode")
 (depends-on "react-snippets")
@@ -92,3 +93,4 @@
 (depends-on "use-package")
 (depends-on "yasnippet")
 (depends-on "dracula-theme")
+(depends-on "elixir-yasnippets")
