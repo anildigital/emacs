@@ -13,12 +13,20 @@
 (require 'elixir-mode)
 (require 'alchemist)
 
+(require 'mix-format)
+
 ;; elixir-mode hook
 (add-hook 'elixir-mode-hook
-  '(lambda ()
-     (add-hook 'before-save-hook
-       (lambda ()
-         (untabify (point-min) (point-max))))))
+          '(lambda ()
+             (add-hook 'before-save-hook
+                       (lambda ()
+                         (untabify (point-min) (point-max))))))
+
+
+(defun mix-format-hook()
+  (when (eq major-mode 'elixir-mode)
+    (mix-format)))
+(add-hook 'before-save-hook 'mix-format-hook)
 
 ;; Flycheck Elixir
 (require 'flycheck-elixir)
