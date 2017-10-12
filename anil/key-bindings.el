@@ -77,7 +77,8 @@
 (global-set-key (kbd "C-=") 'er/expand-region)
 
 ;; neotree toggle
-(global-set-key (kbd "s-\\") 'neotree-projectile-action)
+(global-set-key (kbd "s-\\") 'neotree-toggle)
+(global-set-key [f8] 'neotree-toggle)
 
 ;; helm M-x
 (global-set-key (kbd "M-x") 'helm-M-x)

@@ -23,6 +23,10 @@
   '(diff-removed ((t (:foreground "red3"))) 'now)
   );
 
+;; neotre
+(require 'neotree)
+(setq neo-smart-open t)
+(setq projectile-switch-project-action 'neotree-projectile-action)
 
 ;; markdown mode
 (require 'markdown-mode)
