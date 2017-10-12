@@ -23,10 +23,8 @@
                          (untabify (point-min) (point-max))))))
 
 
-(defun mix-format-hook()
-  (when (eq major-mode 'elixir-mode)
-    (mix-format)))
-(add-hook 'before-save-hook 'mix-format-hook)
+(add-hook 'after-save-hook
+          (lambda () (when (eq major-mode 'elixir-mode) (mix-format))))
 
 ;; Flycheck Elixir
 (require 'flycheck-elixir)
