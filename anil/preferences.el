@@ -30,7 +30,7 @@
 
 ;;(global-hl-line-mode 0)
 
-(global-linum-mode 1)
+;;(global-linum-mode 1)
 
 (setq org-startup-with-inline-images t)
 
