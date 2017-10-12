@@ -41,6 +41,21 @@
 
 (setq markdown-command "/usr/local/bin/markdown")
 
+;; polymode
+(require 'poly-markdown)
+(add-to-list 'auto-mode-alist '("\\.md" . poly-markdown-mode))
+
+
+;;Emacs lisp mode for Cask files
+(add-to-list 'auto-mode-alist '("\\.*Cask\\'" . emacs-lisp-mode))
+
+;;Writeroom-mode
+(require 'writeroom-mode)
+(with-eval-after-load 'writeroom-mode
+  (define-key writeroom-mode-map (kbd "C-M-<") #'writeroom-decrease-width)
+  (define-key writeroom-mode-map (kbd "C-M->") #'writeroom-increase-width)
+  (define-key writeroom-mode-map (kbd "C-M-=") #'writeroom-adjust-width))
+
 ;; Shell mode
 (add-to-list 'auto-mode-alist '(".aliases" . sh-mode))
 (add-to-list 'auto-mode-alist '(".bash_profile" . sh-mode))
