@@ -1,6 +1,7 @@
 ;; Elixir mode
 
 ;; alchemist
+(require 'alchemist)
 (setq alchemist-execute-command "/usr/local/bin/elixir") ;; default: elixir
 (setq alchemist-mix-command "/usr/local/bin/mix")
 (setq alchemist-compile-command "/usr/local/bin/elixirc") ;; default: elixirc
@@ -8,12 +9,10 @@
 ;; (setq alchemist-buffer-status-modeline nil)
 ;; (setq alchemist-key-command-prefix (kbd "C-c ,")) ;; default: (kbd "C-c a")
 ;; (setq alchemist-test-mode-highlight-tests nil) ;; default t
-(setq alchemist-hooks-test-on-save t)
+; (setq alchemist-hooks-test-on-save t)
 
 (require 'elixir-mode)
-(require 'alchemist)
 
-(require 'mix-format)
 
 ;; elixir-mode hook
 (add-hook 'elixir-mode-hook
@@ -22,8 +21,8 @@
                        (lambda ()
                          (untabify (point-min) (point-max))))))
 
-
-(add-hook 'after-save-hook
+(require 'mix-format)
+(add-hook 'before-save-hook
           (lambda () (when (eq major-mode 'elixir-mode) (mix-format))))
 
 ;; Flycheck Elixir

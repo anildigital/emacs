@@ -62,7 +62,7 @@
 (depends-on "git-timemachine")
 (depends-on "rainbow-mode")
 (depends-on "elixir-mode")
-(depends-on "alchemist")
+;(depends-on "alchemist")
 (depends-on "flycheck-credo")
 (depends-on "flycheck-mix")
 (depends-on "editorconfig")

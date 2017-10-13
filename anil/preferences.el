@@ -43,8 +43,6 @@
 ;;(setq-default indent-tabs-mode nil)
 (defalias 'list-buffers 'ibuffer)
 
-(global-git-gutter-mode +1)
-
 ;; Disable Emacs going to sleep
 (global-unset-key [(control z)])
 (global-unset-key [(control x)(control z)])
