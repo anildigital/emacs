@@ -36,8 +36,6 @@
 
 (global-set-key (kbd "C-c g") 'google-search)
 
-(global-set-key "\C-x\C-k" 'kill-region)
-
 (global-set-key "\C-c\C-k" 'kill-region)
 
 (global-set-key "\C-x\ \C-r" 'anil-recentf-ido-find-file)
@@ -109,6 +107,9 @@
 (define-key yas-minor-mode-map (kbd "<tab>") nil)
 (define-key yas-minor-mode-map (kbd "TAB") nil)
 (define-key yas-minor-mode-map (kbd "<backtab>") 'yas-expand)
+
+;;set shell file name (grep doesn't work fine with fish-shell)
+(setq shell-file-name "/bin/sh")
 
 (provide 'key-bindings)
 ;;; key-bindings.el ends here
