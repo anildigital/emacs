@@ -13,6 +13,9 @@
 ; default tab width
 (setq-default tab-width 2)
 
+;; dired dwim target
+(setq dired-dwim-target t)
+
 ;; default directory
 (setq default-directory (concat (getenv "HOME") "/"))
 
@@ -28,9 +31,11 @@
 ;; theme
 (load-theme 'dracula t)
 
-;;(global-hl-line-mode 0)
+(global-hl-line-mode 1)
+(global-linum-mode 0)
 
-;;(global-linum-mode 1)
+(add-hook 'writeroom-mode-hook #'git-gutter-mode 0)
+(add-hook 'writeroom-mode-hook #'linum-mode 0)
 
 (setq org-startup-with-inline-images t)
 

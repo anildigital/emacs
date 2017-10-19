@@ -1,5 +1,7 @@
 ;; Elixir mode
 
+;;; Code:
+
 ;; alchemist
 (require 'alchemist)
 (setq alchemist-execute-command "/usr/local/bin/elixir") ;; default: elixir
@@ -21,9 +23,11 @@
                        (lambda ()
                          (untabify (point-min) (point-max))))))
 
+
+
 (require 'mix-format)
-(add-hook 'before-save-hook
-          (lambda () (when (eq major-mode 'elixir-mode) (mix-format))))
+(add-hook 'elixir-mode-hook
+          (lambda () (add-hook 'before-save-hook 'mix-format)))
 
 ;; Flycheck Elixir
 (require 'flycheck-elixir)
@@ -35,3 +39,6 @@
 (eval-after-load 'flycheck
  '(flycheck-credo-setup))
 (add-hook 'elixir-mode-hook 'flycheck-mode)
+
+(provide 'elixir)
+;;; elixir ends here

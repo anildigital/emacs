@@ -96,5 +96,6 @@
 (depends-on "smex")
 (depends-on "use-package")
 (depends-on "yasnippet")
+(depends-on "yasnippet-snippets")
 (depends-on "dracula-theme")
 (depends-on "elixir-yasnippets")

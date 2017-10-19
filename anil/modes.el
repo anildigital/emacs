@@ -180,6 +180,9 @@
 ;; Guru mode
 (guru-global-mode +1)
 
+;; Git Gutter
+(global-git-gutter-mode +1)
+
 ;; Company mode
 (add-hook 'after-init-hook 'global-company-mode)
 
