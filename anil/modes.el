@@ -288,3 +288,6 @@
 
 ;; undo tree
 (global-undo-tree-mode)
+
+;; desktop-save mode
+(desktop-save-mode 1)
