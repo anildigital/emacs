@@ -1,9 +1,10 @@
 ;;; Code:
-
-
 (when (window-system)
-
-(set-frame-font "-*-Fira Code-normal-normal-normal-*-15-*-*-*-m-0-iso10646-1"))
+  (defvar anil-favourite-font "-*-Fira Code-normal-normal-normal-*-15-*-*-*-m-0-iso10646-1")
+  (set-frame-font anil-favourite-font)
+  (add-to-list 'default-frame-alist
+               '(font . anil-favourite-font))
+  )
 
 (let ((alist '((33 . ".\\(?:\\(?:==\\|!!\\)\\|[!=]\\)")
                (35 . ".\\(?:###\\|##\\|_(\\|[#(?[_{]\\)")
