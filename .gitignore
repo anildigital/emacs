@@ -19,3 +19,4 @@ ido.last
 network-security.data
 .cask
 tutorial
+.emacs.desktop*
