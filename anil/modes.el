@@ -240,6 +240,8 @@
 ;; nyan-cat
 (nyan-mode 1)
 
+(sml/setup)
+
 ;; yasnippets
 (require 'yasnippet)
 (yas-global-mode t)

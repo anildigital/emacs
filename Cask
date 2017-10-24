@@ -99,3 +99,4 @@
 (depends-on "yasnippet-snippets")
 (depends-on "dracula-theme")
 (depends-on "elixir-yasnippets")
+(depends-on "smart-mode-line")
