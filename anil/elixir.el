@@ -27,7 +27,7 @@
 
 (require 'mix-format)
 (add-hook 'elixir-mode-hook
-          (lambda () (add-hook 'before-save-hook 'mix-format)))
+          (lambda () (add-hook 'before-save-hook 'mix-format-before-save)))
 
 ;; Flycheck Elixir
 (require 'flycheck-elixir)
