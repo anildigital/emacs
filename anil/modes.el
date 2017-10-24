@@ -289,5 +289,10 @@
 ;; undo tree
 (global-undo-tree-mode)
 
+;; dired-x mode
+(require 'dired-x)
+(setq-default dired-omit-files-p t)
+(setq dired-omit-files "^\\.[^.]\\|\\.beam$")
+
 ;; desktop-save mode
 (desktop-save-mode 1)
