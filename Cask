@@ -100,3 +100,4 @@
 (depends-on "dracula-theme")
 (depends-on "elixir-yasnippets")
 (depends-on "smart-mode-line")
+(depends-on "flyspell-popup")

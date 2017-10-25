@@ -201,6 +201,10 @@
 ;; Flycheck mode
 (add-hook 'after-init-hook #'global-flycheck-mode)
 
+;; Flyspell
+(require 'flyspell-popup)
+(add-hook 'prog-mode-hook 'flyspell-prog-mode)
+
 (require 'move-text)
 (move-text-default-bindings);
 

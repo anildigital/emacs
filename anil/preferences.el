@@ -12,6 +12,7 @@
 
 ; default tab width
 (setq-default tab-width 2)
+(setq tab-always-indent 'complete)
 
 ;; dired dwim target
 (setq dired-dwim-target t)
@@ -53,6 +54,11 @@
 (global-unset-key [(control x)(control z)])
 
 (delete-selection-mode 1)
+
+;;(setq visible-bell t)
+(setq ring-bell-function 'ignore)
+
+(setq x-stretch-cursor t)
 
 (provide 'preferences)
 ;;; preferences ends here

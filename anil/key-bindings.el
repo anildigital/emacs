@@ -54,6 +54,8 @@
 
 (global-set-key (kbd "C-S-c C-S-c") 'mc/edit-lines)
 
+(define-key flyspell-mode-map (kbd "C-;") #'flyspell-popup-correct)
+
 
 (global-set-key (kbd "C->") 'mc/mark-next-like-this)
 (global-set-key (kbd "C-<") 'mc/mark-previous-like-this)
