@@ -23,10 +23,9 @@
   '(diff-removed ((t (:foreground "red3"))) 'now)
   );
 
-;; neotre
-(require 'neotree)
-(setq neo-smart-open t)
-(setq projectile-switch-project-action 'neotree-projectile-action)
+;; treemacs
+(require 'treemacs)
+(require 'treemacs-projectile)
 
 ;; markdown mode
 (require 'markdown-mode)
