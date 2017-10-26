@@ -102,3 +102,4 @@
 (depends-on "elixir-yasnippets")
 (depends-on "smart-mode-line")
 (depends-on "flyspell-popup")
+(depends-on "browse-at-remote")

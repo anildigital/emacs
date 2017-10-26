@@ -296,8 +296,10 @@
 
 ;; dired-x mode
 (require 'dired-x)
-(setq-default dired-omit-files-p t)
 (setq dired-omit-files "^\\.[^.]\\|\\.beam$")
 
 ;; desktop-save mode
 (desktop-save-mode 1)
+
+;; browse-at-remote
+(require 'browse-at-remote)

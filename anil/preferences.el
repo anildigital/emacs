@@ -74,5 +74,7 @@
           treemacs-is-never-other-window      nil
           treemacs-goto-tag-strategy          'refetch-index)
 
+(setq projectile-switch-project-action 'treemacs-projectile)
+
 (provide 'preferences)
 ;;; preferences ends here

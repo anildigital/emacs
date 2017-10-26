@@ -76,9 +76,10 @@
 (require 'expand-region)
 (global-set-key (kbd "C-=") 'er/expand-region)
 
-;; neotree toggle
-(global-set-key (kbd "M-t c") 'transpose-chars)
+;; treemacs
+(define-key treemacs-mode-map (kbd "SPC") (lambda () (interactive) (treemacs-visit-node-no-split t)))
 (global-set-key (kbd "s-\\") 'treemacs-toggle)
+(global-set-key (kbd "C-c h h") 'browse-at-remote)
 
 ;; helm M-x
 (global-set-key (kbd "M-x") 'helm-M-x)
