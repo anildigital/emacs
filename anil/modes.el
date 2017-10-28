@@ -301,5 +301,13 @@
 ;; desktop-save mode
 (desktop-save-mode 1)
 
+;; hydra
+(require 'hydra)
+
+(defhydra hydra-zoom (global-map "<f2>")
+  "zoom"
+  ("g" text-scale-increase "in")
+  ("l" text-scale-decrease "out"))
+
 ;; browse-at-remote
 (require 'browse-at-remote)

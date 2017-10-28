@@ -33,6 +33,7 @@
 (load "elixir")
 (load "key-bindings")
 (load "fullscreen")
+(load "hydras")
 
 (server-start)
 
