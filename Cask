@@ -104,3 +104,5 @@
 (depends-on "flyspell-popup")
 (depends-on "browse-at-remote")
 (depends-on "hydra")
+(depends-on "tern")
+(depends-on "company-tern")
