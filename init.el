@@ -32,6 +32,7 @@
 (load "anil-clojure")
 (load "anil-coffee")
 (load "anil-markdown")
+(load "anil-recentf")
 (load "anil-magit")
 (load "anil-popwin")
 (load "anil-popup")
