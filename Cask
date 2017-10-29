@@ -101,7 +101,6 @@
 (depends-on "yasnippet-snippets")
 (depends-on "dracula-theme")
 (depends-on "elixir-yasnippets")
-(depends-on "smart-mode-line")
 (depends-on "flyspell-popup")
 (depends-on "browse-at-remote")
 (depends-on "hydra")

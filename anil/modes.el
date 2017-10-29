@@ -48,9 +48,6 @@
 ;; nyan-cat
 (nyan-mode 1)
 
-(sml/setup)
-
-;;
 (add-to-list 'auto-mode-alist '("Dockerfile" . dockerfile-mode))
 
 ;; Remove trailng whitespace on save
