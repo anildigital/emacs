@@ -1,7 +1,7 @@
-(require 'dired)
-
 ;; bind to hippie-expand .. default is 'just-one-space'
 (global-set-key "\M- " 'hippie-expand)
+
+;;magit
 (global-set-key "\C-xg" 'magit-status)
 
 ;; ctags
@@ -10,7 +10,8 @@
 (global-set-key "\M-*" 'pop-tag-mark)
 
 ;; Dired
-; - is `cd ..` (like vim)
+(require 'dired)
+																				; - is `cd ..` (like vim)i
 (define-key dired-mode-map "-" 'dired-up-directory)
 ; prefer dired over dumping dir list to buffer
 (global-set-key "\C-x\C-d" 'dired)
@@ -20,15 +21,15 @@
 (global-set-key (kbd "C-+") 'text-scale-increase)
 (global-set-key (kbd "C--") 'text-scale-decrease)
 
-
+;; ido
 (global-set-key "\C-xp" 'anil-ido-find-project)
+(global-set-key "\C-x\ \C-r" 'anil-recentf-ido-find-file)
 
 ;; Command + Return to go to newline
 (global-set-key [s-return] 'textmate-next-line)
 
 (global-set-key [S-escape] 'delete-other-windows)
 
-(global-set-key "\C-o" 'helm-imenu)
 
 (global-set-key (kbd "C-w") 'backward-kill-word)
 
@@ -37,8 +38,6 @@
 (global-set-key (kbd "C-c g") 'google-search)
 
 (global-set-key "\C-c\C-k" 'kill-region)
-
-(global-set-key "\C-x\ \C-r" 'anil-recentf-ido-find-file)
 
 ;; Ace jump
 (global-set-key (kbd "C-:") 'avy-goto-char)
@@ -54,17 +53,9 @@
 
 (global-set-key (kbd "C-S-c C-S-c") 'mc/edit-lines)
 
-(define-key flyspell-mode-map (kbd "C-;") #'flyspell-popup-correct)
-
-
 (global-set-key (kbd "C->") 'mc/mark-next-like-this)
 (global-set-key (kbd "C-<") 'mc/mark-previous-like-this)
 (global-set-key (kbd "C-c C-<") 'mc/mark-all-like-this)
-
-(require 'goto-chg)
-(global-set-key [(control ?.)] 'goto-last-change)
-(global-set-key [(control ?,)] 'goto-last-change-reverse)
-
 
 (global-set-key (kbd "C-S-<mouse-1>") 'mc/add-cursor-on-click)
 
@@ -77,12 +68,12 @@
 (global-set-key (kbd "C-=") 'er/expand-region)
 
 ;; treemacs
-(define-key treemacs-mode-map (kbd "SPC") (lambda () (interactive) (treemacs-visit-node-no-split t)))
-(global-set-key (kbd "s-\\") 'treemacs-toggle)
+(global-set-key (kbd "s-\\") 'treemacs-projectile)
 (global-set-key (kbd "C-c h h") 'browse-at-remote)
 
-;; helm M-x
+;; helm
 (global-set-key (kbd "M-x") 'helm-M-x)
+(global-set-key "\C-o" 'helm-imenu)
 
 ;; browse kill ring
 (global-set-key "\C-cy" 'browse-kill-ring)
@@ -100,19 +91,16 @@
 (global-set-key "\C-ca" 'org-agenda)
 (global-set-key "\C-cb" 'org-iswitchb)
 
-;; Web mode
-(define-key web-mode-map (kbd "M-n") 'web-mode-tag-match)
-
 ;; contextual backspace
 (global-set-key (kbd "C-<backspace>") 'contextual-backspace)
 
-;; yas
-(define-key yas-minor-mode-map (kbd "<tab>") nil)
-(define-key yas-minor-mode-map (kbd "TAB") nil)
-(define-key yas-minor-mode-map (kbd "<backtab>") 'yas-expand)
-
 ;;set shell file name (grep doesn't work fine with fish-shell)
 (setq shell-file-name "/bin/sh")
+
+(require 'goto-chg)
+(global-set-key [(control ?.)] 'goto-last-change)
+(global-set-key [(control ?,)] 'goto-last-change-reverse)
+
 
 (provide 'key-bindings)
 ;;; key-bindings.el ends here

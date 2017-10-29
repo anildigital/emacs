@@ -19,3 +19,8 @@
       '(("Slashdot"
          "http://rss.slashdot.org/Slashdot/slashdot"
          "/feeds.org" "Slashdot Entries")))
+
+
+;; Org mode
+(require 'org-bullets)
+(add-hook 'org-mode-hook (lambda () (org-bullets-mode 1)))

@@ -7,3 +7,7 @@
     (setq exec-path (split-string path-from-shell path-separator))))
 
 (when window-system (set-exec-path-from-shell-PATH))
+
+;; exec path from shell
+(when (memq window-system '(mac ns))
+  (exec-path-from-shell-initialize))
