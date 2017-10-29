@@ -26,21 +26,16 @@
 (global-git-gutter-mode +1)
 
 ;;
-(autoload
-  'ace-jump-mode
-  "ace-jump-mode"
-  "Emacs quick move minor mode"
-  t)
-
+(autoload 'ace-jump-mode "ace-jump-mode" "Emacs quick move minor mode" t)
 
 (require 'move-text)
-(move-text-default-bindings);
+(move-text-default-bindings)            ;
 
 ;; mutiple cursors
 (require 'multiple-cursors)
 
 
-(add-to-list 'auto-mode-alist '(".go" . go-mode));
+(add-to-list 'auto-mode-alist '(".go" . go-mode)) ;
 
 ;; less-mode
 (add-to-list 'auto-mode-alist '("\\.less$" . less-css-mode))
@@ -71,5 +66,8 @@
 
 ;; browse-at-remote
 (require 'browse-at-remote)
+
+;; elisp-format
+(require 'elisp-format)
 
 (provide 'modes)

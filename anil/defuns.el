@@ -47,6 +47,11 @@
   (interactive)
   (find-file "~/.emacs.d/init.el"))
 
+(defun eshell/clear ()
+  "Clear the eshell buffer."
+  (let ((inhibit-read-only t))
+    (erase-buffer)
+    (eshell-send-input)))
 
 (defun contextual-backspace ()
   "Hungry whitespace or delete word depending on context."

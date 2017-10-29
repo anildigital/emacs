@@ -21,6 +21,8 @@
          "/feeds.org" "Slashdot Entries")))
 
 
+(setq org-startup-with-inline-images t)
+
 ;; Org mode
 (require 'org-bullets)
 (add-hook 'org-mode-hook (lambda () (org-bullets-mode 1)))

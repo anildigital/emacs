@@ -35,11 +35,6 @@
 (global-hl-line-mode 1)
 (global-linum-mode 0)
 
-(add-hook 'writeroom-mode-hook #'git-gutter-mode 0)
-(add-hook 'writeroom-mode-hook #'linum-mode 0)
-
-(setq org-startup-with-inline-images t)
-
 (setq ediff-split-window-function 'split-window-horizontally)
 (setq ediff-diff-options "-w")
 
@@ -59,22 +54,6 @@
 (setq ring-bell-function 'ignore)
 
 (setq x-stretch-cursor t)
-
-
-(setq treemacs-follow-after-init          t
-          treemacs-width                      35
-          treemacs-indentation                2
-          treemacs-git-integration            t
-          treemacs-collapse-dirs              3
-          treemacs-silent-refresh             nil
-          treemacs-change-root-without-asking nil
-          treemacs-sorting                    'alphabetic-desc
-          treemacs-show-hidden-files          nil
-          treemacs-never-persist              nil
-          treemacs-is-never-other-window      nil
-          treemacs-goto-tag-strategy          'refetch-index)
-
-(setq projectile-switch-project-action 'treemacs-projectile)
 
 (provide 'preferences)
 ;;; preferences ends here
