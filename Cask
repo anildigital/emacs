@@ -3,6 +3,7 @@
 
 (depends-on "ruby-compilation")
 (depends-on "chruby")
+(depends-on "elisp-format")
 (depends-on "magit")
 (depends-on "evil")
 (depends-on "git-lens")
