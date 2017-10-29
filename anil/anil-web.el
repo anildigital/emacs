@@ -32,3 +32,4 @@
 
 ;; Web mode
 (define-key web-mode-map (kbd "M-n") 'web-mode-tag-match)
+

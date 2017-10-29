@@ -32,6 +32,3 @@
 (add-hook 'ruby-mode-hook
           (idle-highlight-mode t))
 
-
-(provide 'ruby)
-;;; ruby.el ends here

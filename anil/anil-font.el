@@ -5,6 +5,3 @@
 
 (add-to-list 'default-frame-alist (cons 'font anil-fav-font))
 (add-to-list 'initial-frame-alist (cons 'font anil-fav-font))
-
-(provide 'font)
-;;; font ends here

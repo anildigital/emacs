@@ -9,3 +9,4 @@
 (define-key yas-minor-mode-map (kbd "TAB") nil)
 (define-key yas-minor-mode-map (kbd "<backtab>") 'yas-expand)
 
+(provide 'yasnnipet)

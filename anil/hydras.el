@@ -37,3 +37,5 @@ Git gutter:
               (sit-for 0.1)
               (git-gutter:clear))
        :color blue))
+
+(provide 'hydras)

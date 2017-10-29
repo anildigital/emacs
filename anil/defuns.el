@@ -63,3 +63,6 @@
       (subword-backward-kill 1))
      (t
       (backward-kill-word 1)))))
+
+
+(provide 'defuns)

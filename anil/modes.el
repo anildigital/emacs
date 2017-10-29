@@ -74,3 +74,5 @@
 
 ;; browse-at-remote
 (require 'browse-at-remote)
+
+(provide 'modes)

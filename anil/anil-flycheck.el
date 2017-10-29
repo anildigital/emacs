@@ -7,3 +7,4 @@
 
 (require 'flyspell)
 (define-key flyspell-mode-map (kbd "C-;") #'flyspell-popup-correct)
+

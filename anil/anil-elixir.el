@@ -40,5 +40,3 @@
  '(flycheck-credo-setup))
 (add-hook 'elixir-mode-hook 'flycheck-mode)
 
-(provide 'elixir)
-;;; elixir ends here
