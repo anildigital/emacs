@@ -42,6 +42,7 @@
 (depends-on "projectile")
 (depends-on "helm")
 (depends-on "helm-projectile")
+(depends-on "helm-dash")
 (depends-on "ensime")
 (depends-on "scala-mode")
 (depends-on "sbt-mode")
@@ -106,3 +107,5 @@
 (depends-on "hydra")
 (depends-on "tern")
 (depends-on "company-tern")
+(depends-on "swiper")
+(depends-on "ivy")

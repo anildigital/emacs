@@ -70,4 +70,9 @@
 ;; elisp-format
 (require 'elisp-format)
 
+;; ivy-mode
+(ivy-mode 1)
+(setq ivy-use-virtual-buffers t)
+(setq enable-recursive-minibuffers t)
+
 (provide 'modes)

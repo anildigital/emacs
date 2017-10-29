@@ -101,6 +101,7 @@
 (global-set-key [(control ?.)] 'goto-last-change)
 (global-set-key [(control ?,)] 'goto-last-change-reverse)
 
+(global-set-key "\C-s" 'swiper)
 
 (provide 'key-bindings)
 ;;; key-bindings.el ends here
