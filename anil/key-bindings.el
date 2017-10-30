@@ -25,6 +25,9 @@
 (global-set-key "\C-xp" 'anil-ido-find-project)
 (global-set-key "\C-x\ \C-r" 'anil-recentf-ido-find-file)
 
+;; duplicate line
+(global-set-key (kbd "\C-c \C-d") 'anil-duplicate-line)
+
 ;; Command + Return to go to newline
 (global-set-key [s-return] 'textmate-next-line)
 

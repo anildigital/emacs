@@ -12,6 +12,16 @@
    (concat "~/Projects/" (ido-completing-read "Project: "
                                               (directory-files "~/Projects/" nil "^[^.]")))))
 
+(defun anil-duplicate-line ()
+  (interactive)
+  (move-beginning-of-line 1)
+  (kill-line)
+  (yank)
+  (open-line 1)
+  (next-line 1)
+  (yank)
+  )
+
 (defun anil-clean-slate ()
   "Kills all buffers except *scratch*"
   (interactive)
