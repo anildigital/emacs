@@ -23,7 +23,7 @@
 
 ;; ido
 (global-set-key "\C-xp" 'anil-ido-find-project)
-(global-set-key "\C-x\ \C-r" 'anil-recentf-ido-find-file)
+(global-set-key "\C-x\ \C-r" 'helm-recentf)
 
 ;; duplicate line
 (global-set-key (kbd "\C-c \C-d") 'anil-duplicate-line)
