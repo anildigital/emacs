@@ -30,7 +30,7 @@
 (add-hook 'find-file-hook (lambda() (highlight-phrase "\\(BUG\\|FIXME\\|TODO\\):")))
 
 ;; theme
-(load-theme 'dracula t)
+;(load-theme 'dracula t)
 
 (global-hl-line-mode 1)
 (global-linum-mode 0)

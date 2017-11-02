@@ -100,7 +100,7 @@
 (depends-on "use-package")
 (depends-on "yasnippet")
 (depends-on "yasnippet-snippets")
-(depends-on "dracula-theme")
+;;(depends-on "dracula-theme")
 (depends-on "elixir-yasnippets")
 (depends-on "flyspell-popup")
 (depends-on "browse-at-remote")
