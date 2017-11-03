@@ -60,6 +60,7 @@
 
 ;; undo tree
 (global-undo-tree-mode)
+(global-set-key (kbd "C-M-_") 'undo-tree-visualize)
 
 ;; desktop-save mode
 (desktop-save-mode 1)
