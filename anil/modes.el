@@ -76,4 +76,7 @@
 (setq ivy-use-virtual-buffers t)
 (setq enable-recursive-minibuffers t)
 
+;; swiper
+(setq ivy-use-virtual-buffers t)
+
 (provide 'modes)
