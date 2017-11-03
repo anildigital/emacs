@@ -20,6 +20,10 @@
 ;; default directory
 (setq default-directory (concat (getenv "HOME") "/"))
 
+;; ls dired settings
+(when (string= system-type "darwin")
+  (setq dired-use-ls-dired nil))
+
 ; ask y/n instead of yes/no
 (fset 'yes-or-no-p 'y-or-n-p)
 
