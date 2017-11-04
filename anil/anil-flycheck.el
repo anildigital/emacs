@@ -7,4 +7,4 @@
 
 (require 'flyspell)
 (define-key flyspell-mode-map (kbd "C-;") #'flyspell-popup-correct)
-
+(define-key flyspell-mode-map (kbd "C-.") #'goto-last-change)
