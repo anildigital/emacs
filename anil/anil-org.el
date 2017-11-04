@@ -1,6 +1,6 @@
 (add-to-list 'auto-mode-alist '("\\.org\\'" . org-mode))
 
-(setq org-directory "~/Dropbox/Org files")
+(setq org-directory "~/Dropbox/notes")
 ;; http://orgmode.org/manual/Setting-up-capture.html
 (setq org-default-notes-file (concat org-directory "/notes.org"))
 (setq org-agenda-files (list (concat org-directory "/notes.org")
