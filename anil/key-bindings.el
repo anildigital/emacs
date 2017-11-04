@@ -25,6 +25,9 @@
 (global-set-key "\C-xp" 'anil-ido-find-project)
 (global-set-key "\C-x\ \C-r" 'helm-recentf)
 
+;; projectile
+(define-key prog-mode-map (kbd "\C-c \C-p") 'treemacs-projectile)
+
 ;; duplicate line
 (global-set-key (kbd "\C-c \C-d") 'anil-duplicate-line)
 
@@ -71,7 +74,7 @@
 (global-set-key (kbd "C-=") 'er/expand-region)
 
 ;; treemacs
-(global-set-key (kbd "s-\\") 'treemacs-projectile)
+(global-set-key (kbd "s-\\") 'treemacs-projectile-toggle)
 (global-set-key (kbd "C-c h h") 'browse-at-remote)
 
 ;; helm

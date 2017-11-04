@@ -80,4 +80,8 @@
 ;; swiper
 (setq ivy-use-virtual-buffers t)
 
+;; ripgrep
+(require 'ripgrep)
+(require 'projectile-ripgrep)
+
 (provide 'modes)
