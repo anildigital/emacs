@@ -5,10 +5,11 @@
 (if (fboundp 'tool-bar-mode) (tool-bar-mode -1))
 (if (fboundp 'scroll-bar-mode) (scroll-bar-mode -1))
 
-; don't create backup files
-;(setq make-backup-files nil)
-;(setq create-lockfiles nil)
-;(setq auto-save-default nil)
+;; don't create backup files
+;;(setq make-backup-files nil)
+;;(setq create-lockfiles nil)
+;;(setq auto-save-default nil)
+(setq backup-directory-alist `(("." . "~/.saves")))
 
 ; default tab width
 (setq-default tab-width 2)
@@ -34,7 +35,9 @@
 (add-hook 'find-file-hook (lambda() (highlight-phrase "\\(BUG\\|FIXME\\|TODO\\):")))
 
 ;; theme
-;(load-theme 'dracula t)
+;;(load-theme 'dracula t)
+(unless (display-graphic-p)
+  (load-theme 'wheatgrass))
 
 (global-hl-line-mode 1)
 (global-linum-mode 0)
