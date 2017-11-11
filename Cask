@@ -110,3 +110,4 @@
 (depends-on "company-tern")
 (depends-on "swiper")
 (depends-on "ivy")
+(depends-on "fish-completion")
