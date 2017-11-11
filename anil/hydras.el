@@ -7,7 +7,19 @@
   ("l" text-scale-decrease "out"))
 
 
+(defhydra hydra-undo-tree (:color yellow
+                                  :hint nil
+                                  )
+  "
+  _p_: undo  _n_: redo _s_: save _l_: load   "
+  ("p"   undo-tree-undo)
+  ("n"   undo-tree-redo)
+  ("s"   undo-tree-save-history)
+  ("l"   undo-tree-load-history)
+  ("u"   undo-tree-visualize "visualize" :color blue)
+  ("q"   nil "quit" :color blue))
 
+(global-set-key (kbd "M-,") 'hydra-undo-tree/undo-tree-undo) ;; or whatever
 
 
 (defhydra hydra-git-gutter (:body-pre (git-gutter-mode 1)
@@ -36,6 +48,20 @@ Git gutter:
               ;; clear the markup right away
               (sit-for 0.1)
               (git-gutter:clear))
-       :color blue))
+   :color blue))
+
+
+
+(defhydra hydra-global-org (:color blue)
+  "Org"
+  ("t" org-timer-start "Start Timer")
+  ("s" org-timer-stop "Stop Timer")
+  ("r" org-timer-set-timer "Set Timer") ; This one requires you be in an orgmode doc, as it sets the timer for the header
+  ("p" org-timer "Print Timer") ; output timer value to buffer
+  ("w" (org-clock-in '(4)) "Clock-In") ; used with (org-clock-persistence-insinuate) (setq org-clock-persist t)
+  ("o" org-clock-out "Clock-Out") ; you might also want (setq org-log-note-clock-out t)
+  ("j" org-clock-goto "Clock Goto") ; global visit the clocked task
+  ("c" org-capture "Capture") ; Don't forget to define the captures you want http://orgmode.org/manual/Capture.html
+  ("l" org-capture-goto-last-stored "Last Capture"))
 
 (provide 'hydras)
