@@ -58,9 +58,10 @@
 (load "anil-projectile")
 (load "preferences")
 (load "key-bindings")
+(org-agenda-list)
 
 (server-start)
 
-(provide 'init)
 
+(provide 'init)
 ;;; init.el ends here

@@ -3,8 +3,12 @@
 (setq org-directory "~/Dropbox/notes")
 ;; http://orgmode.org/manual/Setting-up-capture.html
 (setq org-default-notes-file (concat org-directory "/notes.org"))
+
 (setq org-agenda-files (list (concat org-directory "/notes.org")
-                             (concat org-directory "/inbox.org")))
+                             (concat org-directory "/inbox.org")
+                             (concat org-directory "/todo.org")
+
+))
 
 
 ;; http://orgmode.org/manual/Closing-items.html
