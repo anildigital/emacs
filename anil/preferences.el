@@ -39,7 +39,7 @@
 (unless (display-graphic-p)
   (load-theme 'wheatgrass))
 
-(global-hl-line-mode 1)
+;; (global-hl-line-mode 1)
 (global-linum-mode 0)
 
 (setq ediff-split-window-function 'split-window-horizontally)
