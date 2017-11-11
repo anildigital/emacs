@@ -110,4 +110,6 @@
 (depends-on "company-tern")
 (depends-on "swiper")
 (depends-on "ivy")
+(depends-on "ox-pandoc")
+(depends-on "helm-org-rifle")
 (depends-on "fish-completion")
