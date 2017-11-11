@@ -47,6 +47,7 @@
 
 ;; Remove trailng whitespace on save
 (add-hook 'before-save-hook 'delete-trailing-whitespace)
+(add-hook 'prog-mode-hook 'subword-mode)
 
 ;; winner mode
 (winner-mode 1)
