@@ -77,6 +77,9 @@
 ;; elisp-format
 (require 'elisp-format)
 
+;; Erlang mode
+(add-to-list 'auto-mode-alist '("\\.*erl\\'" . erlang-mode))
+
 ;; ivy-mode
 (ivy-mode 1)
 (setq ivy-use-virtual-buffers t)

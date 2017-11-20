@@ -113,3 +113,4 @@
 (depends-on "ox-pandoc")
 (depends-on "helm-org-rifle")
 (depends-on "fish-completion")
+(depends-on "erlang")
