@@ -114,3 +114,4 @@
 (depends-on "helm-org-rifle")
 (depends-on "fish-completion")
 (depends-on "erlang")
+(depends-on "smart-mode-line")
