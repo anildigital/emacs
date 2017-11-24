@@ -96,6 +96,8 @@
 (global-set-key "\C-cc" 'org-capture)
 (global-set-key "\C-ca" 'org-agenda)
 (global-set-key "\C-cb" 'org-iswitchb)
+(define-key org-mode-map (kbd "\C-cf") 'anil/org-narrow-forward)
+(define-key org-mode-map (kbd "\C-cb") 'anil/org-narrow-backward)
 
 ;; contextual backspace
 (global-set-key (kbd "C-<backspace>") 'contextual-backspace)

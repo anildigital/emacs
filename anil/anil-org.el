@@ -1,6 +1,6 @@
 (add-to-list 'auto-mode-alist '("\\.org\\'" . org-mode))
 
-(setq org-directory "~/Dropbox/notes")
+(setq org-directory "~/org")
 ;; http://orgmode.org/manual/Setting-up-capture.html
 (setq org-default-notes-file (concat org-directory "/notes.org"))
 
@@ -24,6 +24,24 @@
          "http://rss.slashdot.org/Slashdot/slashdot"
          "/feeds.org" "Slashdot Entries")))
 
+
+(defun anil/org-narrow-forward ()
+  "Move to the next subtree at same level, and narrow to it."
+  (interactive)
+  (widen)
+  (org-forward-heading-same-level 1)
+  (org-narrow-to-subtree))
+
+
+(defun anil/org-narrow-backward ()
+  "Move to the next subtree at same level, and narrow to it."
+  (interactive)
+  (widen)
+  (org-backward-heading-same-level 1)
+  (org-narrow-to-subtree))
+;;
+(setq org-startup-indented t)
+(setq org-startup-folded "showall")
 
 (setq org-startup-with-inline-images t)
 
