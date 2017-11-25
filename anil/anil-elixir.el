@@ -40,3 +40,4 @@
  '(flycheck-credo-setup))
 (add-hook 'elixir-mode-hook 'flycheck-mode)
 
+(add-hook 'elixir-mode-hook #'smartparens-mode)
