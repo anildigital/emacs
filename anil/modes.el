@@ -22,8 +22,13 @@
 ;; Guru mode
 (guru-global-mode +1)
 
-;; Git Gutter
-(global-git-gutter-mode +1)
+;; diff-hl mode
+(diff-hl-mode 1)
+(diff-hl-dired-mode 1)
+(diff-hl-flydiff-mode 1)
+(diff-hl-margin-mode 1)
+(diff-hl-amend-mode 1)
+(add-hook 'magit-post-refresh-hook 'diff-hl-magit-post-refresh)
 
 ;;
 (autoload 'ace-jump-mode "ace-jump-mode" "Emacs quick move minor mode" t)

@@ -7,7 +7,6 @@
 (depends-on "magit")
 (depends-on "evil")
 (depends-on "git-lens")
-(depends-on "git-gutter")
 (depends-on "markdown-mode")
 (depends-on "polymode")
 (depends-on "writeroom-mode")
@@ -115,3 +114,4 @@
 (depends-on "fish-completion")
 (depends-on "erlang")
 (depends-on "smart-mode-line")
+(depends-on "diff-hl")
