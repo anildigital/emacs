@@ -63,6 +63,7 @@
 ;; which key
 (require 'which-key)
 (which-key-mode)
+(which-key-setup-side-window-right)
 
 ;; undo tree
 (global-undo-tree-mode)
