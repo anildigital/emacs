@@ -4,6 +4,3 @@
   (define-key writeroom-mode-map (kbd "C-M-<") #'writeroom-decrease-width)
   (define-key writeroom-mode-map (kbd "C-M->") #'writeroom-increase-width)
   (define-key writeroom-mode-map (kbd "C-M-=") #'writeroom-adjust-width))
-
-(add-hook 'writeroom-mode-hook #'git-gutter-mode 0)
-(add-hook 'writeroom-mode-hook #'linum-mode 0)
