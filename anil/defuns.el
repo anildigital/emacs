@@ -54,7 +54,10 @@
   "Clear the eshell buffer."
   (let ((inhibit-read-only t))
     (erase-buffer)
-    (eshell-send-input)))
+    (eshell-send-input)
+		(recenter-top-bottom)
+		(recenter-top-bottom)
+		))
 
 (defun contextual-backspace ()
   "Hungry whitespace or delete word depending on context."
