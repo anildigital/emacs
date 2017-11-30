@@ -29,6 +29,7 @@
 (diff-hl-margin-mode 1)
 (diff-hl-amend-mode 1)
 (add-hook 'magit-post-refresh-hook 'diff-hl-magit-post-refresh)
+(add-hook 'prog-mode-hook 'diff-hl-mode)
 
 ;;
 (autoload 'ace-jump-mode "ace-jump-mode" "Emacs quick move minor mode" t)
