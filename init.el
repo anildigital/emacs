@@ -58,7 +58,7 @@
 (load "anil-projectile")
 (load "preferences")
 (load "key-bindings")
-(org-agenda-list)
+(add-hook 'after-init-hook 'org-agenda-list)
 
 (server-start)
 
