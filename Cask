@@ -115,3 +115,5 @@
 (depends-on "erlang")
 (depends-on "smart-mode-line")
 (depends-on "diff-hl")
+(depends-on "terraform-mode")
+(depends-on "restclient")
