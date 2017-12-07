@@ -15,9 +15,6 @@
 (setq org-log-done 'time)
 (setq org-log-done 'note)
 
-;; http://orgmode.org/manual/Weekly_002fdaily-agenda.html
-(setq org-agenda-include-diary t)
-
 
 (setq org-feed-alist
       '(("Slashdot"
