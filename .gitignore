@@ -25,3 +25,4 @@ tutorial
 games
 desktop/emacs.desktop
 desktop/lock
+.private.el
