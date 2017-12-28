@@ -19,7 +19,7 @@
 (setq org-feed-alist
       '(("Slashdot"
          "http://rss.slashdot.org/Slashdot/slashdot"
-         "/feeds.org" "Slashdot Entries")))
+         "~/org/feeds.org" "Slashdot Entries")))
 
 
 (defun anil/org-narrow-forward ()
