@@ -36,11 +36,8 @@
                        'face 'circe-prompt-face)
            " ")))
 
-(setq circe-format-say "{nick:-16s} {body}")
-
 (load "lui-logging" nil t)
 (enable-lui-logging-globally)
-
 
 (setq lui-track-bar-behavior 'before-switch-to-buffer)
 (enable-lui-track-bar)
