@@ -19,6 +19,9 @@
 ;; Scala mode
 (add-to-list 'auto-mode-alist '("\\.scala?\\'" . scala-mode))
 
+;; nov mode
+(add-to-list 'auto-mode-alist '("\\.epub\\'" . nov-mode))
+
 ;; Guru mode
 (guru-global-mode +1)
 
