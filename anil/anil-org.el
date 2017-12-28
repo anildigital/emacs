@@ -45,3 +45,10 @@
 ;; Org mode
 (require 'org-bullets)
 (add-hook 'org-mode-hook (lambda () (org-bullets-mode 1)))
+
+
+;; Treemacs fix
+(with-eval-after-load 'org
+    (defun org-switch-to-buffer-other-window (&rest args)
+      "Same as the original, but lacking the wrapping call to `org-no-popups'"
+      (apply 'switch-to-buffer-other-window args)))
