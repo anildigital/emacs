@@ -59,5 +59,9 @@
 
 (setq x-stretch-cursor t)
 
+(setq nov-text-width 80)
+
+(setq company-show-numbers t)
+
 (provide 'preferences)
 ;;; preferences ends here
