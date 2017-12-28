@@ -113,4 +113,8 @@
 (sml/setup)
 (setq sml/theme 'dark)
 
+;;dimmer
+(require 'dimmer)
+(dimmer-activate)
+
 (provide 'modes)
