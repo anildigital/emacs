@@ -120,3 +120,4 @@
 (depends-on "terraform-mode")
 (depends-on "restclient")
 (depends-on "dimmer")
+(depends-on "ag")

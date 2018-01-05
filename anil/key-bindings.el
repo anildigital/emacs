@@ -51,6 +51,7 @@
 (global-set-key (kbd "M-g f") 'avy-goto-line)
 (global-set-key (kbd "M-g e") 'avy-goto-word-0)
 (global-set-key (kbd "M-g w") 'avy-goto-word-1)
+(global-set-key (kbd "M-g t") 'avy-goto-char-timer)
 (global-set-key (kbd "C-c j") 'avy-goto-word-or-subword-1)
 (global-set-key (kbd "s-.") 'avy-goto-word-or-subword-1)
 
@@ -62,6 +63,8 @@
 (global-set-key (kbd "C->") 'mc/mark-next-like-this)
 (global-set-key (kbd "C-<") 'mc/mark-previous-like-this)
 (global-set-key (kbd "C-c C-<") 'mc/mark-all-like-this)
+
+(global-set-key (kbd "C-c C-f") 'copy-file-name-to-clipboard)
 
 (global-set-key (kbd "C-S-<mouse-1>") 'mc/add-cursor-on-click)
 
