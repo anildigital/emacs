@@ -1,6 +1,6 @@
 ;; chruby
 (require 'chruby)
-(chruby "ruby-2.3.3")
+(chruby "ruby-2.5.0")
 
 (eval-after-load 'ruby-mode
   '(progn
