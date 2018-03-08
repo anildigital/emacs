@@ -112,7 +112,5 @@
 
 (global-set-key "\M-gs" 'swiper)
 
-(define-key org-mode-map "\M-q" 'toggle-truncate-lines)
-
 (provide 'key-bindings)
 ;;; key-bindings.el ends here
