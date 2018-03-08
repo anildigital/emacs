@@ -11,7 +11,7 @@
 (setq alchemist-buffer-status-modeline nil)
 (setq alchemist-key-command-prefix (kbd "C-c ,")) ;; default: (kbd "C-c a")
 (setq alchemist-test-mode-highlight-tests nil) ;; default t
-(setq alchemist-hooks-test-on-save t)
+(setq alchemist-hooks-test-on-save nil)
 
 (require 'elixir-mode)
 
