@@ -14,3 +14,8 @@
 (add-hook 'js2-mode-hook (lambda ()
                            (tern-mode)
                            (company-mode)))
+
+
+(setq js-indent-level 2)
+(setq-default indent-tabs-mode nil)
+(setq javascript-indent-level 2)
