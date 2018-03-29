@@ -121,3 +121,5 @@
 (depends-on "restclient")
 (depends-on "dimmer")
 (depends-on "ag")
+(depends-on "graphql-mode")
+(depends-on "nvm")
