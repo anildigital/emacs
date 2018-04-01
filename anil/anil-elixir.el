@@ -25,7 +25,7 @@
 
 
 
-(require 'mix-format)
+(require 'elixir-format)
 (add-hook 'elixir-mode-hook
           (lambda () (add-hook 'before-save-hook 'mix-format-before-save)))
 
