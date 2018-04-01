@@ -47,7 +47,6 @@
 (load "anil-yasnippet")
 (load "anil-textmate")
 (load "anil-ispell")
-(load "anil-irc")
 (load "anil-org")
 (load "anil-elixir")
 (load "fullscreen")
