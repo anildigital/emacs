@@ -37,7 +37,7 @@
 ;; theme
 (load-theme 'dracula t)
 (unless (display-graphic-p)
-  (load-theme 'wheatgrass))
+  (load-theme 'wombat))
 
 (setq ediff-split-window-function 'split-window-horizontally)
 (setq ediff-diff-options "-w")
