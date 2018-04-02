@@ -123,3 +123,4 @@
 (depends-on "ag")
 (depends-on "graphql-mode")
 (depends-on "nvm")
+(depends-on "indium")
