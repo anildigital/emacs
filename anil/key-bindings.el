@@ -36,6 +36,7 @@
 
 (global-set-key [S-escape] 'delete-other-windows)
 
+(global-set-key (kbd "C-o") 'other-window)
 
 (global-set-key (kbd "C-w") 'backward-kill-word)
 
@@ -82,7 +83,7 @@
 
 ;; helm
 (global-set-key (kbd "M-x") 'helm-M-x)
-(global-set-key "\C-o" 'helm-imenu)
+(global-set-key (kbd "C-M-o") 'helm-imenu)
 
 ;; browse kill ring
 (global-set-key "\C-cy" 'browse-kill-ring)
