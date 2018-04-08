@@ -110,4 +110,9 @@ Version 2017-11-02"
       (kill-new filename)
       (message "Copied buffer file name '%s' to the clipboard." filename))))
 
+
+(defun nuke_traling ()
+  (add-hook 'before-save-hook #'delete-trailing-whitespace nil t))
+
+
 (provide 'defuns)

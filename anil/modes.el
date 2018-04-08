@@ -72,6 +72,9 @@
 (global-undo-tree-mode)
 (global-set-key (kbd "C-M-_") 'undo-tree-visualize)
 
+;; On save remove trailing white space
+(add-hook 'prog-mode-hook #'nuke_traling)
+
 ;; desktop-save mode
 ;; Automatically save and restore sessions
 (setq desktop-path (list "~/emacs-server"))
