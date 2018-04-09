@@ -34,7 +34,7 @@
   :type 'string
   :group 'elixir-format)
 
-(defcustom elixir-format-mix-path "/root/.asdf/shims/mix"
+(defcustom elixir-format-mix-path "/usr/local/bin/mix"
   "Path to the 'mix' executable."
   :type 'string
   :group 'elixir-format)
