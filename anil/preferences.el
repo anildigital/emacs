@@ -63,5 +63,7 @@
 
 (setq company-show-numbers t)
 
+(define-key helm-map (kbd "<tab>") 'helm-execute-persistent-action)
+
 (provide 'preferences)
 ;;; preferences ends here
