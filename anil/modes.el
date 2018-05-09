@@ -80,11 +80,6 @@
 (setq desktop-path (list "~/emacs-server"))
 (desktop-save-mode 1)
 
-;;
-(when (and (executable-find "fish")
-           (require 'fish-completion nil t))
-  (global-fish-completion-mode))
-
 ;; browse-at-remote
 (require 'browse-at-remote)
 
