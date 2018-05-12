@@ -16,6 +16,6 @@
                            (company-mode)))
 
 
-(setq js-indent-level 2)
+(setq js-indent-level 4)
 (setq-default indent-tabs-mode nil)
-(setq javascript-indent-level 2)
+(setq javascript-indent-level 4)
