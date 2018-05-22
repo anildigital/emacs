@@ -25,9 +25,6 @@
 (global-set-key "\C-xp" 'anil-ido-find-project)
 (global-set-key "\C-x\ \C-r" 'helm-recentf)
 
-;; projectile
-(define-key prog-mode-map (kbd "\C-c \C-p") 'treemacs-projectile)
-
 ;; duplicate line
 (global-set-key (kbd "\C-c \C-d") 'anil-duplicate-line)
 
@@ -78,8 +75,13 @@
 (global-set-key (kbd "C-=") 'er/expand-region)
 
 ;; treemacs
-(global-set-key (kbd "s-\\") 'treemacs-projectile-toggle)
+(global-set-key (kbd "s-\\") 'treemacs)
 (global-set-key (kbd "C-c h h") 'browse-at-remote)
+(define-key prog-mode-map (kbd "\C-c \C-p") 'treemacs-projectile)
+
+
+(global-set-key (kbd "s-=") 'text-scale-increase)
+(global-set-key (kbd "s--") 'text-scale-decrease)
 
 ;; helm
 (global-set-key (kbd "M-x") 'helm-M-x)
@@ -115,6 +117,9 @@
 
 (global-set-key "\M-gs" 'swiper)
 (global-set-key "\C-s" 'swiper)
+
+;; ivy
+(global-set-key (kbd "C-c C-r") 'ivy-resume)
 
 (provide 'key-bindings)
 ;;; key-bindings.el ends here

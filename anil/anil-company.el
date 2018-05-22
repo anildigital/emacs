@@ -7,4 +7,4 @@
 ;; Robe backend for company mode
 (eval-after-load 'company '(push 'company-robe company-backends))
 
-(add-to-list 'company-backends 'company-tern)
+;(add-to-list 'company-backends 'company-tern)

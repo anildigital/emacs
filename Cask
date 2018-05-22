@@ -72,8 +72,6 @@
 (depends-on "treemacs")
 (depends-on "treemacs-projectile")
 (depends-on "react-snippets")
-(depends-on "tern")
-(depends-on "company-tern")
 (depends-on "browse-kill-ring")
 (depends-on "less-css-mode")
 (depends-on "ido-vertical-mode")
