@@ -15,19 +15,10 @@
 
 (require 'elixir-mode)
 
-
-;; elixir-mode hook
+;; Create a buffer-local hook to run elixir-format on save, only when we enable elixir-mode.
 (add-hook 'elixir-mode-hook
-          '(lambda ()
-             (add-hook 'before-save-hook
-                       (lambda ()
-                         (untabify (point-min) (point-max))))))
+          (lambda () (add-hook 'before-save-hook 'elixir-format nil t)))
 
-
-
-(require 'elixir-format)
-(add-hook 'elixir-mode-hook
-          (lambda () (add-hook 'before-save-hook 'mix-format-before-save)))
 
 ;; Flycheck Elixir
 (require 'flycheck-elixir)
