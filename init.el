@@ -39,7 +39,7 @@
 (load "anil-polymode")
 (load "anil-scala")
 (load "anil-ensime")
-;(load "anil-treemacs")
+(load "anil-treemacs")
 (load "anil-uniquify")
 (load "anil-web")
 (load "anil-writeroom")
