@@ -31,6 +31,9 @@
 ; Enable paren mode
 (show-paren-mode t)
 
+;; Global linum mode
+(global-linum-mode 1)
+
 ;; highlight TODOs etc.
 (add-hook 'find-file-hook (lambda() (highlight-phrase "\\(BUG\\|FIXME\\|TODO\\):")))
 
