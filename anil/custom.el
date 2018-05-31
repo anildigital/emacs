@@ -4,13 +4,15 @@
  ;; Your init file should contain only one such instance.
  ;; If there is more than one, they won't work right.
  '(coffee-tab-width 2 t)
+ '(custom-enabled-themes (quote (smart-mode-line-dark)))
+ '(custom-safe-themes
+   (quote
+    ("a27c00821ccfd5a78b01e4f35dc056706dd9ede09a8b90c6955ae6a390eb1c1e" "3c83b3676d796422704082049fc38b6966bcad960f896669dfc21a7a37a748fa" default)))
  '(flycheck-coffeelintrc "~/.emacs.d/coffeelint.json")
  '(magit-revision-show-gravatars (quote ("^Author:     " . "^Commit:     ")))
  '(mixfmt-elixir "/usr/local/bin/elixir")
  '(mixfmt-mix "/usr/local/bin/mix")
- '(package-selected-packages
-   (quote
-    discover-my-major))
+ '(package-selected-packages (quote discover-my-major))
  '(safe-local-variable-values (quote ((whitespace-action))))
  '(send-mail-function (quote smtpmail-send-it))
  '(smtpmail-smtp-server "smtp.gmail.com")

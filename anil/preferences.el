@@ -37,6 +37,9 @@
 ;; highlight TODOs etc.
 (add-hook 'find-file-hook (lambda() (highlight-phrase "\\(BUG\\|FIXME\\|TODO\\):")))
 
+;; Auto save visited mode
+(auto-save-visited-mode)
+
 ;; theme
 (load-theme 'dracula t)
 (unless (display-graphic-p)
@@ -67,6 +70,15 @@
 (setq company-show-numbers t)
 
 (define-key helm-map (kbd "<tab>") 'helm-execute-persistent-action)
+
+(add-to-list 'default-frame-alist '(ns-transparent-titlebar . t))
+(add-to-list 'default-frame-alist '(ns-appearance . dark))
+
+(setq mac-command-key-is-meta nil)
+(setq mac-command-modifier 'super)
+(setq mac-option-key-is-meta t)
+(setq mac-option-modifier 'meta)
+(setq frame-title-format '("%b"))
 
 (provide 'preferences)
 ;;; preferences ends here

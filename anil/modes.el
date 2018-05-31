@@ -110,5 +110,6 @@
 ;;dimmer
 (require 'dimmer)
 (dimmer-activate)
+(setq dimmer-fraction 0.3)
 
 (provide 'modes)
