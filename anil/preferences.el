@@ -74,10 +74,20 @@
 (add-to-list 'default-frame-alist '(ns-transparent-titlebar . t))
 (add-to-list 'default-frame-alist '(ns-appearance . dark))
 
+
+;; for railwaycat emacs
 (setq mac-command-key-is-meta nil)
 (setq mac-command-modifier 'super)
 (setq mac-option-key-is-meta t)
 (setq mac-option-modifier 'meta)
+(global-set-key [(s a)] 'mark-whole-buffer)
+(global-set-key [(s v)] 'yank)
+(global-set-key [(s c)] 'kill-ring-save)
+(global-set-key [(s s)] 'save-buffer)
+(global-set-key [(s l)] 'goto-line)
+(global-set-key [(s w)]
+                (lambda () (interactive) (delete-window)))
+(global-set-key [(s z)] 'undo)
 (setq frame-title-format '("%b"))
 
 (provide 'preferences)
