@@ -93,7 +93,6 @@
 ;; helm
 (global-set-key (kbd "M-x") 'helm-M-x)
 (global-set-key (kbd "C-M-o") 'helm-imenu)
-(global-set-key (kbd "C-x C-f") 'helm-find-files)
 
 
 ;; browse kill ring
