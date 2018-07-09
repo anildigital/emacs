@@ -77,7 +77,6 @@
 
 ;; desktop-save mode
 ;; Automatically save and restore sessions
-(setq desktop-path (list "~/emacs-server"))
 (desktop-save-mode 1)
 
 ;; browse-at-remote
