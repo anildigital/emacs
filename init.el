@@ -28,7 +28,6 @@
 (load "anil-js")
 (load "anil-elm")
 (load "anil-company")
-(load "anil-coffee")
 (load "anil-markdown")
 (load "anil-recentf")
 (load "anil-magit")

@@ -18,7 +18,6 @@
 (depends-on "dash-at-point")
 (depends-on "gist")
 (depends-on "yaml-mode")
-(depends-on "coffee-mode")
 (depends-on "elm-mode")
 (depends-on "cider")
 (depends-on "go-mode")
