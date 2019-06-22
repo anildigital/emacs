@@ -79,7 +79,7 @@
 (global-set-key (kbd "C-=") 'er/expand-region)
 
 ;; treemacs
-(global-set-key (kbd "s-0") 'treemacs)
+(global-set-key (kbd "s-1") 'treemacs)
 (global-set-key (kbd "C-c h h") 'browse-at-remote)
 (define-key prog-mode-map (kbd "\C-c \C-p") 'treemacs-projectile)
 (global-set-key (kbd "C-x 1") 'treemacs-delete-other-windows)
