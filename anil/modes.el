@@ -16,9 +16,6 @@
 ;; Python mode
 (add-to-list 'auto-mode-alist '("\\.py?\\'" . python-mode))
 
-;; Scala mode
-(add-to-list 'auto-mode-alist '("\\.scala?\\'" . scala-mode))
-
 ;; nov mode
 (add-to-list 'auto-mode-alist '("\\.epub\\'" . nov-mode))
 
