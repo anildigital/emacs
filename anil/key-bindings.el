@@ -79,24 +79,18 @@
 (global-set-key (kbd "C-=") 'er/expand-region)
 
 ;; treemacs
-(global-set-key (kbd "C-M-s-|") 'treemacs)
+(global-set-key (kbd "s-0") 'treemacs)
 (global-set-key (kbd "C-c h h") 'browse-at-remote)
 (define-key prog-mode-map (kbd "\C-c \C-p") 'treemacs-projectile)
 (global-set-key (kbd "C-x 1") 'treemacs-delete-other-windows)
-
 
 (global-set-key (kbd "s-=") 'text-scale-increase)
 (global-set-key (kbd "s--") 'text-scale-decrease)
 (global-set-key (kbd "s-s") 'save-buffer)
 
-
 ;; helm
 (global-set-key (kbd "M-x") 'helm-M-x)
 (global-set-key (kbd "C-M-o") 'helm-imenu)
-
-
-;; browse kill ring
-(global-set-key "\C-cy" 'browse-kill-ring)
 
 ;; Add pound
 (when (eq system-type 'darwin)

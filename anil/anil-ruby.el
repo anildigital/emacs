@@ -1,6 +1,7 @@
-;; chruby
-(require 'chruby)
-(chruby "ruby-2.5.0")
+(require 'rbenv)
+(global-rbenv-mode)
+
+(require 'rubocop)
 
 (eval-after-load 'ruby-mode
   '(progn
@@ -27,8 +28,3 @@
                          indentation space-after-tab))
 
 (add-hook 'ruby-mode-hook (lambda () (subword-mode 1)))
-
-
-(add-hook 'ruby-mode-hook
-          (idle-highlight-mode t))
-

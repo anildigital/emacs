@@ -48,9 +48,6 @@
 ;; less-mode
 (add-to-list 'auto-mode-alist '("\\.less$" . less-css-mode))
 
-;; nyan-cat
-(nyan-mode 1)
-
 (add-to-list 'auto-mode-alist '("Dockerfile" . dockerfile-mode))
 
 ;; Remove trailng whitespace on save
@@ -67,10 +64,6 @@
 (require 'which-key)
 (which-key-mode)
 (which-key-setup-side-window-right)
-
-;; undo tree
-(global-undo-tree-mode)
-(global-set-key (kbd "C-M-_") 'undo-tree-visualize)
 
 ;; On save remove trailing white space
 (add-hook 'prog-mode-hook #'nuke_traling)

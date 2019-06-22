@@ -6,22 +6,6 @@
   ("g" text-scale-increase "in")
   ("l" text-scale-decrease "out"))
 
-
-(defhydra hydra-undo-tree (:color yellow
-                                  :hint nil
-                                  )
-  "
-  _p_: undo  _n_: redo _s_: save _l_: load   "
-  ("p"   undo-tree-undo)
-  ("n"   undo-tree-redo)
-  ("s"   undo-tree-save-history)
-  ("l"   undo-tree-load-history)
-  ("u"   undo-tree-visualize "visualize" :color blue)
-  ("q"   nil "quit" :color blue))
-
-(global-set-key (kbd "M-,") 'hydra-undo-tree/undo-tree-undo) ;; or whatever
-
-
 (defhydra hydra-git-gutter (:body-pre (git-gutter-mode 1)
                             :hint nil)
   "
