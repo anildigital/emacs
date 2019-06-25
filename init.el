@@ -23,7 +23,6 @@
 (load "anil-ruby")
 (load "anil-dash")
 (load "anil-helm")
-(load "anil-dired")
 (load "anil-flycheck")
 (load "anil-js")
 (load "anil-elm")
