@@ -115,4 +115,18 @@ Version 2017-11-02"
   (add-hook 'before-save-hook #'delete-trailing-whitespace nil t))
 
 
+(defun anil/org-narrow-forward ()
+  "Move to the next subtree at same level, and narrow to it."
+  (interactive)
+  (widen)
+  (org-forward-heading-same-level 1)
+  (org-narrow-to-subtree))
+
+(defun anil/org-narrow-backward ()
+  "Move to the next subtree at same level, and narrow to it."
+  (interactive)
+  (widen)
+  (org-backward-heading-same-level 1)
+  (org-narrow-to-subtree))
+
 (provide 'defuns)

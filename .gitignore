@@ -28,3 +28,4 @@ desktop/lock
 .private.el
 magit-process: emacs
 transient
+bookmarks

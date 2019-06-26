@@ -84,6 +84,17 @@
 (define-key prog-mode-map (kbd "\C-c \C-p") 'treemacs-projectile)
 (global-set-key (kbd "C-x 1") 'treemacs-delete-other-windows)
 
+;; projectile
+;; Press Command-p for fuzzy find in project
+(global-set-key (kbd "s-p") 'projectile-find-file)
+(global-set-key (kbd "s-e") 'projectile-recentf)
+;; Press Command-b for fuzzy switch buffer
+(global-set-key (kbd "s-b") 'projectile-switch-to-buffer)
+
+;;org-projectile
+(global-set-key (kbd "C-c c") 'org-capture)
+(global-set-key (kbd "C-c n p") 'org-projectile-project-todo-completing-read)
+
 (global-set-key (kbd "s-=") 'text-scale-increase)
 (global-set-key (kbd "s--") 'text-scale-decrease)
 (global-set-key (kbd "s-s") 'save-buffer)
