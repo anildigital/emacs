@@ -11,9 +11,7 @@
 
 
 (setq org-agenda-files (list (concat org-directory "/notes.org")
-                             (concat org-directory "/inbox.org")
 ))
-
 
 ;; http://orgmode.org/manual/Closing-items.html
 (setq org-log-done 'time)

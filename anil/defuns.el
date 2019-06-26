@@ -15,6 +15,12 @@
   (yank)
   )
 
+(defun anil-new-line-jump-to-it ()
+  (interactive)
+  (move-end-of-line 1)
+  (electric-newline-and-maybe-indent)
+  )
+
 (defun anil-clean-slate ()
   "Kills all buffers except *scratch*"
   (interactive)

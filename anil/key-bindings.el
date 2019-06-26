@@ -32,7 +32,10 @@
 (global-set-key (kbd "\C-c \C-d") 'anil-duplicate-line)
 
 ;; Command + Return to go to newline
-(global-set-key [s-return] 'textmate-next-line)
+(global-set-key (kbd "s-<backspace>") 'kill-whole-line)
+
+;; New line and jump to it
+(global-set-key (kbd "s-<return>") 'anil-new-line-jump-to-it)
 
 (global-set-key [S-escape] 'delete-other-windows)
 
