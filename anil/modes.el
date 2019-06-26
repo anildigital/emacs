@@ -39,7 +39,6 @@
 ;; mutiple cursors
 (require 'multiple-cursors)
 
-
 (add-to-list 'auto-mode-alist '("\\.go?\\'" . go-mode))
 
 ;; less-mode
@@ -82,10 +81,6 @@
 (ivy-mode 1)
 (setq ivy-use-virtual-buffers t)
 (setq enable-recursive-minibuffers t)
-
-
-;; swiper
-(setq ivy-use-virtual-buffers t)
 
 ;; ripgrep
 (require 'ripgrep)
