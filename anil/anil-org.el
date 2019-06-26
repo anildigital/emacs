@@ -16,7 +16,6 @@
 ))
 
 
-
 ;; http://orgmode.org/manual/Closing-items.html
 (setq org-log-done 'time)
 (setq org-log-done 'note)
@@ -25,6 +24,8 @@
 (setq org-startup-folded "showall")
 
 (setq org-startup-with-inline-images t)
+
+(setq org-use-speed-commands t)
 
 ;; Org mode
 (require 'org-bullets)
