@@ -12,7 +12,6 @@
 
 (setq org-agenda-files (list (concat org-directory "/notes.org")
                              (concat org-directory "/inbox.org")
-                             (concat org-directory "/todo.org")
 ))
 
 
