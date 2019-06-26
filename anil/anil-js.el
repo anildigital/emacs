@@ -9,12 +9,6 @@
 (setq js2-strict-missing-semi-warning nil)
 (setq js2-missing-semi-one-line-override t)
 
-(require 'company-tern)
-(add-to-list 'company-backends 'company-tern)
-(add-hook 'js2-mode-hook (lambda ()
-                          (tern-mode)
-                          (company-mode)))
-
 (setq js-indent-level 4)
 (setq-default indent-tabs-mode nil)
 (setq javascript-indent-level 4)
