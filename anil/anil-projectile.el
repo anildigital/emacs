@@ -3,8 +3,7 @@
 (projectile-global-mode)
 (setq projectile-enable-caching t)
 (setq projectile-completion-system 'helm)
-
-
+(setq projectile-globally-ignored-file-suffixes '(".png" ".gif" ".pdf"  "*.class", "*.beam"))
 
 (require 'org-projectile)
 (setq org-projectile-projects-file
