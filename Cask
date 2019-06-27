@@ -60,6 +60,7 @@
 (depends-on "wsd-mode")
 (depends-on "flycheck-elm")
 (depends-on "flycheck-elixir")
+(depends-on "flycheck-dialyxir")
 (depends-on "bind-key")
 (depends-on "cask")
 (depends-on "exec-path-from-shell")

@@ -44,3 +44,8 @@
 (add-hook 'elixir-mode-hook 'flycheck-mode)
 
 (add-hook 'elixir-mode-hook #'smartparens-mode)
+
+;; Flycheck Dialyxir
+(eval-after-load 'flycheck
+  '(flycheck-dialyxir-setup))
+(add-hook 'elixir-mode-hook 'flycheck-mode)
