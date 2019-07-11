@@ -61,9 +61,9 @@
   (let ((inhibit-read-only t))
     (erase-buffer)
     (eshell-send-input)
-		(recenter-top-bottom)
-		(recenter-top-bottom)
-		))
+    (recenter-top-bottom)
+    (recenter-top-bottom)
+    ))
 
 (defun contextual-backspace ()
   "Hungry whitespace or delete word depending on context."
@@ -134,5 +134,12 @@ Version 2017-11-02"
   (widen)
   (org-backward-heading-same-level 1)
   (org-narrow-to-subtree))
+
+
+(defun anil-switch-to-previous-buffer ()
+  "Switch to previously open buffer.
+Repeated invocations toggle between the two most recently open buffers."
+  (interactive)
+  (switch-to-buffer (other-buffer (current-buffer) 1)))
 
 (provide 'defuns)

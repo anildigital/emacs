@@ -135,5 +135,9 @@
 ;; ivy
 (global-set-key (kbd "C-c C-r") 'ivy-resume)
 
+;;
+(global-set-key (kbd "s-i") #'anil-switch-to-previous-buffer)
+
+
 (provide 'key-bindings)
 ;;; key-bindings.el ends here
