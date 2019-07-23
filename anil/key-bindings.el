@@ -19,6 +19,7 @@
 
 ;; kill current bufffer
 (global-set-key (kbd "s-w") 'kill-buffer)
+(global-set-key (kbd "C-^") 'kill-some-buffers)
 
 ;; Font size
 (global-set-key (kbd "C-+") 'text-scale-increase)
@@ -116,7 +117,7 @@
 ;; Org keybindings
 (global-set-key "\C-cl" 'org-store-link)
 (global-set-key "\C-cc" 'org-capture)
-(global-set-key "\C-ca" 'org-agenda)
+(global-set-key (kbd "C-c a a")  'org-agenda)
 (global-set-key "\C-cb" 'org-iswitchb)
 
 ;; contextual backspace
@@ -137,6 +138,9 @@
 
 ;;
 (global-set-key (kbd "s-i") #'anil-switch-to-previous-buffer)
+
+;; counsel
+(global-set-key "\C-x\ \C-f" 'counsel-find-file)
 
 
 (provide 'key-bindings)
