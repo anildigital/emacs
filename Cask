@@ -93,3 +93,4 @@
 (depends-on "graphql-mode")
 (depends-on "nvm")
 (depends-on "indium")
+(depends-on "eglot")

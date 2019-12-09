@@ -49,3 +49,6 @@
 (eval-after-load 'flycheck
   '(flycheck-dialyxir-setup))
 (add-hook 'elixir-mode-hook 'flycheck-mode)
+
+(require 'eglot)
+(add-to-list 'eglot-server-programs `(elixir-mode "/Users/anil/Code/elixir-ls/release/language_server.sh"))

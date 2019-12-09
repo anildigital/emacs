@@ -84,6 +84,7 @@
 
 ;; treemacs
 (global-set-key (kbd "s-1") 'treemacs)
+(global-set-key (kbd "s-!") 'treemacs-add-and-display-current-project)
 (global-set-key (kbd "C-c h h") 'browse-at-remote)
 (define-key prog-mode-map (kbd "\C-c \C-p") 'treemacs-projectile)
 (global-set-key (kbd "C-x 1") 'treemacs-delete-other-windows)
@@ -102,6 +103,7 @@
 (global-set-key (kbd "s-=") 'text-scale-increase)
 (global-set-key (kbd "s--") 'text-scale-decrease)
 (global-set-key (kbd "s-s") 'save-buffer)
+(global-set-key (kbd "s-S") 'counsel-ag)
 
 ;; helm
 (global-set-key (kbd "M-x") 'helm-M-x)
