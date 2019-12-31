@@ -96,4 +96,8 @@
 (dimmer-activate)
 (setq dimmer-fraction 0.2)
 
+
+;; desktop-mode
+(add-hook 'auto-save-hook 'anil-desktop-save)
+
 (provide 'modes)

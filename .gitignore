@@ -19,12 +19,10 @@ ido.last
 network-security.data
 .cask
 tutorial
-.emacs.desktop*
 *~
 \#*
 games
-desktop/emacs.desktop
-desktop/lock
+emacs-desktop
 .private.el
 magit-process: emacs
 transient

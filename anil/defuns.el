@@ -56,6 +56,10 @@
   (interactive)
   (find-file "~/.emacs.d/init.el"))
 
+(defun anil-goto-todo ()
+  (interactive)
+  (find-file "~/org/todo.org"))
+
 (defun eshell/clear ()
   "Clear the eshell buffer."
   (let ((inhibit-read-only t))
@@ -141,5 +145,12 @@ Version 2017-11-02"
 Repeated invocations toggle between the two most recently open buffers."
   (interactive)
   (switch-to-buffer (other-buffer (current-buffer) 1)))
+
+
+(defun anil-desktop-save ()
+  (interactive)
+  ;; Don't call desktop-save-in-desktop-dir, as it prints a message.
+  (if (eq (desktop-owner) (emacs-pid))
+      (desktop-save desktop-dirname)))
 
 (provide 'defuns)

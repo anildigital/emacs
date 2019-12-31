@@ -1,3 +1,4 @@
+
 ;; bind to hippie-expand .. default is 'just-one-space'
 (global-set-key "\M- " 'hippie-expand)
 
@@ -115,6 +116,7 @@
   (define-key global-map "\M-3" #'insert-pound))
 
 (global-set-key "\C-cP" 'anil-goto-config)
+(global-set-key (kbd "s-t") 'anil-goto-todo)
 
 ;; Org keybindings
 (global-set-key "\C-cl" 'org-store-link)
