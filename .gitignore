@@ -27,3 +27,4 @@ emacs-desktop
 magit-process: emacs
 transient
 bookmarks
+/.emacs.desktop.lock
