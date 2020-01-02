@@ -146,6 +146,10 @@
 ;; counsel
 (global-set-key "\C-x\ \C-f" 'counsel-find-file)
 
+;; Split window
+(global-set-key (kbd "s-2") 'split-window-below)
+(global-set-key (kbd "s-3") 'split-window-right)
+(global-set-key (kbd "s-@") 'delete-window)
 
 (provide 'key-bindings)
 ;;; key-bindings.el ends here
