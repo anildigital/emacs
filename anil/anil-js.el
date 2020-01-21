@@ -9,6 +9,6 @@
 (setq js2-strict-missing-semi-warning nil)
 (setq js2-missing-semi-one-line-override t)
 
-(setq js-indent-level 4)
+(setq js-indent-level 2)
 (setq-default indent-tabs-mode nil)
-(setq javascript-indent-level 4)
+(setq javascript-indent-level 2)
