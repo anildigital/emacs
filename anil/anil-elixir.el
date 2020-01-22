@@ -52,3 +52,6 @@
 
 (require 'eglot)
 (add-to-list 'eglot-server-programs `(elixir-mode "/Users/anil/Code/elixir-ls/release/language_server.sh"))
+
+
+(add-hook 'elixir-mode-hook 'eglot-ensure)
