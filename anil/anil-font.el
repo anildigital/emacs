@@ -1,6 +1,6 @@
 ;;; Code:
 ;; Set favorite font
 (set-face-attribute 'default nil
-                    :font "Inconsolata"
-                    :height 160
+                    :font "JetBrains Mono"
+                    :height 130
                     :weight 'regular)
