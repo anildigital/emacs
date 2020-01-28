@@ -10,7 +10,7 @@
   (setq web-mode-css-indent-offset 2)
   (setq web-mode-indent-style 2)
   (emmet-mode)
-  (set (make-local-variable 'company-backends) '(company-css company-web-html company-yasnippet company-files))
+  (set (make-local-variable 'company-backends) '(company-css company-yasnippet company-files))
   )
 (add-hook 'web-mode-hook  'anil-web-mode-hook)
 

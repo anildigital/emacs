@@ -29,7 +29,6 @@
 (depends-on "helm")
 (depends-on "helm-projectile")
 (depends-on "helm-dash")
-(depends-on "ensime")
 (depends-on "emmet-mode")
 (depends-on "web-mode")
 (depends-on "guru-mode")
