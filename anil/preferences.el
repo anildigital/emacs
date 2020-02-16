@@ -75,5 +75,18 @@
 (setq desktop-dirname "~/.emacs.d/")
 (setq desktop-base-file-name "emacs-desktop")
 
+
+(custom-theme-set-faces
+ 'dracula
+ '(flyspell-duplicate ((t (:weight bold :underline (:color "#0044ff" :style wave)))))
+ '(flyspell-incorrect ((t (:weight bold :underline (:color "#00ff77" :style wave))))))
+
+;; super save
+(super-save-mode +1)
+;; add integration with ace-window
+(add-to-list 'super-save-triggers 'ace-window)
+;; save on find-file
+(add-to-list 'super-save-hook-triggers 'counsel-find-file)
+
 (provide 'preferences)
 ;;; preferences ends here

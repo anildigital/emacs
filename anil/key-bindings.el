@@ -1,4 +1,3 @@
-
 ;; bind to hippie-expand .. default is 'just-one-space'
 (global-set-key "\M- " 'hippie-expand)
 
@@ -41,7 +40,7 @@
 
 (global-set-key [S-escape] 'delete-other-windows)
 
-(global-set-key (kbd "C-o") 'other-window)
+(global-set-key (kbd "C-o") 'ace-window)
 
 (global-set-key (kbd "C-w") 'backward-kill-word)
 
@@ -53,7 +52,7 @@
 
 ;; Ace jump
 (global-set-key (kbd "C-:") 'avy-goto-char)
-(global-set-key (kbd "C-'") 'swiper-avy)
+(global-set-key (kbd "C-'") 'avy-goto-word-1)
 (global-set-key (kbd "C-c u") 'swiper-all)
 (global-set-key (kbd "M-g f") 'avy-goto-line)
 (global-set-key (kbd "M-g e") 'avy-goto-word-0)
@@ -85,10 +84,13 @@
 
 ;; treemacs
 (global-set-key (kbd "s-1") 'treemacs)
+(global-set-key (kbd "s-0") 'treemacs-select-window)
 (global-set-key (kbd "s-!") 'treemacs-add-and-display-current-project)
 (global-set-key (kbd "C-c h h") 'browse-at-remote)
 (define-key prog-mode-map (kbd "\C-c \C-p") 'treemacs-projectile)
 (global-set-key (kbd "C-x 1") 'treemacs-delete-other-windows)
+(global-set-key (kbd "M-s M-s") 'anil-treemacs-swiper)
+
 
 ;; projectile
 ;; Press Command-p for fuzzy find in project
@@ -108,7 +110,7 @@
 
 ;; helm
 (global-set-key (kbd "M-x") 'helm-M-x)
-(global-set-key (kbd "C-M-o") 'helm-imenu)
+(global-set-key (kbd "C-M-o") 'imenu-anywhere)
 
 ;; Add pound
 (when (eq system-type 'darwin)
@@ -136,6 +138,9 @@
 
 (global-set-key "\M-gs" 'swiper)
 (global-set-key "\C-s" 'swiper)
+(global-set-key "\C-s" 'swiper)
+(global-set-key (kbd "C-s-'") 'swiper-avy)
+(global-set-key (kbd "C-M-'") 'swiper-avy)
 
 ;; ivy
 (global-set-key (kbd "C-c C-r") 'ivy-resume)
@@ -150,6 +155,13 @@
 (global-set-key (kbd "s-2") 'split-window-below)
 (global-set-key (kbd "s-3") 'split-window-right)
 (global-set-key (kbd "s-@") 'delete-window)
+
+;; anzu
+(global-set-key [remap query-replace] 'anzu-query-replace)
+(global-set-key [remap query-replace-regexp] 'anzu-query-replace-regexp)
+
+;; zop-to-char
+(global-set-key [remap zap-to-char] 'zop-to-char)
 
 (provide 'key-bindings)
 ;;; key-bindings.el ends here

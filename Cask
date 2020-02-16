@@ -93,3 +93,8 @@
 (depends-on "nvm")
 (depends-on "indium")
 (depends-on "eglot")
+(depends-on "anzu")
+(depends-on "zop-to-char")
+(depends-on "super-save")
+(depends-on "imenu-anywhere")
+(depends-on "volatile-highlights")

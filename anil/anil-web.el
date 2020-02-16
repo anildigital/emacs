@@ -9,6 +9,7 @@
   (setq web-mode-markup-indent-offset 2)
   (setq web-mode-css-indent-offset 2)
   (setq web-mode-indent-style 2)
+  (local-set-key (kbd "RET") 'newline-and-indent)
   (emmet-mode)
   (set (make-local-variable 'company-backends) '(company-css company-yasnippet company-files))
   )

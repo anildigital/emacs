@@ -153,4 +153,10 @@ Repeated invocations toggle between the two most recently open buffers."
   (if (eq (desktop-owner) (emacs-pid))
       (desktop-save desktop-dirname)))
 
+(defun anil-treemacs-swiper ()
+  (interactive)
+  (treemacs-select-window)
+  (swiper)
+  )
+
 (provide 'defuns)

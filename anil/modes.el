@@ -100,4 +100,11 @@
 ;; desktop-mode
 (add-hook 'auto-save-hook 'anil-desktop-save)
 
+;;undo-tree
+(require 'undo-tree)
+(global-undo-tree-mode)
+
+;; volatile mode
+(volatile-highlights-mode t)
+
 (provide 'modes)
