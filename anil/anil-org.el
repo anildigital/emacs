@@ -9,7 +9,6 @@
       '(("t" "Todo" entry (file+headline "~/org/todo.org" "Tasks")
          "* TODO %?\n %i\n %a")))
 
-
 (setq org-agenda-files (list (concat org-directory "/notes.org")
 ))
 
@@ -23,6 +22,8 @@
 (setq org-startup-with-inline-images t)
 
 (setq org-use-speed-commands t)
+
+(setf org-blank-before-new-entry '((heading . nil) (plain-list-item . nil)))
 
 ;; Org mode
 (require 'org-bullets)

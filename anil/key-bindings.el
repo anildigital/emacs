@@ -30,7 +30,7 @@
 (global-set-key "\C-x\ \C-r" 'helm-recentf)
 
 ;; duplicate line
-(global-set-key (kbd "\C-c \C-d") 'anil-duplicate-line)
+(global-set-key (kbd "s-d") 'anil-duplicate-line)
 
 ;; Command + Return to go to newline
 (global-set-key (kbd "s-<backspace>") 'kill-whole-line)
@@ -154,7 +154,7 @@
 ;; Split window
 (global-set-key (kbd "s-2") 'split-window-below)
 (global-set-key (kbd "s-3") 'split-window-right)
-(global-set-key (kbd "s-@") 'delete-window)
+(global-set-key (kbd "s-@") 'treemacs-delete-other-windows)
 
 ;; anzu
 (global-set-key [remap query-replace] 'anzu-query-replace)
