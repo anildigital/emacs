@@ -98,3 +98,4 @@
 (depends-on "super-save")
 (depends-on "imenu-anywhere")
 (depends-on "volatile-highlights")
+(depends-on "org-ac")

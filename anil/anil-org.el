@@ -9,8 +9,9 @@
       '(("t" "Todo" entry (file+headline "~/org/todo.org" "Tasks")
          "* TODO %?\n %i\n %a")))
 
-(setq org-agenda-files (list (concat org-directory "/notes.org")
-))
+(setq org-agenda-files (list (concat org-directory "/notes.org")))
+(setq org-agenda-files (list (concat org-directory "/todo.org")))
+(setq org-agenda-files (list (concat org-directory "/long_term.org")))
 
 ;; http://orgmode.org/manual/Closing-items.html
 (setq org-log-done 'time)
@@ -28,6 +29,10 @@
 ;; Org mode
 (require 'org-bullets)
 (add-hook 'org-mode-hook (lambda () (org-bullets-mode 1)))
+
+(setq org-agenda-span 'day)
+
+(org-ac/config-default)
 
 ;; Treemacs fix
 (with-eval-after-load 'org
