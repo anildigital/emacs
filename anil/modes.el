@@ -107,4 +107,7 @@
 ;; volatile mode
 (volatile-highlights-mode t)
 
+(add-hook 'text-mode-hook 'flyspell-mode)
+(add-hook 'prog-mode-hook 'flyspell-prog-mode)
+
 (provide 'modes)
