@@ -18,13 +18,18 @@
 (setq org-log-done 'note)
 ;;
 (setq org-startup-indented t)
-(setq org-startup-folded "showall")
 
 (setq org-startup-with-inline-images t)
 
 (setq org-use-speed-commands t)
 
 (setf org-blank-before-new-entry '((heading . nil) (plain-list-item . nil)))
+
+(setq org-clock-idle-time 2)
+
+(setq org-clock-persist t)
+(setq org-clock-persist 'history)
+(org-clock-persistence-insinuate)
 
 ;; Org mode
 (require 'org-bullets)
@@ -33,6 +38,10 @@
 (setq org-agenda-span 'day)
 
 (org-ac/config-default)
+
+
+(add-hook 'org-clock-in-hook (lambda () (call-process "/usr/bin/osascript" nil 0 nil "-e" (concat "tell application \"org-clock-statusbar\" to clock in \"" (replace-regexp-in-string "\"" "\\\\\"" org-clock-current-task) "\""))))
+(add-hook 'org-clock-out-hook (lambda () (call-process "/usr/bin/osascript" nil 0 nil "-e" "tell application \"org-clock-statusbar\" to clock out")))
 
 ;; Treemacs fix
 (with-eval-after-load 'org

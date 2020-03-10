@@ -56,3 +56,7 @@
 
 
 (add-hook 'elixir-mode-hook 'eglot-ensure)
+
+
+;; exunit
+(require 'exunit)

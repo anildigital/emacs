@@ -99,3 +99,6 @@
 (depends-on "imenu-anywhere")
 (depends-on "volatile-highlights")
 (depends-on "org-ac")
+(depends-on "polymode")
+(depends-on "poly-markdown")
+(depends-on "exunit")
