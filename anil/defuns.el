@@ -54,7 +54,7 @@
 
 (defun anil-goto-config ()
   (interactive)
-  (find-file "~/.emacs.d/init.el"))
+  (find-file "~/.config/emacs/init.el"))
 
 (defun anil-goto-todo ()
   (interactive)
@@ -146,12 +146,6 @@ Repeated invocations toggle between the two most recently open buffers."
   (interactive)
   (switch-to-buffer (other-buffer (current-buffer) 1)))
 
-
-(defun anil-desktop-save ()
-  (interactive)
-  ;; Don't call desktop-save-in-desktop-dir, as it prints a message.
-  (if (eq (desktop-owner) (emacs-pid))
-      (desktop-save desktop-dirname)))
 
 (defun anil-treemacs-swiper ()
   (interactive)

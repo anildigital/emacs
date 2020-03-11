@@ -1,7 +1,7 @@
 ;; yasnippets
 (require 'yasnippet)
 (yas-global-mode t)
-(setq yas-snippet-dirs '("~/.emacs.d/snippets"))
+(setq yas-snippet-dirs '("~/.config/emacs/snippets"))
 (add-to-list 'yas-snippet-dirs "~/Code/yasnippet-snippets/snippets")
 
 ;; yas

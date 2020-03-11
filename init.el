@@ -5,14 +5,13 @@
 ;; just comment it out by adding a semicolon to the start of the line.
 ;; You may delete these explanatory comments.
 ;;; Code:
-(package-initialize)
 
 (defvar *emacs-load-start* (current-time))
 
 ;; Set paths
-(add-to-list 'load-path (expand-file-name "~/.emacs.d/anil") t)
-(add-to-list 'load-path (expand-file-name "~/.emacs.d/vendor"))
-(setq custom-file "~/.emacs.d/anil/custom.el")
+(add-to-list 'load-path (expand-file-name "~/.config/emacs/anil") t)
+(add-to-list 'load-path (expand-file-name "~/.config/emacs/vendor"))
+(setq custom-file "~/.config/emacs/anil/custom.el")
 (load custom-file)
 
 ;; load packages.el

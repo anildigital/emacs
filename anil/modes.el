@@ -93,12 +93,9 @@
 
 ;;dimmer
 (require 'dimmer)
-(dimmer-activate)
+(dimmer-mode)
 (setq dimmer-fraction 0.2)
 
-
-;; desktop-mode
-(add-hook 'auto-save-hook 'anil-desktop-save)
 
 ;;undo-tree
 (require 'undo-tree)
@@ -113,5 +110,8 @@
 (require 'polymode)
 (require 'poly-markdown)
 (add-to-list 'auto-mode-alist '("\\.md" . poly-markdown-mode))
+
+
+(global-so-long-mode 1)
 
 (provide 'modes)

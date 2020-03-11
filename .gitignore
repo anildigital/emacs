@@ -28,3 +28,4 @@ magit-process: emacs
 transient
 bookmarks
 /.emacs.desktop.lock
+org-clock-save.el

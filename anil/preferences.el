@@ -31,7 +31,7 @@
 (show-paren-mode t)
 
 ;; Global linum mode
-(global-linum-mode 1)
+(global-display-line-numbers-mode)
 
 ;; highlight TODOs etc.
 (add-hook 'find-file-hook (lambda() (highlight-phrase "\\(BUG\\|FIXME\\|TODO\\):")))
@@ -71,8 +71,8 @@
 (add-to-list 'default-frame-alist '(ns-transparent-titlebar . t))
 (add-to-list 'default-frame-alist '(ns-appearance . dark))
 
-(setq desktop-path '("~/.emacs.d/"))
-(setq desktop-dirname "~/.emacs.d/")
+(setq desktop-path '(".config/emacs"))
+(setq desktop-dirname ".config/emacs")
 (setq desktop-base-file-name "emacs-desktop")
 
 
