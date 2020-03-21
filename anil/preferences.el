@@ -66,7 +66,6 @@
 
 (setq company-show-numbers t)
 
-(define-key helm-map (kbd "<tab>") 'helm-execute-persistent-action)
 
 (add-to-list 'default-frame-alist '(ns-transparent-titlebar . t))
 (add-to-list 'default-frame-alist '(ns-appearance . dark))

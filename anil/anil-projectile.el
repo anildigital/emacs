@@ -1,9 +1,12 @@
 ;; Projectile mod
-(require 'helm-projectile)
+(require 'counsel-projectile)
+(define-key projectile-mode-map (kbd "C-c p") 'projectile-command-map)
+
 (projectile-global-mode)
 (setq projectile-enable-caching t)
-(setq projectile-completion-system 'helm)
+(setq projectile-completion-system 'ivy)
 (setq projectile-globally-ignored-file-suffixes '(".png" ".gif" ".pdf"  "*.class", "*.beam"))
+
 
 (require 'org-projectile)
 (setq org-projectile-projects-file

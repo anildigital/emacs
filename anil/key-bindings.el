@@ -108,8 +108,7 @@
 (global-set-key (kbd "s-s") 'save-buffer)
 (global-set-key (kbd "s-S") 'counsel-ag)
 
-;; helm
-(global-set-key (kbd "M-x") 'helm-M-x)
+
 (global-set-key (kbd "C-M-o") 'imenu-anywhere)
 
 ;; Add pound
@@ -149,7 +148,10 @@
 (global-set-key (kbd "s-i") #'anil-switch-to-previous-buffer)
 
 ;; counsel
+(global-set-key (kbd "M-x") 'counsel-M-x)
 (global-set-key "\C-x\ \C-f" 'counsel-find-file)
+
+(global-set-key "\C-c\ \C-o" 'counsel-dash)
 
 ;; Split window
 (global-set-key (kbd "s-2") 'split-window-below)

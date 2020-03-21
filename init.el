@@ -17,11 +17,12 @@
 ;; load packages.el
 (load "packages")
 
+(load "local")
 (load "path")
 (load "anil-font")
+(load "anil-wakatime")
 (load "anil-ruby")
 (load "anil-dash")
-(load "anil-helm")
 (load "anil-flycheck")
 (load "anil-js")
 (load "anil-elm")
