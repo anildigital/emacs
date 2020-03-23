@@ -8,6 +8,8 @@
 
 (defvar *emacs-load-start* (current-time))
 
+(setenv "LANG" "en_US.UTF-8")
+
 ;; Set paths
 (add-to-list 'load-path (expand-file-name "~/.config/emacs/anil") t)
 (add-to-list 'load-path (expand-file-name "~/.config/emacs/vendor"))
