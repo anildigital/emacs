@@ -102,3 +102,4 @@
 (depends-on "poly-markdown")
 (depends-on "exunit")
 (depends-on "wakatime-mode")
+(depends-on "edit-indirect")
