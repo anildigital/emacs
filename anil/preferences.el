@@ -87,5 +87,8 @@
 ;; save on find-file
 (add-to-list 'super-save-hook-triggers 'counsel-find-file)
 
+;;wsd mode style
+(setq wsd-style "default")
+
 (provide 'preferences)
 ;;; preferences ends here
