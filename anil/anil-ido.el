@@ -1,5 +1,14 @@
-;; enable ido mode
-(setq ido-enable-flex-matching t)
-(setq ido-everywhere t)
-(ido-vertical-mode 1)
-(setq ido-vertical-define-keys 'C-n-and-C-p-only)
+(use-package ido
+  :ensure nil
+  :init
+  (setq ido-enable-flex-matching t)
+  (setq ido-everywhere t)
+  (setq ido-vertical-define-keys 'C-n-and-C-p-only)
+  :config
+  )
+
+(use-package ido-vertical-mode
+  :ensure t
+  :config
+  (ido-vertical-mode 1)
+  )

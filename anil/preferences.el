@@ -1,13 +1,10 @@
-; don't show startup message.
+;; ; don't show startup message.
 (setq inhibit-startup-message t)
 
 (if (fboundp 'tool-bar-mode) (tool-bar-mode -1))
-;(if (fboundp 'scroll-bar-mode) (scroll-bar-mode -1))
+(if (fboundp 'scroll-bar-mode) (scroll-bar-mode -1))
 
 ;; don't create backup files
-;;(setq make-backup-files nil)
-;;(setq create-lockfiles nil)
-;;(setq auto-save-default nil)
 (setq backup-directory-alist `(("." . "~/.saves")))
 
 ; default tab width
@@ -39,11 +36,6 @@
 ;; Auto save visited mode
 (auto-save-visited-mode)
 
-;; theme
-(load-theme 'dracula t)
-(unless (display-graphic-p)
-  (load-theme 'wombat))
-
 (setq ediff-split-window-function 'split-window-horizontally)
 (setq ediff-diff-options "-w")
 
@@ -64,7 +56,7 @@
 
 (setq x-stretch-cursor t)
 
-(setq company-show-numbers t)
+;(setq company-show-numbers t)
 
 
 (add-to-list 'default-frame-alist '(ns-transparent-titlebar . t))
@@ -75,20 +67,13 @@
 (setq desktop-base-file-name "emacs-desktop")
 
 
-(custom-theme-set-faces
- 'dracula
- '(flyspell-duplicate ((t (:weight bold :underline (:color "#0044ff" :style wave)))))
- '(flyspell-incorrect ((t (:weight bold :underline (:color "#00ff77" :style wave))))))
+;; ;; super save
+;; (super-save-mode +1)
+;; ;; add integration with ace-window
+;; (add-to-list 'super-save-triggers 'ace-window)
+;; ;; save on find-file
+;; (add-to-list 'super-save-hook-triggers 'counsel-find-file)
 
-;; super save
-(super-save-mode +1)
-;; add integration with ace-window
-(add-to-list 'super-save-triggers 'ace-window)
-;; save on find-file
-(add-to-list 'super-save-hook-triggers 'counsel-find-file)
 
-;;wsd mode style
-(setq wsd-style "default")
-
-(provide 'preferences)
-;;; preferences ends here
+;; (provide 'preferences)
+;; ;;; preferences ends here
