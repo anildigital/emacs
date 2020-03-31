@@ -1,4 +1,4 @@
-;; Find recent files
+;; find recent files
 (defun anil-ido-find-project ()
   (interactive)
   (find-file

@@ -1,50 +1,53 @@
-;; Elixir mode
+;; ;; elixir mode
 
-;;; Code:
-
-(require 'elixir-mode)
-
-;; Set elixir paths
-;; (setq elixir-format-elixir-path "/usr/local/bin/elixir")
-;; (setq elixir-format-mix-path "/usr/local/bin/mix")
-
-
-(add-hook 'elixir-mode-hook
-          (lambda () (add-hook 'before-save-hook 'eglot-format-buffer nil t)))
-
-;; ;; elixir's .formatter.exs
-;; (add-hook 'elixir-format-hook (lambda ()
-;;                                  (if (projectile-project-p)
-;;                                       (setq elixir-format-arguments
-;;                                             (list "--dot-formatter"
-;;                                                   (concat (locate-dominating-file buffer-file-name ".formatter.exs") ".formatter.exs")))
-;;                                    (setq elixir-format-arguments nil))))
+(use-package elixir-mode
+  :ensure t
+  :config
+  (add-hook 'elixir-mode-hook
+            (lambda () (add-hook 'before-save-hook 'eglot-format-buffer nil t)))
+  (add-hook 'elixir-mode-hook 'flycheck-mode)
+  (add-hook 'elixir-mode-hook #'smartparens-mode)
+  (add-hook 'elixir-mode-hook 'eglot-ensure)
+  )
 
 
-;; Flycheck Elixir
-(require 'flycheck-elixir)
 
-;; Flycheck Mix
-(require 'flycheck-mix)
-(flycheck-mix-setup)
+(use-package flycheck-elixir
+  :ensure t
+  )
 
-(eval-after-load 'flycheck
- '(flycheck-credo-setup))
-(add-hook 'elixir-mode-hook 'flycheck-mode)
-
-(add-hook 'elixir-mode-hook #'smartparens-mode)
-
-;; Flycheck Dialyxir
-(eval-after-load 'flycheck
-  '(flycheck-dialyxir-setup))
-(add-hook 'elixir-mode-hook 'flycheck-mode)
-
-(require 'eglot)
-(add-to-list 'eglot-server-programs `(elixir-mode "/Users/anil/Code/elixir-ls/release/language_server.sh"))
+(use-package flycheck-mix
+  :ensure t
+  :init
+  (flycheck-mix-setup)
+  )
 
 
-(add-hook 'elixir-mode-hook 'eglot-ensure)
+(use-package eglot
+  :ensure t
+  :config
+  (add-to-list 'eglot-server-programs `(elixir-mode "/Users/anil/Code/elixir-ls/release/language_server.sh"))
+  )
+
+(use-package exunit
+  :ensure t
+  )
+
+(use-package flycheck-credo
+  :ensure t
+  )
 
 
-;; exunit
-(require 'exunit)
+(use-package flycheck-dialyxir
+  :ensure t
+  )
+
+(use-package flycheck
+  :no-require t
+  :init
+  :config
+  (flycheck-credo-setup)
+  (flycheck-dialyxir-setup)
+  )
+
+
