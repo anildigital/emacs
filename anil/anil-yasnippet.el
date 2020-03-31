@@ -21,3 +21,12 @@
   (define-key yas-minor-mode-map (kbd "<backtab>") 'yas-expand)
   (define-key yas-minor-mode-map (kbd "<C-return>") 'yas-expand)
   )
+
+
+(use-package yasnippet-snippets
+  :ensure t
+  )
+
+(use-package elixir-yasnippets
+  :ensure t
+  )

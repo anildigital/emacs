@@ -1,13 +1,3 @@
-;; ;; save place in files between Sessions
-;; (require 'saveplace)
-;;
-
-;; (use-package saveplace
-;;   :ensure nil
-;;   :init
-;;   (setq-default save-place t)
-;;   )
-
 (use-package sh-mode
   :ensure nil
   :init
@@ -91,12 +81,6 @@
   (add-hook 'prog-mode-hook 'subword-mode)
   )
 
-
-;; (use-package winner-mode
-;;   :ensure t
-;;   :config
-;;   (winner-mode 1))
-
 (use-package avy
   :ensure t)
 
@@ -110,12 +94,7 @@
 ;; On save remove trailing white space
 (add-hook 'prog-mode-hook #'nuke_traling)
 
-;; ;; desktop-save mode
-;; ;; Automatically save and restore sessions
 (desktop-save-mode 1)
-
-;; ;; browse-at-remote
-;; (require 'browse-at-remote)
 
 (use-package browse-at-remote
   :ensure t)
@@ -389,61 +368,19 @@
 (use-package bind-key
   :ensure t
   )
-(use-package cask
-  :ensure t
-  )
-(use-package exec-path-from-shell
-  :ensure t
-  )
-(use-package flycheck-cask
-  :ensure t
-  )
 (use-package htmlize
-  :ensure t
-  )
-(use-package multiple-cursors
   :ensure t
   )
 (use-package s
   :ensure t
   )
-(use-package use-package
-  :ensure t
-  )
-(use-package yasnippet
-  :ensure t
-  )
-(use-package yasnippet-snippets
-  :ensure t
-  )
 (use-package dracula-theme
-  :ensure t
-  )
-(use-package elixir-yasnippets
   :ensure t
   )
 (use-package flyspell-popup
   :ensure t
   )
-(use-package browse-at-remote
-  :ensure t
-  )
 (use-package hydra
-  :ensure t
-  )
-(use-package swiper
-  :ensure t
-  )
-(use-package ivy
-  :ensure t
-  )
-(use-package counsel
-  :ensure t
-  )
-(use-package counsel-projectile
-  :ensure t
-  )
-(use-package counsel-dash
   :ensure t
   )
 (use-package counsel-world-clock
@@ -464,16 +401,10 @@
 (use-package smart-mode-line
   :ensure t
   )
-(use-package diff-hl
-  :ensure t
-  )
 (use-package terraform-mode
   :ensure t
   )
 (use-package restclient
-  :ensure t
-  )
-(use-package dimmer
   :ensure t
   )
 (use-package ag
@@ -488,9 +419,6 @@
 (use-package indium
   :ensure t
   )
-(use-package eglot
-  :ensure t
-  )
 (use-package anzu
   :ensure t
   )
@@ -503,33 +431,9 @@
 (use-package imenu-anywhere
   :ensure t
   )
-(use-package volatile-highlights
-  :ensure t
-  )
 (use-package org-ac
-  :ensure t
-  )
-(use-package polymode
-  :ensure t
-  )
-(use-package poly-markdown
-  :ensure t
-  )
-(use-package exunit
-  :ensure t
-  )
-(use-package wakatime-mode
   :ensure t
   )
 (use-package edit-indirect
   :ensure t
   )
-
-
-
-
-;; ;; (use-package global-so-long
-;; ;;   :ensure t
-;; ;;   :config
-;; ;;   (global-so-long-mode 1)
-;; ;;   )
