@@ -46,8 +46,8 @@
 (load "modes")
 ;(load "hydras")
 (load "anil-projectile")
-;; (load "preferences")
-;; (load "key-bindings")
+(load "preferences")
+(load "key-bindings")
 (add-hook 'after-init-hook 'org-agenda-list)
 
 (server-start)

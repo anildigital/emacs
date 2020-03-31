@@ -73,7 +73,3 @@
 ;; (add-to-list 'super-save-triggers 'ace-window)
 ;; ;; save on find-file
 ;; (add-to-list 'super-save-hook-triggers 'counsel-find-file)
-
-
-;; (provide 'preferences)
-;; ;;; preferences ends here
