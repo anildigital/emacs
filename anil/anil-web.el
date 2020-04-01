@@ -1,22 +1,3 @@
-;; (use-package web-mode
-;;   :ensure t
-;;   :init
-;;   (add-to-list 'auto-mode-alist '("\\.erb\\'" . web-mode))
-;;   (add-to-list 'auto-mode-alist '("\\.mustache\\'" . web-mode))
-;;   (add-to-list 'auto-mode-alist '("\\.html?\\'" . web-mode))
-;;   (add-to-list 'auto-mode-alist '("\\.eex?\\'" . web-mode))
-;;   (add-to-list 'auto-mode-alist '("\\.html?\\'" . web-mode))
-;;   (setq web-mode-enable-current-element-highlight t)
-;;   (setq web-mode-enable-current-column-highlight t)
-;;   (setq js-indent-level 2)
-;;   (setq-default indent-tabs-mode nil)
-;;   (setq javascript-indent-level 2)
-  
-;;   :config
-;;   (add-hook 'web-mode-hook  'anil-web-mode-hook)
-;;   (bind-key (kbd "M-n") 'web-mode-tag-match web-mode-map)
-;;   )
-
 (defun anil-web-mode-hook ()
   "Hooks for Web mode."
   (setq web-mode-markup-indent-offset 2)

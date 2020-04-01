@@ -1,4 +1,4 @@
-;; ; don't show startup message.
+;; don't show startup message.
 (setq inhibit-startup-message t)
 
 (if (fboundp 'tool-bar-mode) (tool-bar-mode -1))

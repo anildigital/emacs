@@ -17,8 +17,8 @@
          )
   )
 
-(use-package pytyon-mode
-  :ensure nil
+(use-package python-mode
+  :ensure t
   :mode (("\\.py?\\'" . python-mode))
   )
 
@@ -31,8 +31,8 @@
 
 (use-package diff-hl
   :ensure t
-  :init
-  (add-hook 'magit-post-refresh-hook 'diff-hl-magit-post-refresh)
+  :hook
+  ((magit-post-refresh-hook . diff-hl-magit-post-refresh))
   :config
   (global-diff-hl-mode)
   (diff-hl-dired-mode 1)
@@ -86,9 +86,9 @@
 ;; TODO check this
 (use-package subword
   :ensure nil
-  :init
-  (add-hook 'before-save-hook 'delete-trailing-whitespace)
-  (add-hook 'prog-mode-hook 'subword-mode)
+  :hook
+  ((before-save-hook . delete-trailing-whitespace)
+   (prog-mode-hook . subword-mode))
   )
 
 (use-package avy
@@ -123,10 +123,6 @@
 (use-package elisp-format
   :ensure t
   )
-
-
-;; ;; Erlang mode
-(add-to-list 'auto-mode-alist '("\\.*erl\\'" . erlang-mode))
 
 
 (use-package ivy
@@ -218,22 +214,18 @@
   ("C-M-'" . swiper-avy)
   )
 
-
-(use-package counsel
+(use-package erlang
+  :mode
+  (("\\.*erl\\'" . erlang-mode))
   :ensure t
-  :bind
-  ("M-x" . counsel-M-x)
-  ("C-x C-f" . counsel-find-file)
-  ("C-x C-r" . counsel-recentf)
-  ("s-r" . counsel-recentf)
   )
 
-(use-package counsel-dash
+(use-package terraform-mode
   :ensure t
-  :bind
-  ("C-c C-o" . counsel-dash)
+  :mode (
+         (".tf" . terraform-mode)
+         )
   )
-
 
 (use-package ruby-compilation
   :ensure t
@@ -380,17 +372,8 @@
 (use-package fish-completion
   :ensure t
   )
-(use-package erlang
-  :ensure t
-  )
 (use-package smart-mode-line
   :ensure t
-  )
-(use-package terraform-mode
-  :ensure t
-  :mode (
-         (".tf" . terraform-mode)
-         )
   )
 (use-package restclient
   :ensure t

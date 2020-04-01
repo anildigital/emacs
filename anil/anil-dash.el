@@ -1,5 +1,7 @@
-;; ;; Dash at point
-;; (autoload 'dash-at-point "dash-at-point"
-;;           "Search the word at point with Dash." t nil)
-;; (global-set-key "\C-cd" 'dash-at-point)
-;; (global-set-key "\C-ce" 'dash-at-point-with-docset)
+(use-package dash-at-point
+  :bind
+  (
+   ("C-c d" . dash-at-point)
+   ("C-c e" . dash-at-point-with-docset)
+   )
+  )
