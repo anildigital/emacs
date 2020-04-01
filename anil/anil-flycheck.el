@@ -1,7 +1,5 @@
-;; Flycheck mode
-(use-package flycheck
+(use-package
+  flycheck
   :no-require t
   :init
-  :config
-  (add-hook 'after-init-hook #'global-flycheck-mode)
-  )
+  :config (add-hook 'after-init-hook #'global-flycheck-mode))

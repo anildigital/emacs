@@ -1,7 +1,5 @@
-(use-package recentf
+(use-package
+  recentf
   :ensure nil
-  :init
-  (setq recentf-max-menu-items 25)
-  :config
-  (recentf-mode 1)
-  )
+  :init (setq recentf-max-menu-items 25)
+  :config (recentf-mode 1))

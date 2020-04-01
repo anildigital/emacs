@@ -9,24 +9,22 @@
 
 ;; (require 'yaml-mode)
 ;;
-(use-package yasnippet
+(use-package
+  yasnippet
   :ensure t
-  :init
-  (setq yas-snippet-dirs '("~/.config/emacs/snippets"))
-  :config
-  (yas-reload-all)
+  :init (setq yas-snippet-dirs '("~/.config/emacs/snippets"))
+  :config (yas-reload-all)
   (yas-global-mode t)
   (define-key yas-minor-mode-map (kbd "<tab>") nil)
   (define-key yas-minor-mode-map (kbd "TAB") nil)
   (define-key yas-minor-mode-map (kbd "<backtab>") 'yas-expand)
-  (define-key yas-minor-mode-map (kbd "<C-return>") 'yas-expand)
-  )
+  (define-key yas-minor-mode-map (kbd "<C-return>") 'yas-expand))
 
 
-(use-package yasnippet-snippets
-  :ensure t
-  )
+(use-package
+  yasnippet-snippets
+  :ensure t)
 
-(use-package elixir-yasnippets
-  :ensure t
-  )
+(use-package
+  elixir-yasnippets
+  :ensure t)

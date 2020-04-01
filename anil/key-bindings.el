@@ -1,9 +1,11 @@
 ;; ;; bind to hippie-expand .. default is 'just-one-space'
-(use-package hippie-exp :bind (("M-SPC" . hippie-expand)))
+(use-package
+  hippie-exp
+  :bind (("M-SPC" . hippie-expand)))
 
-(use-package magit
-  :bind ("\C-xg" . 'magit-status)
-  )
+(use-package
+  magit
+  :bind ("\C-xg" . 'magit-status))
 
 ;; ;; ctags
 (global-set-key [s-mouse-1] 'find-tag)
@@ -13,13 +15,10 @@
 ;; Dired
 (require 'dired)
 
-(use-package dired
+(use-package
+  dired
   :ensure nil
-  :bind
-  (("C-x C-d" . dired)
-   :map dired-mode-map
-   ("-" . 'dired-up-directory)
-   ))
+  :bind (("C-x C-d" . dired) :map dired-mode-map ("-" . 'dired-up-directory)))
 
 ;; kill current bufffer
 (global-set-key (kbd "s-w") 'kill-buffer)

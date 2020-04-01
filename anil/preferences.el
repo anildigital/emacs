@@ -1,13 +1,15 @@
 ;; don't show startup message.
 (setq inhibit-startup-message t)
 
-(if (fboundp 'tool-bar-mode) (tool-bar-mode -1))
-(if (fboundp 'scroll-bar-mode) (scroll-bar-mode -1))
+(if (fboundp 'tool-bar-mode)
+    (tool-bar-mode -1))
+(if (fboundp 'scroll-bar-mode)
+    (scroll-bar-mode -1))
 
 ;; don't create backup files
 (setq backup-directory-alist `(("." . "~/.saves")))
 
-; default tab width
+                                        ; default tab width
 (setq-default tab-width 2)
 (setq tab-always-indent 'complete)
 
@@ -21,17 +23,18 @@
 (when (string= system-type "darwin")
   (setq dired-use-ls-dired nil))
 
-; ask y/n instead of yes/no
+                                        ; ask y/n instead of yes/no
 (fset 'yes-or-no-p 'y-or-n-p)
 
-; Enable paren mode
+                                        ; Enable paren mode
 (show-paren-mode t)
 
 ;; Global linum mode
 (global-display-line-numbers-mode)
 
 ;; highlight TODOs etc.
-(add-hook 'find-file-hook (lambda() (highlight-phrase "\\(BUG\\|FIXME\\|TODO\\):")))
+(add-hook 'find-file-hook (lambda()
+                            (highlight-phrase "\\(BUG\\|FIXME\\|TODO\\):")))
 
 ;; Auto save visited mode
 (auto-save-visited-mode)
@@ -47,7 +50,8 @@
 
 ;; Disable Emacs going to sleep
 (global-unset-key [(control z)])
-(global-unset-key [(control x)(control z)])
+(global-unset-key [(control x)
+                   (control z)])
 
 (delete-selection-mode 1)
 
@@ -56,7 +60,7 @@
 
 (setq x-stretch-cursor t)
 
-;(setq company-show-numbers t)
+                                        ;(setq company-show-numbers t)
 
 
 (add-to-list 'default-frame-alist '(ns-transparent-titlebar . t))
@@ -65,11 +69,3 @@
 (setq desktop-path '(".config/emacs"))
 (setq desktop-dirname ".config/emacs")
 (setq desktop-base-file-name "emacs-desktop")
-
-
-;; ;; super save
-;; (super-save-mode +1)
-;; ;; add integration with ace-window
-;; (add-to-list 'super-save-triggers 'ace-window)
-;; ;; save on find-file
-;; (add-to-list 'super-save-hook-triggers 'counsel-find-file)
