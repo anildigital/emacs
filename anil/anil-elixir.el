@@ -3,11 +3,9 @@
 (use-package
   elixir-mode
   :ensure t
-  :config (add-hook 'elixir-mode-hook (lambda ()
-                                        (add-hook 'before-save-hook 'eglot-format-buffer nil t)))
+  :config
   (add-hook 'elixir-mode-hook 'flycheck-mode)
-  (add-hook 'elixir-mode-hook #'smartparens-mode)
-  (add-hook 'elixir-mode-hook 'eglot-ensure))
+  (add-hook 'elixir-mode-hook #'smartparens-mode))
 
 (use-package
   flycheck-mix
@@ -16,10 +14,21 @@
 
 
 (use-package
-  eglot
+  lsp-mode
+  :commands lsp
   :ensure t
-  :config (add-to-list 'eglot-server-programs `(elixir-mode
-                                                "/Users/anil/Code/elixir-ls/release/language_server.sh")))
+  :diminish lsp-mode
+  :hook (elixir-mode . lsp)
+  :init (add-to-list 'exec-path "/Users/anil/Code/elixir-ls/release")
+  :config (defun my-elixir-mode-before-save-hook ()
+            (when (eq major-mode 'elixir-mode)
+              (lsp-format-buffer)))
+  (add-hook 'before-save-hook #'my-elixir-mode-before-save-hook)
+  )
+
+(use-package
+  lsp-ui
+  :ensure t)
 
 (use-package
   exunit
