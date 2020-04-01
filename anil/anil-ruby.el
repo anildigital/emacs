@@ -1,30 +1,45 @@
-;; (require 'rbenv)
-;; (global-rbenv-mode)
+(use-package rbenv
+  :ensure t
+  :config
+  (global-rbenv-mode)
+  )
 
-;; (require 'rubocop)
+(use-package robe
+  :ensure t
+  )
 
-;; (eval-after-load 'ruby-mode
-;;   '(progn
-;;      (setq ruby-use-encoding-map nil) ;;don't autoadd encoding comment at the top
-;; 		 (autoload 'inf-ruby-minor-mode "inf-ruby" "Run an inferior Ruby process" t)
-;; 		 (add-hook 'ruby-mode-hook 'inf-ruby-minor-mode)
-;;      (require 'ruby-electric)
-;;      (add-hook 'ruby-mode-hook (lambda () (ruby-electric-mode t)))
-;;      (add-hook 'ruby-mode-hook (lambda () (robe-mode t)))
-;;      (define-key ruby-mode-map (kbd "RET") 'reindent-then-newline-and-indent)
-;;      (define-key ruby-mode-map (kbd "C-c l") "lambda")
-;;      ))
+(use-package ruby-electric
+  :ensure t
+  )
+(use-package rubocop
+  :ensure t
+  )
+(use-package rbenv
+  :ensure t
+  )
 
-;; (add-to-list 'auto-mode-alist '("\\.rake$" . ruby-mode))
-;; (add-to-list 'auto-mode-alist '("Gemfile$" . ruby-mode))
-;; (add-to-list 'auto-mode-alist '("Rakefile$" . ruby-mode))
-;; (add-to-list 'auto-mode-alist '("Capfile$" . ruby-mode))
-;; (add-to-list 'auto-mode-alist '("\\.gemspec$" . ruby-mode))
-;; (add-to-list 'auto-mode-alist '("\\.ru$" . ruby-mode))
+(use-package ruby-mode
+  :ensure nil
+  :mode (
+         ("\\.rake$" . ruby-mode)
+         ("Gemfile$" .  ruby-mode)
+         ("Rakefile$" . ruby-mode)
+         ("Capfile$" . ruby-mode)
+         ("\\.gemspec$" . ruby-mode)
+         ("\\.ru$" . ruby-mode)
 
-;; ;; Ruby style guide
-;; ;; From https://github.com/bbatsov/ruby-style-guide
-;; (setq whitespace-style '(trailing space-before-tab
-;;                          indentation space-after-tab))
-
-;; (add-hook 'ruby-mode-hook (lambda () (subword-mode 1)))
+         )
+  :config
+  (progn
+    (setq ruby-use-encoding-map nil) ;;don't autoadd encoding comment at the top
+    (setq whitespace-style '(trailing space-before-tab
+                                      indentation space-after-tab))
+		(autoload 'inf-ruby-minor-mode "inf-ruby" "Run an inferior Ruby process" t)
+		(add-hook 'ruby-mode-hook 'inf-ruby-minor-mode)
+    (add-hook 'ruby-mode-hook (lambda () (ruby-electric-mode t)))
+    (add-hook 'ruby-mode-hook (lambda () (robe-mode t)))
+    (define-key ruby-mode-map (kbd "RET") 'reindent-then-newline-and-indent)
+    (define-key ruby-mode-map (kbd "C-c l") "lambda")
+    (add-hook 'ruby-mode-hook (lambda () (subword-mode 1)))
+    )
+  )

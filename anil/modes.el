@@ -34,7 +34,7 @@
   :init
   (add-hook 'magit-post-refresh-hook 'diff-hl-magit-post-refresh)
   :config
-  (diff-hl-mode 1)
+  (global-diff-hl-mode)
   (diff-hl-dired-mode 1)
   (diff-hl-flydiff-mode 1)
   (diff-hl-margin-mode 1)
@@ -47,6 +47,12 @@
   (autoload 'ace-jump-mode "ace-jump-mode" "Emacs quick move minor mode" t)
   )
 
+(use-package ace-window
+  :ensure t
+  :bind
+  ("C-o" . ace-window)
+  ("M-p" . ace-window)
+  )
 
 (use-package move-text
   :ensure t
@@ -57,14 +63,18 @@
 
 (use-package multiple-cursors
   :ensure t
+  :bind
+  ("C-S-c C-S-c" . mc/edit-lines)
+  ("C->" . mc/mark-next-like-this)
+  ("C-<" . mc/mark-previous-like-this)
+  ("C-c C-<" . mc/mark-all-like-this)
   )
 
-
-;; (use-package go-mode
-;;   :ensure t
-;;   :mode (
-;;          ("\\.go?\\'" . go-mode)
-;;          ))
+(use-package go-mode
+  :ensure t
+  :mode (
+         ("\\.go?\\'" . go-mode)
+         ))
 
 (use-package less-css-mode
   :ensure t
@@ -82,7 +92,18 @@
   )
 
 (use-package avy
-  :ensure t)
+  :ensure t
+  :bind
+  ("C-:" . avy-goto-char)
+  ("C-'" . avy-goto-word-1)
+  ("C-c u" . swiper-all)
+  ("M-g f" . avy-goto-line)
+  ("M-g e" . avy-goto-word-0)
+  ("M-g w" . avy-goto-word-1)
+  ("M-g t" . avy-goto-char-timer)
+  ("C-c j" . avy-goto-word-or-subword-1)
+  ("s-." . avy-goto-word-or-subword-1)
+  )
 
 (use-package which-key
   :ensure t
@@ -113,9 +134,10 @@
   :init
   (setq ivy-use-virtual-buffers t)
   (setq enable-recursive-minibuffers t)
+  :bind
+  ("C-c C-r" . ivy-resume)
   :config
   (ivy-mode 1)
-  (global-set-key (kbd "C-c C-r") 'ivy-resume)
   )
 
 
@@ -178,39 +200,38 @@
   :init
   (bind-key (kbd "C-=") 'er/expand-region)
   )
-;; this is last change
 
-
+;; this is last change0
 (use-package goto-chg
   :ensure t
-  :config
-  (global-set-key [(control ?.)] 'goto-last-change)
-  (global-set-key [(control ?,)] 'goto-last-change-reverse)
+  :bind
+  ("C-." . goto-last-change)
+  ("C-," . goto-last-change-reverse)
   )
 
 
 (use-package swiper
   :ensure t
-  :config
-  (global-set-key "\M-gs" 'swiper)
-  (global-set-key "\C-s" 'swiper)
-  (global-set-key "\C-s" 'swiper)
-  (global-set-key (kbd "C-s-'") 'swiper-avy)
-  (global-set-key (kbd "C-M-'") 'swiper-avy)
+  :bind
+  ("M-g s" . swiper)
+  ("C-s" . swiper)
+  ("C-M-'" . swiper-avy)
   )
 
 
 (use-package counsel
   :ensure t
-  :config
-  (global-set-key (kbd "M-x") 'counsel-M-x)
-  (global-set-key "\C-x\ \C-f" 'counsel-find-file)
+  :bind
+  ("M-x" . counsel-M-x)
+  ("C-x C-f" . counsel-find-file)
+  ("C-x C-r" . counsel-recentf)
+  ("s-r" . counsel-recentf)
   )
 
 (use-package counsel-dash
   :ensure t
-  :config
-  (global-set-key "\C-c\ \C-o" 'counsel-dash)
+  :bind
+  ("C-c C-o" . counsel-dash)
   )
 
 
@@ -232,27 +253,6 @@
 (use-package projectile
   :ensure t
   )
-(use-package org
-  :ensure t
-  )
-(use-package org-bullets
-  :ensure t
-  )
-(use-package org-projectile
-  :ensure t
-  )
-(use-package robe
-  :ensure t
-  )
-(use-package ruby-electric
-  :ensure t
-  )
-(use-package rubocop
-  :ensure t
-  )
-(use-package rbenv
-  :ensure t
-  )
 (use-package scpaste
   :ensure t
   )
@@ -268,9 +268,6 @@
 (use-package yaml-mode
   :ensure t
   )
-(use-package elm-mode
-  :ensure t
-  )
 (use-package go-mode
   :ensure t
   )
@@ -281,9 +278,6 @@
   :ensure t
   )
 (use-package avy
-  :ensure t
-  )
-(use-package ace-window
   :ensure t
   )
 (use-package dockerfile-mode
@@ -302,15 +296,6 @@
   :ensure t
   )
 (use-package flycheck
-  :ensure t
-  )
-(use-package expand-region
-  :ensure t
-  )
-(use-package goto-chg
-  :ensure t
-  )
-(use-package ripgrep
   :ensure t
   )
 (use-package projectile-ripgrep
@@ -403,6 +388,9 @@
   )
 (use-package terraform-mode
   :ensure t
+  :mode (
+         (".tf" . terraform-mode)
+         )
   )
 (use-package restclient
   :ensure t

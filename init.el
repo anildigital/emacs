@@ -1,5 +1,11 @@
 ;;; init.el First thing to get loaded when Emacs starts.
 
+;; Added by Package.el.  This must come before configurations of
+;; installed packages.  Don't delete this line.  If you don't want it,
+;; just comment it out by adding a semicolon to the start of the line.
+;; You may delete these explanatory comments.
+;;; Code:
+
 (defvar *emacs-load-start* (current-time))
 
 (setenv "LANG" "en_US.UTF-8")
@@ -18,12 +24,11 @@
 (load "path")
 (load "anil-font")
 (load "anil-wakatime")
-(load "anil-elixir")
-;; (load "anil-ruby")
-;; (load "anil-dash")
-;; (load "anil-flycheck")
+(load "anil-ruby")
+(load "anil-dash")
+(load "anil-flycheck")
 (load "anil-js")
-;; (load "anil-elm")
+(load "anil-elm")
 (load "anil-company")
 (load "anil-markdown")
 (load "anil-recentf")
@@ -35,13 +40,13 @@
 (load "anil-yasnippet")
 (load "anil-ispell")
 (load "anil-org")
+(load "anil-elixir")
 (load "anil-ido")
 (load "defuns")
 (load "modes")
 (load "anil-projectile")
 (load "preferences")
 (load "key-bindings")
-(add-hook 'after-init-hook 'org-agenda-list)
 
 (server-start)
 

@@ -10,12 +10,6 @@
   (add-hook 'elixir-mode-hook 'eglot-ensure)
   )
 
-
-
-(use-package flycheck-elixir
-  :ensure t
-  )
-
 (use-package flycheck-mix
   :ensure t
   :init
@@ -49,5 +43,3 @@
   (flycheck-credo-setup)
   (flycheck-dialyxir-setup)
   )
-
-
