@@ -4,7 +4,10 @@
   :init
   (with-eval-after-load 'winum
     (define-key winum-keymap (kbd "M-0") #'treemacs-select-window))
-  :bind (("s-@" . treemacs-delete-other-windows))
+  :bind (("M-s M-s" . anil-treemacs-swiper)
+         :map prog-mode-map
+         ("\C-c \C-p" . 'treemacs-projectile)
+         )
   :config
   (progn
     (setq projectile-switch-project-action 'treemacs-projectile)
@@ -48,7 +51,6 @@
           treemacs-width                         35)
 
     ))
-
 
 (use-package treemacs-projectile
   :after treemacs projectile

@@ -13,10 +13,13 @@
 ;; Dired
 (require 'dired)
 
-;; - is `cd ..` (like vim)
-(define-key dired-mode-map "-" 'dired-up-directory)
-; prefer dired over dumping dir list to buffer
-(global-set-key "\C-x\C-d" 'dired)
+(use-package dired
+  :ensure nil
+  :bind
+  (("C-x C-d" . dired)
+   :map dired-mode-map
+   ("-" . 'dired-up-directory)
+   ))
 
 ;; kill current bufffer
 (global-set-key (kbd "s-w") 'kill-buffer)
@@ -28,7 +31,6 @@
 
 ;; ido
 (global-set-key "\C-xp" 'anil-ido-find-project)
-(global-set-key "\C-x\ \C-r" 'helm-recentf)
 
 ;; duplicate line
 (global-set-key (kbd "s-d") 'anil-duplicate-line)
@@ -41,7 +43,6 @@
 
 (global-set-key [S-escape] 'delete-other-windows)
 
-(global-set-key (kbd "C-o") 'ace-window)
 
 (global-set-key (kbd "C-w") 'backward-kill-word)
 
@@ -50,26 +51,6 @@
 (global-set-key (kbd "C-c g") 'google-search)
 
 (global-set-key "\C-c\C-k" 'kill-region)
-
-;; Ace jump
-(global-set-key (kbd "C-:") 'avy-goto-char)
-(global-set-key (kbd "C-'") 'avy-goto-word-1)
-(global-set-key (kbd "C-c u") 'swiper-all)
-(global-set-key (kbd "M-g f") 'avy-goto-line)
-(global-set-key (kbd "M-g e") 'avy-goto-word-0)
-(global-set-key (kbd "M-g w") 'avy-goto-word-1)
-(global-set-key (kbd "M-g t") 'avy-goto-char-timer)
-(global-set-key (kbd "C-c j") 'avy-goto-word-or-subword-1)
-(global-set-key (kbd "s-.") 'avy-goto-word-or-subword-1)
-
-(global-set-key (kbd "M-p") 'ace-window)
-;(global-set-key (kbd "s-w") 'ace-window)
-
-(global-set-key (kbd "C-S-c C-S-c") 'mc/edit-lines)
-
-(global-set-key (kbd "C->") 'mc/mark-next-like-this)
-(global-set-key (kbd "C-<") 'mc/mark-previous-like-this)
-(global-set-key (kbd "C-c C-<") 'mc/mark-all-like-this)
 
 (global-set-key (kbd "C-c C-f") 'copy-file-name-to-clipboard)
 
@@ -80,26 +61,7 @@
 (define-key global-map [end] 'end-of-line)
 
 
-;; treemacs
-(global-set-key (kbd "s-1") 'treemacs)
-(global-set-key (kbd "s-0") 'treemacs-select-window)
-(global-set-key (kbd "s-!") 'treemacs-add-and-display-current-project)
-(global-set-key (kbd "C-c h h") 'browse-at-remote)
-(define-key prog-mode-map (kbd "\C-c \C-p") 'treemacs-projectile)
-(global-set-key (kbd "C-x 1") 'treemacs-delete-other-windows)
-(global-set-key (kbd "M-s M-s") 'anil-treemacs-swiper)
-
-
-;; projectile
-;; Press Command-p for fuzzy find in project
-(global-set-key (kbd "s-p") 'projectile-find-file)
-(global-set-key (kbd "s-e") 'projectile-recentf)
-;; Press Command-b for fuzzy switch buffer
-(global-set-key (kbd "s-b") 'projectile-switch-to-buffer)
-
 ;;org-projectile
-(global-set-key (kbd "C-c c") 'org-capture)
-(global-set-key (kbd "C-c n p") 'org-projectile-project-todo-completing-read)
 
 (global-set-key (kbd "s-=") 'text-scale-increase)
 (global-set-key (kbd "s--") 'text-scale-decrease)

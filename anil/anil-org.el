@@ -2,6 +2,7 @@
   :mode
   (("\\.org\\'" . org-mode))
   :init
+  ;; org-clock hooks for macOS app
   (add-hook 'org-clock-in-hook (lambda () (call-process "/usr/bin/osascript" nil 0 nil "-e" (concat "tell application \"org-clock-statusbar\" to clock in \"" (replace-regexp-in-string "\"" "\\\\\"" org-clock-current-task) "\""))))
   (add-hook 'org-clock-out-hook (lambda () (call-process "/usr/bin/osascript" nil 0 nil "-e" "tell application \"org-clock-statusbar\" to clock out")))
 
@@ -33,12 +34,12 @@
 
   (setq org-clock-persist t)
   (setq org-clock-persist 'history)
+  (add-hook 'after-init-hook 'org-agenda-list)
 
   :config
 
   (org-clock-persistence-insinuate)
 
-  
   ;; Treemacs fix
   (with-eval-after-load 'org
     (defun org-switch-to-buffer-other-window (&rest args)
