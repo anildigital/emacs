@@ -1,6 +1,3 @@
-
-;; (require 'yaml-mode)
-;;
 (use-package yaml-mode
   :ensure t
   :mode
