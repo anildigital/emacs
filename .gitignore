@@ -30,3 +30,4 @@ bookmarks
 /.emacs.desktop.lock
 org-clock-save.el
 local.el
+.lsp-session*
