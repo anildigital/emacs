@@ -1,10 +1,14 @@
 (use-package org
   :mode
   (("\\.org\\'" . org-mode))
+  :hook
+  ((org-clock-in-hook . (lambda() (call-process "/usr/bin/osascript" nil 0 nil "-e" (concat "tell application \"org-clock-statusbar\" to clock in \"" (replace-regexp-in-string "\"" "\\\\\"" org-clock-current-task) "\""))))
+   (org-clock-out-hook . (lambda() (call-process "/usr/bin/osascript" nil 0 nil "-e" "tell application \"org-clock-statusbar\" to clock out")))
+   (after-init-hook . org-agenda-list)
+   )
+
   :init
   ;; org-clock hooks for macOS app
-  (add-hook 'org-clock-in-hook (lambda () (call-process "/usr/bin/osascript" nil 0 nil "-e" (concat "tell application \"org-clock-statusbar\" to clock in \"" (replace-regexp-in-string "\"" "\\\\\"" org-clock-current-task) "\""))))
-  (add-hook 'org-clock-out-hook (lambda () (call-process "/usr/bin/osascript" nil 0 nil "-e" "tell application \"org-clock-statusbar\" to clock out")))
 
   (setq org-directory "~/org")
   (setq org-default-notes-file (concat org-directory "/notes.org"))
@@ -34,7 +38,6 @@
 
   (setq org-clock-persist t)
   (setq org-clock-persist 'history)
-  (add-hook 'after-init-hook 'org-agenda-list)
 
   :config
 
@@ -49,6 +52,6 @@
 
 (use-package org-bullets
   :ensure t
-  :init
+    :init
   (add-hook 'org-mode-hook (lambda () (org-bullets-mode 1)))
   )

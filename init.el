@@ -28,7 +28,6 @@
 (load "anil-dash")
 (load "anil-flycheck")
 (load "anil-js")
-(load "anil-elm")
 (load "anil-company")
 (load "anil-markdown")
 (load "anil-recentf")

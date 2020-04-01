@@ -5,8 +5,14 @@
   (with-eval-after-load 'winum
     (define-key winum-keymap (kbd "M-0") #'treemacs-select-window))
   :bind (("M-s M-s" . anil-treemacs-swiper)
+         ("s-1" . treemacs)
+         ("s-0" . treemacs-select-window)
+         ("s-!" . treemacs-add-and-display-current-project)
+         ("C-c h h" . browse-at-remote)
+         ("C-x 1" . treemacs-delete-other-windows)
+         ("M-s M-s" . anil-treemacs-swiper)
          :map prog-mode-map
-         ("\C-c \C-p" . 'treemacs-projectile)
+         ("C-c C-p" . 'treemacs-projectile)
          )
   :config
   (progn

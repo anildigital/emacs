@@ -1,5 +1,4 @@
 (use-package ido
-  :ensure nil
   :init
   (setq ido-enable-flex-matching t)
   (setq ido-everywhere t)
