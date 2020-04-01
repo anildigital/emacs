@@ -2,5 +2,7 @@
   (use-package
     exec-path-from-shell
     :ensure t
-    :init (setq exec-path (append exec-path '("/usr/local/bin")))
+    :init
+    ;; (setq exec-path-from-shell-debug t)
+    (setq exec-path (append exec-path '("/usr/local/bin")))
     :config (exec-path-from-shell-initialize)))

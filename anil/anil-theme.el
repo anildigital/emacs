@@ -3,7 +3,8 @@
 (use-package
   dracula-theme
   :ensure t
-  :config (load-theme 'dracula t)
+  :config
+  (enable-theme 'dracula)
   (unless (display-graphic-p)
     (load-theme 'wombat))
   (custom-theme-set-faces 'dracula '(flyspell-duplicate ((t
