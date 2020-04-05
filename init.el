@@ -39,6 +39,7 @@
 (load "anil-yasnippet")
 (load "anil-ispell")
 (load "anil-org")
+(load "mix")
 (load "anil-elixir")
 (load "anil-ido")
 (load "defuns")

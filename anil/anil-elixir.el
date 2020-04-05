@@ -5,6 +5,7 @@
   :config
   (add-hook 'elixir-mode-hook 'flycheck-mode)
   (add-hook 'elixir-mode-hook #'smartparens-mode)
+  (add-hook 'elixir-mode-hook 'mix-minor-mode)
   (add-hook 'elixir-mode-hook (lambda ()
                                         (add-hook 'before-save-hook 'lsp-format-buffer))))
 
