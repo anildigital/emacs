@@ -11,8 +11,5 @@
 
 
 (progn ; `use-package'
-  (setq use-package-enable-imenu-support t)
-  (setq use-package-minimum-reported-time 0)
   (setq use-package-verbose t)
-  (setq use-package-compute-statistics t)
   (require 'use-package))

@@ -32,6 +32,7 @@
 (load "anil-markdown")
 (load "anil-recentf")
 (load "anil-magit")
+(load "anil-counsel")
 (load "anil-treemacs")
 (load "anil-uniquify")
 (load "anil-web")

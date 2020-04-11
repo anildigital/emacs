@@ -72,11 +72,13 @@
 
 
 ;; TODO check this
-(use-package
-  subword
-  :ensure nil
-  :hook ((before-save-hook . delete-trailing-whitespace)
-         (prog-mode-hook . subword-mode)))
+(use-package subword
+  :defer t
+  :diminish subword-mode
+  :hook (
+         (before-save-hook . delete-trailing-whitespace)
+         (prog-mode . subword-mode)
+         ))
 
 (use-package
   avy
@@ -96,9 +98,6 @@
   :ensure t
   :config (which-key-mode)
   (which-key-setup-side-window-right))
-
-;; On save remove trailing white space
-(add-hook 'prog-mode-hook #'nuke_traling)
 
 (desktop-save-mode 1)
 
@@ -153,6 +152,11 @@
   :ensure t
   :mode (("\\.md" . poly-markdown-mode)))
 
+(use-package
+  dpaste
+  :ensure t
+
+  )
 
 (use-package
   wsd-mode
