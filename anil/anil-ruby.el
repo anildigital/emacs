@@ -37,5 +37,4 @@
                                         (robe-mode t)))
             (define-key ruby-mode-map (kbd "RET") 'reindent-then-newline-and-indent)
             (define-key ruby-mode-map (kbd "C-c l") "lambda")
-            (add-hook 'ruby-mode-hook (lambda ()
-                                        (subword-mode 1)))))
+            ))

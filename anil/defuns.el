@@ -106,10 +106,6 @@ Version 2017-11-02"
           (message "Copied buffer file name '%s' to the clipboard." filename))))
 
 
-(defun nuke_traling ()
-  (add-hook 'before-save-hook #'delete-trailing-whitespace nil t))
-
-
 (defun anil/org-narrow-forward ()
   "Move to the next subtree at same level, and narrow to it."
   (interactive)
