@@ -266,9 +266,6 @@
   feature-mode
   :ensure t)
 (use-package
-  react-snippets
-  :ensure t)
-(use-package
   less-css-mode
   :ensure t)
 (use-package
@@ -282,12 +279,6 @@
   :ensure t)
 (use-package
   flycheck-elm
-  :ensure t)
-(use-package
-  flycheck-elixir
-  :ensure t)
-(use-package
-  flycheck-dialyxir
   :ensure t)
 (use-package
   bind-key
