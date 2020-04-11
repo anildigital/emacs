@@ -103,11 +103,6 @@
         ("C-c C-d" . lsp-ui-doc-show))
   )
 
-(use-package flycheck-mix
-  :after (flycheck elixir-mode)
-  :hook
-  (elixir-mode . flycheck-mix-setup))
-
 (use-package
   lsp-mode
   :commands lsp
