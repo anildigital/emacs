@@ -125,12 +125,6 @@
 
 
 (use-package
-  dimmer
-  :ensure t
-  :init (setq dimmer-fraction 0.2)
-  :config (dimmer-mode))
-
-(use-package
   undo-tree
   :ensure t
   :config (global-undo-tree-mode))
