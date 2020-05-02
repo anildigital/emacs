@@ -99,8 +99,6 @@
   :config (which-key-mode)
   (which-key-setup-side-window-right))
 
-(desktop-save-mode 1)
-
 (use-package
   browse-at-remote
   :ensure t)
