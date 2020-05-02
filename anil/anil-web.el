@@ -7,9 +7,16 @@
   (set (make-local-variable 'company-backends)
        '(company-css company-yasnippet company-files)))
 
-(use-package
-  emmet-mode
-  :ensure t)
+
+(use-package emmet-mode
+  :ensure t
+  :hook ((html-mode . emmet-mode)
+         (css-mode  . emmet-mode)
+         (sgml-mode . emmet-mode)
+         (sass-mode . emmet-mode)
+         (web-mode  . emmet-mode)
+         (scss-mode . emmet-mode)))
+
 
 (use-package
   web-mode
@@ -25,6 +32,5 @@
            (default indent-tabs-mode nil)
            (javascript-indent-level 2))
   :hook (web-mode-hook . anil-web-mode-hook)
-  :config (add-hook 'web-mode-hook emmet-mode)
   :bind (:map web-mode-map
               ("M-n" . web-mode-tag-match)))
