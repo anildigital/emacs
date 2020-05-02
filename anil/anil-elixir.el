@@ -40,6 +40,22 @@
   :ensure t
   :commands company-lsp)
 
+(use-package lsp-treemacs
+  :ensure t
+  :commands lsp-treemacs
+  :config
+  (lsp-treemacs-sync-mode 1)
+  )
+
+(use-package posframe
+  :ensure t
+  )
+
+(use-package company-posframe
+  :ensure t
+  :config
+  (company-posframe-mode 1)
+  )
 
 (use-package
   lsp-ui
