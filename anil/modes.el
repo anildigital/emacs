@@ -341,7 +341,3 @@
 
 (use-package lsp-ivy
   :ensure t)
-
-(use-package helm-lsp
-  :ensure t)
-
