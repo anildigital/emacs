@@ -3,6 +3,10 @@
 (add-to-list 'package-archives
        '("melpa" . "http://melpa.org/packages/"))
 
+
+(when (< emacs-major-version 27)
+  (package-initialize))
+
 (setq use-package-verbose t)
 
 (unless (package-installed-p 'use-package)

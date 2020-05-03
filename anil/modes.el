@@ -338,3 +338,10 @@
 (use-package
   edit-indirect
   :ensure t)
+
+(use-package lsp-ivy
+  :ensure t)
+
+(use-package helm-lsp
+  :ensure t)
+
