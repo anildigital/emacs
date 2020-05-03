@@ -31,3 +31,4 @@ bookmarks
 org-clock-save.el
 local.el
 .lsp-session*
+anil/custom.el
