@@ -24,6 +24,7 @@
 (load "path")
 (load "anil-font")
 (load "anil-wakatime")
+(load "anil-lsp")
 (load "anil-ruby")
 (load "anil-dash")
 (load "anil-flycheck")
