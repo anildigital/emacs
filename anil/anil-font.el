@@ -1,6 +1,6 @@
 ;;; Code:
 ;; Set favorite font
 (set-face-attribute 'default nil
-                    :font "JetBrains Mono"
-                    :height 150
+                    :font "Menlo"
+                    :height 170
                     :weight 'regular)

@@ -341,3 +341,6 @@
 
 (use-package lsp-ivy
   :ensure t)
+
+(use-package nginx-mode
+  :ensure t)
