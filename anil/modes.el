@@ -18,12 +18,6 @@
   :ensure t
   :mode (("\\.py?\\'" . python-mode)))
 
-
-(use-package
-  guru-mode
-  :ensure t
-  :config (guru-global-mode +1))
-
 (use-package
   diff-hl
   :ensure t
@@ -226,9 +220,6 @@
   :ensure t)
 (use-package
   web-mode
-  :ensure t)
-(use-package
-  guru-mode
   :ensure t)
 (use-package
   company
