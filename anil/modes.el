@@ -335,3 +335,9 @@
 
 (use-package nginx-mode
   :ensure t)
+
+(use-package git-gutter
+  :ensure t
+  :config
+  (git-gutter-mode)
+  )
