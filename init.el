@@ -41,6 +41,7 @@
 (load "anil-ispell")
 (load "anil-org")
 (load "mix")
+(load "vscode-dark-plus-theme")
 (load "anil-elixir")
 (load "anil-ido")
 (load "defuns")
