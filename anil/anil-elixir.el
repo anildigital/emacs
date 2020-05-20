@@ -18,7 +18,9 @@
                                 (add-hook 'before-save-hook 'lsp-format-buffer)))
   :bind
   (:map elixir-mode-map
-        ("C-c C-d" . lsp-ui-doc-show))
+        ("C-c C-d" . lsp-ui-doc-show)
+        ("C-M-o" . lsp-ui-imenu)
+        )
   )
 
 (use-package
@@ -62,9 +64,9 @@
   :ensure t
   :custom
   (lsp-ui-flycheck-enable t)
-  (lsp-ui-peek-enable nil)
-  (lsp-ui-sideline-enable nil)
-  (lsp-ui-doc-enable nil)
+  (lsp-ui-peek-enable t)
+  (lsp-ui-sideline-enable t)
+  (lsp-ui-doc-enable t)
   :config
   (add-to-list 'lsp-file-watch-ignored "\\.asdf")
   (add-to-list 'lsp-file-watch-ignored "[/\\\\]node_modules$")
