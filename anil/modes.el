@@ -101,7 +101,6 @@
   elisp-format
   :ensure t)
 
-
 (use-package
   ivy
   :ensure t
@@ -110,11 +109,9 @@
   :bind ("C-c C-r" . ivy-resume)
   :config (ivy-mode 1))
 
-
 (use-package
   ripgrep
   :ensure t)
-
 
 (use-package
   undo-tree
@@ -160,7 +157,6 @@
   :ensure t
   :bind ("C-." . goto-last-change)
   ("C-," . goto-last-change-reverse))
-
 
 (use-package
   swiper
@@ -339,5 +335,5 @@
 (use-package git-gutter
   :ensure t
   :config
-  (git-gutter-mode)
+  (global-git-gutter-mode)
   )
