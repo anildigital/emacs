@@ -1,8 +1,6 @@
 ;; ;; elixir mode
-
 (use-package erlang
   :mode "\\.erl$")
-
 
 (use-package
   elixir-mode
@@ -29,7 +27,7 @@
   :ensure t
   :diminish lsp-mode
   :hook (elixir-mode . lsp)
-  :init (add-to-list 'exec-path "/Users/anil/Code/elixir-ls/release")
+  :init (add-to-list 'exec-path "~/Code/elixir-ls/release")
   :custom
   (lsp-restart 'ignore)
   (lsp-file-watch-threshold 5000)
