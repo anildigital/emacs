@@ -18,9 +18,11 @@
   (setq org-default-notes-file (concat org-directory "/notes.org"))
   (setq org-capture-templates '(("t" "Todo" entry (file+headline "~/org/todo.org" "Tasks")
                                  "* TODO %?\n %i\n %a")))
-  (setq org-agenda-files (list (concat org-directory "/notes.org")))
-  (setq org-agenda-files (list (concat org-directory "/todo.org")))
-  (setq org-agenda-files (list (concat org-directory "/long_term.org")))
+
+  (setq org-agenda-files (list (concat org-directory "/notes.org")
+                               (concat org-directory "/todo.org")
+                               (concat org-directory "/long_term.org")))
+
   (setq org-agenda-span 'day)
 
   ;; http://orgmode.org/manual/Closing-items.html
@@ -44,7 +46,8 @@
         (&rest
          args)
       "Same as the original, but lacking the wrapping call to `org-no-popups'"
-      (apply 'switch-to-buffer-other-window args))))
+      (apply 'switch-to-buffer-other-window args)))
+  )
 
 (use-package
   org-bullets
