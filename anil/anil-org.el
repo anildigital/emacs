@@ -1,5 +1,4 @@
-(use-package
-  org
+(use-package org
   :mode (("\\.org\\'" . org-mode))
   :hook ((org-clock-in-hook . (lambda()
                                 (call-process "/usr/bin/osascript" nil 0 nil "-e" (concat
@@ -49,20 +48,20 @@
       (apply 'switch-to-buffer-other-window args)))
   )
 
-(use-package
-  org-bullets
+(use-package org-bullets
   :ensure t
   :init (add-hook 'org-mode-hook (lambda ()
                                    (org-bullets-mode 1))))
 
 
 (use-package org-roam
-      :ensure t
-      :hook
-      (after-init . org-roam-mode)
-      :custom
-      (org-roam-directory "~/org")
-      :bind (:map org-roam-mode-map
+  :ensure t
+  :hook
+  (after-init . org-roam-mode)
+  :custom
+  (org-roam-directory "~/org")
+  (org-roam-index-file "~/org/index.org")
+  :bind (:map org-roam-mode-map
               (("C-c n l" . org-roam)
                ("C-c n f" . org-roam-find-file)
                ("C-c n j" . org-roam-jump-to-index)
