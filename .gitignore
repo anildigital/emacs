@@ -31,4 +31,5 @@ bookmarks
 org-clock-save.el
 local.el
 .lsp-session*
+.last-package-update-day
 anil/custom.el
