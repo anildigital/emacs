@@ -41,6 +41,7 @@
 (load "anil-ispell")
 (load "anil-org")
 (load "mix")
+(load "openapi-yaml-mode")
 (load "anil-elixir")
 (load "anil-ido")
 (load "defuns")
