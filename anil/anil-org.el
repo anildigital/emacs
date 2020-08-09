@@ -14,7 +14,7 @@
          (after-init-hook . org-agenda-list))
   :init
   ;; org-clock hooks for macOS app
-  (setq org-directory "~/org")
+  (setq org-directory (file-truename "~/org"))
   (setq org-default-notes-file (concat org-directory "/notes.org"))
   (setq org-capture-templates '(("t" "Todo" entry (file+headline "~/org/todo.org" "Tasks")
                                  "* TODO %?\n %i\n %a")))

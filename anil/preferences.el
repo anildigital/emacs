@@ -82,4 +82,9 @@
 (add-to-list 'desktop-modes-not-to-save 'info-lookup-mode)
 (add-to-list 'desktop-modes-not-to-save 'fundamental-mode)
 
-(add-hook 'before-save-hook 'whitespace-cleanup)
+
+;; delete old buffers
+(setq clean-buffer-list-delay-general 1)
+(midnight-delay-set 'midnight-delay "02:00am")
+
+(add-hook 'before-save-hook 'delete-trailing-whitespace)
