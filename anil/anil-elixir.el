@@ -11,7 +11,9 @@
   (elixir-mode . smartparens-mode)
   (elixir-mode . mix-minor-mode)
   :config (add-hook 'elixir-mode-hook (lambda ()
-                                        (add-hook 'before-save-hook 'lsp-format-buffer)))
+                                        (add-hook 'before-save-hook 'lsp-format-buffer)
+                                        (add-hook 'before-save-hook 'delete-trailing-whitespace)
+                                        ))
   :bind (:map elixir-mode-map
               ("C-c C-d" . lsp-ui-doc-show)
               ("C-M-o" . lsp-ui-imenu)))

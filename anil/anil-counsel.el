@@ -23,5 +23,4 @@
   (setq counsel-dash-enable-debugging nil)
   (setq counsel-dash-browser-func 'browse-url)
   (setq counsel-dash-ignored-docsets nil)
-  (setcdr (assoc 'counsel-M-x ivy-initial-inputs-alist) "")
   :bind ("C-c C-o" . counsel-dash))

@@ -57,7 +57,7 @@
   :custom (lsp-ui-flycheck-enable t)
   (lsp-ui-peek-enable t)
   (lsp-ui-sideline-enable t)
-  (lsp-ui-doc-enable nil)
+  (lsp-ui-doc-enable t)
   :config (add-to-list 'lsp-file-watch-ignored "\\.asdf")
   (add-to-list 'lsp-file-watch-ignored "[/\\\\]node_modules$")
   (add-to-list 'lsp-file-watch-ignored "[/\\\\]\\.git$")
