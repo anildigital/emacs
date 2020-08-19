@@ -54,7 +54,7 @@
 
 (defun anil-goto-todo ()
   (interactive)
-  (find-file "~/org/todo.org"))
+  (find-file "/Users/anil/Dropbox/org/todo.org"))
 
 (defun eshell/clear ()
   "Clear the eshell buffer."

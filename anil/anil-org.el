@@ -14,9 +14,9 @@
          (after-init-hook . org-agenda-list))
   :init
   ;; org-clock hooks for macOS app
-  (setq org-directory (file-truename "~/org"))
+  (setq org-directory "/Users/anil/Dropbox/org")
   (setq org-default-notes-file (concat org-directory "/notes.org"))
-  (setq org-capture-templates '(("t" "Todo" entry (file+headline "~/org/todo.org" "Tasks")
+  (setq org-capture-templates '(("t" "Todo" entry (file+headline "/Users/anil/dropbox/org/todo.org" "Tasks")
                                  "* TODO %?\n %i\n %a")))
   (setq org-agenda-files (list (concat org-directory "/notes.org")
                                (concat org-directory "/todo.org")
@@ -55,8 +55,8 @@
   org-roam
   :ensure t
   :hook (after-init . org-roam-mode)
-  :config (setq org-roam-directory (file-truename "~/org"))
-  (setq org-roam-index-file "~/org/index.org")
+  :config (setq org-roam-directory "/Users/anil/Dropbox/org/")
+  (setq org-roam-index-file "/Users/anil/Dropbox/org/index.org")
   :bind (:map org-roam-mode-map
               (("C-c n l" . org-roam)
                ("C-c n f" . org-roam-find-file)

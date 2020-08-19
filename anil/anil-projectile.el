@@ -28,7 +28,7 @@
 (use-package
   org-projectile
   :ensure t
-  :init (setq org-projectile-projects-file "~/org/todo.org")
+  :init (setq org-projectile-projects-file "/Users/anil/Dropbox/org/todo.org")
   ;; TODO fix this
                                         ;  (setq org-agenda-files (append org-agenda-files (org-projectile-todo-files)))
   :config (push (org-projectile-project-todo-entry) org-capture-templates))

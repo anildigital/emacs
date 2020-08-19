@@ -305,9 +305,6 @@
   nvm
   :ensure t)
 (use-package
-  indium
-  :ensure t)
-(use-package
   anzu
   :ensure t)
 (use-package
@@ -342,5 +339,5 @@
   :ensure t
   :bind ("<f13>" . deft)
   :commands (deft)
-  :config (setq deft-directory "~/org"
+  :config (setq deft-directory "/Users/anil/Dropbox/org"
                 deft-extensions '("md" "org")))
