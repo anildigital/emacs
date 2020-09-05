@@ -3,6 +3,7 @@
 (add-to-list 'package-archives
        '("melpa" . "http://melpa.org/packages/"))
 
+(setq gnutls-algorithm-priority "NORMAL:-VERS-TLS1.3")
 
 (when (< emacs-major-version 27)
   (package-initialize))

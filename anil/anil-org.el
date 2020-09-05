@@ -1,23 +1,13 @@
 (use-package
   org
   :mode (("\\.org\\'" . org-mode))
-  :hook ((org-clock-in-hook . (lambda()
-                                (call-process "/usr/bin/osascript" nil 0 nil "-e" (concat
-                                                                                   "tell application \"org-clock-statusbar\" to clock in \""
-                                                                                   (replace-regexp-in-string
-                                                                                    "\"" "\\\\\""
-                                                                                    org-clock-current-task)
-                                                                                   "\""))))
-         (org-clock-out-hook . (lambda()
-                                 (call-process "/usr/bin/osascript" nil 0 nil "-e"
-                                               "tell application \"org-clock-statusbar\" to clock out")))
-         (after-init-hook . org-agenda-list))
+  :hook ((after-init-hook . org-agenda-list))
   :init
   ;; org-clock hooks for macOS app
   (setq org-directory "/Users/anil/Dropbox/org")
   (setq org-default-notes-file (concat org-directory "/notes.org"))
-  (setq org-capture-templates '(("t" "Todo" entry (file+headline "/Users/anil/dropbox/org/todo.org" "Tasks")
-                                 "* TODO %?\n %i\n %a")))
+  (setq org-capture-templates '(("t" "Todo" entry (file+headline "/Users/anil/dropbox/org/todo.org"
+                                                                 "Tasks") "* TODO %?\n %i\n %a")))
   (setq org-agenda-files (list (concat org-directory "/notes.org")
                                (concat org-directory "/todo.org")
                                (concat org-directory "/long_term.org")))
@@ -32,7 +22,7 @@
   (setq org-use-speed-commands t)
   (setf org-blank-before-new-entry '((heading . nil)
                                      (plain-list-item . nil)))
-  (setq org-clock-idle-time 2)
+  (setq org-clock-idle-time 3)
   (setq org-clock-persist t)
   (setq org-clock-persist 'history)
   :config (org-clock-persistence-insinuate)
@@ -57,6 +47,8 @@
   :hook (after-init . org-roam-mode)
   :config (setq org-roam-directory "/Users/anil/Dropbox/org/")
   (setq org-roam-index-file "/Users/anil/Dropbox/org/index.org")
+  (add-hook 'org-clock-in-hook (lambda () (call-process "/usr/bin/osascript" nil 0 nil "-e" (concat "tell application \"org-clock-statusbar\" to clock in \"" (replace-regexp-in-string "\"" "\\\\\"" org-clock-current-task) "\""))))
+  (add-hook 'org-clock-out-hook (lambda () (call-process "/usr/bin/osascript" nil 0 nil "-e" "tell application \"org-clock-statusbar\" to clock out")))
   :bind (:map org-roam-mode-map
               (("C-c n l" . org-roam)
                ("C-c n f" . org-roam-find-file)

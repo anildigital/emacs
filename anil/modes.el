@@ -34,6 +34,12 @@
   :config (autoload 'ace-jump-mode "ace-jump-mode" "Emacs quick move minor mode" t))
 
 (use-package
+  adoc-mode
+  :ensure t
+  )
+
+
+(use-package
   ace-window
   :ensure t
   :bind ("C-o" . ace-window)
