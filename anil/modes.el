@@ -345,5 +345,5 @@
   :ensure t
   :bind ("<f13>" . deft)
   :commands (deft)
-  :config (setq deft-directory "/Users/anil/Dropbox/org"
+  :config (setq deft-directory "~/org"
                 deft-extensions '("md" "org")))

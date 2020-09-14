@@ -4,7 +4,7 @@
   :hook ((after-init-hook . org-agenda-list))
   :init
   ;; org-clock hooks for macOS app
-  (setq org-directory "/Users/anil/Dropbox/org")
+  (setq org-directory "~/org")
   (setq org-default-notes-file (concat org-directory "/notes.org"))
   (setq org-capture-templates '(("t" "Todo" entry (file+headline "/Users/anil/dropbox/org/todo.org"
                                                                  "Tasks") "* TODO %?\n %i\n %a")))
@@ -45,8 +45,8 @@
   org-roam
   :ensure t
   :hook (after-init . org-roam-mode)
-  :config (setq org-roam-directory "/Users/anil/Dropbox/org/")
-  (setq org-roam-index-file "/Users/anil/Dropbox/org/index.org")
+  :config (setq org-roam-directory "~/org/")
+  (setq org-roam-index-file "~/org/index.org")
   (add-hook 'org-clock-in-hook (lambda () (call-process "/usr/bin/osascript" nil 0 nil "-e" (concat "tell application \"org-clock-statusbar\" to clock in \"" (replace-regexp-in-string "\"" "\\\\\"" org-clock-current-task) "\""))))
   (add-hook 'org-clock-out-hook (lambda () (call-process "/usr/bin/osascript" nil 0 nil "-e" "tell application \"org-clock-statusbar\" to clock out")))
   :bind (:map org-roam-mode-map
