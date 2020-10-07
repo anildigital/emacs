@@ -41,7 +41,8 @@
 (global-set-key (kbd "s-<return>") 'anil-new-line-jump-to-it)
 
 (global-set-key [S-escape] 'delete-other-windows)
-
+(global-set-key (kbd "s-[") 'other-window)
+(global-set-key (kbd "s-]") 'other-window)
 
 (global-set-key (kbd "C-w") 'backward-kill-word)
 
