@@ -133,4 +133,19 @@ Repeated invocations toggle between the two most recently open buffers."
   (treemacs-select-window)
   (swiper))
 
+(defun anil-org-log-delete ()
+  "Delete logbook drawer of subtree."
+  (interactive)
+  (save-excursion
+    (goto-char (org-log-beginning))
+    (when (save-excursion
+            (save-match-data
+              (beginning-of-line 0)
+              (search-forward-regexp org-drawer-regexp)
+              (goto-char (match-beginning 1))
+              (looking-at "LOGBOOK")))
+      (org-mark-element)
+      (delete-region (region-beginning) (region-end))
+      (org-remove-empty-drawer-at (point)))))
+
 (provide 'defuns)
