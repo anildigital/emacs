@@ -8,14 +8,17 @@
   (setq org-default-notes-file (concat org-directory "/notes.org"))
   (setq org-capture-templates '(("t" "Todo" entry (file+headline "/Users/anil/dropbox/org/todo.org"
                                                                  "Tasks") "* TODO %?\n %i\n %a")))
-  (setq org-agenda-files (list (concat org-directory "/notes.org")
-                               (concat org-directory "/todo.org")
+  (setq org-agenda-files (list (concat org-directory "/todo.org")
                                (concat org-directory "/long_term.org")))
   (setq org-agenda-span 'day)
+
+  (setq org-tag-alist '(("important" . ?i)
+                    ("urgent"    . ?u)))
 
   ;; http://orgmode.org/manual/Closing-items.html
   (setq org-log-done 'time)
   (setq org-log-done 'note)
+
   ;;
   (setq org-startup-indented t)
   (setq org-startup-with-inline-images t)
@@ -26,6 +29,12 @@
   (setq org-clock-persist t)
   (setq org-clock-persist 'history)
   :config (org-clock-persistence-insinuate)
+
+  (setq org-agenda-custom-commands
+        '(("1" "Q1" tags-todo "+important+urgent")
+          ("2" "Q2" tags-todo "+important-urgent")
+          ("3" "Q3" tags-todo "-important+urgent")
+          ("4" "Q4" tags-todo "-important-urgent")))
 
   ;; Treemacs fix
   (with-eval-after-load 'org
