@@ -66,23 +66,6 @@
 (add-to-list 'default-frame-alist '(ns-transparent-titlebar . t))
 (add-to-list 'default-frame-alist '(ns-appearance . dark))
 
-(desktop-save-mode 1)
-(setq desktop-path '(".config/emacs"))
-(setq desktop-dirname ".config/emacs")
-(setq desktop-base-file-name "emacs-desktop")
-
-
-(setq desktop-buffers-not-to-save
-      (concat "\\("
-              "^nn\\.a[0-9]+\\|\\.log\\|(ftp)\\|^tags\\|^TAGS"
-              "\\|\\.emacs.*\\|\\.diary\\|\\.newsrc-dribble\\|\\.bbdb"
-              "\\)$"))
-(add-to-list 'desktop-modes-not-to-save 'dired-mode)
-(add-to-list 'desktop-modes-not-to-save 'Info-mode)
-(add-to-list 'desktop-modes-not-to-save 'info-lookup-mode)
-(add-to-list 'desktop-modes-not-to-save 'fundamental-mode)
-
-
 ;; delete old buffers
 (setq clean-buffer-list-delay-general 1)
 (midnight-delay-set 'midnight-delay "02:00am")
