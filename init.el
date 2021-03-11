@@ -18,12 +18,12 @@
 
 ;; load packages.el
 (load "packages")
+(setq package-check-signature nil)
 
 (load "anil-theme")
 (load "local")
 (load "path")
 (load "anil-font")
-(load "anil-wakatime")
 (load "anil-lsp")
 (load "anil-ruby")
 (load "anil-dash")
@@ -56,3 +56,4 @@
 
 (provide 'init)
 ;;; init.el ends here
+(put 'narrow-to-region 'disabled nil)
