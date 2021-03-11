@@ -7,6 +7,12 @@
   magit
   :bind ("\C-xg" . 'magit-status))
 
+(use-package
+  magit
+  :bind ("\C-cf" . 'forge-browse-remote))
+
+
+
 ;; ;; ctags
 (global-set-key [s-mouse-1] 'lsp-ui-peek-find-definitions)
 (global-set-key [S-s-mouse-1] 'xref-pop-marker-stack)

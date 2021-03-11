@@ -6,3 +6,6 @@
                                            (:foreground "green3"))) 'now)
                             '(diff-removed ((t
                                              (:foreground "red3"))) 'now)))
+(use-package
+  forge
+  :ensure t)

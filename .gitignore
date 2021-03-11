@@ -34,3 +34,4 @@ local.el
 .last-package-update-day
 anil/custom.el
 org-roam.db
+forge-database.sqlite
