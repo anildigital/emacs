@@ -53,6 +53,14 @@
   (lsp-ui-peek-enable t)
   (lsp-ui-sideline-enable t)
   (lsp-ui-doc-enable t)
+  :bind
+  (:map lsp-ui-mode-map
+        ([remap xref-find-definitions] . lsp-ui-peek-find-definitions)
+        ([remap xref-find-references] . lsp-ui-peek-find-references)
+        ("M-i" . lsp-ui-doc-focus-frame))
+  (:map lsp-mode-map
+        ("M-n" . forward-paragraph)
+        ("M-p" . backward-paragraph))
   :config (add-to-list 'lsp-file-watch-ignored "\\.asdf")
   (add-to-list 'lsp-file-watch-ignored "[/\\\\]node_modules$")
   (add-to-list 'lsp-file-watch-ignored "[/\\\\]\\.git$")

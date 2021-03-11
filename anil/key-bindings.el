@@ -8,8 +8,9 @@
   :bind ("\C-xg" . 'magit-status))
 
 ;; ;; ctags
-(global-set-key [s-mouse-1] 'find-tag)
-(global-set-key (kbd "s-.") 'find-tag)
+(global-set-key [s-mouse-1] 'lsp-ui-peek-find-definitions)
+(global-set-key [S-s-mouse-1] 'xref-pop-marker-stack)
+(global-set-key (kbd "s-.") 'lsp-ui-peek-find-definitions)
 (global-set-key "\M-*" 'pop-tag-mark)
 
 ;; Dired
@@ -77,7 +78,10 @@
   (define-key global-map "\M-3" #'insert-pound))
 
 (global-set-key "\C-cP" 'anil-goto-config)
-(global-set-key (kbd "s-t") 'anil-goto-todo)
+(global-set-key (kbd "\C-ct") 'anil-goto-todo)
+
+;; shell
+(global-set-key (kbd "C-~") 'eshell)
 
 ;; Org keybindings
 (global-set-key "\C-cl" 'org-store-link)

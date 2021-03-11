@@ -43,7 +43,7 @@
   ace-window
   :ensure t
   :bind ("C-o" . ace-window)
-  ("M-p" . ace-window))
+  )
 
 (use-package
   move-text

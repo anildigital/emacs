@@ -16,7 +16,7 @@
                                         ))
   :bind (:map elixir-mode-map
               ("C-c C-d" . lsp-ui-doc-show)
-              ("C-M-o" . lsp-ui-imenu)))
+              ("s-t" . lsp-ui-imenu)))
 
 (use-package
   exunit
@@ -45,14 +45,9 @@
   :no-require t
   :init (flycheck-dialyxir-setup))
 
-
-(use-package
-  alchemist
-  :ensure t
-  :after elixir-mode
-  :init (let ((fn (byte-compile (lambda ()
-                                  (add-to-list (make-local-variable 'company-backends)
-                                               'alchemist-company)))))
-          (remove-hook 'alchemist-mode-hook fn)
-          (remove-hook 'alchemist-iex-mode-hook fn))
-  :config (remove-hook 'elixir-mode-hook #'alchemist-mode-hook))
+(use-package inf-elixir
+  :bind (("C-c i i" . 'inf-elixir)
+         ("C-c i p" . 'inf-elixir-project)
+         ("C-c i l" . 'inf-elixir-send-line)
+         ("C-c i r" . 'inf-elixir-send-region)
+         ("C-c i b" . 'inf-elixir-send-buffer)))
