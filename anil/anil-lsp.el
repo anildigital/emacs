@@ -32,11 +32,6 @@
   :config (company-posframe-mode 1))
 
 (use-package
-  company-lsp
-  :ensure t
-  :commands company-lsp)
-
-(use-package
   lsp-treemacs
   :ensure t
   :commands lsp-treemacs
