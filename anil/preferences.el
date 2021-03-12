@@ -71,3 +71,8 @@
 (midnight-delay-set 'midnight-delay "02:00am")
 
 (add-hook 'before-save-hook 'delete-trailing-whitespace)
+
+
+;; eshell
+(setq eshell-scroll-to-bottom-on-output nil)
+(setq eshell-scroll-show-maximum-output nil)
