@@ -22,9 +22,6 @@
   exunit
   :ensure t)
 
-(use-package
-  flycheck-elixir
-  :ensure t)
 
 (use-package
   flycheck-dialyxir

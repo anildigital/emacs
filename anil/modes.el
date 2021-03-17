@@ -29,21 +29,9 @@
   (diff-hl-amend-mode 1))
 
 (use-package
-  ace-jump-mode
-  :ensure t
-  :config (autoload 'ace-jump-mode "ace-jump-mode" "Emacs quick move minor mode" t))
-
-(use-package
-  adoc-mode
-  :ensure t
-  )
-
-
-(use-package
   ace-window
   :ensure t
-  :bind ("C-o" . ace-window)
-  )
+  :bind ("C-o" . ace-window))
 
 (use-package
   move-text
@@ -72,13 +60,12 @@
 
 
 ;; TODO check this
-(use-package subword
+(use-package
+  subword
   :defer t
   :diminish subword-mode
-  :hook (
-         (before-save-hook . delete-trailing-whitespace)
-         (prog-mode . subword-mode)
-         ))
+  :hook ((before-save-hook . delete-trailing-whitespace)
+         (prog-mode . subword-mode)))
 
 (use-package
   avy
@@ -104,10 +91,6 @@
   :ensure t)
 
 (use-package
-  elisp-format
-  :ensure t)
-
-(use-package
   ivy
   :ensure t
   :init (setq ivy-use-virtual-buffers t)
@@ -124,13 +107,6 @@
   :ensure t
   :config (global-undo-tree-mode))
 
-
-(use-package
-  volatile-highlights
-  :ensure t
-  :config (volatile-highlights-mode t))
-
-
 (add-hook 'text-mode-hook 'flyspell-mode)
 (add-hook 'prog-mode-hook 'flyspell-prog-mode)
 
@@ -143,9 +119,7 @@
 
 (use-package
   dpaste
-  :ensure t
-
-  )
+  :ensure t)
 
 (use-package
   wsd-mode
@@ -182,9 +156,6 @@
   :mode ((".tf" . terraform-mode)))
 
 (use-package
-  elisp-format
-  :ensure t)
-(use-package
   git-lens
   :ensure t)
 (use-package
@@ -201,9 +172,6 @@
   :ensure t)
 (use-package
   dash-at-point
-  :ensure t)
-(use-package
-  gist
   :ensure t)
 (use-package
   yaml-mode
@@ -255,9 +223,6 @@
   :ensure t)
 (use-package
   ido-vertical-mode
-  :ensure t)
-(use-package
-  paradox
   :ensure t)
 (use-package
   wsd-mode
@@ -322,28 +287,34 @@
 (use-package
   imenu-anywhere
   :ensure t)
-(use-package
-  org-ac
-  :ensure t)
+
 (use-package
   edit-indirect
   :ensure t)
 
-(use-package lsp-ivy
+(use-package
+  nginx-mode
   :ensure t)
 
-(use-package nginx-mode
-  :ensure t)
-
-(use-package git-gutter
+(use-package
+  git-gutter
   :ensure t
-  :config
-  (global-git-gutter-mode)
-  )
+  :config (global-git-gutter-mode))
 
-(use-package deft
+(use-package
+  deft
   :ensure t
   :bind ("<f13>" . deft)
   :commands (deft)
-  :config (setq deft-directory "~/org"
-                deft-extensions '("md" "org")))
+  :config (setq deft-directory "~/org" deft-extensions '("md" "org")))
+
+(use-package
+  perspective
+  :ensure t
+  :bind (("C-x C-b" . persp-list-buffers) ; or use a nicer switcher, see below
+         ))
+
+
+(use-package
+  treemacs-perspective
+  :ensure t)
