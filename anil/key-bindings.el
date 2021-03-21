@@ -61,7 +61,9 @@
 
 (global-set-key (kbd "C-c C-f") 'copy-file-name-to-clipboard)
 
-(global-set-key (kbd "C-S-<mouse-1>") 'mc/add-cursor-on-click)
+
+(global-unset-key (kbd "M-<down-mouse-1>"))
+(global-set-key (kbd "M-<mouse-1>") 'mc/add-cursor-on-click)
 
 
 (define-key global-map [home] 'beginning-of-line)
