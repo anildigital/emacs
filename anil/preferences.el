@@ -76,3 +76,11 @@
 ;; eshell
 (setq eshell-scroll-to-bottom-on-output nil)
 (setq eshell-scroll-show-maximum-output nil)
+
+
+;; smooth scrolling
+(pixel-scroll-mode 1)
+(setq scroll-preserve-screen-position 1)
+(setq scroll-conservatively 101)
+
+(add-to-list 'default-frame-alist '(inhibit-double-buffering . t))
