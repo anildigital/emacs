@@ -21,6 +21,7 @@
   (progn
     (setq projectile-switch-project-action 'treemacs-projectile)
     (define-key treemacs-mode-map (kbd "SPC") (lambda () (interactive) (treemacs-visit-node-no-split t)))
+    (define-key treemacs-mode-map [mouse-1] #'treemacs-single-click-expand-action)
     (setq treemacs-collapse-dirs                 (if treemacs-python-executable 3 0)
           treemacs-deferred-git-apply-delay      0.5
           treemacs-directory-name-transformer    #'identity
