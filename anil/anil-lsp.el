@@ -15,12 +15,6 @@
   (setq read-process-output-max (* 1024 1024)) ;; 1mb
   (setq lsp-idle-delay 0.500))
 
-(use-package
-  lsp-treemacs
-  :ensure t
-  :commands lsp-treemacs
-  :config (lsp-treemacs-sync-mode 1))
-
 
 (use-package
   posframe
