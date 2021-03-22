@@ -314,7 +314,12 @@
   :bind (("C-x C-b" . persp-list-buffers) ; or use a nicer switcher, see below
          ))
 
-
 (use-package
   treemacs-perspective
   :ensure t)
+
+(use-package
+  protobuf-mode
+  :ensure t
+  :mode ((".proto" . protobuf-mode)
+         ))
