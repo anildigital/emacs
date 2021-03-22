@@ -107,9 +107,6 @@
   :ensure t
   :config (global-undo-tree-mode))
 
-(add-hook 'text-mode-hook 'flyspell-mode)
-(add-hook 'prog-mode-hook 'flyspell-prog-mode)
-
 (use-package
   polymode)
 (use-package
@@ -241,9 +238,6 @@
   :ensure t)
 (use-package
   dracula-theme
-  :ensure t)
-(use-package
-  flyspell-popup
   :ensure t)
 (use-package
   hydra
