@@ -317,3 +317,9 @@
   :ensure t
   :mode (("\\.proto" . protobuf-mode)
          ))
+
+(use-package
+  mermaid-mode
+  :ensure t
+  :mode (("\\.mmd" . mermaid-mode)
+         ))
