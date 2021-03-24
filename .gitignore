@@ -35,3 +35,4 @@ local.el
 anil/custom.el
 org-roam.db
 forge-database.sqlite
+eln-cache

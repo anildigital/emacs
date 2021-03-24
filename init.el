@@ -6,6 +6,8 @@
 ;; You may delete these explanatory comments.
 ;;; Code:
 
+(setq comp-speed 2)
+
 (defvar *emacs-load-start* (current-time))
 
 (setenv "LANG" "en_US.UTF-8")
@@ -20,9 +22,9 @@
 (load "packages")
 (setq package-check-signature nil)
 
+(load "path")
 (load "anil-theme")
 (load "local")
-(load "path")
 (load "anil-font")
 (load "anil-lsp")
 (load "anil-ruby")

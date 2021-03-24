@@ -78,6 +78,9 @@
 (setq eshell-scroll-show-maximum-output nil)
 
 
+(setq warning-minimum-level :error)
+
+
 ;; smooth scrolling
 (pixel-scroll-mode 1)
 (setq scroll-preserve-screen-position 1)
