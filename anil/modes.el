@@ -359,3 +359,7 @@
   :ensure t
   :mode (("\\.mmd" . mermaid-mode)
          ))
+
+(use-package all-the-icons
+	:ensure t
+	)
