@@ -10,7 +10,7 @@
   ;;                           )
 
   :bind
-  ("\C-cf" . 'forge-browse-remote)
+  ;; ("\C-cf" . 'forge-browse-remote)
   ("\C-xg" . 'magit-status)
   )
 

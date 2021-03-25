@@ -55,3 +55,17 @@
   (add-to-list 'lsp-file-watch-ignored "[/\\\\]\\.elixir_ls$")
   (add-to-list 'lsp-file-watch-ignored "[/\\\\]deps$")
   (add-to-list 'lsp-file-watch-ignored "[/\\\\]_build$"))
+
+
+(use-package
+	lsp-origami
+	:ensure t
+	:init
+	(setq lsp-enable-folding t)
+	:after lsp-mode
+	:hook (lsp-after-open . lsp-origami-try-enable)
+	:config
+	(with-eval-after-load 'origami
+    (define-key origami-mode-map (kbd "C-c f") 'origami-recursively-toggle-node)
+    (define-key origami-mode-map (kbd "C-c F") 'origami-toggle-all-nodes)
+		))
