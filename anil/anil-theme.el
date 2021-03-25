@@ -7,6 +7,7 @@
 
 (use-package centaur-tabs
   :ensure t
+  :after (vscode-dark-plus-theme)
   :demand
   :init
   (setq centaur-tabs-height 32

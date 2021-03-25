@@ -3,15 +3,6 @@
   hippie-exp
   :bind (("M-SPC" . hippie-expand)))
 
-(use-package
-  magit
-  :bind ("\C-xg" . 'magit-status))
-
-(use-package
-  magit
-  :bind ("\C-cf" . 'forge-browse-remote))
-
-
 
 ;; ;; ctags
 (global-set-key [s-mouse-1] 'lsp-ui-peek-find-definitions)

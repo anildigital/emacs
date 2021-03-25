@@ -29,6 +29,7 @@
 (load "anil-lsp")
 (load "anil-ruby")
 (load "anil-dash")
+(load "anil-hydra")
 (load "anil-flycheck")
 (load "anil-js")
 (load "anil-company")
@@ -43,8 +44,6 @@
 (load "anil-yasnippet")
 (load "anil-ispell")
 (load "anil-org")
-(load "mix")
-(load "openapi-yaml-mode")
 (load "anil-elixir")
 (load "anil-ido")
 (load "defuns")
@@ -55,6 +54,7 @@
 
 (server-start)
 
+(message (emacs-init-time))
 
 (provide 'init)
 ;;; init.el ends here

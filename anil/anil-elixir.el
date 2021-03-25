@@ -1,6 +1,7 @@
 ;; ;; elixir mode
 (use-package
   erlang
+	:ensure t
   :mode "\\.erl$")
 
 (use-package
@@ -20,12 +21,15 @@
 
 (use-package
   exunit
-  :ensure t)
-
+  :ensure t
+	:after elixir-mode
+	)
 
 (use-package
   flycheck-dialyxir
-  :ensure t)
+  :ensure t
+	:after elixir-mode
+	)
 
 (use-package
   flycheck-credo
@@ -35,7 +39,9 @@
 
 (use-package
   flycheck-dialyxir
-  :ensure t)
+  :ensure t
+	:after elixir-mode
+	)
 
 (use-package
   flycheck
@@ -43,8 +49,17 @@
   :init (flycheck-dialyxir-setup))
 
 (use-package inf-elixir
+	:ensure t
+	:after elixir-mode
   :bind (("C-c i i" . 'inf-elixir)
          ("C-c i p" . 'inf-elixir-project)
          ("C-c i l" . 'inf-elixir-send-line)
          ("C-c i r" . 'inf-elixir-send-region)
          ("C-c i b" . 'inf-elixir-send-buffer)))
+
+(use-package
+  mix
+	:ensure t
+  :after elixir-mode
+	:hook (elixir-mode . mix-minor-mode)
+	)

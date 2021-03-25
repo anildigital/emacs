@@ -1,6 +1,7 @@
 (use-package
   yasnippet
   :ensure t
+  :after (elixir-mode ruby-mode)
   :init (setq yas-snippet-dirs '("~/.config/emacs/snippets"))
   :config
   (add-to-list 'yas-snippet-dirs "~/Code/yasnippet-snippets/snippets")

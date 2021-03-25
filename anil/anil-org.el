@@ -47,12 +47,14 @@
 (use-package
   org-bullets
   :ensure t
+  :after org
   :init (add-hook 'org-mode-hook (lambda ()
                                    (org-bullets-mode 1))))
 
 (use-package
   org-roam
   :ensure t
+  :after org
   :hook (after-init . org-roam-mode)
   :config (setq org-roam-directory "~/org/")
   (setq org-roam-index-file "~/org/index.org")
@@ -68,3 +70,11 @@
               :map org-mode-map
               (("C-c n i" . org-roam-insert))
               (("C-c n I" . org-roam-insert-immediate))))
+
+
+(use-package
+  ox-pandoc
+  :ensure t
+  :after org
+  )
+

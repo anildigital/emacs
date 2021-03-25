@@ -21,16 +21,19 @@
 (use-package
   web-mode
   :ensure t
-  :mode (("\\.erb\\'" . web-mode)
-         ("\\.mustache\\'" . web-mode)
-         ("\\.html?\\'" . web-mode)
-         ("\\.eex?\\'" . web-mode)
-         ("\\.html?\\'" . web-mode))
+	:defer t
   :custom ((web-mode-enable-current-element-highlight t)
            (web-mode-enable-current-column-highlight t)
            (js-indent-level 2)
            (default indent-tabs-mode nil)
            (javascript-indent-level 2))
   :hook (web-mode-hook . anil-web-mode-hook)
+  :mode
+  (
+   ".erb$"
+   ".html?$"
+   ".vue$"
+   ".eex$"
+   )
   :bind (:map web-mode-map
               ("M-n" . web-mode-tag-match)))

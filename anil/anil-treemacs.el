@@ -1,6 +1,7 @@
 (use-package treemacs
   :ensure t
   :defer t
+  :after prog-mode
   :init
   (with-eval-after-load 'winum
     (define-key winum-keymap (kbd "M-0") #'treemacs-select-window))

@@ -73,10 +73,6 @@
 (add-hook 'before-save-hook 'delete-trailing-whitespace)
 
 
-;; eshell
-(setq eshell-scroll-to-bottom-on-output nil)
-(setq eshell-scroll-show-maximum-output nil)
-
 
 (setq warning-minimum-level :error)
 

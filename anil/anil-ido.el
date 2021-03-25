@@ -8,4 +8,5 @@
 (use-package
   ido-vertical-mode
   :ensure t
+	:after ido
   :config (ido-vertical-mode 1))

@@ -1,25 +1,29 @@
 (use-package
   rbenv
   :ensure t
+  :after (ruby-mode)
   :config (global-rbenv-mode))
 
 (use-package
   robe
-  :ensure t)
+  :ensure t
+  :after (ruby-mode)
+  )
 
 (use-package
   ruby-electric
-  :ensure t)
+  :ensure t
+  :after (ruby-mode)
+  )
+
 (use-package
   rubocop
-  :ensure t)
-(use-package
-  rbenv
-  :ensure t)
+  :ensure t
+  :after (ruby-mode)
+  )
 
 (use-package
   ruby-mode
-  :ensure nil
   :mode (("\\.rake$" . ruby-mode)
          ("Gemfile$" .  ruby-mode)
          ("Rakefile$" . ruby-mode)

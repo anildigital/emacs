@@ -2,14 +2,13 @@
   sh-mode
   :ensure nil
   :init
-  :mode ((".aliases" . sh-mode)
-         (".bash_profile" . sh-mode)
-         (".bashrc" . sh-mode)))
+  :mode (".aliases" . sh-mode)
+  (".bash_profile" . sh-mode)
+  (".bashrc" . sh-mode))
 
 (use-package
   dockerfile-mode
   :ensure t
-  :init
   :mode (("\\Dockerfile\\'" . dockerfile-mode)
          ("Dockerfile" . dockerfile-mode)))
 
@@ -21,6 +20,7 @@
 (use-package
   diff-hl
   :ensure t
+  :after magit
   :hook ((magit-post-refresh-hook . diff-hl-magit-post-refresh))
   :config (global-diff-hl-mode)
   (diff-hl-dired-mode 1)
@@ -57,7 +57,6 @@
   less-css-mode
   :ensure t
   :mode (("\\.less$" . less-css-mode)))
-
 
 ;; TODO check this
 (use-package
@@ -100,38 +99,51 @@
 
 (use-package
   ripgrep
-  :ensure t)
+  :ensure t
+	:commands projectile-ripgrep
+	)
 
 (use-package
   undo-tree
   :ensure t
+	:commands undo-tree-visualize
   :config (global-undo-tree-mode))
 
 (use-package
-  polymode)
+  polymode
+	:ensure t
+	:after markdown-mode
+	)
+
 (use-package
   poly-markdown
   :ensure t
+	:after polymode
   :mode (("\\.md" . poly-markdown-mode)))
 
 (use-package
   dpaste
-  :ensure t)
+  :ensure t
+	:commands dpaste-buffer dpaste-region-or-buffer dpaste-region
+	)
 
 (use-package
   wsd-mode
   :ensure t
+	:commands wsd-mode
   :init (setq wsd-style "default"))
 
 (use-package
   expand-region
   :ensure t
+	:commands er/expand-region
   :init (bind-key (kbd "C-=") 'er/expand-region))
 
 ;; this is last change0
 (use-package
   goto-chg
   :ensure t
+	:after prog-mode
   :bind ("C-." . goto-last-change)
   ("C-," . goto-last-change-reverse))
 
@@ -143,161 +155,184 @@
   ("C-M-'" . swiper-avy))
 
 (use-package
-  erlang
-  :mode (("\\.*erl\\'" . erlang-mode))
-  :ensure t)
-
-(use-package
   terraform-mode
   :ensure t
   :mode ((".tf" . terraform-mode)))
 
 (use-package
-  git-lens
-  :ensure t)
-(use-package
   markdown-mode
-  :ensure t)
-(use-package
-  projectile
-  :ensure t)
+  :ensure t
+	:mode
+	(".md" . markdown-mode)
+	)
+
 (use-package
   scpaste
-  :ensure t)
+  :ensure t
+	:defer t
+	)
+
 (use-package
   dash
   :ensure t)
-(use-package
-  dash-at-point
-  :ensure t)
+
 (use-package
   yaml-mode
-  :ensure t)
+  :ensure t
+	:mode
+	(".yaml" . yaml-mode)
+	(".yml" . yaml-mode)
+	)
+
 (use-package
   paredit
-  :ensure t)
-(use-package
-  which-key
-  :ensure t)
-(use-package
-  dockerfile-mode
-  :ensure t)
+  :ensure t
+	:after emacs-lisp-mode clojure-mode
+	)
+
+
 (use-package
   emmet-mode
-  :ensure t)
-(use-package
-  web-mode
-  :ensure t)
-(use-package
-  company
-  :ensure t)
-(use-package
-  move-text
-  :ensure t)
+  :ensure t
+	:after web-mode
+	:mode
+	(".html" . yaml-mode)
+	(".eex" . yaml-mode)
+	)
+
 (use-package
   smartparens
-  :ensure t)
+  :ensure t
+	:defer t
+	)
 (use-package
   discover-my-major
-  :ensure t)
-(use-package
-  js2-mode
-  :ensure t)
+  :ensure t
+	:commands discover-my-major
+	)
 (use-package
   git-timemachine
-  :ensure t)
+  :ensure t
+  :commands git-timemachine
+  )
 (use-package
   rainbow-mode
-  :ensure t)
+  :ensure t
+	:mode
+	(".html" . rainbow-mode)
+	(".eex" . rainbow-mode)
+	(".css" . rainbow-mode)
+	(".scss" . rainbow-mode)
+	(".erb" . rainbow-mode)
+	)
+
 (use-package
   editorconfig
-  :ensure t)
+  :ensure t
+  :mode (".editorconfig" . editorconfig-mode)
+	)
+
 (use-package
   feature-mode
-  :ensure t)
-(use-package
-  less-css-mode
-  :ensure t)
-(use-package
-  ido-vertical-mode
-  :ensure t)
-(use-package
-  wsd-mode
-  :ensure t)
-(use-package
-  flycheck-elm
-  :ensure t)
+  :ensure t
+	:defer t
+	)
+
 (use-package
   bind-key
   :ensure t)
+
 (use-package
   htmlize
-  :ensure t)
+  :ensure t
+	:defer t
+	)
+
 (use-package
   s
   :ensure t)
-(use-package
-  dracula-theme
-  :ensure t)
-(use-package
-  hydra
-  :ensure t)
+
 (use-package
   counsel-world-clock
-  :ensure t)
-(use-package
-  ox-pandoc
-  :ensure t)
-(use-package
-  helm-org-rifle
-  :ensure t)
+  :ensure t
+	:defer t
+	)
+
 (use-package
   fish-completion
-  :ensure t)
-(use-package
-  smart-mode-line
-  :ensure t)
+  :ensure t
+	:init
+	(setq eshell-scroll-to-bottom-on-output nil)
+	(setq eshell-scroll-show-maximum-output nil)
+	:commands (eshell))
+
 (use-package
   restclient
-  :ensure t)
+  :ensure t
+	:defer t
+	)
+
 (use-package
   ag
-  :ensure t)
+  :ensure t
+	:commands counsel-ag
+	)
+
 (use-package
   graphql-mode
-  :ensure t)
+  :ensure t
+  :mode (".graphql" . graphql-mode)
+	)
+
 (use-package
   nvm
-  :ensure t)
+  :ensure t
+  :mode (".js" . nvm)
+	)
+
 (use-package
   anzu
-  :ensure t)
+  :ensure t
+	:commands anzu-query-replace
+	)
+
 (use-package
   zop-to-char
   :ensure t)
-(use-package
-  super-save
-  :ensure t)
-(use-package
-  imenu-anywhere
-  :ensure t)
+
+(use-package super-save
+  :ensure t
+  :config
+  (super-save-mode +1))
 
 (use-package
-  edit-indirect
-  :ensure t)
+  imenu-anywhere
+  :ensure t
+	:commands imenu-anywhere
+	)
 
 (use-package
   nginx-mode
-  :ensure t)
+  :ensure t
+	:defer t
+	)
 
 (use-package
   git-gutter
   :ensure t
-  :config (global-git-gutter-mode))
+	:hook
+	(emacs-lisp-mode . git-gutter-mode)
+	(markdown-mode . git-gutter-mode)
+	(dockerfile-mode . git-gutter-mode)
+	(ruby-mode . git-gutter-mode)
+	(elixir-mode . git-gutter-mode)
+	(js2-mode . git-gutter-mode)
+  :config (git-gutter-mode))
 
 (use-package
   deft
   :ensure t
+	:defer
   :bind ("<f13>" . deft)
   :commands (deft)
   :config (setq deft-directory "~/org" deft-extensions '("md" "org")))
@@ -310,6 +345,7 @@
 
 (use-package
   treemacs-perspective
+  :after treemacs perspective
   :ensure t)
 
 (use-package

@@ -4,13 +4,14 @@
   :ensure t
   :diminish lsp-mode
   :hook (elixir-mode . lsp)
-  :init (add-to-list 'exec-path "~/Code/elixir-ls/release")
   :custom (lsp-restart 'ignore)
   (lsp-file-watch-threshold 5000)
   (lsp-auto-guess-root t)
   (lsp-response-timeout 5)
   (lsp-prefer-flymake nil)
-  :config (setq lsp-prefer-capf t)
+  :config
+  (add-to-list 'exec-path "~/Code/elixir-ls/release")
+  (setq lsp-prefer-capf t)
   (setq gc-cons-threshold 100000000)
   (setq read-process-output-max (* 1024 1024)) ;; 1mb
   (setq lsp-idle-delay 0.500))
@@ -23,22 +24,15 @@
 (use-package
   company-posframe
   :ensure t
+	:after posframe
   :config (company-posframe-mode 1))
 
 (use-package
   lsp-treemacs
+  :after (lsp-mode)
   :ensure t
   :commands lsp-treemacs
   :config (lsp-treemacs-sync-mode 1))
-
-(use-package
-  posframe
-  :ensure t)
-
-(use-package
-  company-posframe
-  :ensure t
-  :config (company-posframe-mode 1))
 
 (use-package
   lsp-ui
