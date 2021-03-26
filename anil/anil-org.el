@@ -29,7 +29,7 @@
   (setq org-clock-persist t)
   (setq org-clock-persist 'history)
   :config (org-clock-persistence-insinuate)
-
+	(require 'org-tempo)
   (setq org-agenda-custom-commands
         '(("1" "Q1" tags-todo "+important+urgent")
           ("2" "Q2" tags-todo "+important-urgent")
