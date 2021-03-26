@@ -250,7 +250,9 @@
 
 (use-package
   s
-  :ensure t)
+  :ensure t
+	:defer t
+	)
 
 (use-package
   counsel-world-clock
@@ -332,7 +334,6 @@
 (use-package
   deft
   :ensure t
-	:defer
   :bind ("<f13>" . deft)
   :commands (deft)
   :config (setq deft-directory "~/org" deft-extensions '("md" "org")))

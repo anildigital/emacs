@@ -21,7 +21,6 @@
 (use-package
   web-mode
   :ensure t
-	:defer t
   :custom ((web-mode-enable-current-element-highlight t)
            (web-mode-enable-current-column-highlight t)
            (js-indent-level 2)

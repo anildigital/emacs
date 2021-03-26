@@ -1,6 +1,5 @@
 (use-package treemacs
   :ensure t
-  :defer t
   :after prog-mode
   :init
   (with-eval-after-load 'winum

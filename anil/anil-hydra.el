@@ -1,6 +1,5 @@
 (use-package hydra
 	:ensure t
-  :defer 2
   :bind ("C-c c" . hydra-clock/body))
 
 (defhydra hydra-clock (:color blue)
