@@ -64,6 +64,11 @@
     (recenter-top-bottom)
     (recenter-top-bottom)))
 
+(defun eshell/x ()
+  (insert "exit")
+  (eshell-send-input)
+  (delete-window))
+
 (defun contextual-backspace ()
   "Hungry whitespace or delete word depending on context."
   (interactive)
