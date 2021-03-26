@@ -364,3 +364,8 @@
 (use-package all-the-icons
 	:ensure t
 	)
+
+(use-package winner
+  :init
+  (winner-mode))
+
