@@ -13,7 +13,7 @@
   (setq org-agenda-span 'day)
 
   (setq org-tag-alist '(("important" . ?i)
-                    ("urgent"    . ?u)))
+												("urgent"    . ?u)))
 
   ;; http://orgmode.org/manual/Closing-items.html
   (setq org-log-done 'time)
@@ -50,7 +50,6 @@
   :after org
   :init (add-hook 'org-mode-hook (lambda ()
                                    (org-bullets-mode 1))))
-
 (use-package
   org-roam
   :ensure t
@@ -58,8 +57,6 @@
   :hook (after-init . org-roam-mode)
   :config (setq org-roam-directory "~/org/")
   (setq org-roam-index-file "~/org/index.org")
-  (add-hook 'org-clock-in-hook (lambda () (call-process "/usr/bin/osascript" nil 0 nil "-e" (concat "tell application \"org-clock-statusbar\" to clock in \"" (replace-regexp-in-string "\"" "\\\\\"" org-clock-current-task) "\""))))
-  (add-hook 'org-clock-out-hook (lambda () (call-process "/usr/bin/osascript" nil 0 nil "-e" "tell application \"org-clock-statusbar\" to clock out")))
   :bind (:map org-roam-mode-map
               (("C-c n l" . org-roam)
                ("C-c n f" . org-roam-find-file)
