@@ -153,4 +153,9 @@ Repeated invocations toggle between the two most recently open buffers."
       (delete-region (region-beginning) (region-end))
       (org-remove-empty-drawer-at (point)))))
 
+
+(defun anil/org-clock-in ()
+	(interactive)
+	(org-clock-in '(4)))
+
 (provide 'defuns)

@@ -2,6 +2,10 @@
   org
   :mode (("\\.org\\'" . org-mode))
   :hook ((after-init-hook . org-agenda-list))
+	:bind
+	("C-c I". anil/org-clock-in)
+	("C-c O" . org-clock-out)
+
   :init
   ;; org-clock hooks for macOS app
   (setq org-directory "~/org")
@@ -44,6 +48,9 @@
 
   (setq org-clock-persist 'history)
 
+	;; Show lot of clocking history so it's easy to pick items off the `C-c I` list
+	(setq org-clock-history-length 23)
+
 	;; Sometimes I change tasks I'm clocking quickly - this removes clocked tasks
 	;; with 0:00 duration
 	(setq org-clock-out-remove-zero-time-clocks t)
@@ -60,21 +67,23 @@
 	;; use pretty things for the clocktable
 	(setq org-pretty-entities t)
 
-	:config
-	;; Resume clocking task when emacs is restarted
-	(org-clock-persistence-insinuate)
-
 	;; org-calendar settings
 	(setq calendar-latitude 18.5)
 	(setq calendar-longitude 73.8)
 	(setq calendar-location-name "Pune, India")
 
-	(require 'org-tempo)
   (setq org-agenda-custom-commands
         '(("1" "Q1" tags-todo "+important+urgent")
           ("2" "Q2" tags-todo "+important-urgent")
           ("3" "Q3" tags-todo "-important+urgent")
           ("4" "Q4" tags-todo "-important-urgent")))
+	:config
+	;; Resume clocking task when emacs is restarted
+	(org-clock-persistence-insinuate)
+
+	(set-face-attribute 'org-mode-line-clock nil :foreground "black" :weight 'bold :background "dark sea green")
+
+	(require 'org-tempo)
 
   ;; Treemacs fix
   (with-eval-after-load 'org
