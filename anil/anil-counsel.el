@@ -1,10 +1,21 @@
 (use-package
+  ivy
+  :ensure t
+  :init (setq ivy-use-virtual-buffers t)
+  (setq enable-recursive-minibuffers t)
+  :bind ("C-c C-r" . ivy-resume)
+  :config (ivy-mode 1))
+
+
+(use-package
   counsel
   :ensure t
   :bind ("M-x" . counsel-M-x)
   ("C-x C-f" . counsel-find-file)
   ("C-x C-r" . counsel-recentf)
-  ("s-r" . counsel-recentf))
+  ("s-r" . counsel-recentf)
+	("C-x b" . counsel-switch-buffer)
+	)
 
 (use-package
   counsel-dash
@@ -23,4 +34,19 @@
   (setq counsel-dash-enable-debugging nil)
   (setq counsel-dash-browser-func 'browse-url)
   (setq counsel-dash-ignored-docsets nil)
-  :bind ("C-c C-o" . counsel-dash))
+  :bind
+	("C-c C-o" . counsel-dash)
+	)
+
+(use-package
+	ivy-prescient
+	:ensure t
+	:after counsel
+	:config
+	(ivy-prescient-mode 1))
+
+(use-package
+	ivy-rich
+	:ensure t
+	:after ivy
+	)

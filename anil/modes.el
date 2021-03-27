@@ -90,14 +90,6 @@
   :ensure t)
 
 (use-package
-  ivy
-  :ensure t
-  :init (setq ivy-use-virtual-buffers t)
-  (setq enable-recursive-minibuffers t)
-  :bind ("C-c C-r" . ivy-resume)
-  :config (ivy-mode 1))
-
-(use-package
   ripgrep
   :ensure t
 	:commands projectile-ripgrep
