@@ -9,7 +9,9 @@
   (setq org-capture-templates '(("t" "Todo" entry (file+headline "/Users/anil/dropbox/org/todo.org"
                                                                  "Tasks") "* TODO %?\n %i\n %a")))
   (setq org-agenda-files (list (concat org-directory "/todo.org")
-                               (concat org-directory "/long_term.org")))
+                               (concat org-directory "/long_term_todo.org")
+															 (concat org-directory "/timesheet.org")
+															 ))
   (setq org-agenda-span 'day)
 
   (setq org-tag-alist '(("important" . ?i)
@@ -19,16 +21,54 @@
   (setq org-log-done 'time)
   (setq org-log-done 'note)
 
+
+	(setq org-todo-keywords
+				'((sequence "TODO(t)" "HOLD(h)" "WAITING(w)" "NEEDSREVIEW(n)" "|" "DONE(d)" "FIXED(f)" "CANCELED(c)")))
+
   ;;
   (setq org-startup-indented t)
   (setq org-startup-with-inline-images t)
   (setq org-use-speed-commands t)
   (setf org-blank-before-new-entry '((heading . nil)
                                      (plain-list-item . nil)))
-  (setq org-clock-idle-time 3)
-  (setq org-clock-persist t)
+
+	;; org-clock settings
+	(setq org-clock-idle-time 15)
+
+	;; Save the running clock and all clock history when exiting Emacs, load it on startup
+	(setq org-clock-persist t)
+	;; Resume clocking task on clock-in if the clock is open
+	(setq org-clock-in-resume t)
+	;; Do not prompt to resume an active clock, just resume it
+	(setq org-clock-persist-query-resume nil)
+
   (setq org-clock-persist 'history)
-  :config (org-clock-persistence-insinuate)
+
+	;; Sometimes I change tasks I'm clocking quickly - this removes clocked tasks
+	;; with 0:00 duration
+	(setq org-clock-out-remove-zero-time-clocks t)
+
+	;; Clock out when moving task to a done state
+	(setq org-clock-out-when-done t)
+
+	;; Enable auto clock resolution for finding open clocks
+	(setq org-clock-auto-clock-resolution (quote when-no-clock-is-running))
+
+	;; Include current clocking task in clock reports
+	(setq org-clock-report-include-clocking-task t)
+
+	;; use pretty things for the clocktable
+	(setq org-pretty-entities t)
+
+	:config
+	;; Resume clocking task when emacs is restarted
+	(org-clock-persistence-insinuate)
+
+	;; org-calendar settings
+	(setq calendar-latitude 18.5)
+	(setq calendar-longitude 73.8)
+	(setq calendar-location-name "Pune, India")
+
 	(require 'org-tempo)
   (setq org-agenda-custom-commands
         '(("1" "Q1" tags-todo "+important+urgent")
@@ -68,10 +108,8 @@
               (("C-c n i" . org-roam-insert))
               (("C-c n I" . org-roam-insert-immediate))))
 
-
 (use-package
   ox-pandoc
   :ensure t
   :after org
   )
-
