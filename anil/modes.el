@@ -275,7 +275,7 @@
 (use-package
   graphql-mode
   :ensure t
-  :mode (".graphql" . graphql-mode)
+	:mode ("\\.graphql$" . graphql-mode)
 	)
 
 (use-package
