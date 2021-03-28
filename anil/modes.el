@@ -111,7 +111,7 @@
   poly-markdown
   :ensure t
 	:after polymode
-  :mode (("\\.md" . poly-markdown-mode)))
+  :mode (("\\.md$" . poly-markdown-mode)))
 
 (use-package
   dpaste
@@ -149,13 +149,13 @@
 (use-package
   terraform-mode
   :ensure t
-  :mode ((".tf" . terraform-mode)))
+  :mode (("\\.tf$" . terraform-mode)))
 
 (use-package
   markdown-mode
   :ensure t
 	:mode
-	(".md" . markdown-mode)
+	("\\.md$" . markdown-mode)
 	)
 
 (use-package
@@ -188,8 +188,8 @@
   :ensure t
 	:after web-mode
 	:mode
-	(".html" . yaml-mode)
-	(".eex" . yaml-mode)
+	("\\.html\\'" . emmet-mode)
+	("\\.eex$" . emmet--mode)
 	)
 
 (use-package
@@ -211,11 +211,11 @@
   rainbow-mode
   :ensure t
 	:mode
-	(".html" . rainbow-mode)
-	(".eex" . rainbow-mode)
-	(".css" . rainbow-mode)
-	(".scss" . rainbow-mode)
-	(".erb" . rainbow-mode)
+	("\\.html\\'" . rainbow-mode)
+	("\\.eex$" . rainbow-mode)
+	("\\.css$" . rainbow-mode)
+	("\\.scss$" . rainbow-mode)
+	("\\.erb$" . rainbow-mode)
 	)
 
 (use-package
@@ -281,7 +281,7 @@
 (use-package
   nvm
   :ensure t
-  :mode (".js" . nvm)
+  :mode ("\\.js$" . nvm)
 	)
 
 (use-package
@@ -344,13 +344,13 @@
 (use-package
   protobuf-mode
   :ensure t
-  :mode (("\\.proto" . protobuf-mode)
+  :mode (("\\.proto$" . protobuf-mode)
          ))
 
 (use-package
   mermaid-mode
   :ensure t
-  :mode (("\\.mmd" . mermaid-mode)
+  :mode (("\\.mmd$" . mermaid-mode)
          ))
 
 (use-package all-the-icons
