@@ -2,6 +2,10 @@
   projectile
   :ensure t
 	:after prog-mode
+	:hook
+	(elixir-mode . projectile-mode)
+	(elixir-mode . counsel-projectile-mode)
+	:commands (projectile-find-file projectile-switch-project)
   :bind (("s-p" . projectile-find-file)
          ("s-e" . projectile-recentf)
          ;; Press Command-b for fuzzy switch buffer
@@ -35,7 +39,8 @@
   counsel-projectile
   :ensure t
 	:after projectile
-  :config (define-key projectile-mode-map (kbd "C-c p") 'projectile-command-map))
+  :config
+	(define-key projectile-mode-map (kbd "C-c p") 'projectile-command-map))
 
 (use-package
   projectile-ripgrep
