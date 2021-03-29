@@ -22,8 +22,8 @@
 												("urgent"    . ?u)))
 
   ;; http://orgmode.org/manual/Closing-items.html
-  (setq org-log-done 'time)
-  (setq org-log-done 'note)
+  ;; (setq org-log-done 'time)
+  ;; (setq org-log-done 'note)
 
 
 	(setq org-todo-keywords
