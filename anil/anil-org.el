@@ -120,5 +120,5 @@
 (use-package
   ox-pandoc
   :ensure t
-  :after org
+  :commands org-export-dispatch
   )
