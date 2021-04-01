@@ -1,7 +1,8 @@
 (use-package
   org
   :mode (("\\.org\\'" . org-mode))
-  :hook ((after-init-hook . org-agenda-list))
+  :hook (after-init . org-agenda-list)
+	(org-mode . (lambda () (display-line-numbers-mode 0)))
 	:bind
 	("C-c I". anil/org-clock-in)
 	("C-c O" . org-clock-out)
