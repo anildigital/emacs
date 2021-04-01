@@ -39,7 +39,7 @@
   :custom (lsp-ui-flycheck-enable t)
   (lsp-ui-peek-enable t)
   (lsp-ui-sideline-enable t)
-  (lsp-ui-doc-enable nil)
+  (lsp-ui-doc-enable t)
   :bind
   (:map lsp-ui-mode-map
         ([remap xref-find-definitions] . lsp-ui-peek-find-definitions)
