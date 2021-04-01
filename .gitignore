@@ -37,3 +37,4 @@ org-roam.db
 forge-database.sqlite
 eln-cache
 diary
+.dap-breakpoints
