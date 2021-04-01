@@ -83,3 +83,6 @@
 (setq scroll-conservatively 101)
 
 (add-to-list 'default-frame-alist '(inhibit-double-buffering . t))
+
+;; To remove gaps between your emacs frames and other windows
+(setq frame-resize-pixelwise t)
