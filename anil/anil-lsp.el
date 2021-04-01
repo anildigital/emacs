@@ -16,7 +16,6 @@
   (setq read-process-output-max (* 1024 1024)) ;; 1mb
   (setq lsp-idle-delay 0.500))
 
-
 (use-package
   posframe
   :ensure t)
@@ -40,7 +39,7 @@
   :custom (lsp-ui-flycheck-enable t)
   (lsp-ui-peek-enable t)
   (lsp-ui-sideline-enable t)
-  (lsp-ui-doc-enable t)
+  (lsp-ui-doc-enable nil)
   :bind
   (:map lsp-ui-mode-map
         ([remap xref-find-definitions] . lsp-ui-peek-find-definitions)
