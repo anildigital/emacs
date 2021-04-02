@@ -5,7 +5,7 @@
   (with-eval-after-load 'winum
     (define-key winum-keymap (kbd "M-0") #'treemacs-select-window))
   :bind (("M-s M-s" . anil-treemacs-swiper)
-         ("s-1" . treemacs)
+         ("C-s-1" . treemacs)
          ("C-c 1" . treemacs)
          ("s-0" . treemacs-select-window)
          ("C-c 0" . treemacs)
