@@ -77,7 +77,7 @@
   (define-key global-map "\M-3" #'insert-pound))
 
 (global-set-key "\C-cP" 'anil-goto-config)
-(global-set-key (kbd "s-t") 'anil-goto-todo)
+(global-set-key (kbd "\C-ct") 'anil-goto-todo)
 
 ;; shell
 (global-set-key (kbd "C-~") 'eshell)
