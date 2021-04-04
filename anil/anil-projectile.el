@@ -6,10 +6,6 @@
 	(elixir-mode . projectile-mode)
 	(elixir-mode . counsel-projectile-mode)
 	:commands (projectile-find-file projectile-switch-project)
-  :bind (("s-p" . projectile-find-file)
-         ("s-e" . projectile-recentf)
-         ;; Press Command-b for fuzzy switch buffer
-         ("s-b" . projectile-switch-to-buffer))
   :init
 	(setq projectile-enable-caching t)
   (setq projectile-completion-system 'ivy)
@@ -39,6 +35,8 @@
   counsel-projectile
   :ensure t
 	:after projectile
+	:bind ("s-p" . counsel-projectile-find-file)
+	("s-b" . counsel-buffer-or-recentf)
   :config
 	(define-key projectile-mode-map (kbd "C-c p") 'projectile-command-map))
 
