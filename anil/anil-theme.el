@@ -2,6 +2,12 @@
 
 (use-package vscode-dark-plus-theme
   :ensure t
+	:init
+	;; Remove the border around the TODO word on org-mode files
+	(setq vscode-dark-plus-box-org-todo nil)
+
+	;; Do not set different heights for some org faces
+	(setq vscode-dark-plus-scale-org-faces nil)
   :config
   (load-theme 'vscode-dark-plus t))
 

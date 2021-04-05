@@ -28,7 +28,7 @@
 
 
 	(setq org-todo-keywords
-				'((sequence "TODO(t)" "HOLD(h)" "WAITING(w)" "NEEDSREVIEW(n)" "|" "DONE(d)" "FIXED(f)" "CANCELED(c)")))
+				'((sequence "TODO(t)" "IN_PROGRESS(is)"  "HOLD(h)" "WAITING(w)" "NEEDSREVIEW(n)" "|" "DONE(d)" "CANCELED(c)")))
 
   ;;
   (setq org-startup-indented t)
