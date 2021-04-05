@@ -13,7 +13,7 @@
   :bind ("M-x" . counsel-M-x)
   ("C-x C-f" . counsel-find-file)
   ("C-x C-r" . counsel-recentf)
-  ("s-r" . counsel-recentf)
+  ("s-e" . counsel-recentf)
 	("C-x b" . counsel-switch-buffer)
 	)
 

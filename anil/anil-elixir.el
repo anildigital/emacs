@@ -62,5 +62,5 @@
 	:ensure t
   :after elixir-mode
 	:hook (elixir-mode . mix-minor-mode)
-	:bind ("s-e" . 'mix-test-current-buffer)
+	:bind ("s-r" . 'mix-test-current-buffer)
 	)
