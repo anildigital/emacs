@@ -123,3 +123,13 @@
   :ensure t
   :commands org-export-dispatch
   )
+
+(use-package org-mru-clock
+  :ensure t
+	:init
+	  (setq org-mru-clock-how-many 100
+        org-mru-clock-completing-read #'ivy-completing-read)
+  :bind* (("C-c C-x i" . org-mru-clock-in)
+          ("C-c C-x C-j" . org-mru-clock-select-recent-task))
+  :config
+  (add-hook 'minibuffer-setup-hook #'org-mru-clock-embark-minibuffer-hook))
