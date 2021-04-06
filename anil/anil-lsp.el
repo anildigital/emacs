@@ -17,16 +17,6 @@
   (setq lsp-idle-delay 0.500))
 
 (use-package
-  posframe
-  :ensure t)
-
-(use-package
-  company-posframe
-  :ensure t
-	:after posframe
-  :config (company-posframe-mode 1))
-
-(use-package
   lsp-treemacs
   :after (lsp-mode)
   :ensure t
