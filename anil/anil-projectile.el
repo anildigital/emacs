@@ -1,7 +1,7 @@
 (use-package
   projectile
   :ensure t
-	:after prog-mode
+	:after prog-mode treemacs
 	:hook
 	(elixir-mode . projectile-mode)
 	(elixir-mode . counsel-projectile-mode)
@@ -34,7 +34,7 @@
 (use-package
   counsel-projectile
   :ensure t
-	:after projectile
+	:after treemacs
 	:bind ("s-p" . counsel-projectile-find-file)
 	("s-b" . counsel-buffer-or-recentf)
   :config
