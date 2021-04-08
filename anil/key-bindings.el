@@ -78,6 +78,7 @@
 
 (global-set-key "\C-cP" 'anil-goto-config)
 (global-set-key (kbd "\C-ct") 'anil-goto-todo)
+(global-set-key (kbd "\C-c n o") 'anil-goto-index)
 
 ;; shell
 (global-set-key (kbd "C-~") 'eshell)

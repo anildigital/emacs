@@ -56,6 +56,10 @@
   (interactive)
   (find-file "~/org/todo.org"))
 
+(defun anil-goto-index ()
+  (interactive)
+  (find-file "~/org/index.org"))
+
 (defun eshell/clear ()
   "Clear the eshell buffer."
   (let ((inhibit-read-only t))

@@ -1,6 +1,8 @@
 (use-package
   org
-  :mode (("\\.org\\'" . org-mode))
+  :mode (("\\.org\\'" . org-mode)
+				 ("\\.org_archive\\'" . org-mode)
+				 )
   :hook (after-init . org-agenda-list)
 	(org-mode . (lambda () (display-line-numbers-mode 0)))
 	:bind
@@ -21,6 +23,8 @@
 
   (setq org-tag-alist '(("important" . ?i)
 												("urgent"    . ?u)))
+
+	(setq org-archive-location "archive/%s_archive::")
 
   ;; http://orgmode.org/manual/Closing-items.html
   ;; (setq org-log-done 'time)
@@ -78,6 +82,10 @@
           ("2" "Q2" tags-todo "+important-urgent")
           ("3" "Q3" tags-todo "-important+urgent")
           ("4" "Q4" tags-todo "-important-urgent")))
+
+	(setq org-refile-targets
+				'((nil :maxlevel . 3)
+					(org-agenda-files :maxlevel . 3)))
 	:config
 	;; Resume clocking task when emacs is restarted
 	(org-clock-persistence-insinuate)
@@ -108,15 +116,16 @@
   :config (setq org-roam-directory "~/org/")
   (setq org-roam-index-file "~/org/index.org")
   :bind (:map org-roam-mode-map
-              (("C-c n l" . org-roam)
-               ("C-c n f" . org-roam-find-file)
+              (("C-c n f" . org-roam-find-file)
                ("C-c n g" . org-roam-graph-show)
                ("C-c n j" . org-roam-jump-to-index)
                ("C-c n b" . org-roam-switch-to-buffer)
                ("C-c n g" . org-roam-graph-show))
               :map org-mode-map
-              (("C-c n i" . org-roam-insert))
-              (("C-c n I" . org-roam-insert-immediate))))
+              (("C-c n i" . org-roam-insert)
+							("C-c n l" . org-roam-buffer-toggle-display)
+              ("C-c n I" . org-roam-insert-immediate))
+							))
 
 (use-package
   ox-pandoc
