@@ -82,6 +82,7 @@
 (use-package
   which-key
   :ensure t
+	:delight which-key-mode
   :config (which-key-mode)
   (which-key-setup-side-window-right))
 
@@ -195,6 +196,7 @@
 (use-package
   smartparens
   :ensure t
+	:delight smartparens
 	:defer t
 	)
 (use-package
@@ -296,6 +298,7 @@
 
 (use-package super-save
   :ensure t
+	:delight super-save-mode
   :config
   (super-save-mode +1))
 

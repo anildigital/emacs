@@ -1,6 +1,7 @@
 (use-package
   ivy
   :ensure t
+	:diminish ivy-mode
   :init (setq ivy-use-virtual-buffers t)
   (setq enable-recursive-minibuffers t)
   :bind ("C-c C-r" . ivy-resume)
@@ -10,6 +11,7 @@
 (use-package
   counsel
   :ensure t
+	:diminish counsel-mode
   :bind ("M-x" . counsel-M-x)
   ("C-x C-f" . counsel-find-file)
   ("C-x C-r" . counsel-recentf)

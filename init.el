@@ -23,6 +23,7 @@
 (setq package-check-signature nil)
 
 (load "path")
+(load "anil-delight")
 (load "anil-theme")
 (load "local")
 (load "anil-font")
