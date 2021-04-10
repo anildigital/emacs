@@ -5,7 +5,15 @@
 				 )
   :hook (after-init . org-agenda-list)
 	(org-mode . (lambda () (display-line-numbers-mode 0)))
+
 	:bind
+	("C-c l" . org-store-link)
+	("C-c c" . org-capture)
+	("C-c a a" . org-agenda)
+	("<f16>" . org-agenda)
+	("C-c b" . org-switchb)
+
+	;; org clock
 	("C-c I". anil/org-clock-in)
 	("C-c O" . org-clock-out)
 
@@ -18,6 +26,7 @@
   (setq org-agenda-files (list (concat org-directory "/todo.org")
                                (concat org-directory "/long_term_todo.org")
 															 (concat org-directory "/timesheet.org")
+                               (concat org-directory "/habits.org")
 															 ))
   (setq org-agenda-span 'day)
 

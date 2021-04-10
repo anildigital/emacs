@@ -83,11 +83,6 @@
 ;; shell
 (global-set-key (kbd "C-~") 'eshell)
 
-;; Org keybindings
-(global-set-key "\C-cl" 'org-store-link)
-(global-set-key "\C-cc" 'org-capture)
-(global-set-key (kbd "C-c a a")  'org-agenda)
-(global-set-key "\C-cb" 'org-iswitchb)
 
 ;; contextual backspace
 (global-set-key (kbd "C-<backspace>") 'contextual-backspace)
