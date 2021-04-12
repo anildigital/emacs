@@ -17,6 +17,8 @@
          :map prog-mode-map
          ("C-c C-p" . 'treemacs-projectile)
          )
+	:hook
+	(treemacs-mode . (lambda () (display-line-numbers-mode 0)))
   :config
   (progn
     (setq projectile-switch-project-action 'treemacs-projectile)
