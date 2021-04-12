@@ -2,9 +2,9 @@
   yasnippet
   :ensure t
   :after prog-mode
-  :init (setq yas-snippet-dirs '("~/.config/emacs/snippets"))
   :config
   (add-to-list 'yas-snippet-dirs "~/Code/yasnippet-snippets/snippets")
+  (add-to-list 'yas-snippet-dirs "~/.config/emacs/snippets")
   (yas-reload-all)
   (yas-global-mode t)
   (define-key yas-minor-mode-map (kbd "<tab>") nil)
