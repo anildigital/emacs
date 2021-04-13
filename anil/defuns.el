@@ -162,4 +162,12 @@ Repeated invocations toggle between the two most recently open buffers."
 	(interactive)
 	(org-clock-in '(4)))
 
+
+(defun anil-pulse-line (&rest _)
+      "Pulse the current line."
+      (pulse-momentary-highlight-one-line (point)))
+(dolist (command '(recenter-top-bottom other-window ace-window anil-scroll-down-half anil-scroll-up-half))
+  (advice-add command :after #'anil-pulse-line))
+
+
 (provide 'defuns)
