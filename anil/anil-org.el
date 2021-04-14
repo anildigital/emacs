@@ -125,6 +125,20 @@
   :hook (after-init . org-roam-mode)
   :config (setq org-roam-directory "~/org/")
   (setq org-roam-index-file "~/org/index.org")
+  (setq org-roam-capture-templates
+        '(("d" "default" plain (function org-roam--capture-get-point)
+           "%?"
+           :file-name "${dir}/%<%Y%m%d%H%M%S>-${slug}"
+           :head "#+title: ${title}\n"
+           :unnarrowed t)
+
+          ("n" "note" plain (function org-roam--capture-get-point)
+           "%?"
+           :file-name "%<%Y%m%d%H%M%S>-${slug}"
+           :head "#+title: ${title}\n"
+           :unnarrowed t)
+          ))
+
   :bind (:map org-roam-mode-map
               (("C-c n f" . org-roam-find-file)
                ("C-c n g" . org-roam-graph-show)
