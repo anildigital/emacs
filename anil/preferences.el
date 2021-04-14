@@ -6,6 +6,8 @@
 (if (fboundp 'scroll-bar-mode)
     (scroll-bar-mode -1))
 
+(setq max-lisp-eval-depth 10000)
+
 ;; don't create backup files
 (setq backup-directory-alist `(("." . "~/.saves")))
 
