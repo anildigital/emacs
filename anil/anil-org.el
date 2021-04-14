@@ -5,6 +5,7 @@
 				 )
   :hook (after-init . org-agenda-list)
 	(org-mode . (lambda () (display-line-numbers-mode 0)))
+  (org-timer-done . anil-org-timer-hook)
 
 	:bind
 	("C-c l" . org-store-link)

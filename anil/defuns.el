@@ -169,5 +169,9 @@ Repeated invocations toggle between the two most recently open buffers."
 (dolist (command '(recenter-top-bottom other-window ace-window anil-scroll-down-half anil-scroll-up-half))
   (advice-add command :after #'anil-pulse-line))
 
+(defun anil-org-timer-hook ()
+	(call-process "/usr/bin/say" "" t "" "" "Time up!")
+	)
 
 (provide 'defuns)
+
