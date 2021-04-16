@@ -185,3 +185,9 @@
           ("C-c C-x C-j" . org-mru-clock-select-recent-task))
   :config
   (add-hook 'minibuffer-setup-hook #'org-mru-clock-embark-minibuffer-hook))
+
+
+(use-package
+	org-analyzer
+	:ensure t
+	)
