@@ -12,11 +12,12 @@
   counsel
   :ensure t
 	:diminish counsel-mode
-  :bind ("M-x" . counsel-M-x)
+  :bind
+	("M-x" . counsel-M-x)
   ("C-x C-f" . counsel-find-file)
   ("C-x C-r" . counsel-recentf)
-  ("s-e" . counsel-recentf)
 	("C-x b" . counsel-switch-buffer)
+	("s-b" . counsel-buffer-or-recentf)
 	)
 
 (use-package

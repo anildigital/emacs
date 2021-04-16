@@ -6,6 +6,8 @@
 	(elixir-mode . projectile-mode)
 	(elixir-mode . counsel-projectile-mode)
 	:commands (projectile-find-file projectile-switch-project)
+	:bind
+	("s-e" . projectile-recentf)
   :init
 	(setq projectile-enable-caching t)
   (setq projectile-completion-system 'ivy)
@@ -35,8 +37,8 @@
   counsel-projectile
   :ensure t
 	:after treemacs
-	:bind ("s-p" . counsel-projectile-find-file)
-	("s-b" . counsel-buffer-or-recentf)
+	:bind
+	("s-p" . counsel-projectile-find-file)
   :config
 	(define-key projectile-mode-map (kbd "C-c p") 'projectile-command-map))
 
