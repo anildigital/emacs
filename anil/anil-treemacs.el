@@ -8,7 +8,7 @@
          ("C-s-1" . treemacs)
          ("C-c 1" . treemacs)
          ("s-0" . treemacs-select-window)
-         ("C-c C-e" . treemacs-select-window)
+         ("C-s-s" . treemacs-select-window)
          ("C-c 0" . treemacs)
          ("s-!" . treemacs-add-and-display-current-project)
          ("C-c h h" . browse-at-remote)
