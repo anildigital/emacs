@@ -13,3 +13,9 @@
                               (add-hook 'before-save-hook (lambda ()
                                                             (untabify (point-min)
                                                                       (point-max)))))))
+
+(use-package
+	typescript-mode
+	:ensure t
+	:mode ("\\.ts?\\'" . typescript-mode)
+	)
