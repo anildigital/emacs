@@ -8,6 +8,7 @@
          ("C-s-1" . treemacs)
          ("C-c 1" . treemacs)
          ("s-0" . treemacs-select-window)
+         ("C-c C-e" . treemacs-select-window)
          ("C-c 0" . treemacs)
          ("s-!" . treemacs-add-and-display-current-project)
          ("C-c h h" . browse-at-remote)
@@ -17,8 +18,8 @@
          :map prog-mode-map
          ("C-c C-p" . 'treemacs-projectile)
          )
-	:hook
-	(treemacs-mode . (lambda () (display-line-numbers-mode 0)))
+  :hook
+  (treemacs-mode . (lambda () (display-line-numbers-mode 0)))
   :config
   (progn
     (setq projectile-switch-project-action 'treemacs-projectile)
