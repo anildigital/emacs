@@ -39,6 +39,8 @@
 
   (setq org-show-notification-handler 'message)
 
+	(setq org-export-with-sub-superscripts nil)
+
   ;; http://orgmode.org/manual/Closing-items.html
   ;; (setq org-log-done 'time)
   ;; (setq org-log-done 'note)
