@@ -47,7 +47,10 @@
 ;; query replace regex
 (defalias 'qrr 'query-replace-regexp)
 
-;;(setq-default indent-tabs-mode nil)
+
+;; no tabs
+(setq-default indent-tabs-mode nil)
+
 (defalias 'list-buffers 'ibuffer)
 
 ;; Disable Emacs going to sleep
