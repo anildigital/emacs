@@ -31,7 +31,10 @@
 (use-package
   ace-window
   :ensure t
-  :bind ("C-o" . ace-window))
+  :bind
+	("C-o" . ace-window)
+	("C-c s" . ace-swap-window)
+	)
 
 (use-package
   move-text
