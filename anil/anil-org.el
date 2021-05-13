@@ -24,7 +24,12 @@
   (setq org-directory "~/org")
   (setq org-default-notes-file (concat org-directory "/notes.org"))
   (setq org-capture-templates '(("t" "Todo" entry (file+headline "/Users/anil/dropbox/org/todo.org"
-                                                                 "Tasks") "* TODO %?\n %i\n %a")))
+                                                                 "Tasks") "* TODO %?\n")
+                                ("c" "Todo" entry (file+headline "/Users/anil/dropbox/org/coding.org"
+                                                                 "Tasks") "* TODO %?\n %i\n %a")
+                                ("n" "Note" entry (file+headline "/Users/anil/dropbox/org/notes.org"
+                                                                 "Notes") "* %?\n")
+                                ))
   (setq org-agenda-files (list (concat org-directory "/todo.org")
                                (concat org-directory "/long_term_todo.org")
                                (concat org-directory "/timesheet.org")
@@ -39,7 +44,7 @@
 
   (setq org-show-notification-handler 'message)
 
-	(setq org-export-with-sub-superscripts nil)
+  (setq org-export-with-sub-superscripts nil)
 
   ;; http://orgmode.org/manual/Closing-items.html
   ;; (setq org-log-done 'time)
@@ -190,6 +195,14 @@
 
 
 (use-package
-	org-analyzer
-	:ensure t
-	)
+  org-analyzer
+  :ensure t
+  )
+
+
+(use-package org-fancy-priorities
+  :diminish
+  :ensure t
+  :hook (org-mode . org-fancy-priorities-mode)
+  :config
+  (setq org-fancy-priorities-list '("🅰" "🅱" "🅲" "🅳" "🅴")))
