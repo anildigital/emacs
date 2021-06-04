@@ -78,9 +78,10 @@
 (add-hook 'before-save-hook 'delete-trailing-whitespace)
 
 
-
 (setq warning-minimum-level :error)
 
+;; opening large file
+(setq large-file-warning-threshold 100000000)
 
 ;; smooth scrolling
 (pixel-scroll-mode 1)
