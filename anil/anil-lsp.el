@@ -5,7 +5,7 @@
   :diminish lsp-mode
   :hook (elixir-mode . lsp)
   :custom (lsp-restart 'ignore)
-  (lsp-file-watch-threshold 5000)
+  (lsp-file-watch-threshold 100000)
   (lsp-auto-guess-root t)
   (lsp-response-timeout 5)
   (lsp-prefer-flymake nil)
