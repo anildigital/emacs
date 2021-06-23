@@ -40,12 +40,10 @@
   (:map lsp-mode-map
         ("M-n" . forward-paragraph)
         ("M-p" . backward-paragraph))
-  :config (add-to-list 'lsp-file-watch-ignored "\\.asdf")
-  (add-to-list 'lsp-file-watch-ignored "[/\\\\]node_modules$")
-  (add-to-list 'lsp-file-watch-ignored "[/\\\\]\\.git$")
-  (add-to-list 'lsp-file-watch-ignored "[/\\\\]\\.elixir_ls$")
-  (add-to-list 'lsp-file-watch-ignored "[/\\\\]deps$")
-  (add-to-list 'lsp-file-watch-ignored "[/\\\\]_build$"))
+  :config
+  (add-to-list 'lsp-file-watch-ignored-directories "[/\\\\]\\.asdf\\'")
+  (add-to-list 'lsp-file-watch-ignored-directories "[/\\\\]\\deps\\'")
+  (add-to-list 'lsp-file-watch-ignored-directories "[/\\\\]\\.node_modules\\'"))
 
 
 (use-package
