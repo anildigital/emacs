@@ -23,6 +23,7 @@
         centaur-tabs-style "chamfer"
         centaur-tabs-gray-out-icons 'buffer
         centaur-tabs-set-bar 'over
+        centaur-tabs-cycle-scope 'tabs
         )
   :config
   (centaur-tabs-mode t)
