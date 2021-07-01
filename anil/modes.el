@@ -385,3 +385,11 @@
           compilation-mode))
 	:config
   (popper-mode +1))
+
+
+(use-package
+  persistent-scratch
+  :ensure t
+  :config
+  (persistent-scratch-setup-default)
+  )
