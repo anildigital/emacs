@@ -40,3 +40,4 @@ diary
 .dap-breakpoints
 projects
 .persistent-scratch
+vendor/*

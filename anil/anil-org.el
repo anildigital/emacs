@@ -127,55 +127,41 @@
   :after org
   :init (add-hook 'org-mode-hook (lambda ()
                                    (org-bullets-mode 1))))
-(use-package
-  org-roam
-  :ensure t
-  :after org
-  :hook (after-init . org-roam-mode)
-  :config (setq org-roam-directory "~/org/")
-  (setq org-roam-index-file "~/org/index.org")
-  (setq org-roam-capture-templates
-        '(("d" "default" plain (function org-roam--capture-get-point)
-           "%?"
-           :file-name "${dir}/%<%Y%m%d%H%M%S>-${slug}"
-           :head "#+title: ${title}\n"
-           :unnarrowed t)
 
-          ("n" "note" plain (function org-roam--capture-get-point)
-           "%?"
-           :file-name "%<%Y%m%d%H%M%S>-${slug}"
-           :head "#+title: ${title}\n"
-           :unnarrowed t)
-          ))
+(defun anil/org-roam-load ()
+  (interactive)
+  (add-to-list 'load-path "~/.config/emacs/vendor/org-roam/")
+  (load-library "org-roam")
+  (setq org-roam-directory (file-truename "~/org"))
+  (setq org-roam-file-extensions '("org"))
+  (org-roam-setup)
+  (define-key global-map (kbd "C-c n /") #'org-roam-node-find)
+  (define-key global-map (kbd "C-c n c") #'org-roam-capture)
+  (define-key global-map (kbd "C-c n i") #'org-roam-node-insert)
+  (define-key global-map (kbd "C-c n r") #'org-roam-buffer-toggle))
 
-  :bind (:map org-roam-mode-map
-              (("C-c n f" . org-roam-find-file)
-               ("C-c n g" . org-roam-graph-show)
-               ("C-c n j" . org-roam-jump-to-index)
-               ("C-c n b" . org-roam-switch-to-buffer)
-               ("C-c n g" . org-roam-graph-show))
-              :map org-mode-map
-              (("C-c n i" . org-roam-insert)
-               ("C-c n l" . org-roam-buffer-toggle-display)
-               ("C-c n I" . org-roam-insert-immediate))
-              ))
+(anil/org-roam-load)
 
-(use-package org-roam-server
-  :ensure t
-  :config
-  (setq org-roam-server-host "127.0.0.1"
-        org-roam-server-port 6969
-        org-roam-server-authenticate nil
-        org-roam-server-export-inline-images t
-        org-roam-server-serve-files nil
-        org-roam-server-served-file-extensions '("pdf" "mp4" "ogv")
-        org-roam-server-network-poll t
-        org-roam-server-network-arrows nil
-        org-roam-server-network-label-truncate t
-        org-roam-server-network-label-truncate-length 60
-        org-roam-server-network-label-wrap-length 20)
-  (org-roam-server-mode 1)
-  )
+(defun anil/org-id-update-org-roam-files ()
+  "Update Org-ID locations for all Org-roam files."
+  (interactive)
+  (org-id-update-id-locations (org-roam--list-all-files)))
+
+(defun anil/org-id-update-id-current-file ()
+  "Scan the current buffer for Org-ID locations and update them."
+  (interactive)
+  (org-id-update-id-locations (list (buffer-file-name (current-buffer)))))
+
+(define-key org-roam-mode-map [mouse-1] #'org-roam-visit-thing)
+
+;; for org-roam-buffer-toggle
+(add-to-list 'display-buffer-alist
+             '(;; Left side window
+               (".org-roam.*"
+                (display-buffer-in-side-window)
+                (window-width . 0.25)
+                (side . left)
+                (slot . 0))))
 
 (use-package
   ox-pandoc
@@ -193,12 +179,10 @@
   :config
   (add-hook 'minibuffer-setup-hook #'org-mru-clock-embark-minibuffer-hook))
 
-
 (use-package
   org-analyzer
   :ensure t
   )
-
 
 (use-package org-fancy-priorities
   :diminish

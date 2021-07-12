@@ -14,7 +14,7 @@
 
 ;; Set paths
 (add-to-list 'load-path (expand-file-name "~/.config/emacs/anil") t)
-(add-to-list 'load-path (expand-file-name "~/.config/emacs/vendor"))
+(add-to-list 'load-path (expand-file-name "~/.config/emacs/vendor") t)
 (setq custom-file "~/.config/emacs/anil/custom.el")
 (load custom-file)
 
