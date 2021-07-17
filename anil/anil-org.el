@@ -3,7 +3,9 @@
   :mode (("\\.org\\'" . org-mode)
          ("\\.org_archive\\'" . org-mode)
          )
-  :hook (after-init . org-agenda-list)
+  :hook
+  (after-init . org-agenda-list)
+  (after-init . org-roam-setup)
   (org-mode . (lambda () (display-line-numbers-mode 0)))
   (org-timer-done . anil-org-timer-hook)
 
@@ -127,20 +129,19 @@
   :after org
   :init (add-hook 'org-mode-hook (lambda ()
                                    (org-bullets-mode 1))))
-
-(defun anil/org-roam-load ()
-  (interactive)
-  (add-to-list 'load-path "~/.config/emacs/vendor/org-roam/")
-  (load-library "org-roam")
-  (setq org-roam-directory (file-truename "~/org"))
-  (setq org-roam-file-extensions '("org"))
-  (org-roam-setup)
-  (define-key global-map (kbd "C-c n /") #'org-roam-node-find)
-  (define-key global-map (kbd "C-c n c") #'org-roam-capture)
-  (define-key global-map (kbd "C-c n i") #'org-roam-node-insert)
-  (define-key global-map (kbd "C-c n r") #'org-roam-buffer-toggle))
-
-(anil/org-roam-load)
+(use-package
+  org-roam
+  :ensure t
+  :custom
+  (org-roam-directory (file-truename "~/org"))
+  :bind (("C-c n l" . org-roam-buffer-toggle)
+         ("C-c n f" . org-roam-node-find)
+         ("C-c n g" . org-roam-graph)
+         ("C-c n i" . org-roam-node-insert)
+         ("C-c n c" . org-roam-capture)
+         ;; Dailies
+         ("C-c n j" . org-roam-dailies-capture-today))
+  )
 
 (defun anil/org-id-update-org-roam-files ()
   "Update Org-ID locations for all Org-roam files."
@@ -151,8 +152,6 @@
   "Scan the current buffer for Org-ID locations and update them."
   (interactive)
   (org-id-update-id-locations (list (buffer-file-name (current-buffer)))))
-
-(define-key org-roam-mode-map [mouse-1] #'org-roam-visit-thing)
 
 ;; for org-roam-buffer-toggle
 (add-to-list 'display-buffer-alist
