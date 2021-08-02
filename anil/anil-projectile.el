@@ -11,7 +11,7 @@
   :init
 	(setq projectile-enable-caching t)
   (setq projectile-completion-system 'ivy)
-  (setq projectile-globally-ignored-file-suffixes '(".png" ".gif" ".pdf"  "*.class", "*.beam"))
+  (setq projectile-globally-ignored-file-suffixes '(".png" ".gif" ".pdf"  ".class", ".beam"))
 	:config
   (add-to-list 'projectile-globally-ignored-directories "node_modules")
   (add-to-list 'projectile-globally-ignored-directories "elixir-ls")
