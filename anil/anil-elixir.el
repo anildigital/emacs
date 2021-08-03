@@ -15,11 +15,6 @@
                                         (add-hook 'before-save-hook 'lsp-format-buffer)
                                         (add-hook 'before-save-hook 'delete-trailing-whitespace)
                                         ))
-  :mode
-  ("\\.eex?\\'" . elixir-mode)
-  ("\\.leex?\\'" . elixir-mode)
-  ("\\.sface?\\'" . elixir-mode)
-
   :bind (:map elixir-mode-map
               ("C-c C-d" . lsp-ui-doc-show)
               ("s-t" . lsp-ui-imenu)))

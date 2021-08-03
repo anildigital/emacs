@@ -17,10 +17,15 @@
          (web-mode  . emmet-mode)
          (scss-mode . emmet-mode)))
 
-
 (use-package
   web-mode
   :ensure t
+  :init
+  (setq web-mode-engines-alist
+        '(("elixir" . ".html\\.eex$")
+          ("elixir" . ".html\\.leex$")
+          ("elixir" . ".sface$")
+          ))
   :custom ((web-mode-enable-current-element-highlight t)
            (web-mode-enable-current-column-highlight t)
            (js-indent-level 2)
@@ -33,6 +38,9 @@
    ".html?$"
    ".vue$"
    ".eex$"
+   ".sface$"
+   "html\\.eex$"
+   "html\\.leex$"
    )
   :bind (:map web-mode-map
               ("M-n" . web-mode-tag-match)))
