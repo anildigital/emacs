@@ -212,6 +212,14 @@
   :ensure t
   :commands git-timemachine
   )
+
+(use-package
+  scss-mode
+  :ensure t
+	:mode
+  ("\\.scss$" . scss-mode)
+  )
+
 (use-package
   rainbow-mode
   :ensure t
