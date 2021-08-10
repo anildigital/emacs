@@ -217,7 +217,7 @@
   scss-mode
   :ensure t
 	:mode
-  ("\\.scss$" . scss-mode)
+  ("\\.scss\\'" . scss-mode)
   )
 
 (use-package
