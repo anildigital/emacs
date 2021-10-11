@@ -44,7 +44,6 @@
 (load "anil-yaml")
 (load "anil-yasnippet")
 (load "anil-ispell")
-(setq org-roam-v2-ack t)
 (load "anil-org")
 (load "anil-elixir")
 (load "anil-ido")
