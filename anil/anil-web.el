@@ -17,6 +17,10 @@
          (web-mode  . emmet-mode)
          (scss-mode . emmet-mode)))
 
+(use-package css-mode
+  :mode
+  ("\\.css$" . css-mode))
+
 (use-package
   web-mode
   :ensure t
