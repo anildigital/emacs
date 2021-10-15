@@ -11,6 +11,7 @@
   (elixir-mode . flycheck-mode)
   (elixir-mode . smartparens-mode)
   (elixir-mode . mix-minor-mode)
+  (elixir-mode . poly-elixir-web-mode)
   :config (add-hook 'elixir-mode-hook (lambda ()
                                         (add-hook 'before-save-hook 'lsp-format-buffer)
                                         (add-hook 'before-save-hook 'delete-trailing-whitespace)
