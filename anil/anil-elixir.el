@@ -1,7 +1,7 @@
 ;; ;; elixir mode
 (use-package
   erlang
-	:ensure t
+  :ensure t
   :mode "\\.erl$")
 
 (use-package
@@ -14,8 +14,7 @@
   (elixir-mode . poly-elixir-web-mode)
   :config (add-hook 'elixir-mode-hook (lambda ()
                                         (add-hook 'before-save-hook 'lsp-format-buffer)
-                                        (add-hook 'before-save-hook 'delete-trailing-whitespace)
-                                        ))
+                                        (add-hook 'before-save-hook 'delete-trailing-whitespace)))
   :bind (:map elixir-mode-map
               ("C-c C-d" . lsp-ui-doc-show)
               ("s-t" . lsp-ui-imenu)))
@@ -23,14 +22,12 @@
 (use-package
   exunit
   :ensure t
-	:after elixir-mode
-	)
+  :after elixir-mode)
 
 (use-package
   flycheck-dialyxir
   :ensure t
-	:after elixir-mode
-	)
+  :after elixir-mode)
 
 (use-package
   flycheck-credo
@@ -41,17 +38,17 @@
 (use-package
   flycheck-dialyxir
   :ensure t
-	:after elixir-mode
-	)
+  :after elixir-mode)
 
 (use-package
   flycheck
   :no-require t
   :init (flycheck-dialyxir-setup))
 
-(use-package inf-elixir
-	:ensure t
-	:after elixir-mode
+(use-package
+  inf-elixir
+  :ensure t
+  :after elixir-mode
   :bind (("C-c i i" . 'inf-elixir)
          ("C-c i p" . 'inf-elixir-project)
          ("C-c i l" . 'inf-elixir-send-line)
@@ -60,8 +57,7 @@
 
 (use-package
   mix
-	:ensure t
+  :ensure t
   :after elixir-mode
-	:hook (elixir-mode . mix-minor-mode)
-	:bind ("s-r" . 'mix-test-current-buffer)
-	)
+  :hook (elixir-mode . mix-minor-mode)
+  :bind ("s-r" . 'mix-test-current-buffer))

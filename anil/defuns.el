@@ -145,33 +145,33 @@ Repeated invocations toggle between the two most recently open buffers."
 (defun anil-org-log-delete ()
   "Delete logbook drawer of subtree."
   (interactive)
-  (save-excursion
-    (goto-char (org-log-beginning))
-    (when (save-excursion
-            (save-match-data
-              (beginning-of-line 0)
-              (search-forward-regexp org-drawer-regexp)
-              (goto-char (match-beginning 1))
-              (looking-at "LOGBOOK")))
-      (org-mark-element)
-      (delete-region (region-beginning) (region-end))
-      (org-remove-empty-drawer-at (point)))))
+  (save-excursion (goto-char (org-log-beginning))
+                  (when (save-excursion (save-match-data (beginning-of-line 0)
+                                                         (search-forward-regexp org-drawer-regexp)
+                                                         (goto-char (match-beginning 1))
+                                                         (looking-at "LOGBOOK")))
+                    (org-mark-element)
+                    (delete-region (region-beginning)
+                                   (region-end))
+                    (org-remove-empty-drawer-at (point)))))
 
 
 (defun anil/org-clock-in ()
-	(interactive)
-	(org-clock-in '(4)))
+  (interactive)
+  (org-clock-in '(4)))
 
 
-(defun anil-pulse-line (&rest _)
-      "Pulse the current line."
-      (pulse-momentary-highlight-one-line (point)))
-(dolist (command '(recenter-top-bottom other-window ace-window anil-scroll-down-half anil-scroll-up-half))
-  (advice-add command :after #'anil-pulse-line))
+(defun anil-pulse-line
+    (&rest
+     _)
+  "Pulse the current line."
+  (pulse-momentary-highlight-one-line (point)))
+(dolist (command '(recenter-top-bottom other-window ace-window anil-scroll-down-half
+                                       anil-scroll-up-half))
+  (advice-add command
+              :after #'anil-pulse-line))
 
 (defun anil-org-timer-hook ()
-	(call-process "/usr/bin/say" "" t "" "" "Time up!")
-	)
+  (call-process "/usr/bin/say" "" t "" "" "Time up!"))
 
 (provide 'defuns)
-

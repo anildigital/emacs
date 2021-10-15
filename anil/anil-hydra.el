@@ -1,9 +1,11 @@
-(use-package hydra
-	:ensure t
+(use-package
+  hydra
+  :ensure t
   :bind ("C-c c" . hydra-clock/body))
 
-(defhydra hydra-clock (:color blue)
-    "
+(defhydra hydra-clock
+  (:color blue)
+  "
     ^
     ^Clock^             ^Do^
     ^─────^─────────────^──^─────────
@@ -15,9 +17,9 @@
     ^^                  _o_ out
     ^^                  _r_ report
     ^^                  ^^
-    "
-    ("q" nil)
-    ("c" org-clock-cancel :color pink)
+    " ("q" nil)
+    ("c" org-clock-cancel
+     :color pink)
     ("d" org-clock-display)
     ("e" org-clock-modify-effort-estimate)
     ("i" org-clock-in)

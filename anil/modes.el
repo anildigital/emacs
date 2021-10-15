@@ -31,10 +31,8 @@
 (use-package
   ace-window
   :ensure t
-  :bind
-	("C-o" . ace-window)
-	("C-c s" . ace-swap-window)
-	)
+  :bind ("C-o" . ace-window)
+  ("C-c s" . ace-swap-window))
 
 (use-package
   move-text
@@ -85,7 +83,7 @@
 (use-package
   which-key
   :ensure t
-	:delight which-key-mode
+  :delight which-key-mode
   :config (which-key-mode)
   (which-key-setup-side-window-right))
 
@@ -96,27 +94,28 @@
 (use-package
   ripgrep
   :ensure t
-	:commands projectile-ripgrep
-	)
+  :commands projectile-ripgrep)
 
 (use-package
   undo-tree
   :ensure t
-	:commands undo-tree-visualize
+  :commands undo-tree-visualize
   :config (global-undo-tree-mode))
 
 
 ;; Assumes web-mode and elixir-mode are already set up
 ;;
-(use-package polymode
+(use-package
+  polymode
   :ensure t
   :mode ("\.ex$" . poly-elixir-web-mode)
-  :config
-  (define-hostmode poly-elixir-hostmode :mode 'elixir-mode)
+  :config (define-hostmode poly-elixir-hostmode
+            :mode 'elixir-mode)
   (define-innermode poly-liveview-expr-elixir-innermode
     :mode 'web-mode
     :head-matcher (rx line-start (* space) "~L" (= 3 (char "\"'")) line-end)
-    :tail-matcher (rx line-start (* space) (= 3 (char "\"'")) line-end)
+    :tail-matcher (rx line-start (* space)
+                      (= 3 (char "\"'")) line-end)
     :head-mode 'host
     :tail-mode 'host
     :allow-nested nil
@@ -125,48 +124,50 @@
   (define-innermode poly-surface-expr-elixir-innermode
     :mode 'web-mode
     :head-matcher (rx line-start (* space) "~F" (= 3 (char "\"'")) line-end)
-    :tail-matcher (rx line-start (* space) (= 3 (char "\"'")) line-end)
+    :tail-matcher (rx line-start (* space)
+                      (= 3 (char "\"'")) line-end)
     :head-mode 'host
     :tail-mode 'host
     :allow-nested nil
     :keep-in-mode 'host
     :fallback-mode 'host)
-  (define-polymode poly-elixir-web-mode
+  (define-polymode
+    poly-elixir-web-mode
     :hostmode 'poly-elixir-hostmode
-    :innermodes '(poly-liveview-expr-elixir-innermode poly-surface-expr-elixir-innermode))
-  )
+    :innermodes '(poly-liveview-expr-elixir-innermode poly-surface-expr-elixir-innermode)))
 
 (setq web-mode-engines-alist '(("elixir" . "\\.ex\\'")))
 
 (use-package
   poly-markdown
   :ensure t
-	:after polymode
+  :after polymode
   :mode (("\\.md$" . poly-markdown-mode)))
 
 (use-package
   dpaste
   :ensure t
-	:commands dpaste-buffer dpaste-region-or-buffer dpaste-region
-	)
+  :commands dpaste-buffer
+  dpaste-region-or-buffer
+  dpaste-region)
 
 (use-package
   wsd-mode
   :ensure t
-	:commands wsd-mode
+  :commands wsd-mode
   :init (setq wsd-style "default"))
 
 (use-package
   expand-region
   :ensure t
-	:commands er/expand-region
+  :commands er/expand-region
   :init (bind-key (kbd "C-=") 'er/expand-region))
 
 ;; this is last change0
 (use-package
   goto-chg
   :ensure t
-	:after prog-mode
+  :after prog-mode
   :bind ("C-." . goto-last-change)
   ("C-," . goto-last-change-reverse))
 
@@ -185,15 +186,12 @@
 (use-package
   markdown-mode
   :ensure t
-	:mode
-	("\\.md$" . markdown-mode)
-	)
+  :mode ("\\.md$" . markdown-mode))
 
 (use-package
   scpaste
   :ensure t
-	:defer t
-	)
+  :defer t)
 
 (use-package
   dash
@@ -202,73 +200,60 @@
 (use-package
   yaml-mode
   :ensure t
-	:mode
-	(".yaml" . yaml-mode)
-	(".yml" . yaml-mode)
-	)
+  :mode (".yaml" . yaml-mode)
+  (".yml" . yaml-mode))
 
 (use-package
   paredit
   :ensure t
-	:after emacs-lisp-mode clojure-mode
-	)
+  :after emacs-lisp-mode
+  clojure-mode)
 
 
 (use-package
   emmet-mode
   :ensure t
-	:after web-mode
-	:mode
-	("\\.html\\'" . emmet-mode)
-	("\\.eex$" . emmet--mode)
-	)
+  :after web-mode
+  :mode ("\\.html\\'" . emmet-mode)
+  ("\\.eex$" . emmet--mode))
 
 (use-package
   smartparens
   :ensure t
-	:delight smartparens
-	:defer t
-	)
+  :delight smartparens
+  :defer t)
 (use-package
   discover-my-major
   :ensure t
-	:commands discover-my-major
-	)
+  :commands discover-my-major)
 (use-package
   git-timemachine
   :ensure t
-  :commands git-timemachine
-  )
+  :commands git-timemachine)
 
 (use-package
   scss-mode
   :ensure t
-	:mode
-  ("\\.scss\\'" . scss-mode)
-  )
+  :mode ("\\.scss\\'" . scss-mode))
 
 (use-package
   rainbow-mode
   :ensure t
-	:mode
-	("\\.html\\'" . rainbow-mode)
-	("\\.eex$" . rainbow-mode)
-	("\\.css$" . rainbow-mode)
-	("\\.scss$" . rainbow-mode)
-	("\\.erb$" . rainbow-mode)
-	)
+  :mode ("\\.html\\'" . rainbow-mode)
+  ("\\.eex$" . rainbow-mode)
+  ("\\.css$" . rainbow-mode)
+  ("\\.scss$" . rainbow-mode)
+  ("\\.erb$" . rainbow-mode))
 
 (use-package
   editorconfig
   :ensure t
-  :mode (".editorconfig" . editorconfig-mode)
-	)
+  :mode (".editorconfig" . editorconfig-mode))
 
 (use-package
   feature-mode
   :ensure t
-	:defer t
-	)
+  :defer t)
 
 (use-package
   bind-key
@@ -277,91 +262,79 @@
 (use-package
   htmlize
   :ensure t
-	:defer t
-	)
+  :defer t)
 
 (use-package
   s
   :ensure t
-	:defer t
-	)
+  :defer t)
 
 (use-package
   counsel-world-clock
   :ensure t
-	:defer t
-	)
+  :defer t)
 
 (use-package
   fish-completion
   :ensure t
-	:init
-	(setq eshell-scroll-to-bottom-on-output nil)
-	(setq eshell-scroll-show-maximum-output nil)
-	:commands (eshell))
+  :init (setq eshell-scroll-to-bottom-on-output nil)
+  (setq eshell-scroll-show-maximum-output nil)
+  :commands (eshell))
 
 (use-package
   restclient
   :ensure t
-	:defer t
-	)
+  :defer t)
 
 (use-package
   ag
   :ensure t
-	:commands counsel-ag
-	)
+  :commands counsel-ag)
 
 (use-package
   graphql-mode
   :ensure t
-	:mode ("\\.graphql$" . graphql-mode)
-	)
+  :mode ("\\.graphql$" . graphql-mode))
 
 (use-package
   nvm
   :ensure t
-  :mode ("\\.js$" . nvm)
-	)
+  :mode ("\\.js$" . nvm))
 
 (use-package
   anzu
   :ensure t
-	:commands anzu-query-replace
-	)
+  :commands anzu-query-replace)
 
 (use-package
   zop-to-char
   :ensure t)
 
-(use-package super-save
+(use-package
+  super-save
   :ensure t
-	:delight super-save-mode
-  :config
-  (super-save-mode +1))
+  :delight super-save-mode
+  :config (super-save-mode +1))
 
 (use-package
   imenu-anywhere
   :ensure t
-	:commands imenu-anywhere
-	)
+  :commands imenu-anywhere)
 
 (use-package
   nginx-mode
   :ensure t
-	:defer t
-	)
+  :defer t)
 
 (use-package
   git-gutter
   :ensure t
-	:hook
-	(emacs-lisp-mode . git-gutter-mode)
-	(markdown-mode . git-gutter-mode)
-	(dockerfile-mode . git-gutter-mode)
-	(ruby-mode . git-gutter-mode)
-	(elixir-mode . git-gutter-mode)
-	(js2-mode . git-gutter-mode)
+  :hook (emacs-lisp-mode . git-gutter-mode)
+  (markdown-mode . git-gutter-mode)
+  (dockerfile-mode . git-gutter-mode)
+  (ruby-mode . git-gutter-mode)
+  (elixir-mode . git-gutter-mode)
+  (js2-mode . git-gutter-mode)
   :config (git-gutter-mode))
 
 (use-package
@@ -379,52 +352,43 @@
 
 (use-package
   treemacs-perspective
-  :after treemacs perspective
+  :after treemacs
+  perspective
   :ensure t)
 
 (use-package
   protobuf-mode
   :ensure t
-  :mode (("\\.proto$" . protobuf-mode)
-         ))
+  :mode (("\\.proto$" . protobuf-mode)))
 
 (use-package
   mermaid-mode
   :ensure t
-  :mode (("\\.mmd$" . mermaid-mode)
-         ))
+  :mode (("\\.mmd$" . mermaid-mode)))
 
-(use-package all-the-icons
-	:ensure t
-	)
+(use-package
+  all-the-icons
+  :ensure t)
 
-(use-package winner
-  :init
-  (winner-mode))
+(use-package
+  winner
+  :init (winner-mode))
 
-(use-package popper
-  :ensure t ; or :straight t
+(use-package
+  popper
+  :ensure t                             ; or :straight t
   :bind (("C-`"   . popper-toggle-latest)
          ("M-`"   . popper-cycle)
          ("C-M-`" . popper-toggle-type))
-  :init
-  (setq popper-reference-buffers
-        '("\\*Messages\\*"
-          "Output\\*$"
-					"\\*eshell\\*"
-					"\\*elixir-ls\\*"
-					"\\*Compile-Log\\*"
-					"\\*Async-native-compile-log\\*"
-					"\\*Flycheck error messages\\*"
-          help-mode
-          compilation-mode))
-	:config
-  (popper-mode +1))
+  :init (setq popper-reference-buffers '("\\*Messages\\*" "Output\\*$" "\\*eshell\\*"
+                                         "\\*elixir-ls\\*" "\\*Compile-Log\\*"
+                                         "\\*Async-native-compile-log\\*"
+                                         "\\*Flycheck error messages\\*" help-mode
+                                         compilation-mode))
+  :config (popper-mode +1))
 
 
 (use-package
   persistent-scratch
   :ensure t
-  :config
-  (persistent-scratch-setup-default)
-  )
+  :config (persistent-scratch-setup-default))
