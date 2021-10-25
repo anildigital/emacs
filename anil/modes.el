@@ -392,3 +392,12 @@
   persistent-scratch
   :ensure t
   :config (persistent-scratch-setup-default))
+
+
+(use-package
+  company-tabnine
+  :ensure t
+  :init
+  (setq company-idle-delay 0)
+  (setq company-show-numbers t)
+  )
