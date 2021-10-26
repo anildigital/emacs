@@ -337,12 +337,21 @@
   (js2-mode . git-gutter-mode)
   :config (git-gutter-mode))
 
-(use-package
-  deft
+
+(use-package deft
   :ensure t
-  :bind ("<f13>" . deft)
+  :config
+  (setq deft-extensions '("org")
+        deft-directory "~/org"
+        deft-recursive t
+        deft-extensions '("md" "org")
+        deft-strip-summary-regexp ":PROPERTIES:\n\\(.+\n\\)+:END:\n"
+        deft-use-filename-as-title t)
   :commands (deft)
-  :config (setq deft-directory "~/org" deft-extensions '("md" "org")))
+  :bind
+  (("<f13>" . deft)
+  ("C-c n d" . deft))
+  )
 
 (use-package
   perspective
