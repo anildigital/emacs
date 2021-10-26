@@ -5,7 +5,7 @@
          (before-save . (lambda ()
                           (untabify (point-min)
                                     (point-max)))))
-  :mode ("\\.js\\'" . js2-mode)
+  :mode ("\\.js?\\'" . js2-mode)
   :config (setq js2-strict-missing-semi-warning nil)
   (setq js2-missing-semi-one-line-override t)
   (setq js-indent-level 2)
