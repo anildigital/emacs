@@ -7,10 +7,10 @@
 (use-package
   elixir-mode
   :ensure t
-  :hook (elixir-mode . lsp)
-  (elixir-mode . flycheck-mode)
-  (elixir-mode . smartparens-mode)
-  (elixir-mode . mix-minor-mode)
+  :hook
+  ((elixir-mode . flycheck-mode)
+   (elixir-mode . smartparens-mode)
+   (elixir-mode . mix-minor-mode))
   :config (add-hook 'elixir-mode-hook (lambda ()
                                         (add-hook 'before-save-hook 'lsp-format-buffer)
                                         (add-hook 'before-save-hook 'delete-trailing-whitespace)))

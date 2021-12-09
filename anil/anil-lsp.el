@@ -1,9 +1,12 @@
 (use-package
   lsp-mode
-  :commands lsp
   :ensure t
   :diminish lsp-mode
-  :hook (elixir-mode . lsp)
+  :hook
+  ((elixir-mode . lsp)
+   (lsp-mode . lsp-enable-which-key-integration)
+   )
+  :commands lsp
   :custom (lsp-restart 'ignore)
   (lsp-file-watch-threshold 1000000)
   (lsp-auto-guess-root t)
@@ -25,6 +28,7 @@
 (use-package
   lsp-ui
   :ensure t
+  :commands lsp-ui-mode
   :custom (lsp-ui-flycheck-enable t)
   (lsp-ui-peek-enable t)
   (lsp-ui-sideline-enable t)
