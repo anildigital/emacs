@@ -52,7 +52,6 @@
 (load "anil-projectile")
 (load "preferences")
 (load "key-bindings")
-(load "init-tree-sitter")
 
 (server-start)
 
