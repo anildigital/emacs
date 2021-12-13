@@ -5,7 +5,6 @@
          )
   :hook
   (after-init . org-agenda-list)
-  (after-init . org-roam-setup)
   (org-mode . (lambda () (display-line-numbers-mode 0)))
   (org-timer-done . anil-org-timer-hook)
 
