@@ -189,6 +189,13 @@
   :mode ("\\.md$" . markdown-mode))
 
 (use-package
+  markdown-preview-mode
+  :ensure t
+  :config
+  (setq markdown-preview-stylesheets (list "http://thomasf.github.io/solarized-css/solarized-light.min.css"))
+  )
+
+(use-package
   scpaste
   :ensure t
   :defer t)
