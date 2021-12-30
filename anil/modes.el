@@ -35,6 +35,11 @@
   ("C-c s" . ace-swap-window))
 
 (use-package
+  dimmer
+  :ensure t
+  :config (dimmer-mode))
+
+(use-package
   move-text
   :ensure t
   :config (move-text-default-bindings)  ;
