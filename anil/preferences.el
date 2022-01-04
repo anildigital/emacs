@@ -65,6 +65,8 @@
 
 (setq x-stretch-cursor t)
 
+(setq-default cursor-type 'bar)
+
 ;(setq company-show-numbers t)
 
 
