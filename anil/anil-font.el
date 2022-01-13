@@ -2,5 +2,5 @@
 ;; Set favorite font
 (set-face-attribute 'default nil
                     :font "Menlo"
-                    :height 150
+                    :height 160
                     :weight 'regular)
