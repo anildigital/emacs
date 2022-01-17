@@ -72,6 +72,7 @@
 
 (add-to-list 'default-frame-alist '(ns-transparent-titlebar . t))
 (add-to-list 'default-frame-alist '(ns-appearance . dark))
+(add-to-list 'default-frame-alist '(fullscreen . maximized))
 
 ;; delete old buffers
 (setq clean-buffer-list-delay-general 1)
