@@ -76,8 +76,7 @@
   subword
   :defer t
   :diminish subword-mode
-  :hook ((before-save-hook . delete-trailing-whitespace)
-         (prog-mode . subword-mode)))
+  :hook ((prog-mode . subword-mode)))
 
 (use-package
   avy

@@ -78,8 +78,7 @@
 (setq clean-buffer-list-delay-general 1)
 (midnight-delay-set 'midnight-delay "02:00am")
 
-(add-hook 'before-save-hook 'delete-trailing-whitespace)
-
+(add-hook 'before-save-hook 'anil-prog-nuke-trailing-whitespace)
 
 (setq warning-minimum-level :error)
 
