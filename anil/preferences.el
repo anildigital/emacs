@@ -11,7 +11,7 @@
 ;; don't create backup files
 (setq backup-directory-alist `(("." . "~/.saves")))
 
-                                        ; default tab width
+;; default tab width
 (setq-default tab-width 2)
 (setq tab-always-indent 'complete)
 
@@ -25,10 +25,10 @@
 (when (string= system-type "darwin")
   (setq dired-use-ls-dired nil))
 
-                                        ; ask y/n instead of yes/no
+;; ask y/n instead of yes/no
 (fset 'yes-or-no-p 'y-or-n-p)
 
-                                        ; Enable paren mode
+;; Enable paren mode
 (show-paren-mode t)
 
 ;; Global linum mode
