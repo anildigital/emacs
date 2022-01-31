@@ -94,3 +94,6 @@
 
 ;; To remove gaps between your emacs frames and other windows
 (setq frame-resize-pixelwise t)
+
+;; auth sources
+(setq auth-sources '("~/.authinfo.gpg"))
