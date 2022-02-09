@@ -9,7 +9,7 @@
   (org-timer-done . anil-org-timer-hook)
 
   :bind
-  ("C-c l" . org-store-link)
+  ("C-c l s" . org-store-link)
   ("C-c c" . org-capture)
   ("C-c a a" . org-agenda)
   ("<f16>" . org-agenda)

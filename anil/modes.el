@@ -419,11 +419,8 @@
   :ensure t
   :config (persistent-scratch-setup-default))
 
-
-(use-package
-  company-tabnine
+(use-package link-hint
   :ensure t
-  :init
-  (setq company-idle-delay 0)
-  (setq company-show-numbers t)
-  )
+  :bind
+  ("C-c l o" . link-hint-open-link)
+  ("C-c l c" . link-hint-copy-link))
