@@ -51,7 +51,10 @@
   :after counsel
   :config (ivy-prescient-mode 1))
 
-(use-package
-  ivy-rich
+(use-package ivy-rich
   :ensure t
-  :after ivy)
+  :after (ivy counsel)
+  :init
+  (setq ivy-rich-path-style 'abbrev
+        ivy-virtual-abbreviate 'full)
+  :config (ivy-rich-mode 1))
