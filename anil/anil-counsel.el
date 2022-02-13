@@ -12,6 +12,14 @@
   counsel
   :ensure t
   :diminish counsel-mode
+  :config
+  (ivy-set-actions
+ 'counsel-buffer-or-recentf
+ '(("j" find-file-other-window "other window")
+   ("f" find-file-other-frame "other frame")
+   ("x" counsel-find-file-extern "open externally")
+   ("d" (lambda (file) (setq recentf-list (delete file recentf-list)))
+    "delete from recentf")))
   :bind ("M-x" . counsel-M-x)
   ("C-x C-f" . counsel-find-file)
   ("C-x C-r" . counsel-recentf)
