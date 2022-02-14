@@ -97,3 +97,7 @@
 
 ;; auth sources
 (setq auth-sources '("~/.authinfo.gpg"))
+
+
+;; perp-mode
+(persp-mode)
