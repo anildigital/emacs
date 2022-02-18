@@ -175,7 +175,7 @@
   goto-chg
   :ensure t
   :after prog-mode
-  :bind ("C-." . goto-last-change)
+  :bind ("C-." . anil-goto-last-change)
   ("C-," . goto-last-change-reverse))
 
 (use-package

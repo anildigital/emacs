@@ -46,6 +46,11 @@
                                                              (region-beginning)
                                                              (region-end))
                                                           (read-string "Google: ")))))
+(defun anil-goto-last-change ()
+  (interactive)
+  (call-interactively 'goto-last-change)
+  (call-interactively 'recenter-top-bottom)
+  )
 
 
 (defun anil-goto-config ()
