@@ -40,18 +40,10 @@
   :config (dimmer-mode))
 
 (use-package
-  wakatime-mode
-  :init
-  (setq wakatime-cli-path "/usr/local/bin/wakatime-cli")
-  :ensure t
-  :config (global-wakatime-mode))
-
-(use-package
   move-text
   :ensure t
   :config (move-text-default-bindings)  ;
   )
-
 
 (use-package
   multiple-cursors
