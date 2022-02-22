@@ -16,7 +16,7 @@
   (setq lsp-prefer-capf t)
   (setq gc-cons-threshold 100000000)
   (setq lsp-elixir-dialyzer-enabled t)
-  (setq lsp-elixir-dialyzer-warn-opts (list "error_handling" "no_behaviours" "no_contracts" "no_fail_call" "no_fun_app" "no_improper_lists" "no_match" "no_missing_calls" "no_opaque" "no_return" "no_undefined_callbacks" "no_unused" "unknown" "specdiffs"))q
+  (setq lsp-elixir-dialyzer-warn-opts (list "error_handling" "no_behaviours" "no_contracts" "no_fail_call" "no_fun_app" "no_improper_lists" "no_match" "no_missing_calls" "no_opaque" "no_return" "no_undefined_callbacks" "no_unused" "unknown" "specdiffs"))
   (setq read-process-output-max (* 1024 1024)) ;; 1mb
   (setq lsp-idle-delay 0.500))
 
