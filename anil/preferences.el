@@ -98,6 +98,16 @@
 ;; auth sources
 (setq auth-sources '("~/.authinfo.gpg"))
 
-
 ;; perp-mode
 (persp-mode)
+
+;; save place mode
+(save-place-mode)
+
+;; global auto revert mode
+(global-auto-revert-mode 1)
+
+
+;; save history mode
+(setq history-length 100)
+(savehist-mode 1)
