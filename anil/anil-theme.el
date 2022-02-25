@@ -25,7 +25,9 @@
   :config (centaur-tabs-mode t)
   ;; (centaur-tabs-headline-match)
   ;; (centaur-tabs-group-by-projectile-project)
-  :hook (eshell-mode . centaur-tabs-local-mode)
+  :hook
+  ((eshell-mode . centaur-tabs-local-mode)
+   (dired-mode . centaur-tabs-local-mode))
   (org-agenda-mode . centaur-tabs-local-mode)
   :bind ("s-{" . centaur-tabs-backward)
   ("s-}" . centaur-tabs-forward))
