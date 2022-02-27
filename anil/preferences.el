@@ -111,3 +111,6 @@
 ;; save history mode
 (setq history-length 100)
 (savehist-mode 1)
+
+;; use fish shell from shell
+(setq-default explicit-shell-file-name "/usr/local/bin/fish")
