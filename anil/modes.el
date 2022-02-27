@@ -363,7 +363,7 @@
   )
 
 (use-package
-  perspective
+  persp-mode
   :ensure t
   :config
   (persp-mode)
@@ -371,12 +371,6 @@
   (kill-emacs-hook . persp-state-save)
   :bind (("C-x C-b" . persp-list-buffers) ; or use a nicer switcher, see below
          ))
-
-(use-package
-  treemacs-perspective
-  :after treemacs
-  perspective
-  :ensure t)
 
 (use-package
   protobuf-mode
