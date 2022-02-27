@@ -76,3 +76,8 @@
 (use-package treemacs-magit
   :after (treemacs magit)
   :ensure t)
+
+(use-package treemacs-perspective
+  :after (treemacs perspective)
+  :ensure t
+  :config (treemacs-set-scope-type 'Perspectives))

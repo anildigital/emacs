@@ -98,9 +98,6 @@
 ;; auth sources
 (setq auth-sources '("~/.authinfo.gpg"))
 
-;; perp-mode
-(persp-mode)
-
 ;; save place mode
 (save-place-mode)
 
