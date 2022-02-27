@@ -93,6 +93,9 @@
 ;;
 (global-set-key (kbd "s-i") #'anil-switch-to-previous-buffer)
 
+;;
+(global-set-key (kbd "C-~") #'anil-goto-shell)
+
 ;; Split window
 (global-set-key (kbd "s-2") 'split-window-below)
 (global-set-key (kbd "s-3") 'split-window-right)

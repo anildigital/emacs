@@ -57,6 +57,10 @@
   (interactive)
   (find-file "~/.config/emacs/init.el"))
 
+(defun anil-goto-shell ()
+  (interactive)
+   (call-interactively #'shell))
+
 (defun anil-goto-todo ()
   (interactive)
   (find-file "~/org/todo.org"))
