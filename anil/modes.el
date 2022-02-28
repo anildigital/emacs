@@ -362,16 +362,6 @@
   ("C-c n d" . deft))
   )
 
-(use-package perspective
-  :ensure t
-  :hook
-  (kill-emacs-hook . persp-state-save)
-  :after treemacs-mode
-  :bind
-  ("C-x C-b" . persp-list-buffers)   ; or use a nicer switcher, see below
-  :init
-  (persp-mode))
-
 (use-package
   protobuf-mode
   :ensure t
