@@ -58,3 +58,7 @@
   (setq ivy-rich-path-style 'abbrev
         ivy-virtual-abbreviate 'full)
   :config (ivy-rich-mode 1))
+
+(use-package all-the-icons-ivy-rich
+  :ensure t
+  :init (all-the-icons-ivy-rich-mode 1))
