@@ -111,6 +111,3 @@
 
 ;; use fish shell from shell
 (setq-default explicit-shell-file-name "/usr/local/bin/fish")
-
-;; disable tab
-(add-hook 'comint-mode-hook (lambda () (define-key comint-mode-map "\t" 'self-insert-command)))
