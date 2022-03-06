@@ -9,16 +9,26 @@
   :commands lsp
   :custom (lsp-restart 'ignore)
   (lsp-file-watch-threshold 1000000)
-  (lsp-auto-guess-root t)
+  ;; (lsp-auto-guess-root t)
   (lsp-response-timeout 5)
   (lsp-prefer-flymake nil)
   :config (add-to-list 'exec-path "~/Code/elixir-ls/release")
   (setq lsp-prefer-capf t)
   (setq gc-cons-threshold 100000000)
-  (setq lsp-elixir-dialyzer-enabled t)
-  (setq lsp-elixir-dialyzer-warn-opts (list "error_handling" "no_behaviours" "no_contracts" "no_fail_call" "no_fun_app" "no_improper_lists" "no_match" "no_missing_calls" "no_opaque" "no_return" "no_undefined_callbacks" "no_unused" "unknown" "specdiffs"))
   (setq read-process-output-max (* 1024 1024)) ;; 1mb
-  (setq lsp-idle-delay 0.500))
+  (setq lsp-idle-delay 0.500)
+  (add-to-list 'lsp-file-watch-ignored-directories "[/\\\\]\\.asdf\\'")
+  (add-to-list 'lsp-file-watch-ignored-directories "[/\\\\]\\deps\\'")
+  (add-to-list 'lsp-file-watch-ignored-directories "[/\\\\]\\node_modules\\'")
+  (dolist (match
+           '("[/\\\\].direnv$"
+             "[/\\\\]node_modules$"
+             "[/\\\\]deps"
+             "[/\\\\]priv"
+             "[/\\\\]build"
+             "[/\\\\]_build"))
+    (add-to-list 'lsp-file-watch-ignored match))
+  )
 
 (use-package
   lsp-treemacs
@@ -44,10 +54,7 @@
   (:map lsp-mode-map
         ("M-n" . forward-paragraph)
         ("M-p" . backward-paragraph))
-  :config (add-to-list 'lsp-file-watch-ignored-directories "[/\\\\]\\.asdf\\'")
-  (add-to-list 'lsp-file-watch-ignored-directories "[/\\\\]\\deps\\'")
-  (add-to-list 'lsp-file-watch-ignored-directories "[/\\\\]\\node_modules\\'"))
-
+  )
 
 (use-package
   lsp-origami
