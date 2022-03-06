@@ -284,13 +284,6 @@
   :defer t)
 
 (use-package
-  fish-completion
-  :ensure t
-  :init (setq eshell-scroll-to-bottom-on-output nil)
-  (setq eshell-scroll-show-maximum-output nil)
-  :commands (eshell))
-
-(use-package
   restclient
   :ensure t
   :defer t)
