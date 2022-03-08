@@ -184,6 +184,6 @@ Repeated invocations toggle between the two most recently open buffers."
               :after #'anil-pulse-line))
 
 (defun anil-org-timer-hook ()
-  (call-process "/usr/bin/say" "" t "" "" "Time up!"))
+  (call-process "/usr/bin/say" "" t "" "" "Pomodoro Time up!"))
 
 (provide 'defuns)
