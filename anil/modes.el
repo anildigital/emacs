@@ -409,4 +409,8 @@
 
 
 (use-package vterm
-    :ensure t)
+  :ensure t
+  :bind
+  (:map vterm-mode-map
+        ("C-o" . ace-window))
+  )
