@@ -375,16 +375,25 @@
 
 (use-package
   popper
-  :ensure t                             ; or :straight t
+  :ensure t
   :bind (("C-`"   . popper-toggle-latest)
          ("M-`"   . popper-cycle)
          ("C-M-`" . popper-toggle-type))
-  :init (setq popper-reference-buffers '("\\*Messages\\*" "Output\\*$" "\\*eshell\\*"
-                                         "\\*elixir-ls\\*" "\\*Compile-Log\\*"
-                                         "\\*Async-native-compile-log\\*"
-                                         "\\*Flycheck error messages\\*" help-mode
-                                         compilation-mode))
-  :config (popper-mode +1))
+  :init
+  (setq popper-reference-buffers '("\\*Messages\\*"
+                                   "Output\\*$"
+                                   "eshell"
+                                   "shell*"
+                                   "\\*elixir-ls\\*"
+                                   "\\*Compile-Log\\*"
+                                   "\\*Async-native-compile-log\\*"
+                                   "\\*Flycheck error messages\\*"
+                                   "vterm"
+                                   "*SQL"
+                                   help-mode
+                                   compilation-mode))
+  (popper-mode +1)
+  (popper-echo-mode +1))
 
 
 (use-package
