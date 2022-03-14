@@ -9,7 +9,6 @@
   :ensure t
   :init
   (setq lsp-elixir-dialyzer-enabled t)
-  (setq lsp-elixir-dialyzer-warn-opts (list "error_handling" "no_behaviours" "no_contracts" "no_fail_call" "no_fun_app" "no_improper_lists" "no_match" "no_missing_calls" "no_opaque" "no_return" "no_undefined_callbacks" "no_unused" "unknown" "specdiffs"))
   :hook
   ((elixir-mode . flycheck-mode)
    (elixir-mode . smartparens-mode)
