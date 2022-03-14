@@ -22,7 +22,29 @@
 (use-package
   exunit
   :ensure t
-  :after elixir-mode)
+  :after elixir-mode
+  :commands (anil/mix-format)
+  :bind
+  (:map elixir-mode-map
+        ("C-c , a" . exunit-verify-all)
+        ("C-c , A" . exunit-verify-all-in-umbrella)
+        ("C-c , s" . exunit-verify-single)
+        ("C-c , v" . exunit-verify)
+        ("C-c , r" . exunit-rerun))
+  (:map elixir-mode-map
+        ("C-c i f" . anil/mix-format))
+  :config
+  (defun anil/mix-format ()
+    (interactive)
+    (save-buffer)
+    (shell-command (format "cd %s && mix format %s"
+                           (or
+                            (ignore-errors (exunit-umbrella-project-root))
+                            (exunit-project-root))
+                           (buffer-file-name)))
+    (revert-buffer t t))
+
+  )
 
 (use-package
   flycheck-dialyxir
