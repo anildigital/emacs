@@ -390,6 +390,7 @@
                                    "\\*Flycheck error messages\\*"
                                    "vterm"
                                    "*SQL"
+                                   "*exunit-compilation*"
                                    help-mode
                                    compilation-mode))
   (popper-mode +1)
