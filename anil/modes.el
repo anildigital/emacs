@@ -391,11 +391,11 @@
                                    "vterm"
                                    "*SQL"
                                    "*exunit-compilation*"
+                                   "magit-process"
                                    help-mode
                                    compilation-mode))
   (popper-mode +1)
   (popper-echo-mode +1))
-
 
 (use-package
   persistent-scratch
