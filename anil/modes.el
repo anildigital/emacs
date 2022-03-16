@@ -409,7 +409,12 @@
 
 (use-package vterm
   :ensure t
+  :init
+  (setq vterm-shell "/usr/local/bin/fish")
   :bind
   (:map vterm-mode-map
-        ("C-o" . ace-window))
-  )
+        ("C-o" . ace-window)
+        ("C-s" . swiper)
+        ("M-<" . beginning-of-buffer)
+        ("M->" . end-of-buffer)
+        ))
