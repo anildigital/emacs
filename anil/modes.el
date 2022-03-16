@@ -382,11 +382,9 @@
   :init
   (setq popper-reference-buffers '("\\*Messages\\*"
                                    "Output\\*$"
-                                   "eshell"
+                                   "eshell*"
                                    "shell*"
                                    "\\*elixir-ls\\*"
-                                   "\\*Compile-Log\\*"
-                                   "\\*Async-native-compile-log\\*"
                                    "\\*Flycheck error messages\\*"
                                    "vterm"
                                    "*SQL"
