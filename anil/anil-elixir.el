@@ -33,6 +33,8 @@
         ("C-c , r" . exunit-rerun))
   (:map elixir-mode-map
         ("C-c i f" . anil/mix-format))
+  (:map exunit-compilation-mode-map
+        ("C-o" . ace-window))
   :config
   (defun anil/mix-format ()
     (interactive)
@@ -43,7 +45,6 @@
                             (exunit-project-root))
                            (buffer-file-name)))
     (revert-buffer t t))
-
   )
 
 (use-package
