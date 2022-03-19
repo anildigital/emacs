@@ -9,17 +9,14 @@
   :commands lsp
   :custom (lsp-restart 'ignore)
   (lsp-file-watch-threshold 1000000)
-  ;; (lsp-auto-guess-root t)
-  (lsp-response-timeout 5)
+  (lsp-auto-guess-root t)
+  (lsp-response-timeout 2)
   (lsp-prefer-flymake nil)
   :config (add-to-list 'exec-path "~/Code/elixir-ls/release")
   (setq lsp-prefer-capf t)
   (setq gc-cons-threshold 100000000)
   (setq read-process-output-max (* 1024 1024)) ;; 1mb
   (setq lsp-idle-delay 0.500)
-  (add-to-list 'lsp-file-watch-ignored-directories "[/\\\\]\\.asdf\\'")
-  (add-to-list 'lsp-file-watch-ignored-directories "[/\\\\]\\deps\\'")
-  (add-to-list 'lsp-file-watch-ignored-directories "[/\\\\]\\node_modules\\'")
   (dolist (match
            '("[/\\\\].direnv$"
              "[/\\\\]node_modules$"
@@ -43,6 +40,7 @@
   :commands lsp-ui-mode
   :custom (lsp-ui-flycheck-enable t)
   (lsp-ui-peek-enable t)
+  (lsp-ui-imenu-buffer-enable)
   (lsp-ui-sideline-enable t)
   (lsp-ui-doc-enable t)
   :hook (lsp-ui-doc-frame-mode . (lambda()
