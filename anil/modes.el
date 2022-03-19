@@ -102,9 +102,11 @@
 (use-package
   undo-tree
   :ensure t
+  :init
+  (setq undo-tree-auto-save-history t)
+  (setq undo-tree-history-directory-alist '(("." . "~/.saves/undo")))
   :commands undo-tree-visualize
   :config (global-undo-tree-mode))
-
 
 ;; Assumes web-mode and elixir-mode are already set up
 (use-package
