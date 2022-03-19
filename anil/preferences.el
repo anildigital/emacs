@@ -8,9 +8,6 @@
 
 (setq max-lisp-eval-depth 10000)
 
-;; don't create backup files
-(setq backup-directory-alist `(("." . "~/.saves")))
-
 ;; default tab width
 (setq-default tab-width 2)
 (setq tab-always-indent 'complete)
@@ -104,10 +101,8 @@
 ;; global auto revert mode
 (global-auto-revert-mode 1)
 
-
-;; save history mode
-(setq history-length 100)
-(savehist-mode 1)
-
 ;; use fish shell from shell
 (setq-default explicit-shell-file-name "/usr/local/bin/fish")
+
+;; time
+(display-time-mode 1)
