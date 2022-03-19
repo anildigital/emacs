@@ -53,6 +53,7 @@
 (load "modes")
 (load "anil-projectile")
 (load "preferences")
+(load "backups")
 (load "key-bindings")
 
 (server-start)
