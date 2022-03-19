@@ -7,8 +7,6 @@
 (use-package
   elixir-mode
   :ensure t
-  :init
-  (setq lsp-elixir-dialyzer-enabled t)
   :hook
   ((elixir-mode . flycheck-mode)
    (elixir-mode . smartparens-mode)
