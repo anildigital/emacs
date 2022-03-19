@@ -12,7 +12,7 @@
   (lsp-auto-guess-root t)
   (lsp-response-timeout 2)
   (lsp-prefer-flymake nil)
-  lsp-elixir-suggest-specs
+  (lsp-elixir-suggest-specs t)
   :config (add-to-list 'exec-path "~/Code/elixir-ls/release")
   (setq lsp-prefer-capf t)
   (setq gc-cons-threshold 100000000)
