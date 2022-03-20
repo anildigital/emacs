@@ -14,6 +14,7 @@
   (add-to-list 'projectile-globally-ignored-directories "elixir-ls")
   (add-to-list 'projectile-globally-ignored-directories "deps")
   (add-to-list 'projectile-globally-ignored-directories "elpa")
+  (add-to-list 'projectile-globally-ignored-directories "_build")
   (projectile-global-mode))
 
 (use-package
