@@ -80,10 +80,6 @@
 (global-set-key (kbd "\C-ct") 'anil-goto-todo)
 (global-set-key (kbd "\C-c n o") 'anil-goto-index)
 
-;; shell
-(global-set-key (kbd "C-~") 'eshell)
-
-
 ;; contextual backspace
 (global-set-key (kbd "C-<backspace>") 'contextual-backspace)
 

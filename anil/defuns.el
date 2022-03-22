@@ -59,7 +59,7 @@
 
 (defun anil-goto-shell ()
   (interactive)
-   (call-interactively #'shell))
+   (call-interactively #'vterm))
 
 (defun anil-goto-todo ()
   (interactive)
