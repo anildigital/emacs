@@ -382,16 +382,11 @@
          ("M-`"   . popper-cycle)
          ("C-M-`" . popper-toggle-type))
   :init
-  (setq popper-reference-buffers '("\\*Messages\\*"
-                                   "Output\\*$"
-                                   "eshell*"
+  (setq popper-reference-buffers '("eshell*"
                                    "shell*"
-                                   "\\*elixir-ls\\*"
-                                   "\\*Flycheck error messages\\*"
                                    "vterm"
                                    "*SQL"
                                    "*exunit-compilation*"
-                                   "magit-process"
                                    help-mode
                                    compilation-mode))
   (popper-mode +1)
