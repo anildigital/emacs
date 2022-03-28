@@ -413,6 +413,7 @@
   :ensure t
   :init
   (setq vterm-shell "/usr/local/bin/fish")
+  (setq vterm-buffer-name-string "%s")
   :bind
   (:map vterm-mode-map
         ("C-o" . ace-window)
