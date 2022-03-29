@@ -52,6 +52,11 @@
   (call-interactively 'recenter-top-bottom)
   )
 
+(defun anil-copy-line (N)
+  (interactive "P")
+  (save-excursion (goto-line N)
+                  (kill-new (buffer-substring (point-at-bol) (point-at-eol)))
+                  ))
 
 (defun anil-goto-config ()
   (interactive)
