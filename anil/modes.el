@@ -375,6 +375,13 @@
   winner
   :init (winner-mode))
 
+
+(use-package
+  annotate
+  :ensure t
+  :init (annotate-mode)
+  )
+
 (use-package
   popper
   :ensure t
