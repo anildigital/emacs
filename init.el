@@ -6,8 +6,6 @@
 ;; You may delete these explanatory comments.
 ;;; Code:
 
-(setq comp-speed 2)
-
 (defvar *emacs-load-start* (current-time))
 
 (setenv "LANG" "en_US.UTF-8")
