@@ -379,7 +379,7 @@
 (use-package
   annotate
   :ensure t
-  :init (annotate-mode)
+  :hook ((prog-mode . annotate-mode))
   )
 
 (use-package
