@@ -95,6 +95,17 @@
   :ensure t)
 
 (use-package
+  mini-frame
+  :ensure t
+  :config
+  (custom-set-variables
+   '(mini-frame-show-parameters
+     '((top . 600)
+       (width . 0.7)
+       (left . 0.5))))
+  )
+
+(use-package
   ripgrep
   :ensure t
   :commands projectile-ripgrep)
