@@ -60,6 +60,14 @@
   (setq org-todo-keywords
         '((sequence "TODO(t)" "IN_PROGRESS(is)"  "HOLD(h)" "WAITING(w)" "NEEDSREVIEW(n)" "|" "DONE(d)" "CANCELED(c)")))
 
+  (setq-default org-todo-keyword-faces
+   '(("TODO" :foreground "#ffd166" :weight bold)
+     ("IN_PROGRESS" :foreground "#ef476f" :weight bold)
+     ("WAITING" :foreground "#118ab2" :weight bold)
+     ("NEEDSREVIEW" :foreground "#b7b7a4" :weight bold)
+     ("CANCELED" :foreground "#073b4c" :weight bold)
+     ("DONE" :foreground "#06d6a0" :weight bold)))
+
   ;;
   (setq org-startup-indented t)
   (setq org-startup-with-inline-images t)
