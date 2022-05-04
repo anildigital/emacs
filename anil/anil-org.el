@@ -7,6 +7,8 @@
   (after-init . org-agenda-list)
   (org-mode . (lambda () (display-line-numbers-mode 0)))
   (org-timer-done . anil-org-timer-hook)
+  (org-clock-in . anil-on-org-clock-in)
+  (org-clock-out . anil-on-org-clock-out)
 
   :bind
   ("C-c l s" . org-store-link)
@@ -127,6 +129,12 @@
   (set-face-attribute 'org-mode-line-clock nil :foreground "black" :weight 'bold :background "dark sea green")
 
   (require 'org-tempo)
+
+  (defun anil-on-org-clock-in ()
+    (shell-command "/Users/anil/.asdf/shims/hueadm light 1 turquoise bri=20"))
+
+  (defun anil-on-org-clock-out ()
+    (shell-command "/Users/anil/.asdf/shims/hueadm light 1 red bri=20"))
 
   ;; Treemacs fix
   (with-eval-after-load 'org
