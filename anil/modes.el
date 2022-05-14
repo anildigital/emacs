@@ -312,11 +312,6 @@
   :mode ("\\.graphql$" . graphql-mode))
 
 (use-package
-  nvm
-  :ensure t
-  :mode ("\\.js$" . nvm))
-
-(use-package
   anzu
   :ensure t
   :commands anzu-query-replace)
