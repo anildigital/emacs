@@ -429,3 +429,10 @@
         ("M-<" . beginning-of-buffer)
         ("M->" . end-of-buffer)
         ))
+
+(use-package
+  rainbow-delimiters
+  :ensure t
+  :defer t
+  :hook (prog-mode . rainbow-delimiters-mode)
+  )
