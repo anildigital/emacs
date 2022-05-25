@@ -6,7 +6,9 @@
   :hook (elixir-mode . projectile-mode)
   (elixir-mode . counsel-projectile-mode)
   :commands (projectile-find-file projectile-switch-project)
-  :bind ("s-e" . projectile-recentf)
+  :bind
+  ("s-e" . projectile-recentf)
+  ("C-x 5 k" . anil/projectile-kill-non-project-buffers)
   :init (setq projectile-enable-caching t)
   (setq projectile-completion-system 'ivy)
   (setq projectile-globally-ignored-file-suffixes '(".png" ".gif" ".pdf"  ".class", ".beam"))
@@ -15,7 +17,25 @@
   (add-to-list 'projectile-globally-ignored-directories "deps")
   (add-to-list 'projectile-globally-ignored-directories "elpa")
   (add-to-list 'projectile-globally-ignored-directories "_build")
-  (projectile-global-mode))
+  (projectile-global-mode)
+
+  (defun anil/projectile-kill-non-project-buffers ()
+    "Kill all the buffers that doesn't belong to the current project."
+
+    (interactive)
+    (let ((root (projectile-project-root)) (bufs (buffer-list (selected-frame))))
+      (when (null root) (user-error "Not in a Projectile buffer"))
+      (when (yes-or-no-p (format "Do you want to kill all the buffers that doesn't belong to \"%s\"? " root))
+        (dolist (buf bufs)
+          (let ((buf-name (buffer-name buf)))
+                                        ; " ?" -> Treemacs buffers has an space at the beginning, because potato.
+            (unless (or (projectile-project-buffer-p buf root)
+                        (string-match "^ ?\\*\\(\\scratch\\|\\timesheet\\|\\elixir-ls\\|Messages\\|Treemacs\\|tab-line-hscroll\\)" buf-name))
+
+              (message "Killing buffer '%s'" buf-name)
+              (kill-buffer buf)))))))
+
+  )
 
 (use-package
   org-projectile
