@@ -117,6 +117,8 @@
   (setq undo-tree-auto-save-history t)
   (setq undo-tree-history-directory-alist '(("." . "~/.saves/undo")))
   :commands undo-tree-visualize
+  :bind
+  ("C-x u" . undo-tree-visualize)
   :config (global-undo-tree-mode))
 
 ;; Assumes web-mode and elixir-mode are already set up
