@@ -146,13 +146,13 @@
 
 (use-package
   org-bullets
-  :ensure t
+  :straight t
   :after org
   :init (add-hook 'org-mode-hook (lambda ()
                                    (org-bullets-mode 1))))
 (use-package
   org-roam
-  :ensure t
+  :straight t
   :custom
   (org-roam-directory (file-truename "~/org"))
   :bind (("C-c n l" . org-roam-buffer-toggle)
@@ -185,12 +185,12 @@
 
 (use-package
   ox-pandoc
-  :ensure t
+  :straight t
   :commands org-export-dispatch
   )
 
 (use-package org-mru-clock
-  :ensure t
+  :straight t
   :init
   (setq org-mru-clock-how-many 100
         org-mru-clock-completing-read #'ivy-completing-read)
@@ -201,12 +201,12 @@
 
 (use-package
   org-analyzer
-  :ensure t
+  :straight t
   )
 
 (use-package org-fancy-priorities
   :diminish
-  :ensure t
+  :straight t
   :hook (org-mode . org-fancy-priorities-mode)
   :config
   (setq org-fancy-priorities-list '("🅰" "🅱" "🅲" "🅳" "🅴")))

@@ -1,6 +1,6 @@
 (use-package
   yasnippet
-  :ensure t
+  :straight t
   :after prog-mode
   :config
   (add-to-list 'yas-snippet-dirs "~/Code/yasnippet-snippets/snippets")

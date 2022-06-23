@@ -1,5 +1,4 @@
-(use-package
-  delight
-  :ensure t)
+(use-package delight
+  :straight t)
 
 (require 'delight)

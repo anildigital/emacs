@@ -1,12 +1,12 @@
 ;; ;; elixir mode
 (use-package
   erlang
-  :ensure t
+  :straight t
   :mode "\\.erl$")
 
 (use-package
   elixir-mode
-  :ensure t
+  :straight t
   :hook
   ((elixir-mode . flycheck-mode)
    (elixir-mode . smartparens-mode)
@@ -19,7 +19,7 @@
 
 (use-package
   exunit
-  :ensure t
+  :straight t
   :after elixir-mode
   :commands (anil/mix-format)
   :bind
@@ -47,18 +47,18 @@
 
 (use-package
   flycheck-dialyxir
-  :ensure t
+  :straight t
   :after elixir-mode)
 
 (use-package
   flycheck-credo
-  :ensure t
+  :straight t
   :after (flycheck elixir-mode)
   :custom (flycheck-elixir-credo-strict t))
 
 (use-package
   flycheck-dialyxir
-  :ensure t
+  :straight t
   :after elixir-mode)
 
 (use-package
@@ -68,7 +68,7 @@
 
 (use-package
   inf-elixir
-  :ensure t
+  :straight t
   :after elixir-mode
   :bind (("C-c i i" . 'inf-elixir)
          ("C-c i p" . 'inf-elixir-project)
@@ -78,7 +78,7 @@
 
 (use-package
   mix
-  :ensure t
+  :straight t
   :after elixir-mode
   :hook (elixir-mode . mix-minor-mode)
   :bind ("s-r" . 'mix-test-current-buffer))

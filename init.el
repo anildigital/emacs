@@ -16,9 +16,10 @@
 (setq custom-file "~/.config/emacs/anil/custom.el")
 (load custom-file)
 
+(load "straight")
+
 ;; load packages.el
-(load "packages")
-(setq package-check-signature nil)
+;; (load "packages")
 
 (load "path")
 (load "anil-delight")

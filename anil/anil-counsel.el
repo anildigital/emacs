@@ -1,6 +1,6 @@
 (use-package
   ivy
-  :ensure t
+  :straight t
   :diminish ivy-mode
   :init (setq ivy-use-virtual-buffers t)
   (setq enable-recursive-minibuffers t)
@@ -10,7 +10,7 @@
 
 (use-package
   counsel
-  :ensure t
+  :straight t
   :diminish counsel-mode
   :config
   (ivy-set-actions
@@ -28,7 +28,7 @@
 
 (use-package
   counsel-dash
-  :ensure t
+  :straight t
   :init (setq counsel-dash-common-docsets '("Ruby", "Javascript" "HTML", "Elixir", "Phoenix"))
   (add-hook 'emacs-lisp-mode-hook (lambda ()
                                     (setq-local counsel-dash-docsets '("Emacs Lisp"))))
@@ -47,12 +47,12 @@
 
 (use-package
   ivy-prescient
-  :ensure t
+  :straight t
   :after counsel
   :config (ivy-prescient-mode 1))
 
 (use-package ivy-rich
-  :ensure t
+  :straight t
   :after (ivy counsel)
   :init
   (setq ivy-rich-path-style 'abbrev
@@ -60,5 +60,5 @@
   :config (ivy-rich-mode 1))
 
 (use-package all-the-icons-ivy-rich
-  :ensure t
+  :straight t
   :init (all-the-icons-ivy-rich-mode 1))

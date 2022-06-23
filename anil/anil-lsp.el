@@ -1,12 +1,12 @@
 (use-package
   lsp-mode
-  :ensure t
+  :commands lsp
+  :straight t
   :diminish lsp-mode
   :hook
   ((elixir-mode . lsp)
    (lsp-mode . lsp-enable-which-key-integration)
    )
-  :commands lsp
   :custom (lsp-restart 'ignore)
   (lsp-file-watch-threshold 1000000)
   (lsp-auto-guess-root t)
@@ -31,13 +31,13 @@
 (use-package
   lsp-treemacs
   :after (lsp-mode)
-  :ensure t
+  :straight t
   :commands lsp-treemacs
   :config (lsp-treemacs-sync-mode 1))
 
 (use-package
   lsp-ui
-  :ensure t
+  :straight t
   :commands lsp-ui-mode
   :custom (lsp-ui-flycheck-enable t)
   (lsp-ui-peek-enable t)
@@ -57,7 +57,7 @@
 
 (use-package
   lsp-origami
-  :ensure t
+  :straight t
   :init (setq lsp-enable-folding t)
   :after lsp-mode
   :hook (lsp-after-open . lsp-origami-try-enable)

@@ -12,10 +12,10 @@
   )
 
 (use-package flyspell-correct
-  :ensure t
+  :straight t
   :after flyspell
   :bind (:map flyspell-mode-map ("C-;" . flyspell-correct-wrapper)))
 
 (use-package flyspell-correct-popup
-  :ensure t
+  :straight t
   :after flyspell-correct)

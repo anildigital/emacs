@@ -34,7 +34,7 @@ local.el
 .last-package-update-day
 anil/custom.el
 org-roam.db
-forge-database.sqlite
+forge-database*
 eln-cache
 diary
 .dap-breakpoints
@@ -46,3 +46,4 @@ history
 places
 multisession
 annotations
+straight

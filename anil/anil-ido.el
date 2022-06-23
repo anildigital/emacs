@@ -7,6 +7,6 @@
 
 (use-package
   ido-vertical-mode
-  :ensure t
+  :straight t
   :after ido
   :config (ido-vertical-mode 1))

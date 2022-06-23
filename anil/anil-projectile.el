@@ -1,6 +1,6 @@
 (use-package
   projectile
-  :ensure t
+  :straight t
   :after prog-mode
   treemacs
   :hook (elixir-mode . projectile-mode)
@@ -39,7 +39,7 @@
 
 (use-package
   org-projectile
-  :ensure t
+  :straight t
   :after org
   projectile
   :init (setq org-projectile-projects-file "~/org/todo.org")
@@ -50,12 +50,12 @@
 
 (use-package
   counsel-projectile
-  :ensure t
+  :straight t
   :after treemacs
   :bind ("s-p" . counsel-projectile-find-file)
   :config (define-key projectile-mode-map (kbd "C-c p") 'projectile-command-map))
 
 (use-package
   projectile-ripgrep
-  :ensure t
+  :straight t
   :after projectile)

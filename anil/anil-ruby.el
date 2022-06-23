@@ -1,24 +1,24 @@
 (use-package
   rbenv
-  :ensure t
+  :straight t
   :after (ruby-mode)
   :config (global-rbenv-mode))
 
 (use-package
   robe
-  :ensure t
+  :straight t
   :after (ruby-mode)
   )
 
 (use-package
   ruby-electric
-  :ensure t
+  :straight t
   :after (ruby-mode)
   )
 
 (use-package
   rubocop
-  :ensure t
+  :straight t
   :after (ruby-mode)
   )
 

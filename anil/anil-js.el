@@ -1,6 +1,6 @@
 (use-package
   js2-mode
-  :ensure t
+  :straight t
   :hook ((js-mode . smartparens-mode)
          (before-save . (lambda ()
                           (untabify (point-min)
@@ -14,5 +14,5 @@
 
 (use-package
   typescript-mode
-  :ensure t
+  :straight t
   :mode ("\\.ts?\\'" . typescript-mode))
