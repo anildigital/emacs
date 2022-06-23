@@ -7,19 +7,37 @@
   :bind ("C-c C-r" . ivy-resume)
   :config (ivy-mode 1))
 
-
 (use-package
   counsel
   :straight t
   :diminish counsel-mode
   :config
   (ivy-set-actions
- 'counsel-buffer-or-recentf
- '(("j" find-file-other-window "other window")
-   ("f" find-file-other-frame "other frame")
-   ("x" counsel-find-file-extern "open externally")
-   ("d" (lambda (file) (setq recentf-list (delete file recentf-list)))
-    "delete from recentf")))
+   'counsel-buffer-or-recentf
+   '(("j" find-file-other-window "other window")
+     ("f" find-file-other-frame "other frame")
+     ("x" counsel-find-file-extern "open externally")
+     ("d" (lambda (file) (setq recentf-list (delete file recentf-list)))
+      "delete from recentf")))
+
+  (defun anil/counsel-buffer-or-recentf-candidates ()
+    "Return candidates for `counsel-buffer-or-recentf'."
+    (require 'recentf)
+    (recentf-mode)
+    (let ((buffers
+           (delq nil
+                 (mapcar (lambda (b)
+                           (when (buffer-file-name b)
+                             (abbreviate-file-name (buffer-file-name b))))
+                         (delq (current-buffer) (buffer-list))))))
+      (append
+       buffers
+       (cl-remove-if (lambda (f) (member f buffers))
+                     (counsel-recentf-candidates)))))
+
+  (advice-add #'counsel-buffer-or-recentf-candidates
+              :override #'anil/counsel-buffer-or-recentf-candidates)
+
   :bind ("M-x" . counsel-M-x)
   ("C-x C-f" . counsel-find-file)
   ("C-x C-r" . counsel-recentf)
