@@ -62,6 +62,8 @@
 (define-key global-map [home] 'beginning-of-line)
 (define-key global-map [end] 'end-of-line)
 
+;; full screen
+(global-set-key (kbd "C-s-f") 'toggle-frame-fullscreen)
 
 ;;org-projectile
 
