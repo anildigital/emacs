@@ -250,6 +250,7 @@
   discover-my-major
   :straight t
   :commands discover-my-major)
+
 (use-package
   git-timemachine
   :straight t
@@ -404,7 +405,7 @@
   ;; (defun centaur-tabs-local-off ()
   ;;  (centaur-tabs-local-mode 1))
   :init
-  (setq popper-window-height 24)
+  (setq popper-window-height 0.33)
   (setq popper-reference-buffers '("eshell*"
                                    "shell*"
                                    "vterm"
