@@ -61,7 +61,7 @@
   :init (setq lsp-enable-folding t)
   :after lsp-mode
   :hook (lsp-after-open . lsp-origami-try-enable)
-  :config (with-eval-after-load 'origami (define-key origami-mode-map (kbd "C-c f")
+  :config (with-eval-after-load 'origami (define-key origami-mode-map (kbd "M-=")
                                            'origami-recursively-toggle-node)
-                                (define-key origami-mode-map (kbd "C-c F")
+                                (define-key origami-mode-map (kbd "M-+")
                                   'origami-toggle-all-nodes)))
