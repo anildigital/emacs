@@ -213,11 +213,6 @@
   )
 
 (use-package
-  scpaste
-  :straight t
-  :defer t)
-
-(use-package
   dash
   :straight t)
 
