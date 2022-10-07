@@ -17,7 +17,8 @@
 
 (use-package
   centaur-tabs
-  :straight t
+  :straight (:host github :repo "friedelino/centaur-tabs")
+  :ensure t
   :after (vscode-dark-plus-theme)
   :demand
   :init (setq centaur-tabs-height 32
@@ -26,7 +27,9 @@
               centaur-tabs-modified-marker "*"
               centaur-tabs-style "chamfer"
               centaur-tabs-gray-out-icons 'buffer centaur-tabs-set-bar 'over
-              centaur-tabs-cycle-scope 'tabs)
+              centaur-tabs-cycle-scope 'tabs
+              centaur-tabs-enable-key-bindings t
+              )
   :config (centaur-tabs-mode t)
   ;; (centaur-tabs-headline-match)
   ;; (centaur-tabs-group-by-projectile-project)
