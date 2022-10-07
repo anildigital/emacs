@@ -366,7 +366,10 @@
 (use-package
   protobuf-mode
   :straight t
-  :mode (("\\.proto$" . protobuf-mode)))
+  :mode (("\\.proto$" . protobuf-mode))
+  :bind
+  ("M-]" . anil-align-to-equals)
+  )
 
 (use-package
   mermaid-mode
