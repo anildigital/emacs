@@ -17,8 +17,7 @@
 
 (use-package
   centaur-tabs
-  :straight (:host github :repo "friedelino/centaur-tabs")
-  :ensure t
+  :straight t
   :after (vscode-dark-plus-theme)
   :demand
   :init (setq centaur-tabs-height 32
