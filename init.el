@@ -46,7 +46,6 @@
 (load "anil-org")
 (load "init-tree-sitter")
 (load "anil-elixir")
-(load "anil-copilot")
 (load "anil-postgres")
 (load "anil-ido")
 (load "defuns")
