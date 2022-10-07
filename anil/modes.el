@@ -248,8 +248,10 @@
 
 (use-package
   git-timemachine
-  :straight t
-  :commands git-timemachine)
+  :straight (:repo "https://codeberg.org/pidu/git-timemachine.git")
+  :ensure t
+  :commands git-timemachine
+  )
 
 (use-package
   scss-mode
