@@ -123,11 +123,17 @@
 
 ;; Assumes web-mode and elixir-mode are already set up
 (use-package
-   polymode
+  polymode
   :straight t
   :mode ("\\.ex\\'" . poly-elixir-web-mode)
   :init (setq web-mode-engines-alist '(("elixir" . "\\.ex\\'")))
   :config
+  (advice-add 'centaur-tabs-hide-tab :around
+              (lambda (oldfn buf &rest args)
+                (if (with-current-buffer buf
+                      (eq major-mode 'web-mode))
+                    t
+                  (apply oldfn buf args))))
   (define-hostmode poly-elixir-hostmode :mode 'elixir-mode)
   (define-innermode poly-surface-expr-elixir-innermode
     :mode 'web-mode
