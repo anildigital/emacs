@@ -74,7 +74,7 @@
   :after (ivy counsel)
   :init
   (setq ivy-rich-path-style 'abbrev
-        ivy-virtual-abbreviate 'full)
+        ivy-virtual-abbreviate 'abbreviate)
   :config (ivy-rich-mode 1))
 
 (use-package all-the-icons-ivy-rich

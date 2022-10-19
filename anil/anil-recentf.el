@@ -1,5 +1,10 @@
 (use-package
   recentf
   :straight nil
-  :init (setq recentf-max-menu-items 25)
-  :config (recentf-mode 1))
+  :init
+  (setq recentf-max-menu-items 25)
+  :config
+  (recentf-mode 1)
+  (setq recentf-filename-handlers
+      (append '(abbreviate-file-name) recentf-filename-handlers))
+  )
