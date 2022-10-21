@@ -1,5 +1,5 @@
 (use-package yaml-mode
-  :straight t
+  :ensure t
   :mode
   (("\\.yml$" . yaml-mode))
   )

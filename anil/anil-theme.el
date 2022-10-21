@@ -1,7 +1,7 @@
 ;; theme
 (use-package
   vscode-dark-plus-theme
-  :straight t
+  :ensure t
   :init
   ;; Remove the border around the TODO word on org-mode files
   (setq vscode-dark-plus-box-org-todo nil)
@@ -17,7 +17,7 @@
 
 (use-package
   centaur-tabs
-  :straight t
+  :ensure t
   :after (vscode-dark-plus-theme)
   :demand
   :init (setq centaur-tabs-height 32

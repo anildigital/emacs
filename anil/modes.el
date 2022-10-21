@@ -1,6 +1,6 @@
 (use-package
   sh-mode
-  :straight nil
+  :ensure nil
   :init
   :mode (".aliases" . sh-mode)
   (".bash_profile" . sh-mode)
@@ -8,18 +8,18 @@
 
 (use-package
   dockerfile-mode
-  :straight t
+  :ensure t
   :mode (("\\Dockerfile\\'" . dockerfile-mode)
          ("Dockerfile" . dockerfile-mode)))
 
 (use-package
   python-mode
-  :straight t
+  :ensure t
   :mode (("\\.py?\\'" . python-mode)))
 
 (use-package
   diff-hl
-  :straight t
+  :ensure t
   :after magit
   :hook ((magit-post-refresh-hook . diff-hl-magit-post-refresh))
   :config (global-diff-hl-mode)
@@ -30,24 +30,24 @@
 
 (use-package
   ace-window
-  :straight t
+  :ensure t
   :bind ("C-o" . ace-window)
   ("C-c s" . ace-swap-window))
 
 (use-package
   dimmer
-  :straight t
+  :ensure t
   :config (dimmer-mode))
 
 (use-package
   move-text
-  :straight t
+  :ensure t
   :config (move-text-default-bindings)  ;
   )
 
 (use-package
   multiple-cursors
-  :straight t
+  :ensure t
   :bind ("C-S-c C-S-c" . mc/edit-lines)
   ("C->" . mc/mark-next-like-this)
   ("C-<" . mc/mark-previous-like-this)
@@ -55,12 +55,12 @@
 
 (use-package
   go-mode
-  :straight t
+  :ensure t
   :mode (("\\.go?\\'" . go-mode)))
 
 (use-package
   less-css-mode
-  :straight t
+  :ensure t
   :mode (("\\.less$" . less-css-mode)))
 
 ;; TODO check this
@@ -72,7 +72,7 @@
 
 (use-package
   avy
-  :straight t
+  :ensure t
   :bind ("C-;" . avy-goto-char)
   ("C-'" . avy-goto-word-1)
   ("C-c u" . swiper-all)
@@ -85,18 +85,18 @@
 
 (use-package
   which-key
-  :straight t
+  :ensure t
   :delight which-key-mode
   :config (which-key-mode)
   (which-key-setup-side-window-right))
 
 (use-package
   browse-at-remote
-  :straight t)
+  :ensure t)
 
 (use-package
   mini-frame
-  :straight t
+  :ensure t
   :config
   (custom-set-variables
    '(mini-frame-show-parameters
@@ -107,12 +107,12 @@
 
 (use-package
   ripgrep
-  :straight t
+  :ensure t
   :commands projectile-ripgrep)
 
 (use-package
   undo-tree
-  :straight t
+  :ensure t
   :init
   (setq undo-tree-auto-save-history t)
   (setq undo-tree-history-directory-alist '(("." . "~/.saves/undo")))
@@ -124,7 +124,7 @@
 ;; Assumes web-mode and elixir-mode are already set up
 (use-package
   polymode
-  :straight t
+  :ensure t
   :mode ("\\.ex\\'" . poly-elixir-web-mode)
   :init (setq web-mode-engines-alist '(("elixir" . "\\.ex\\'")))
   :config
@@ -160,52 +160,52 @@
 
 (use-package
   poly-markdown
-  :straight t
+  :ensure t
   :after polymode
   :mode (("\\.md$" . poly-markdown-mode)))
 
 (use-package
   dpaste
-  :straight t
+  :ensure t
   :commands dpaste-buffer
   dpaste-region-or-buffer
   dpaste-region)
 
 (use-package
   wsd-mode
-  :straight t
+  :ensure t
   :commands wsd-mode
   :init (setq wsd-style "default"))
 
 (use-package
   expand-region
-  :straight t
+  :ensure t
   :commands er/expand-region
   :init (bind-key (kbd "C-=") 'er/expand-region))
 
 ;; this is last change0
 (use-package
   goto-chg
-  :straight t
+  :ensure t
   :after prog-mode
   :bind ("C-." . anil-goto-last-change)
   ("C-," . goto-last-change-reverse))
 
 (use-package
   swiper
-  :straight t
+  :ensure t
   :bind ("M-g s" . swiper)
   ("C-s" . swiper)
   ("C-M-'" . swiper-avy))
 
 (use-package
   terraform-mode
-  :straight t
+  :ensure t
   :mode (("\\.tf$" . terraform-mode)))
 
 (use-package
   markdown-mode
-  :straight t
+  :ensure t
   :init
   (setq markdown-fontify-code-blocks-natively t)
   :mode ("\\.md$" . markdown-mode)
@@ -213,60 +213,59 @@
 
 (use-package
   markdown-preview-mode
-  :straight t
+  :ensure t
   :config
   (setq markdown-preview-stylesheets (list "http://thomasf.github.io/solarized-css/solarized-light.min.css"))
   )
 
 (use-package
   dash
-  :straight t)
+  :ensure t)
 
 (use-package
   yaml-mode
-  :straight t
+  :ensure t
   :mode (".yaml" . yaml-mode)
   (".yml" . yaml-mode))
 
 (use-package
   paredit
-  :straight t
+  :ensure t
   :after emacs-lisp-mode
   clojure-mode)
 
 
 (use-package
   emmet-mode
-  :straight t
+  :ensure t
   :after web-mode
   :mode ("\\.html\\'" . emmet-mode)
   ("\\.eex$" . emmet--mode))
 
 (use-package
   smartparens
-  :straight t
+  :ensure t
   :delight smartparens
   :defer t)
 (use-package
   discover-my-major
-  :straight t
+  :ensure t
   :commands discover-my-major)
 
 (use-package
   git-timemachine
-  :straight (:repo "https://codeberg.org/pidu/git-timemachine.git")
   :ensure t
   :commands git-timemachine
   )
 
 (use-package
   scss-mode
-  :straight t
+  :ensure t
   :mode ("\\.scss\\'" . scss-mode))
 
 (use-package
   rainbow-mode
-  :straight t
+  :ensure t
   :mode ("\\.html\\'" . rainbow-mode)
   ("\\.eex$" . rainbow-mode)
   ("\\.css$" . rainbow-mode)
@@ -275,76 +274,76 @@
 
 (use-package
   editorconfig
-  :straight t
+  :ensure t
   :mode (".editorconfig" . editorconfig-mode))
 
 (use-package
   feature-mode
-  :straight t
+  :ensure t
   :defer t)
 
 (use-package
   bind-key
-  :straight t)
+  :ensure t)
 
 (use-package
   htmlize
-  :straight t
+  :ensure t
   :defer t)
 
 (use-package
   s
-  :straight t
+  :ensure t
   :defer t)
 
 (use-package
   counsel-world-clock
-  :straight t
+  :ensure t
   :defer t)
 
 (use-package
   restclient
-  :straight t
+  :ensure t
   :defer t)
 
 (use-package
   ag
-  :straight t
+  :ensure t
   :commands counsel-ag)
 
 (use-package
   graphql-mode
-  :straight t
+  :ensure t
   :mode ("\\.graphql$" . graphql-mode))
 
 (use-package
   anzu
-  :straight t
+  :ensure t
   :commands anzu-query-replace)
 
 (use-package
   zop-to-char
-  :straight t)
+  :ensure t)
 
 (use-package
   super-save
-  :straight t
+  :ensure t
   :delight super-save-mode
   :config (super-save-mode +1))
 
 (use-package
   imenu-anywhere
-  :straight t
+  :ensure t
   :commands imenu-anywhere)
 
 (use-package
   nginx-mode
-  :straight t
+  :ensure t
   :defer t)
 
 (use-package
   git-gutter
-  :straight t
+  :ensure t
   :hook (emacs-lisp-mode . git-gutter-mode)
   (markdown-mode . git-gutter-mode)
   (dockerfile-mode . git-gutter-mode)
@@ -355,7 +354,7 @@
 
 
 (use-package deft
-  :straight t
+  :ensure t
   :config
   (setq deft-extensions '("org")
         deft-directory "~/org"
@@ -371,7 +370,7 @@
 
 (use-package
   protobuf-mode
-  :straight t
+  :ensure t
   :mode (("\\.proto$" . protobuf-mode))
   :bind
   ("M-]" . anil-align-to-equals)
@@ -379,12 +378,12 @@
 
 (use-package
   mermaid-mode
-  :straight t
+  :ensure t
   :mode (("\\.mmd$" . mermaid-mode)))
 
 (use-package
   all-the-icons
-  :straight t)
+  :ensure t)
 
 (use-package
   winner
@@ -393,13 +392,13 @@
 
 (use-package
   annotate
-  :straight t
+  :ensure t
   :hook ((prog-mode . annotate-mode))
   )
 
 (use-package
   popper
-  :straight t
+  :ensure t
   :bind (("C-`"   . popper-toggle-latest)
          ("M-`"   . popper-cycle)
          ("C-M-`" . popper-toggle-type))
@@ -424,18 +423,18 @@
 
 (use-package
   persistent-scratch
-  :straight t
+  :ensure t
   :config (persistent-scratch-setup-default))
 
 (use-package link-hint
-  :straight t
+  :ensure t
   :bind
   ("C-c l o" . link-hint-open-link)
   ("C-c l c" . link-hint-copy-link))
 
 
 (use-package vterm
-  :straight t
+  :ensure t
   :init
   (setq vterm-shell "/usr/local/bin/fish")
   (setq vterm-buffer-name-string "%s")
@@ -449,13 +448,13 @@
 
 (use-package
   rainbow-delimiters
-  :straight t
+  :ensure t
   :defer t
   :hook (prog-mode . rainbow-delimiters-mode)
   )
 
 (use-package switch-buffer-functions
-  :straight t
+  :ensure t
   :after recentf
   :preface
   (defun anil/recentf-track-visited-file (_prev _curr)

@@ -15,7 +15,7 @@
 
 (use-package
   dired
-  :straight nil
+  :ensure nil
   :bind (("C-x C-d" . dired) :map dired-mode-map ("-" . 'dired-up-directory)))
 
 ;; kill current bufffer

@@ -16,10 +16,9 @@
 (setq custom-file "~/.config/emacs/anil/custom.el")
 (load custom-file)
 
-(load "straight")
-
 ;; load packages.el
-;; (load "packages")
+(load "packages")
+(setq package-check-signature nil)
 
 (when (eq system-type 'darwin) (customize-set-variable 'native-comp-driver-options '("-Wl,-w")))
 

@@ -1,6 +1,6 @@
 (use-package
   recentf
-  :straight nil
+  :ensure nil
   :init
   (setq recentf-max-menu-items 25)
   :config

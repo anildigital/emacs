@@ -9,7 +9,7 @@
 
 
 (use-package emmet-mode
-  :straight t
+  :ensure t
   :hook ((html-mode . emmet-mode)
          (css-mode  . emmet-mode)
          (sgml-mode . emmet-mode)
@@ -23,7 +23,7 @@
 
 (use-package
   web-mode
-  :straight t
+  :ensure t
   :init
   (setq web-mode-engines-alist
         '(("elixir" . ".html\\.eex$")

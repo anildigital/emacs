@@ -1,6 +1,6 @@
 (use-package
   hydra
-  :straight t
+  :ensure t
   :bind ("C-c c" . hydra-clock/body))
 
 (defhydra hydra-clock

@@ -1,7 +1,7 @@
 (use-package
   lsp-mode
   :commands lsp
-  :straight t
+  :ensure t
   :diminish lsp-mode
   :hook
   ((elixir-mode . lsp)
@@ -31,13 +31,13 @@
 (use-package
   lsp-treemacs
   :after (lsp-mode)
-  :straight t
+  :ensure t
   :commands lsp-treemacs
   :config (lsp-treemacs-sync-mode 1))
 
 (use-package
   lsp-ui
-  :straight t
+  :ensure t
   :commands lsp-ui-mode
   :custom (lsp-ui-flycheck-enable t)
   (lsp-ui-peek-enable t)
@@ -57,7 +57,7 @@
 
 (use-package
   lsp-origami
-  :straight t
+  :ensure t
   :init (setq lsp-enable-folding t)
   :after lsp-mode
   :hook (lsp-after-open . lsp-origami-try-enable)

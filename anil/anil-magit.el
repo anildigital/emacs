@@ -1,6 +1,6 @@
 (use-package
   magit
-  :straight t
+  :ensure t
   :hook (git-commit-setup-hook . git-commit-turn-on-flyspell)
   ;; :config (custom-set-faces '(diff-added ((t
   ;;                                          (:foreground "green3"))) 'now)
@@ -16,6 +16,12 @@
 
 (use-package
   forge
-  :straight t
+  :ensure t
   :after magit
+  )
+
+(use-package
+  code-review
+  :ensure t
+  :after magit forge
   )

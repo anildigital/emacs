@@ -1,5 +1,5 @@
 (use-package treemacs
-  :straight t
+  :ensure t
   :after prog-mode
   :init
   (with-eval-after-load 'winum
@@ -67,12 +67,12 @@
 
 (use-package treemacs-projectile
   :after treemacs projectile
-  :straight t)
+  :ensure t)
 
 (use-package treemacs-icons-dired
   :hook (dired-mode . treemacs-icons-dired-enable-once)
-  :straight t)
+  :ensure t)
 
 (use-package treemacs-magit
   :after (treemacs magit)
-  :straight t)
+  :ensure t)

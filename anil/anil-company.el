@@ -1,6 +1,6 @@
 (use-package
   company
-  :straight t
+  :ensure t
   :delight company-mode
   :hook (after-init . global-company-mode)
   :config (setq company-dabbrev-downcase nil)

@@ -1,10 +1,10 @@
 (use-package tree-sitter
-  :straight t
+  :ensure t
   :config
   (tree-sitter-hl-mode)
   :hook ((elixir-mode . tree-sitter-mode))
   )
 
 (use-package tree-sitter-langs
-  :straight t
+  :ensure t
   :after tree-sitter)

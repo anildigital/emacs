@@ -1,6 +1,6 @@
 (use-package
   uniquify
-  :straight nil
+  :ensure nil
   :init (setq uniquify-buffer-name-style 'reverse)
   (setq uniquify-separator "/")
   (setq uniquify-after-kill-buffer-p t) ; rename after killing uniquified
