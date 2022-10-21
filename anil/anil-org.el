@@ -41,7 +41,6 @@
                                 ))
   (setq org-agenda-files (list (concat org-directory "/todo.org")
                                (concat org-directory "/long_term_todo.org")
-                               (concat org-directory "/timesheet.org")
                                (concat org-directory "/habits.org")
                                ))
   (setq org-agenda-span 'day)

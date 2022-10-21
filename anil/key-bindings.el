@@ -27,7 +27,7 @@
 (global-set-key (kbd "C--") 'text-scale-decrease)
 
 ;; ido
-(global-set-key "\C-xp" 'anil-ido-find-project)
+;; (global-set-key "\C-xp" 'anil-ido-find-project)
 
 ;; duplicate line
 (global-set-key (kbd "s-d") 'anil-duplicate-line)

@@ -432,7 +432,6 @@
   ("C-c l o" . link-hint-open-link)
   ("C-c l c" . link-hint-copy-link))
 
-
 (use-package vterm
   :ensure t
   :init
@@ -452,6 +451,21 @@
   :defer t
   :hook (prog-mode . rainbow-delimiters-mode)
   )
+
+(use-package volatile-highlights
+  :ensure t
+  :config
+  (volatile-highlights-mode t)
+  )
+
+(use-package perspective
+  :ensure t
+  :bind
+  ("C-x C-b" . persp-list-buffers)qq
+  :custom
+  (persp-mode-prefix-key (kbd "C-x p"))
+  :init
+  (persp-mode))
 
 (use-package switch-buffer-functions
   :ensure t
