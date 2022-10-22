@@ -461,7 +461,7 @@
 (use-package perspective
   :ensure t
   :bind
-  ("C-x C-b" . persp-list-buffers)qq
+  ("C-x C-b" . persp-list-buffers)
   :custom
   (persp-mode-prefix-key (kbd "C-x p"))
   :init
