@@ -8,14 +8,20 @@
   elixir-mode
   :ensure t
   :hook
-  ((elixir-mode . flycheck-mode)
+  (
+   (elixir-mode . flycheck-mode)
    (elixir-mode . smartparens-mode)
-   (elixir-mode . mix-minor-mode))
+   (elixir-mode . mix-minor-mode)
+   (elixir-mode . eglot-ensure)
+   )
   :config (add-hook 'elixir-mode-hook (lambda ()
-                                        (add-hook 'before-save-hook 'lsp-format-buffer)))
-  :bind (:map elixir-mode-map
-              ("C-c C-d" . lsp-ui-doc-show)
-              ("s-t" . lsp-ui-imenu)))
+                                        (add-hook 'before-save-hook 'eglot-format-buffer)))
+  ;; :config (add-hook 'elixir-mode-hook (lambda ()
+  ;;                                       (add-hook 'before-save-hook 'lsp-format-buffer)))
+  ;; :bind (:map elixir-mode-map
+  ;;             ("C-c C-d" . lsp-ui-doc-show)
+  ;;             ("s-t" . lsp-ui-imenu))
+  )
 
 (use-package
   exunit
