@@ -332,11 +332,6 @@
   :config (super-save-mode +1))
 
 (use-package
-  imenu-anywhere
-  :ensure t
-  :commands imenu-anywhere)
-
-(use-package
   nginx-mode
   :ensure t
   :defer t)
@@ -365,7 +360,7 @@
   :commands (deft)
   :bind
   (("<f13>" . deft)
-  ("C-c n d" . deft))
+   ("C-c n d" . deft))
   )
 
 (use-package

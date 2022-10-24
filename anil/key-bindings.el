@@ -72,9 +72,6 @@
 (global-set-key (kbd "s-s") 'save-buffer)
 (global-set-key (kbd "s-S") 'counsel-ag)
 
-
-(global-set-key (kbd "C-M-o") 'imenu-anywhere)
-
 ;; Add pound
 (when (eq system-type 'darwin)
   (fset 'insert-pound "#")
@@ -90,15 +87,11 @@
 ;;set shell file name (grep doesn't work fine with fish-shell)
 (setq shell-file-name "/bin/sh")
 
-;;
+;; go to previous buffer
 (global-set-key (kbd "s-i") #'anil-switch-to-previous-buffer)
 
-;;
+;; open shell
 (global-set-key (kbd "C-~") #'anil-goto-shell)
-
-;; Split window
-(global-set-key (kbd "s-2") 'split-window-below)
-(global-set-key (kbd "s-3") 'split-window-right)
 
 ;; anzu
 (global-set-key [remap query-replace] 'anzu-query-replace)

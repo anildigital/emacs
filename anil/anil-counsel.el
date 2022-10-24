@@ -42,7 +42,9 @@
   ("C-x C-f" . counsel-find-file)
   ("C-x C-r" . counsel-recentf)
   ("C-x b" . counsel-switch-buffer)
-  ("s-b" . counsel-buffer-or-recentf))
+  ("C-M-o" . counsel-imenu)
+  ("s-b" . counsel-buffer-or-recentf)
+  )
 
 (use-package
   counsel-dash
