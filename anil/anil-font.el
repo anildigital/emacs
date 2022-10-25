@@ -1,6 +1,6 @@
 ;;; Code:
 ;; Set favorite font
 (set-face-attribute 'default nil
-                    :font "MonoLisa"
+                    :font "Menlo"
                     :height 160
                     :weight 'regular)
