@@ -73,8 +73,8 @@
 (use-package
   avy
   :ensure t
-  :bind ("C-;" . avy-goto-char)
-  ("C-'" . avy-goto-word-1)
+  :bind
+  ("C-'" . avy-goto-char)
   ("C-c u" . swiper-all)
   ("M-g f" . avy-goto-line)
   ("M-g e" . avy-goto-word-0)
