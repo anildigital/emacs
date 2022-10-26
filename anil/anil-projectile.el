@@ -9,6 +9,8 @@
   :bind
   ("s-e" . projectile-recentf)
   ("C-x 5 k" . anil/projectile-kill-non-project-buffers)
+  :bind-keymap
+  ("s-p" . projectile-command-map)
   :init (setq projectile-enable-caching t)
   (setq projectile-completion-system 'ivy)
   (setq projectile-globally-ignored-file-suffixes '(".png" ".gif" ".pdf"  ".class", ".beam"))
@@ -51,9 +53,8 @@
 (use-package
   counsel-projectile
   :ensure t
-  :after treemacs
-  :bind ("s-p" . counsel-projectile-find-file)
-  :config (define-key projectile-mode-map (kbd "C-c p") 'projectile-command-map))
+  :commands (projectile-command-map)
+  :after projectile)
 
 (use-package
   projectile-ripgrep
