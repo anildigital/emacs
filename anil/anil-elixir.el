@@ -12,15 +12,17 @@
    (elixir-mode . flycheck-mode)
    (elixir-mode . smartparens-mode)
    (elixir-mode . mix-minor-mode)
-   (elixir-mode . eglot-ensure)
+   ;; (elixir-mode . eglot-ensure)
    )
-  :config (add-hook 'elixir-mode-hook (lambda ()
-                                        (add-hook 'before-save-hook 'eglot-format-buffer)))
   ;; :config (add-hook 'elixir-mode-hook (lambda ()
-  ;;                                       (add-hook 'before-save-hook 'lsp-format-buffer)))
-  ;; :bind (:map elixir-mode-map
-  ;;             ("C-c C-d" . lsp-ui-doc-show)
-  ;;             ("s-t" . lsp-ui-imenu))
+  ;;                                       (add-hook 'before-save-hook 'eglot-format-buffer)))
+  :config (add-hook 'elixir-mode-hook (lambda ()
+                                        (add-hook 'before-save-hook 'lsp-format-buffer)))
+  :bind
+  (:map elixir-mode-map
+        ("C-c C-d" . lsp-ui-doc-show)
+        ("s-t" . lsp-ui-imenu)
+        )
   )
 
 (use-package
@@ -34,7 +36,9 @@
         ("C-c , A" . exunit-verify-all-in-umbrella)
         ("C-c , s" . exunit-verify-single)
         ("C-c , v" . exunit-verify)
-        ("C-c , r" . exunit-rerun))
+        ("C-c , r" . exunit-rerun)
+        ("C-c , t" . exunit-toggle-file-and-test)
+        )
   (:map elixir-mode-map
         ("C-c i f" . anil/mix-format))
   (:map exunit-compilation-mode-map
