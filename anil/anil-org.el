@@ -122,6 +122,10 @@
         '((nil :maxlevel . 3)
           (org-agenda-files :maxlevel . 3)))
   :config
+  (with-eval-after-load 'org
+    (org-babel-do-load-languages
+     'org-babel-load-languages
+     '((sql . t))))
   ;; Resume clocking task when emacs is restarted
   (org-clock-persistence-insinuate)
 
