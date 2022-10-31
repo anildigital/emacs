@@ -104,9 +104,6 @@
   ;; Include current clocking task in clock reports
   (setq org-clock-report-include-clocking-task t)
 
-  ;; use pretty things for the clocktable
-  (setq org-pretty-entities t)
-
   ;; org-calendar settings
   (setq calendar-latitude 18.5)
   (setq calendar-longitude 73.8)
