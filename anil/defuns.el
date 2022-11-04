@@ -19,6 +19,12 @@
   (electric-newline-and-maybe-indent))
 
 
+(defun anil-add-elixir-pipe ()
+  (interactive)
+  (newline-and-indent)
+  (insert "|> ")
+  )
+
 (defun anil-align-to-equals (begin end)
   "Align region to equal signs"
   (interactive "r")
