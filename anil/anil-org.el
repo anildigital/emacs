@@ -131,10 +131,10 @@
   (require 'org-tempo)
 
   (defun anil-on-org-clock-in ()
-    (shell-command "/Users/anil/.asdf/shims/hueadm light 1 turquoise bri=20"))
+    (shell-command "/Users/anil/.asdf/shims/hueadm light 1 turquoise bri=5"))
 
   (defun anil-on-org-clock-out ()
-    (shell-command "/Users/anil/.asdf/shims/hueadm light 1 red bri=20"))
+    (shell-command "/Users/anil/.asdf/shims/hueadm light 1 red bri=40"))
 
   ;; Treemacs fix
   (with-eval-after-load 'org
