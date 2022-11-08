@@ -7,7 +7,6 @@
   (elixir-mode . counsel-projectile-mode)
   :commands (projectile-find-file projectile-switch-project)
   :bind
-  ("s-e" . projectile-recentf)
   ("C-x 5 k" . anil/projectile-kill-non-project-buffers)
   :bind-keymap
   ("s-p" . projectile-command-map)
