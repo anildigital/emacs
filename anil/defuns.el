@@ -21,6 +21,7 @@
 
 (defun anil-add-elixir-pipe ()
   (interactive)
+  (move-end-of-line 1)
   (newline-and-indent)
   (insert "|> ")
   )
