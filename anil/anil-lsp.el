@@ -57,7 +57,7 @@
   (lsp-ui-sideline-enable t)
   (lsp-ui-doc-enable t)
   :hook (lsp-ui-doc-frame-mode . (lambda()
-                                   (display-line  -numbers-mode -1)))
+                                   (display-line-numbers-mode -1)))
   :bind (:map lsp-ui-mode-map
               ([remap xref-find-definitions] . lsp-ui-peek-find-definitions)
               ([remap xref-find-references] . lsp-ui-peek-find-references)
