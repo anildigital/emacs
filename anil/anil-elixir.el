@@ -56,11 +56,6 @@
   )
 
 (use-package
-  flycheck-dialyxir
-  :ensure t
-  :after elixir-mode)
-
-(use-package
   flycheck-credo
   :ensure t
   :after (flycheck elixir-mode)
