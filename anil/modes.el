@@ -473,3 +473,7 @@
          (recentf-add-file buffer-file-name)))
   :init
   (add-hook 'switch-buffer-functions #'anil/recentf-track-visited-file))
+
+(use-package csv-mode
+  :ensure t
+  )
