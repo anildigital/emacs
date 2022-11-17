@@ -10,9 +10,6 @@
   (setq vscode-dark-plus-scale-org-faces nil)
   :config
   (load-theme 'vscode-dark-plus t)
-  (custom-set-faces
-   '(mode-line ((t (:background "turquoise3" :foreground "#fafafa" :weight normal))))
-   '(mode-line-inactive ((t (:background "turquoise4" :foreground "#d4d4d4" :weight normal)))))
   )
 
 (use-package
