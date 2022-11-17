@@ -38,6 +38,7 @@
         ("C-c , v" . exunit-verify)
         ("C-c , r" . exunit-rerun)
         ("C-c , t" . exunit-toggle-file-and-test)
+        ("s-r" . exunit-rerun)
         )
   (:map elixir-mode-map
         ("C-c i f" . anil/mix-format))
@@ -85,5 +86,4 @@
   mix
   :ensure t
   :after elixir-mode
-  :hook (elixir-mode . mix-minor-mode)
-  :bind ("s-r" . 'mix-test-current-buffer))
+  :hook (elixir-mode . mix-minor-mode))

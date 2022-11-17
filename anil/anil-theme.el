@@ -17,7 +17,7 @@
   :ensure t
   :after (vscode-dark-plus-theme)
   :demand
-  :init (setq centaur-tabs-height 32
+  :init (setq centaur-tabs-height 24
               centaur-tabs-set-icons t
               centaur-tabs-set-modified-marker t
               centaur-tabs-modified-marker "*"
