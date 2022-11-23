@@ -26,16 +26,16 @@
   ;; org-clock hooks for macOS app
   (setq org-directory "~/org")
   (setq org-default-notes-file (concat org-directory "/notes.org"))
-  (setq org-capture-templates '(("t" "Personal Todo" entry (file+headline "/Users/anil/dropbox/org/todo.org"
+  (setq org-capture-templates '(("t" "Personal Todo" entry (file+headline "/Users/anil/org/todo.org"
                                                                           "Tasks") "* TODO %^{Description} %^g\n:LOGBOOK:\n- Added: %U\n:END:%?" )
-                                ("c" "Coding Todo" entry (file+headline "/Users/anil/dropbox/org/coding.org"
+                                ("c" "Coding Todo" entry (file+headline "/Users/anil/org/coding.org"
                                                                         "Tasks") "* TODO %?\n %i\n %a")
-                                ("n" "Note" entry (file+headline "/Users/anil/dropbox/org/notes.org"
+                                ("n" "Note" entry (file+headline "/Users/anil/org/notes.org"
                                                                  "Notes") "* %?\n")
-                                ("m" "Meeting notes" entry (file+headline "/Users/anil/dropbox/org/meeting_notes.org" "Meeting Notes")
+                                ("m" "Meeting notes" entry (file+headline "/Users/anil/org/meeting_notes.org" "Meeting Notes")
                                  "* %^{Agenda}\n- Attendees: %^{Attendees}, Anil\n- Date: %U\n- Notes:\n  + %?\n- Action Items [/]\n   + [ ] "
                                  :prepend t)
-                                ("r" "Reading list item" entry (file+headline "/Users/anil/dropbox/org/toread.org" "Reading List")
+                                ("r" "Reading list item" entry (file+headline "/Users/anil/org/toread.org" "Reading List")
                                  "* TODO %^{Description}\n  :LOGBOOK:\n  - Added: %U\n  :END:\n  %(current-kill 0)%?"
                                  :prepend t)
                                 ))
