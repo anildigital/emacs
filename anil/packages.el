@@ -1,12 +1,11 @@
 (require 'package)
 (setq package-enable-at-startup nil)
 (add-to-list 'package-archives
-       '("melpa" . "http://melpa.org/packages/"))
+             '("melpa" . "http://melpa.org/packages/")
+             '("org" . "http://orgmode.org/elpa/")
+             )
 
 (setq gnutls-algorithm-priority "NORMAL:-VERS-TLS1.3")
-
-(when (< emacs-major-version 27)
-  (package-initialize))
 
 (setq use-package-verbose t)
 
@@ -21,8 +20,8 @@
 
 
 (use-package auto-package-update
-   :ensure t
-   :config
-   (setq auto-package-update-delete-old-versions t
-         auto-package-update-interval 4)
-   (auto-package-update-maybe))
+  :ensure t
+  :config
+  (setq auto-package-update-delete-old-versions t
+        auto-package-update-interval 4)
+  (auto-package-update-maybe))
