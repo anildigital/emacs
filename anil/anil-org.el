@@ -23,8 +23,12 @@
   ("C-c O" . org-clock-out)
 
   :init
-  ;; org-clock hooks for macOS app
   (setq org-directory "~/org")
+  (setq org-agenda-files (list (concat org-directory "/todo.org")
+                               (concat org-directory "/long_term_todo.org")
+                               (concat org-directory "/habits.org")
+                               (concat org-directory "/coding.org")
+                               ))
   (setq org-default-notes-file (concat org-directory "/notes.org"))
   (setq org-capture-templates '(("t" "Personal Todo" entry (file+headline "/Users/anil/org/todo.org"
                                                                           "Tasks") "* TODO %^{Description} %^g\n:LOGBOOK:\n- Added: %U\n:END:%?" )
@@ -39,10 +43,6 @@
                                  "* TODO %^{Description}\n  :LOGBOOK:\n  - Added: %U\n  :END:\n  %(current-kill 0)%?"
                                  :prepend t)
                                 ))
-  (setq org-agenda-files (list (concat org-directory "/todo.org")
-                               (concat org-directory "/long_term_todo.org")
-                               (concat org-directory "/habits.org")
-                               ))
   (setq org-agenda-span 'day)
 
   (setq org-tag-alist '(("important" . ?i)
