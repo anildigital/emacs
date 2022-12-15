@@ -11,6 +11,7 @@
   (
    (elixir-mode . flycheck-mode)
    (elixir-mode . smartparens-mode)
+   (elixir-mode . tree-sitter-hl-mode)
    (elixir-mode . mix-minor-mode)
    ;; (elixir-mode . eglot-ensure)
    )
@@ -48,7 +49,8 @@
   (defun anil/mix-format ()
     (interactive)
     (save-buffer)
-    (shell-command (format "cd %s && mix format %s"
+    (message "formatting code...")
+    (shell-command (format "cd %s && mix format && mix surface.format"
                            (or
                             (ignore-errors (exunit-umbrella-project-root))
                             (exunit-project-root))
@@ -60,6 +62,8 @@
   flycheck-credo
   :ensure t
   :after (flycheck elixir-mode)
+  :config
+  (flycheck-credo-setup)
   :custom (flycheck-elixir-credo-strict t))
 
 (use-package

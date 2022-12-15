@@ -7,7 +7,8 @@
   ((elixir-mode . lsp)
    (lsp-mode . lsp-enable-which-key-integration)
    )
-  :custom (lsp-restart 'ignore)
+  :custom
+  (lsp-restart 'ignore)
   (lsp-file-watch-threshold 1000000)
   (lsp-auto-guess-root t)
   (lsp-response-timeout 2)
@@ -18,6 +19,7 @@
   (setq gc-cons-threshold 100000000)
   (setq read-process-output-max (* 1024 1024)) ;; 1mb
   (setq lsp-idle-delay 0.500)
+  :config
   (dolist (match
            '("[/\\\\].direnv$"
              "[/\\\\]node_modules$"
@@ -37,7 +39,7 @@
         ("C-; o" . lsp-organize-imports)
         ("M-n" . forward-paragraph)
         ("M-p" . backward-paragraph)
-          )  
+          )
   )
 
 (use-package
