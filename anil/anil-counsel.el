@@ -43,7 +43,6 @@
   ("C-x C-r" . counsel-recentf)
   ("C-x b" . counsel-switch-buffer)
   ("C-M-o" . counsel-imenu)
-  ("s-b" . counsel-buffer-or-recentf)
   )
 
 (use-package
