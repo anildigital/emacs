@@ -20,8 +20,6 @@
 (load "packages")
 (setq package-check-signature nil)
 
-(when (eq system-type 'darwin) (customize-set-variable 'native-comp-driver-options '("-Wl,-w")))
-
 (load "path")
 (load "anil-delight")
 (load "anil-theme")
