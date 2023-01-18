@@ -18,7 +18,6 @@
 
 ;; load packages.el
 (load "packages")
-(setq package-check-signature nil)
 
 (load "path")
 (load "anil-delight")
