@@ -258,6 +258,8 @@
   git-timemachine
   :ensure t
   :commands git-timemachine
+  :bind
+  ("C-c m" . git-timemachine)
   )
 
 (use-package
