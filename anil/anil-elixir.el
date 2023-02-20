@@ -81,6 +81,7 @@
   :ensure t
   :after elixir-mode
   :bind (("C-c i i" . 'inf-elixir)
+         ("C-c i f" . anil/mix-format)
          ("C-c i p" . 'inf-elixir-project)
          ("C-c i l" . 'inf-elixir-send-line)
          ("C-c i r" . 'inf-elixir-send-region)

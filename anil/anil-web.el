@@ -19,7 +19,7 @@
 
 (use-package css-mode
   :mode
-  (".css?$" . css-mode))
+  (".css" . css-mode))
 
 (use-package
   web-mode
