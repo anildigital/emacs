@@ -41,7 +41,7 @@
   :bind ("M-x" . counsel-M-x)
   ("C-x C-f" . counsel-find-file)
   ("C-x C-r" . counsel-recentf)
-  ("C-x b" . counsel-switch-buffer)
+  ("C-x b" . counsel-projectile-switch-to-buffer)
   ("C-M-o" . counsel-imenu)
   )
 
