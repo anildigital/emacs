@@ -20,6 +20,11 @@
      ("d" (lambda (file) (setq recentf-list (delete file recentf-list)))
       "delete from recentf")))
 
+  (defun ivy-rich--switch-buffer-directory! (orig-fun &rest args)
+    (cl-letf (((symbol-function 'directory-file-name) #'file-name-directory))
+      (apply orig-fun args)))
+  (advice-add 'ivy-rich--switch-buffer-directory :around #'ivy-rich--switch-buffer-directory!)
+
   (defun anil/counsel-buffer-or-recentf-candidates ()
     "Return candidates for `counsel-buffer-or-recentf'."
     (require 'recentf)
@@ -41,7 +46,7 @@
   :bind ("M-x" . counsel-M-x)
   ("C-x C-f" . counsel-find-file)
   ("C-x C-r" . counsel-recentf)
-  ("C-x b" . counsel-projectile-switch-to-buffer)
+  ("C-x b" . counsel-switch-buffer)
   ("C-M-o" . counsel-imenu)
   )
 
