@@ -479,15 +479,6 @@
   (volatile-highlights-mode t)
   )
 
-(use-package perspective
-  :ensure t
-  :bind
-  ("C-x C-b" . persp-list-buffers)
-  :custom
-  (persp-mode-prefix-key (kbd "C-x p"))
-  :init
-  (persp-mode))
-
 (use-package switch-buffer-functions
   :ensure t
   :after recentf
