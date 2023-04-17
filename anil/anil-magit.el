@@ -12,16 +12,13 @@
   :bind
   ;; ("\C-cf" . 'forge-browse-remote)
   ("\C-xg" . 'magit-status)
-  )
-
-(use-package
-  forge
-  :ensure t
-  :after magit
-  )
-
-(use-package
-  code-review
-  :ensure t
-  :after magit forge
+  :config
+  (transient-append-suffix 'magit-push "-u"
+    '(1 "=s" "Skip gitlab pipeline" "--push-option=ci.skip"))
+  (transient-append-suffix 'magit-push "=s"
+    '(1 "=D" "DEBUG" "--push-option=ci.variable=DEBUG=1"))  ;; no special meaning for gitlab
+  (transient-append-suffix 'magit-push "=D"
+    '(1 "=V" "Set CI variable" "--push-option=ci.variable="))  ;; Will prompt, can only set one extra variable
+  (transient-append-suffix 'magit-push "=V"
+    '(1 "=O" "Set push option" "--push-option="))  ;; Will prompt, can only set one extra push option
   )
