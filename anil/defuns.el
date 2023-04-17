@@ -183,10 +183,6 @@ Version 2017-11-02"
   (org-backward-heading-same-level 1)
   (org-narrow-to-subtree))
 
-(defun anil-prog-nuke-trailing-whitespace ()
-  (when (derived-mode-p 'prog-mode)
-    (delete-trailing-whitespace)))
-
 (defun anil-switch-to-previous-buffer ()
   "Switch to previously open buffer.
 Repeated invocations toggle between the two most recently open buffers."

@@ -75,7 +75,8 @@
 (setq clean-buffer-list-delay-general 1)
 (midnight-delay-set 'midnight-delay "02:00am")
 
-(add-hook 'before-save-hook 'anil-prog-nuke-trailing-whitespace)
+(add-hook 'prog-mode-hook
+                (lambda () (add-to-list 'write-file-functions 'delete-trailing-whitespace)))
 
 (setq warning-minimum-level :error)
 
