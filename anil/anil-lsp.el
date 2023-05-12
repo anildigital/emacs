@@ -4,7 +4,7 @@
   :ensure t
   :diminish lsp-mode
   :hook
-  ((elixir-mode . lsp)
+  ((elixir-ts-mode . lsp)
    (lsp-mode . lsp-enable-which-key-integration)
    )
   :init
@@ -30,6 +30,12 @@
              "[/\\\\]build"
              "[/\\\\]_build"))
     (add-to-list 'lsp-file-watch-ignored match))
+
+  (setq lsp-language-id-configuration
+      (append lsp-language-id-configuration
+              '((elixir-ts-mode . "elixir")
+                (heex-ts-mode . "elixir"))))
+
   :bind
   (:map lsp-mode-map
         ("C-; d" . eldoc-doc-buffer)
@@ -65,7 +71,7 @@
   :bind (:map lsp-ui-mode-map
               ([remap xref-find-definitions] . lsp-ui-peek-find-definitions)
               ([remap xref-find-references] . lsp-ui-peek-find-references)
-              ("M-i" . lsp-ui-doc-focus-frame)) 
+              ("M-i" . lsp-ui-doc-focus-frame))
   (:map lsp-mode-map
         ("M-n" . forward-paragraph)
         ("M-p" . backward-paragraph))

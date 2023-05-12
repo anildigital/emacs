@@ -4,36 +4,61 @@
   :ensure t
   :mode "\\.erl$")
 
-(use-package
-  elixir-mode
+(use-package elixir-ts-mode
   :ensure t
   :hook
   (
-   (elixir-mode . flycheck-mode)
-   (elixir-mode . smartparens-mode)
-   (elixir-mode . tree-sitter-hl-mode)
-   (elixir-mode . mix-minor-mode)
-   (elixir-mode . exunit-mode)
-   ;; (elixir-mode . eglot-ensure)
+   (elixir-ts-mode . flycheck-mode)
+   (elixir-ts-mode . smartparens-mode)
+   (elixir-ts-mode . tree-sitter-hl-mode)
+   (elixir-ts-mode . mix-minor-mode)
+   (elixir-ts-mode . exunit-mode)
+   ;; (elixir-ts-mode . eglot-ensure)
    )
-  ;; :config (add-hook 'elixir-mode-hook (lambda ()
+  ;; :config (add-hook 'elixir-ts-mode-hook (lambda ()
   ;;                                       (add-hook 'before-save-hook 'eglot-format-buffer)))
-  :config (add-hook 'elixir-mode-hook (lambda ()
-                                        (add-hook 'before-save-hook 'lsp-format-buffer)))
+  :config
+  (add-hook 'elixir-ts-mode-hook (lambda ()
+                                   (add-hook 'before-save-hook 'lsp-format-buffer)))
+  (load "~/.config/emacs/vendor/surface-ts-mode/surface-ts-mode.el")
+
   :bind
-  (:map elixir-mode-map
+  (:map elixir-ts-mode-map
         ("C-c C-d" . lsp-ui-doc-show)
         ("s-t" . lsp-ui-imenu)
         )
   )
 
+;; (use-package
+;;   elixir-mode
+;;   :ensure t
+;;   :hook
+;;   (
+;;    (elixir-mode . flycheck-mode)
+;;    (elixir-mode . smartparens-mode)
+;;    (elixir-mode . tree-sitter-hl-mode)
+;;    (elixir-mode . mix-minor-mode)
+;;    (elixir-mode . exunit-mode)
+;;    ;; (elixir-mode . eglot-ensure)
+;;    )
+;;   ;; :config (add-hook 'elixir-mode-hook (lambda ()
+;;   ;;                                       (add-hook 'before-save-hook 'eglot-format-buffer)))
+;;   :config (add-hook 'elixir-mode-hook (lambda ()
+;;                                         (add-hook 'before-save-hook 'lsp-format-buffer)))
+;;   :bind
+;;   (:map elixir-mode-map
+;;         ("C-c C-d" . lsp-ui-doc-show)
+;;         ("s-t" . lsp-ui-imenu)
+;;         )
+;;   )
+
 (use-package
   exunit
   :ensure t
-  :after elixir-mode
+  :after elixir-ts-mode
   :commands (anil/mix-format)
   :bind
-  (:map elixir-mode-map
+  (:map elixir-ts-mode-map
         ("C-c , a" . exunit-verify-all)
         ("C-c , A" . exunit-verify-all-in-umbrella)
         ("C-c , s" . exunit-verify-single)
@@ -49,7 +74,7 @@
 (use-package
   flycheck-credo
   :ensure t
-  :after (flycheck elixir-mode)
+  :after (flycheck elixir-ts-mode)
   :config
   (flycheck-credo-setup)
   :custom (flycheck-elixir-credo-strict t))
@@ -57,7 +82,7 @@
 (use-package
   flycheck-dialyxir
   :ensure t
-  :after elixir-mode)
+  :after elixir-ts-mode)
 
 (use-package
   flycheck
@@ -67,7 +92,7 @@
 (use-package
   inf-elixir
   :ensure t
-  :after elixir-mode
+  :after elixir-ts-mode
   :bind (("C-c i i" . 'inf-elixir)
          ("C-c i f" . anil/mix-format)
          ("C-c i p" . 'inf-elixir-project)
@@ -78,9 +103,9 @@
 (use-package
   mix
   :ensure t
-  :after elixir-mode
+  :after elixir-ts-mode
   :bind
-  (:map elixir-mode-map
+  (:map elixir-ts-mode-map
         ("C-c i f" . anil/mix-format))
   :config
   (defun anil/mix-format ()
@@ -93,5 +118,5 @@
                             (exunit-project-root))
                            (buffer-file-name)))
     (revert-buffer t t))
-  :hook (elixir-mode . mix-minor-mode)
+  :hook (elixir-ts-mode . mix-minor-mode)
   )

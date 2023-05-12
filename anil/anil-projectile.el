@@ -3,8 +3,8 @@
   :ensure t
   :after prog-mode
   treemacs
-  :hook (elixir-mode . projectile-mode)
-  (elixir-mode . counsel-projectile-mode)
+  :hook (elixir-ts-mode . projectile-mode)
+  (elixir-ts-mode . counsel-projectile-mode)
   :commands (projectile-find-file projectile-switch-project)
   :bind
   ("s-b" . projectile-recentf)
