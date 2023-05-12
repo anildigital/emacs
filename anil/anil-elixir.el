@@ -13,6 +13,7 @@
    (elixir-mode . smartparens-mode)
    (elixir-mode . tree-sitter-hl-mode)
    (elixir-mode . mix-minor-mode)
+   (elixir-mode . exunit-mode)
    ;; (elixir-mode . eglot-ensure)
    )
   ;; :config (add-hook 'elixir-mode-hook (lambda ()
@@ -41,21 +42,8 @@
         ("C-c , t" . exunit-toggle-file-and-test)
         ("s-r" . exunit-rerun)
         )
-  (:map elixir-mode-map
-        ("C-c i f" . anil/mix-format))
   (:map exunit-compilation-mode-map
         ("C-o" . ace-window))
-  :config
-  (defun anil/mix-format ()
-    (interactive)
-    (save-buffer)
-    (message "formatting code...")
-    (shell-command (format "cd %s && mix format && mix surface.format"
-                           (or
-                            (ignore-errors (exunit-umbrella-project-root))
-                            (exunit-project-root))
-                           (buffer-file-name)))
-    (revert-buffer t t))
   )
 
 (use-package
@@ -91,4 +79,19 @@
   mix
   :ensure t
   :after elixir-mode
-  :hook (elixir-mode . mix-minor-mode))
+  :bind
+  (:map elixir-mode-map
+        ("C-c i f" . anil/mix-format))
+  :config
+  (defun anil/mix-format ()
+    (interactive)
+    (save-buffer)
+    (message "formatting code...")
+    (shell-command (format "cd %s && mix format && mix surface.format"
+                           (or
+                            (ignore-errors (exunit-umbrella-project-root))
+                            (exunit-project-root))
+                           (buffer-file-name)))
+    (revert-buffer t t))
+  :hook (elixir-mode . mix-minor-mode)
+  )
