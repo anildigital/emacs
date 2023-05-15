@@ -7,18 +7,20 @@
   ((elixir-mode . lsp)
    (lsp-mode . lsp-enable-which-key-integration)
    )
-  :custom
+  :init
+  (setq lsp-elixir-ls-server-dir "~/Code/elixir-ls/release")
+  (add-to-list 'exec-path "~/Code/elixir-ls/release")
+  (setq lsp-prefer-capf t)
+  (setq gc-cons-threshold 100000000)
+  (setq read-process-output-max (* 1024 1024)) ;; 1mb
+  (setq lsp-idle-delay 0.500)
+   :custom
   (lsp-restart 'ignore)
   (lsp-file-watch-threshold 1000000)
   (lsp-auto-guess-root t)
   (lsp-response-timeout 2)
   (lsp-prefer-flymake nil)
   (lsp-elixir-suggest-specs t)
-  :config (add-to-list 'exec-path "~/Code/elixir-ls/release")
-  (setq lsp-prefer-capf t)
-  (setq gc-cons-threshold 100000000)
-  (setq read-process-output-max (* 1024 1024)) ;; 1mb
-  (setq lsp-idle-delay 0.500)
   :config
   (dolist (match
            '("[/\\\\].direnv$"
