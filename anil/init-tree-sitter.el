@@ -2,7 +2,7 @@
   :ensure t
   :config
   (tree-sitter-hl-mode)
-  :hook ((elixir-mode . tree-sitter-mode))
+  :hook ((elixir-ts-mode . tree-sitter-mode))
   )
 
 (use-package tree-sitter-langs
