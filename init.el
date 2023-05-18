@@ -44,7 +44,6 @@
 (load "anil-yasnippet")
 (load "anil-ispell")
 (load "anil-org")
-(load "init-tree-sitter")
 (load "anil-elixir")
 (load "anil-postgres")
 (load "anil-ido")

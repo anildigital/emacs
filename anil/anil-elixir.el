@@ -11,7 +11,6 @@
   (
    (elixir-ts-mode . flycheck-mode)
    (elixir-ts-mode . smartparens-mode)
-;;   (elixir-ts-mode . tree-sitter-hl-mode)
    (elixir-ts-mode . mix-minor-mode)
    (elixir-ts-mode . exunit-mode)
    ;; (elixir-ts-mode . eglot-ensure)
