@@ -18,7 +18,9 @@
   ;; :config (add-hook 'elixir-ts-mode-hook (lambda ()
   ;;                                       (add-hook 'before-save-hook 'eglot-format-buffer)))
   :config (add-hook 'elixir-ts-mode-hook (lambda ()
-                                        (add-hook 'before-save-hook 'lsp-format-buffer)))
+                                           (add-hook 'before-save-hook 'lsp-format-buffer)))
+
+  (load "surface-ts-mode/surface-ts-mode.el") ;; load from vendor
   :bind
   (:map elixir-ts-mode-map
         ("C-c C-d" . lsp-ui-doc-show)
