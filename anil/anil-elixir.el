@@ -26,6 +26,11 @@
         ("C-c C-d" . lsp-ui-doc-show)
         ("s-t" . lsp-ui-imenu)
         )
+  :mode (
+   ".ex$"
+   ".exs?$"
+   ".eex$"
+   )
   )
 
 (use-package
