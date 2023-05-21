@@ -93,7 +93,7 @@
     (interactive)
     (save-buffer)
     (message "formatting code...")
-    (shell-command (format "cd %s && mix format && mix surface.format"
+    (shell-command (format "cd %s && mix format"
                            (or
                             (ignore-errors (exunit-umbrella-project-root))
                             (exunit-project-root))
