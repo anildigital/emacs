@@ -460,3 +460,20 @@
   :ensure t
   :config
   (global-treesit-auto-mode))
+
+
+(use-package perspective
+  :ensure t
+  :commands (persp-switch)
+  :init
+  (persp-mode)
+  (setq persp-state-default-file (concat user-emacs-directory "persp-state-file"))
+  :custom
+  (persp-mode-prefix-key (kbd "C-x p"))
+  :config
+  (persp-state-load persp-state-default-file)
+  (add-hook 'kill-emacs-hook #'persp-state-save)
+  :bind
+  ("C-x b" . persp-ivy-switch-buffer)
+  ("C-x C-b" . persp-list-buffers)
+  )
