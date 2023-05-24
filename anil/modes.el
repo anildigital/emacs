@@ -44,7 +44,7 @@
 (use-package
   move-text
   :ensure t
-  :config (move-text-default-bindings)  ;
+  :config (move-text-default-bindings)
   )
 
 (use-package
@@ -123,43 +123,6 @@
   ("C-x u" . undo-tree-visualize)
   :config (global-undo-tree-mode))
 
-;; Assumes web-mode and elixir-mode are already set up
-;; (use-package
-;;   polymode
-;;   :ensure t
-;;   :mode ("\\.ex\\'" . poly-elixir-web-mode)
-;;   :init (setq web-mode-engines-alist '(("elixir" . "\\.ex\\'")))
-;;   :config
-;;   (advice-add 'centaur-tabs-hide-tab :around
-;;               (lambda (oldfn buf &rest args)
-;;                 (if (with-current-buffer buf
-;;                       (eq major-mode 'web-mode))
-;;                     t
-;;                   (apply oldfn buf args))))
-;;   (define-hostmode poly-elixir-hostmode :mode 'elixir-mode)
-;;   (define-innermode poly-surface-expr-elixir-innermode
-;;     :mode 'web-mode
-;;     :head-matcher (rx line-start (* space) "~F" (= 3 (char "\"'")) line-end)
-;;     :tail-matcher (rx line-start (* space) (= 3 (char "\"'")) line-end)
-;;     :head-mode 'host
-;;     :tail-mode 'host
-;;     :allow-nested nil
-;;     :keep-in-mode 'host
-;;     :fallback-mode 'host)
-;;   (define-innermode poly-heex-expr-elixir-innermode
-;;     :mode 'web-mode
-;;     :head-matcher (rx line-start (* space) "~H" (= 3 (char "\"'")) line-end)
-;;     :tail-matcher (rx line-start (* space) (= 3 (char "\"'")) line-end)
-;;     :head-mode 'host
-;;     :tail-mode 'host
-;;     :allow-nested nil
-;;     :keep-in-mode 'host
-;;     :fallback-mode 'host)
-;;   (define-polymode poly-elixir-web-mode
-;;     :hostmode 'poly-elixir-hostmode
-;;     :innermodes '(poly-surface-expr-elixir-innermode poly-heex-expr-elixir-innermode)))
-;; (setq web-mode-engines-alist '(("elixir" . "\\.ex\\'")))
-
 (use-package
   poly-markdown
   :ensure t
@@ -236,7 +199,6 @@
   :after emacs-lisp-mode
   clojure-mode)
 
-
 (use-package
   emmet-mode
   :ensure t
@@ -249,6 +211,7 @@
   :ensure t
   :delight smartparens
   :defer t)
+
 (use-package
   discover-my-major
   :ensure t
