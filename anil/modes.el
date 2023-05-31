@@ -461,19 +461,45 @@
   :config
   (global-treesit-auto-mode))
 
-
-(use-package perspective
+(use-package persp-mode
   :ensure t
-  :commands (persp-switch)
-  :init
-  (persp-mode)
-  (setq persp-state-default-file (concat user-emacs-directory "persp-state-file"))
   :custom
-  (persp-mode-prefix-key (kbd "C-x p"))
+  (persp-keymap-prefix (kbd "C-x p"))
+  (persp-auto-save-num-of-backups 10)
+  (persp-autokill-buffer-on-remove 'kill-weak)
+  (persp-nil-name "nil")
+
+ :preface
+  (defun anil-persp-mode-filter-magit-buffers (buf)
+    (string-prefix-p "magit" (buffer-name buf)))
+
+  (defun anil-persp-before-kill-hook (persp)
+    "Remove the killed perspective's name from persp-recent-persps."
+    (let* ((frame (selected-frame))
+           (recent-list (frame-parameter frame 'persp-recent-persps))
+           (most-recent (nth 1 recent-list))
+           (persp-name (safe-persp-name persp))
+           (current-persp (safe-persp-name (get-current-persp))))
+
+      (set-frame-parameter frame 'persp-recent-persps
+                           (delete persp-name recent-list))
+      (set-frame-parameter frame 'persp-recent-just-killed persp-name)
+
+      (if (and most-recent (equal persp-name current-persp))
+          (persp-frame-switch most-recent frame))))
+
+
+  :init
+  ;; Do not auto save/load in terminal. My main instance of Emacs runs in GUI,
+  ;; terminal based instances are for smaller random things.
+  (when (not window-system)
+    (setq persp-auto-resume-time -1
+          persp-auto-save-opt 0))
+
   :config
-  (persp-state-load persp-state-default-file)
-  (add-hook 'kill-emacs-hook #'persp-state-save)
-  :bind
-  ("C-x b" . persp-ivy-switch-buffer)
-  ("C-x C-b" . persp-list-buffers)
+  (persp-mode)
+  (add-hook 'persp-common-buffer-filter-functions
+            'anil-persp-mode-filter-magit-buffers)
+
+  (add-hook 'persp-before-kill-functions 'anil-persp-before-kill-hook)
   )

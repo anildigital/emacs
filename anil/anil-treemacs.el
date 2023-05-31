@@ -78,7 +78,7 @@
   :ensure t)
 
 
-(use-package treemacs-perspective
-  :after (treemacs perspective)
+(use-package treemacs-persp
+  :after (treemacs persp-mode)
   :ensure t
   :config (treemacs-set-scope-type 'Perspectives))
