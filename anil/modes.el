@@ -230,14 +230,15 @@
   :ensure t
   :mode ("\\.scss\\'" . scss-mode))
 
-(use-package
-  rainbow-mode
+(use-package rainbow-mode
   :ensure t
-  :mode ("\\.html\\'" . rainbow-mode)
-  ("\\.eex$" . rainbow-mode)
-  ("\\.css$" . rainbow-mode)
-  ("\\.scss$" . rainbow-mode)
-  ("\\.erb$" . rainbow-mode))
+  :commands rainbow-mode
+  :diminish
+  :hook (
+         (web-mode . rainbow-mode)
+         (css-mode . rainbow-mode)
+         )
+  )
 
 (use-package
   editorconfig
