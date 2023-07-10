@@ -15,6 +15,7 @@
          (sgml-mode . emmet-mode)
          (sass-mode . emmet-mode)
          (web-mode  . emmet-mode)
+         (elixir-ts-mode  . emmet-mode)
          (scss-mode . emmet-mode)))
 
 
