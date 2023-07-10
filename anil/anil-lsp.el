@@ -22,6 +22,7 @@
   (lsp-prefer-flymake nil)
   (lsp-elixir-suggest-specs t)
   :config
+  (custom-set-variables '(lsp-credo-version "0.1.3"))
   (dolist (match
            '("[/\\\\].direnv$"
              "[/\\\\]node_modules$"
