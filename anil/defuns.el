@@ -110,6 +110,15 @@
   (interactive)
   (find-file "~/org/todo.org"))
 
+(defun anil-goto-coding-todo ()
+  (interactive)
+  (find-file "~/org/coding.org"))
+
+(defun anil-goto-long-term-todo ()
+  (interactive)
+  (find-file "~/org/long_term_todo.org"))
+
+
 (defun anil-goto-index ()
   (interactive)
   (find-file "~/org/index.org"))

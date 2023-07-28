@@ -81,6 +81,8 @@
 
 (global-set-key "\C-cP" 'anil-goto-config)
 (global-set-key (kbd "\C-ct") 'anil-goto-todo)
+(global-set-key (kbd "\C-cy") 'anil-goto-coding-todo)
+(global-set-key (kbd "\C-c l t") 'anil-goto-long-term-todo)
 (global-set-key (kbd "\C-c n o") 'anil-goto-index)
 
 ;; contextual backspace
