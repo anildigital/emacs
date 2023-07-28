@@ -142,11 +142,11 @@
   :commands wsd-mode
   :init (setq wsd-style "default"))
 
-(use-package
-  expand-region
-  :ensure t
-  :commands er/expand-region
-  :init (bind-key (kbd "C-=") 'er/expand-region))
+;; (use-package
+;;   expand-region
+;;   :ensure t
+;;   :commands er/expand-region
+;;   :init (bind-key (kbd "C-=") 'er/expand-region))
 
 ;; this is last change0
 (use-package

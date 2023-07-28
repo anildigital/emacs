@@ -236,4 +236,31 @@ Repeated invocations toggle between the two most recently open buffers."
 (defun anil-org-timer-hook ()
   (call-process "/usr/bin/say" "" t "" "" "Pomodoro Time up!"))
 
+
+
+(defvar anil-treesit-expand-region-node nil)
+
+;;;###autoload
+(defun anil-treesit-expand-region ()
+  (interactive)
+  (unless (and anil-treesit-expand-region-node
+               (use-region-p)
+               (eq (treesit-node-start anil-treesit-expand-region-node)
+                   (region-beginning))
+               (eq (treesit-node-end anil-treesit-expand-region-node)
+                   (region-end)))
+    (setq anil-treesit-expand-region-node nil))
+  (let* ((node (if anil-treesit-expand-region-node
+                   (treesit-node-parent anil-treesit-expand-region-node)
+                 (treesit-node-at (point))))
+         (start (treesit-node-start node)))
+    (when (use-region-p)
+      (deactivate-mark))
+    (goto-char start)
+    (activate-mark)
+    (goto-char (treesit-node-end node))
+    (push-mark)
+    (goto-char start)
+    (setq anil-treesit-expand-region-node node)))
+
 (provide 'defuns)

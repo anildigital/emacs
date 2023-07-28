@@ -73,6 +73,8 @@
 (global-set-key (kbd "s--") 'text-scale-decrease)
 (global-set-key (kbd "s-s") 'save-buffer)
 (global-set-key (kbd "s-S") 'counsel-ag)
+(global-set-key (kbd "C-=") 'anil-treesit-expand-region)
+
 
 ;; Add pound
 (when (eq system-type 'darwin)
