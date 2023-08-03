@@ -30,7 +30,7 @@
 ;; (global-set-key "\C-xp" 'anil-ido-find-project)
 
 ;; duplicate line
-(global-set-key (kbd "s-d") 'anil-duplicate-line)
+(global-set-key (kbd "s-d") 'anil-duplicate-current-line-or-region)
 
 ;; Command + Return to go to newline
 (global-set-key (kbd "s-<backspace>") 'kill-whole-line)

@@ -3,15 +3,25 @@
   (interactive)
   (find-file (concat "~/Projects/" (ido-completing-read "Project: " (directory-files "~/Projects/"
                                                                                      nil "^[^.]")))))
-
-(defun anil-duplicate-line ()
-  (interactive)
-  (move-beginning-of-line 1)
-  (kill-line)
-  (yank)
-  (open-line 1)
-  (next-line 1)
-  (yank))
+(defun anil-duplicate-current-line-or-region (arg)
+  "Duplicates the current line or region ARG times.
+If there's no region, the current line will be duplicated. However, if
+there's a region, all lines that region covers will be duplicated."
+  (interactive "p")
+  (let (beg end (origin (point)))
+    (if (and mark-active (> (point) (mark)))
+        (exchange-point-and-mark))
+    (setq beg (line-beginning-position))
+    (if mark-active
+        (exchange-point-and-mark))
+    (setq end (line-end-position))
+    (let ((region (buffer-substring-no-properties beg end)))
+      (dotimes (i arg)
+        (goto-char end)
+        (newline)
+        (insert region)
+        (setq end (point)))
+      (goto-char (+ origin (* (length region) arg) arg)))))
 
 (defun anil-new-line-jump-to-it ()
   (interactive)
@@ -262,5 +272,10 @@ Repeated invocations toggle between the two most recently open buffers."
     (push-mark)
     (goto-char start)
     (setq anil-treesit-expand-region-node node)))
+
+
+(defalias 'singlyfy
+   (kmacro "C-s d o <return> C-b C-b C-b , C-e : C-s e n d <return> <backspace> <backspace> <backspace> C-p M-^ SPC C-e s-s"))
+
 
 (provide 'defuns)
