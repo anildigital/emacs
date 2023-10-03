@@ -101,7 +101,7 @@
 (global-auto-revert-mode 1)
 
 ;; use fish shell from shell
-(setq-default explicit-shell-file-name "/usr/local/bin/fish")
+(setq-default explicit-shell-file-name "/opt/homebrew/bin/fish")
 
 ;; time
 (display-time-mode 1)
