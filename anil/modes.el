@@ -489,6 +489,11 @@
       (if (and most-recent (equal persp-name current-persp))
           (persp-frame-switch most-recent frame))))
 
+  :hook ((after-init . persp-mode)
+         (emacs-startup . toggle-frame-maximized))
+
+  :bind
+  ("C-s-w" . persp-window-switch)
 
   :init
   ;; Do not auto save/load in terminal. My main instance of Emacs runs in GUI,

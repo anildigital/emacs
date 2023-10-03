@@ -14,7 +14,7 @@
          ("C-c h h" . browse-at-remote)
          ;; ("C-x 1" . treemacs-delete-other-windows)
          ("M-s M-s" . anil-treemacs-swiper)
-         ("C-s-w" . treemacs-switch-workspace)
+         ;; ("C-s-w" . treemacs-switch-workspace)
          :map prog-mode-map
          ("C-c C-p" . 'treemacs-projectile)
          )
