@@ -105,3 +105,6 @@
 
 ;; time
 (display-time-mode 1)
+
+(setq require-final-newline t)
+
