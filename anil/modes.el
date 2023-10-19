@@ -466,13 +466,17 @@
   :ensure t
   :custom
   (persp-keymap-prefix (kbd "C-x p"))
-  (persp-auto-save-num-of-backups 10)
+  (persp-auto-save-num-of-backups 2)
   (persp-autokill-buffer-on-remove 'kill-weak)
-  (persp-nil-name "nil")
+  (persp-nil-name "default")
+  (persp-set-last-persp-for-new-frames nil)
+  (persp-auto-resume-time 0)
 
  :preface
-  (defun anil-persp-mode-filter-magit-buffers (buf)
-    (string-prefix-p "magit" (buffer-name buf)))
+ (defun anil-persp-mode-filter-magit-buffers (buf)
+   (or (string-prefix-p "*" (buffer-name buf))
+       (string-prefix-p "magit" (buffer-name buf))
+    ))
 
   (defun anil-persp-before-kill-hook (persp)
     "Remove the killed perspective's name from persp-recent-persps."
