@@ -8,7 +8,6 @@
    (lsp-mode . lsp-enable-which-key-integration)
    )
   :init
-  (setq lsp-elixir-ls-server-dir "~/Code/elixir-ls/release")
   (add-to-list 'exec-path "~/Code/elixir-ls/release")
   (setq lsp-prefer-capf t)
   (setq gc-cons-threshold 100000000)
