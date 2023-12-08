@@ -190,7 +190,8 @@
   :commands org-export-dispatch
   )
 
-(use-package org-mru-clock
+(use-package
+  org-mru-clock
   :ensure t
   :init
   (setq org-mru-clock-how-many 100

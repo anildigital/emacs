@@ -275,7 +275,7 @@ Repeated invocations toggle between the two most recently open buffers."
 
 
 (defalias 'singlyfy
-   (kmacro "C-s d o <return> C-b C-b C-b , C-e : C-s e n d <return> <backspace> <backspace> <backspace> C-p M-^ SPC C-e s-s"))
+  (kmacro "C-s d o <return> C-b C-b C-b , C-e : C-s e n d <return> <backspace> <backspace> <backspace> C-p M-^ SPC C-e s-s"))
 
 
 (provide 'defuns)
