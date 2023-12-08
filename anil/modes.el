@@ -460,7 +460,7 @@
   :ensure t
   :custom
   (persp-keymap-prefix (kbd "C-x p"))
-  (persp-auto-save-num-of-backups 2)
+  (persp-auto-save-num-of-backups 1)
   (persp-autokill-buffer-on-remove 'kill-weak)
   (persp-nil-name "default")
   (persp-set-last-persp-for-new-frames nil)
