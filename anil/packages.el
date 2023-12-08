@@ -5,6 +5,13 @@
              '("org" . "http://orgmode.org/elpa/")
              )
 
+(use-package quelpa
+  :ensure)
+(use-package quelpa-use-package
+  :demand
+  :config
+  (quelpa-use-package-activate-advice))
+
 (setq gnutls-algorithm-priority "NORMAL:-VERS-TLS1.3")
 
 (setq use-package-verbose t)
