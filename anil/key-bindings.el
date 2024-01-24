@@ -81,6 +81,7 @@
   (fset 'insert-pound "#")
   (define-key global-map "\M-3" #'insert-pound))
 
+(global-set-key (kbd "C-s-0") 'anil-goto-scratch)
 (global-set-key "\C-cP" 'anil-goto-config)
 (global-set-key (kbd "\C-ct") 'anil-goto-todo)
 (global-set-key (kbd "\C-cy") 'anil-goto-coding-todo)

@@ -112,6 +112,10 @@ there's a region, all lines that region covers will be duplicated."
   (interactive)
   (find-file "~/.config/emacs/init.el"))
 
+(defun anil-goto-scratch ()
+  (interactive)
+  (switch-to-buffer "*scratch*"))
+
 (defun anil-goto-shell ()
   (interactive)
    (call-interactively #'vterm))
