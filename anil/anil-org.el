@@ -206,9 +206,10 @@
   :ensure t
   )
 
+
 (use-package org-fancy-priorities
   :diminish
   :ensure t
   :hook (org-mode . org-fancy-priorities-mode)
   :config
-  (setq org-fancy-priorities-list '("🅰" "🅱" "🅲" "🅳" "🅴")))
+  (setq org-fancy-priorities-list '("⚡" "⬆" "⬇" "☕")))
