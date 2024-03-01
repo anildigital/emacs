@@ -281,5 +281,10 @@ Repeated invocations toggle between the two most recently open buffers."
 (defalias 'singlyfy
   (kmacro "C-s d o <return> C-b C-b C-b , C-e : C-s e n d <return> <backspace> <backspace> <backspace> C-p M-^ SPC C-e s-s"))
 
+(defun anil/show-agenda ()
+  (let ((agenda-frame (make-frame-command)))
+    (select-frame agenda-frame)
+    (org-agenda-list)
+    (x-focus-frame agenda-frame)))
 
 (provide 'defuns)
