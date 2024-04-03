@@ -12,6 +12,7 @@
   :bind-keymap
   ("s-p" . projectile-command-map)
   :init (setq projectile-enable-caching t)
+  (setq projectile-switch-project-action 'counsel-projectile-find-file)
   (setq projectile-completion-system 'ivy)
   (setq projectile-globally-ignored-file-suffixes '(".png" ".gif" ".pdf"  ".class", ".beam"))
   :config (add-to-list 'projectile-globally-ignored-directories "node_modules")
