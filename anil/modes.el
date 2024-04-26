@@ -378,7 +378,7 @@
 (use-package
   popper
   :ensure t
-  :bind (("C-`"   . popper-toggle-latest)
+  :bind (("C-`"   . popper-toggle)
          ("M-`"   . popper-cycle)
          ("C-M-`" . popper-toggle-type))
   ;; :hook (
