@@ -161,6 +161,7 @@
   :ensure t
   :bind ("M-g s" . swiper)
   ("C-s" . swiper)
+  ("s-f" . swiper)
   ("C-M-'" . swiper-avy))
 
 (use-package
