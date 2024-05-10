@@ -6,7 +6,7 @@
 (if (fboundp 'scroll-bar-mode)
     (scroll-bar-mode -1))
 
-(setq max-lisp-eval-depth 100000)
+(setq max-lisp-eval-depth 5000)
 
 ;; default tab width
 (setq-default tab-width 2)
