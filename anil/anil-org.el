@@ -16,7 +16,7 @@
   ("C-c a a" . org-agenda)
   ("<f16>" . org-agenda)
   ("C-c b" . org-switchb)
-  ("s-9" . org-timer-set-timer)
+  ("C-c 9" . org-timer-set-timer)
 
   ;; org clock
   ("C-c I". anil/org-clock-in)
