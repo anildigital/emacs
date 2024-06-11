@@ -308,7 +308,12 @@
   (ruby-mode . git-gutter-mode)
   (elixir-ts-mode . git-gutter-mode)
   (js2-mode . git-gutter-mode)
-  :config (git-gutter-mode))
+  :config (git-gutter-mode)
+  :bind
+  ("C-c n n" . git-gutter:next-hunk)
+  ("C-c n p" . git-gutter:previous-hunk)
+  ("s-'" . git-gutter:popup-hunk)
+  )
 
 
 (use-package deft
@@ -507,4 +512,8 @@
             'anil-persp-mode-filter-magit-buffers)
 
   (add-hook 'persp-before-kill-functions 'anil-persp-before-kill-hook)
+  )
+
+(use-package docker-compose-mode
+  :ensure t
   )
