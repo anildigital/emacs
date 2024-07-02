@@ -522,6 +522,10 @@
     (setq persp-auto-resume-time -1
           persp-auto-save-opt 0))
 
+  ;; testing still
+  (setq persp-add-buffer-on-after-change-major-mode 'free)
+  (setq persp-kill-foreign-indirect-buffer-behaviour-override 'as-base-buffer)
+
   :config
   (persp-mode)
   (add-hook 'persp-common-buffer-filter-functions
