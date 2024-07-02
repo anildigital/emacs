@@ -493,11 +493,27 @@
       (if (and most-recent (equal persp-name current-persp))
           (persp-frame-switch most-recent frame))))
 
+  (defun switch-to-app ()
+    "Switch to the persp named 'app'."
+    (interactive)
+    (persp-frame-switch "app")
+    (treemacs)
+    )
+
+  (defun switch-to-regular ()
+    "Switch to the persp named 'regular'."
+    (interactive)
+    (persp-frame-switch "regular")
+    (treemacs)
+    )
+
   :hook ((after-init . persp-mode)
          (emacs-startup . toggle-frame-maximized))
 
   :bind
   ("C-s-w" . persp-window-switch)
+  ("<f6>" . switch-to-app)
+  ("<f5>" . switch-to-regular)
 
   :init
   ;; Do not auto save/load in terminal. My main instance of Emacs runs in GUI,
