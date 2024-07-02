@@ -537,3 +537,13 @@
 (use-package docker-compose-mode
   :ensure t
   )
+
+
+(use-package ellama
+  :ensure t
+  :init
+  (setopt ellama-language "English")
+  (require 'llm-ollama)
+  (setopt ellama-provider
+      (make-llm-ollama
+       :chat-model "codellama" :embedding-model "codellama")))
