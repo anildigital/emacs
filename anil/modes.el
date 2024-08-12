@@ -462,82 +462,10 @@
   :config
   (global-treesit-auto-mode))
 
-(use-package persp-mode
-  :ensure t
-  :custom
-  (persp-keymap-prefix (kbd "C-x p"))
-  (persp-auto-save-num-of-backups 1)
-  (persp-autokill-buffer-on-remove 'kill-weak)
-  (persp-nil-name "default")
-  (persp-set-last-persp-for-new-frames nil)
-  (persp-auto-resume-time 0)
-
- :preface
- (defun anil-persp-mode-filter-magit-buffers (buf)
-   (or (string-prefix-p "*" (buffer-name buf))
-       (string-prefix-p "magit" (buffer-name buf))
-    ))
-
-  (defun anil-persp-before-kill-hook (persp)
-    "Remove the killed perspective's name from persp-recent-persps."
-    (let* ((frame (selected-frame))
-           (recent-list (frame-parameter frame 'persp-recent-persps))
-           (most-recent (nth 1 recent-list))
-           (persp-name (safe-persp-name persp))
-           (current-persp (safe-persp-name (get-current-persp))))
-
-      (set-frame-parameter frame 'persp-recent-persps
-                           (delete persp-name recent-list))
-      (set-frame-parameter frame 'persp-recent-just-killed persp-name)
-
-      (if (and most-recent (equal persp-name current-persp))
-          (persp-frame-switch most-recent frame))))
-
-  (defun switch-to-app ()
-    "Switch to the persp named 'app'."
-    (interactive)
-    (persp-frame-switch "app")
-    (treemacs)
-    )
-
-  (defun switch-to-regular ()
-    "Switch to the persp named 'regular'."
-    (interactive)
-    (persp-frame-switch "regular")
-    (treemacs)
-    )
-
-  :hook ((after-init . persp-mode)
-         (emacs-startup . toggle-frame-maximized))
-
-  :bind
-  ("C-s-w" . persp-window-switch)
-  ("<f6>" . switch-to-app)
-  ("<f5>" . switch-to-regular)
-
-  :init
-  ;; Do not auto save/load in terminal. My main instance of Emacs runs in GUI,
-  ;; terminal based instances are for smaller random things.
-  (when (not window-system)
-    (setq persp-auto-resume-time -1
-          persp-auto-save-opt 0))
-
-  ;; testing still
-  (setq persp-add-buffer-on-after-change-major-mode 'free)
-  (setq persp-kill-foreign-indirect-buffer-behaviour-override 'as-base-buffer)
-
-  :config
-  (persp-mode)
-  (add-hook 'persp-common-buffer-filter-functions
-            'anil-persp-mode-filter-magit-buffers)
-
-  (add-hook 'persp-before-kill-functions 'anil-persp-before-kill-hook)
-  )
 
 (use-package docker-compose-mode
   :ensure t
   )
-
 
 (use-package ellama
   :ensure t
