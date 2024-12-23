@@ -7,6 +7,7 @@
   :bind (("M-s M-s" . anil-treemacs-swiper)
          ("C-s-1" . treemacs)
          ("C-c 1" . treemacs)
+         ("C-<return>" . treemacs-switch-workspace)
          ("s-0" . treemacs-select-window)
          ("C-s-s" . treemacs-select-window)
          ("C-c 0" . treemacs)
